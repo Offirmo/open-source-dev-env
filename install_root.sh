@@ -45,6 +45,9 @@ sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
 sudo apt update
 sudo apt upgrade --yes
 
+## allow remote access
+sudo apt install -y  openssh-server
+
 ## ensure our machine has correct time
 sudo apt install -y  ntp
 
@@ -65,8 +68,9 @@ sudo apt install -y  bash
 ## basic tools
 sudo apt install -y  jq curl vim nano
 
-## headers (for extensions)
+## for extensions
 sudo apt install -y  linux-headers-$(uname -r)
+sudo apt install -y dkms
 
 
 ############ DEV ############
