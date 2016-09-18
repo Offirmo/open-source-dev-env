@@ -33,7 +33,6 @@ gsettings set com.canonical.Unity always-show-menus true
 ############ Structure ############
 mkdir ~/work
 mkdir ~/work/bin
-mkdir ~/work/bin/shellrc
 mkdir ~/work/install
 mkdir ~/work/tmp
 mkdir ~/work/src
