@@ -73,6 +73,13 @@ sudo apt install -y  linux-headers-$(uname -r)
 sudo apt install -y dkms
 
 
+
+############ STRUCTURE ############
+mkdir /work
+mkdir /work/bin
+mkdir /work/install
+
+
 ############ DEV ############
 
 ## Java
