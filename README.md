@@ -28,3 +28,8 @@ cd ~/work/install/; mkdir jbsdk8u112b340_linux_x64; tar -xzf jbsdk8u112b340_linu
 cd ~/work/src && git clone git@github.com:Offirmo/virtualized-open-source-dev-env.git
 
 
+echo "source ~/work/src/virtualized-open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
+
+
+
+
