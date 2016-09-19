@@ -24,7 +24,6 @@ echo "  - PATH          = $PATH"
 ## full env
 #env
 
-
 ############ Node ############
 ## NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash -s stable
@@ -39,16 +38,38 @@ curl -sSL https://get.rvm.io | bash -s stable
 source /home/sam/.rvm/scripts/rvm
 
 
+############ Java ############
+## https://confluence.jetbrains.com/display/IDEADEV/JetBrains+Runtime+Environment
+## https://bintray.com/jetbrains/intellij-jdk/openjdk8-linux-x64
+JDK_ID=jbsdk8u112b340_linux_x64
+if [[ ! -d ~/work/install/${JDK_ID} ]]; then
+    curl -L "https://dl.bintray.com/jetbrains/intellij-jdk/${JDK_ID}.tar.gz" -o ~/work/install/${JDK_ID}.tar.gz
+    pushd ~/work/install > /dev/null
+    mkdir ${JDK_ID}
+    tar -xzf ${JDK_ID}.tar.gz -C ${JDK_ID}
+    popd > /dev/null
+fi
+
+
 ############ Fonts ############
 ## https://github.com/powerline/fonts
 pushd ~/work/install > /dev/null
-if ![[ -d ~/work/install/fonts ]]; then
+if [[ ! -d ~/work/install/fonts ]]; then
     git clone --recursive https://github.com/powerline/fonts.git
     cd fonts
     ./install.sh
 fi
 popd > /dev/null
 
+
+############ Offirmo shared scripts ############
+pushd ~/work/src > /dev/null
+if [[ ! -d virtualized-open-source-dev-env ]]; then
+    git clone --recursive git@github.com:Offirmo/virtualized-open-source-dev-env.git
+    echo "source ~/work/src/virtualized-open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
+fi
+popd > /dev/null
+
+
 ############ TOSORT ############
 #umake ide webstorm
-# git clone !

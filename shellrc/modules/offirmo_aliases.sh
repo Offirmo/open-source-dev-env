@@ -12,6 +12,7 @@ alias ga='echo "Current git account :"; echo "   `git config --get user.name` (`
 alias gfp='git fetch && git pull'
 alias ur='CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout master; git pull; git checkout $CURRENT_BRANCH; git fetch origin master; git rebase origin/master'
 alias gac='git add . && git commit -m "+" --no-verify'
+alias gitc='gitc.sh'
 
 ## node
 alias kng='killall node grunt gulp tsc phantomjs'

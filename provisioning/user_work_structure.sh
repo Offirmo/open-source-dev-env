@@ -26,9 +26,10 @@ echo "  - PATH          = $PATH"
 
 
 ############ Structure ############
-mkdir ~/work
-mkdir ~/work/bin
-mkdir ~/work/install
-mkdir ~/work/tmp
-mkdir ~/work/src
-mkdir ~/work/docs
+mkdir -p ~/work
+mkdir -p ~/work/bin
+mkdir -p ~/work/containers
+mkdir -p ~/work/docs
+mkdir -p ~/work/install
+mkdir -p ~/work/src
+mkdir -p ~/work/tmp

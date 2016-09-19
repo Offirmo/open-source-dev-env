@@ -28,3 +28,6 @@ echo "  - PATH          = $PATH"
 ############ Ubuntu settings ############
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set com.canonical.Unity always-show-menus true
+
+############ Misc ############
+git config --global push.default simple

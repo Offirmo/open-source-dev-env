@@ -71,12 +71,6 @@ doesn’t
 ````
 ssh sam@192.168.88.10
 
-## https://confluence.jetbrains.com/display/IDEADEV/JetBrains+Runtime+Environment
-## https://bintray.com/jetbrains/intellij-jdk/openjdk8-linux-x64
-curl -L "https://dl.bintray.com/jetbrains/intellij-jdk/jbsdk8u112b340_linux_x64.tar.gz" -o ~/work/install/jbsdk8u112b340_linux_x64.tar.gz
-cd ~/work/install/; mkdir jbsdk8u112b340_linux_x64; tar -xzf jbsdk8u112b340_linux_x64.tar.gz -C jbsdk8u112b340_linux_x64
+gitc git@github.com:Offirmo/web-tech-experiments.git
 
-cd ~/work/src && git clone git@github.com:Offirmo/virtualized-open-source-dev-env.git
-
-echo "source $HOME/work/src/virtualized-open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
 ```
