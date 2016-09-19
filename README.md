@@ -57,6 +57,12 @@ sudo gedit /etc/samba/smb.conf
 ```
 * https://github.com/Offirmo-team/wiki/wiki/partage-samba
 
+### login to npm
+```
+npm adduser
+```
+
+
 ## Notes
 
 ### Useful commands
