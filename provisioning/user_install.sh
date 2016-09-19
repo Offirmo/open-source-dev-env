@@ -41,13 +41,13 @@ source /home/sam/.rvm/scripts/rvm
 
 ############ Fonts ############
 ## https://github.com/powerline/fonts
-cd ~/work/install
+pushd ~/work/install > /dev/null
 if ![[ -d ~/work/install/fonts ]]; then
     git clone --recursive https://github.com/powerline/fonts.git
     cd fonts
     ./install.sh
 fi
-cd ~
+popd > /dev/null
 
 ############ TOSORT ############
 #umake ide webstorm
