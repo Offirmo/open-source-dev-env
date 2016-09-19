@@ -65,3 +65,6 @@ cd ~
 
 
 #umake ide webstorm
+
+
+# git clone !

@@ -24,63 +24,7 @@ echo "  - PATH          = $PATH"
 ## full env
 #env
 
-
 ################################
-
-## prepare possible alternative locales
-sudo locale-gen fr_FR
-sudo locale-gen fr_FR.UTF-8
-
-## To handle 3rd party apt repositories
-sudo apt install -y  software-properties-common python-software-properties
-
-## allow secure apt repositories
-sudo apt install -y  apt-transport-https
-
-## add important apt repositories
-sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
-#sudo add-apt-repository -y ppa:webupd8team/java
-
-## prepare further installations
-sudo apt update
-sudo apt upgrade --yes
-
-## allow remote access
-sudo apt install -y  openssh-server
-
-## ensure our machine has correct time
-sudo apt install -y  ntp
-
-## A useful resource monitoring tool.
-## Just run it to test it.
-sudo apt install -y  dstat
-
-## A useful resource monitoring tool. (better than 'top')
-## Just run it to test it.
-sudo apt install -y  htop
-
-## useful for misc operations
-sudo apt install -y  zip
-
-## standard, posix-compliant safe shell
-sudo apt install -y  bash
-
-## basic tools
-sudo apt install -y  jq curl vim nano
-
-## for extensions
-sudo apt install -y  linux-headers-$(uname -r)
-sudo apt install -y dkms
-
-
-
-############ STRUCTURE ############
-mkdir /work
-mkdir /work/bin
-mkdir /work/install
-
-
-############ DEV ############
 
 ## Java
 #sudo apt-get install -y  oracle-java8-installer
@@ -117,6 +61,4 @@ sudo apt install -y  libappindicator1 libindicator7 libxss1 fonts-liberation lib
 
 
 ############ post install cleanups ############
-sudo apt-get -y autoclean
-sudo apt-get -y clean
-sudo apt-get -y autoremove --purge
+## see superuser_cleanup.sh
