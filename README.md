@@ -31,6 +31,13 @@ cat ~/.ssh/id_rsa.pub
 echo "hello from .profile"
 ```
 
+### Setup the Windows share
+https://github.com/Offirmo-team/wiki/wiki/partage-samba
+```
+sudo smbpasswd -a sam
+sudo gedit /etc/samba/smb.conf
+```
+
 ## Notes
 
 ### Useful commands
