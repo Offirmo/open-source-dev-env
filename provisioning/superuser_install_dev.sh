@@ -53,12 +53,8 @@ sudo apt install -y  libssl-dev
 
 ## chrome
 ## https://www.google.fr/chrome/browser
-sudo apt install -y  libappindicator1 libindicator7 libxss1 fonts-liberation libcurl3 xdg-utils
+#sudo apt install -y  libappindicator1 libindicator7 libxss1 fonts-liberation libcurl3 xdg-utils
 #cd
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
 #rm google-chrome-stable_current_amd64.deb
-
-
-############ post install cleanups ############
-## see superuser_cleanup.sh

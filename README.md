@@ -16,11 +16,13 @@ curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/hello.sh | sudo 
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_setup_apt.sh      | sudo bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_install_base.sh   | sudo bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_work_structure.sh | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_install_dev.sh    | sudo bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh        | sudo bash
 
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_work_structure.sh  | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_install.sh         | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_clone.sh           | bash
 ```
 
 
@@ -48,11 +50,12 @@ echo "hello from .bash_logout"
 ```
 
 ### Setup the Windows share
-https://github.com/Offirmo-team/wiki/wiki/partage-samba
+* http://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7
 ```
 sudo smbpasswd -a sam
 sudo gedit /etc/samba/smb.conf
 ```
+* https://github.com/Offirmo-team/wiki/wiki/partage-samba
 
 ## Notes
 
@@ -72,5 +75,4 @@ doesn’t
 ssh sam@192.168.88.10
 
 gitc git@github.com:Offirmo/web-tech-experiments.git
-
 ```
