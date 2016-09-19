@@ -10,10 +10,23 @@ curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/hello.sh | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/hello.sh | sudo bash
 ```
 
+
 ## Install
 ```
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/install_root.sh | sudo bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/install_nonroot.sh | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_setup_apt.sh      | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_install_base.sh   | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_work_structure.sh | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh        | sudo bash
+
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_install.sh         | bash
+```
+
+
+## Maintain
+```
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash
 ```
 
 
@@ -29,6 +42,9 @@ cat ~/.ssh/id_rsa.pub
 ### Add a debug line to shellrc existing files
 ```bash
 echo "hello from .profile"
+echo "hello from .bashrc"
+echo "hello from .bash_profile"
+echo "hello from .bash_logout"
 ```
 
 ## Notes

@@ -25,20 +25,6 @@ echo "  - PATH          = $PATH"
 #env
 
 
-############ Ubuntu settings ############
-gsettings set org.gtk.Settings.FileChooser show-hidden true
-gsettings set com.canonical.Unity always-show-menus true
-
-
-############ Structure ############
-mkdir ~/work
-mkdir ~/work/bin
-mkdir ~/work/install
-mkdir ~/work/tmp
-mkdir ~/work/src
-mkdir ~/work/docs
-
-
 ############ Node ############
 ## NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash -s stable
@@ -53,18 +39,16 @@ curl -sSL https://get.rvm.io | bash -s stable
 source /home/sam/.rvm/scripts/rvm
 
 
-############ Misc ############
-
-## polices powerline
+############ Fonts ############
 ## https://github.com/powerline/fonts
 cd ~/work/install
-git clone --recursive https://github.com/powerline/fonts.git
-cd fonts
-./install.sh
+if ![[ -d ~/work/install/fonts ]]; then
+    git clone --recursive https://github.com/powerline/fonts.git
+    cd fonts
+    ./install.sh
+fi
 cd ~
 
-
+############ TOSORT ############
 #umake ide webstorm
-
-
 # git clone !

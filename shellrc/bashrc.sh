@@ -1,5 +1,6 @@
 ## REM : this file is meant to conveniently complement ~/.bashrc
 ##       It is supposed to run in login and non-login shells, after ~/.bashrc
+
 echo "hello from 'virtualized-open-source-dev-env/shellrc/bashrc.sh"
 
 ## useful function
@@ -13,13 +14,7 @@ source_bash_files_from_dir()
 	done
 }
 
-#export SIMPLI_USER_WORKING_DIR=/home/yej/work
-#export SIMPLI_USER_BIN_DIR=/home/yej/work/bin
+#export SIMPLI_USER_WORKING_DIR=/home/sam/work
+#export SIMPLI_USER_BIN_DIR=/home/sam/work/bin
 
-## auto-load root bashrc files
-#source /work/bin/.bashrc
-#source_bash_files_from_dir "/work/bin/bashrc.d"
-
-## auto-load user bashrc files
-##source_bash_files_from_dir "/home/yjutard/work/bin/dotfiles"
-
+source_bash_files_from_dir "/home/sam/work/src/virtualized-open-source-dev-env/shellrc/modules"
