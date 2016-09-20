@@ -7,3 +7,4 @@ ulimit -c unlimited
 ############ Git ############
 git config --global push.default simple
 git config --global color.ui "auto"
+git config --global core.excludesfile "$HOME/work/src/virtualized-open-source-dev-env/misc/global.gitignore"
