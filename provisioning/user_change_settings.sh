@@ -29,5 +29,6 @@ echo "  - PATH          = $PATH"
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set com.canonical.Unity always-show-menus true
 
-############ Misc ############
+############ Git ############
 git config --global push.default simple
+git config --global color.ui "auto"
