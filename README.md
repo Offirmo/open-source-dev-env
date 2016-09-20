@@ -43,10 +43,10 @@ cat ~/.ssh/id_rsa.pub
 
 ### Add a debug line to shellrc existing files
 ```bash
-echo "hello from .profile"
-echo "hello from .bashrc"
-echo "hello from .bash_profile"
-echo "hello from .bash_logout"
+echo "* hello from .profile"
+echo "* hello from .bashrc"
+echo "* hello from .bash_profile"
+echo "* hello from .bash_logout"
 ```
 
 ### Setup the Windows share
