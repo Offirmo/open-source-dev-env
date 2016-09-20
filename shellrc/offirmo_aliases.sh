@@ -1,4 +1,4 @@
-echo "* hello from offirmo_aliases.sh"
+echo "* hello from: offirmo_aliases.sh"
 
 alias x='exit'
 

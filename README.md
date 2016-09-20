@@ -43,10 +43,10 @@ cat ~/.ssh/id_rsa.pub
 
 ### Add a debug line to shellrc existing files
 ```bash
-echo "* hello from .profile"
-echo "* hello from .bashrc"
-echo "* hello from .bash_profile"
-echo "* hello from .bash_logout"
+echo "* hello from: .profile"
+echo "* hello from: .bashrc"
+echo "* hello from: .bash_profile"
+echo "* hello from: .bash_logout"
 ```
 
 ### Setup the Windows share
@@ -81,4 +81,7 @@ doesn’t
 ssh sam@192.168.88.10
 
 gitc git@github.com:Offirmo/web-tech-experiments.git
+
+#export SIMPLI_USER_WORKING_DIR=~/work
+#export SIMPLI_USER_BIN_DIR=~/work/bin
 ```
