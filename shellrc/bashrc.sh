@@ -14,7 +14,7 @@ source_bash_files_from_dir()
 	done
 }
 
-#export SIMPLI_USER_WORKING_DIR=/home/sam/work
-#export SIMPLI_USER_BIN_DIR=/home/sam/work/bin
+#export SIMPLI_USER_WORKING_DIR=~/work
+#export SIMPLI_USER_BIN_DIR=~/work/bin
 
-source_bash_files_from_dir "/home/sam/work/src/virtualized-open-source-dev-env/shellrc/modules"
+source_bash_files_from_dir "~/work/src/virtualized-open-source-dev-env/shellrc/modules"
