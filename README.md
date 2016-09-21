@@ -73,15 +73,3 @@ git rebase -i master
 ```
 
 ### Useful unicode chars ’☑☐✓❌
-doesn’t 
-
-## Tosort
-
-````
-ssh sam@192.168.88.10
-
-gitc git@github.com:Offirmo/web-tech-experiments.git
-
-#export SIMPLI_USER_WORKING_DIR=~/work
-#export SIMPLI_USER_BIN_DIR=~/work/bin
-```

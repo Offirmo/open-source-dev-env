@@ -2,8 +2,8 @@ echo "* hello from: offirmo_aliases.sh"
 
 alias x='exit'
 
-#alias ws='~/work/bin/WebStorm-162.1121.31/bin/webstorm.sh'
-#alias yed='java -jar /opt/bin/yed-3.12/yed.jar'
+## works if installed via umake
+alias ws='jetbrains-webstorm &'
 
 ## git
 alias s='git status'
