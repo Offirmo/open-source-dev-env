@@ -29,6 +29,7 @@ echo "  - PATH          = $PATH"
 mkdir -p ~/work
 mkdir -p ~/work/bin
 mkdir -p ~/work/bin/shellrc
+echo "#! /bin/bash" > ~/work/bin/shellrc/keep.sh
 mkdir -p ~/work/containers
 mkdir -p ~/work/docs
 mkdir -p ~/work/install
