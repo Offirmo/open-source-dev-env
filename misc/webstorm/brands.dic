@@ -1,12 +1,13 @@
 axios
-intl
+cloudfront
+Dashlane
+GitHub
 inversify
 jetpack
 jsen
+paypal
 sinon
-tsconfig
+typebot
 typings
 uglify
 vorpal
-cloudfront
-typebot
