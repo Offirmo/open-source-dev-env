@@ -1,4 +1,5 @@
 debounce
+devops
 dropdown
 informations
 mana
@@ -7,14 +8,14 @@ passphrase
 persistable
 polyfilling
 prng
+stringify
 subdomain
+timeline
 unmount
 versioning
 virtualized
 webapp
+webpage
 webservices
 whitelist
 whitelisted
-devops
-stringify
-webpage
