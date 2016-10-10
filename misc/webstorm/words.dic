@@ -1,5 +1,6 @@
 consumption
 debounce
+debounced
 devops
 dropdown
 informations
@@ -12,6 +13,7 @@ prng
 stringify
 subdomain
 timeline
+uniformize
 unmount
 versioning
 virtualized

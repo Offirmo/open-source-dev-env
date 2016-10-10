@@ -20,6 +20,7 @@ alias un='npm prune && npm upgrade && npm outdated'
 alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
 alias onn='npm i -g outdated diff-so-fancy git-recent git-standup typescript@next typings gulp'
+alias npm-reset='npm cache clean; '
 
 ## projects
 alias ba='cd ~/work/src/bangja; git_offirmo.sh; nvm use'
