@@ -32,3 +32,19 @@ gsettings set com.canonical.Unity always-show-menus true
 ############ Git ############
 git config --global push.default simple
 git config --global color.ui "auto"
+
+npm config set init-license UNLICENSED
+npm config set init-version 0.0.1
+# TODO
+#globalconfig = "/home/yjutard/.nvm/versions/node/v6.8.1/etc/npmrc"
+#globalignorefile = "/home/yjutard/.nvm/versions/node/v6.8.1/etc/npmignore"
+#init-author-email = ""
+#init-author-name = ""
+#init-author-url = ""
+#init-module = "/home/yjutard/.npm-init.js"
+#userconfig = "/home/yjutard/.npmrc"
+
+## https://yarnpkg.com/en/docs/cli/config
+# TODO check if inherited from npm ? maybe not if config in anternate place
+yarn config set init-license UNLICENSED
+yarn config set init-version 0.0.1

@@ -1,3 +1,4 @@
+#@IgnoreInspection BashAddShebang
 echo "* hello from: offirmo_aliases.sh"
 
 alias x='exit'
@@ -14,12 +15,17 @@ alias ur='CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout master;
 alias gac='git add . && git commit -m "+" --no-verify'
 alias gitc='gitc.sh'
 
+## JS
+alias tpx='rm -rf node_modules bower…components typings'
+
 ## node
 alias kng='killall node grunt gulp tsc phantomjs'
 alias un='npm prune && npm upgrade && npm outdated'
+alias uy='yarn && yarn upgrade && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
-alias onn='npm i -g outdated diff-so-fancy git-recent git-standup typescript@next typings gulp'
+alias uyt='yarn && yarn upgrade && ./node_modules/.bin/typings i'
+alias onn='npm i -g outdated diff-so-fancy git-recent git-standup typescript@next typings gulp yarn'
 alias npm-reset='npm cache clean; '
 
 ## projects

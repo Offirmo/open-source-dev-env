@@ -27,10 +27,13 @@ echo "  - PATH          = $PATH"
 
 ############ Repos ############
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/bangja.git
+~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/clean-code.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/cli-toolbox.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/cross-js-env-tests.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/Etendard.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/hello-world-npm.git
+~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/internationalize.git
+~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/minisite-w.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/node-typescript-compiler.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/offirmo.github.io.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/online-adventur.es.git   oa
