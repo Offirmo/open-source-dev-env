@@ -30,6 +30,7 @@ alias npm-reset='npm cache clean; '
 
 ## projects
 alias ba='cd ~/work/src/bangja; git_offirmo.sh; nvm use'
+alias cct='cd ~/work/src/clean-code-toolbox; git_offirmo.sh; nvm install'
 alias clt='cd ~/work/src/cli-toolbox; git_offirmo.sh; nvm use'
 alias cro='cd ~/work/src/cross-js-env-tests; git_offirmo.sh; nvm install 6'
 alias hwe='cd ~/work/src/hello-world-npm; git_offirmo.sh; nvm use'
@@ -46,5 +47,6 @@ alias tbm='cd ~/work/src/tb-model; git_offirmo.sh; nvm use'
 alias utt='cd ~/work/src/unit-test-toolbox; git_offirmo.sh; nvm use'
 alias vde='cd ~/work/src/virtualized-open-source-dev-env; git_offirmo.sh'
 alias wte='cd ~/work/src/web-tech-experiments; git_offirmo.sh; nvm install'
+alias wmt='cd ~/work/src/web-module-toolbox; git_offirmo.sh; nvm install'
 
 #alias tbm='cd ~/work/src/tb-model; git_offirmo.sh; nvm use; export TIMEZONE_PLUS_ONE=true'

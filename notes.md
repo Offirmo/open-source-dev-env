@@ -1,4 +1,7 @@
 
+## To copy
+https://github.com/tregagnon/dotfiles
+
 ## Tosort
 
 ````

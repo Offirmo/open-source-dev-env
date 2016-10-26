@@ -1,6 +1,8 @@
 axios
+classnames
 cloudfront
 Dashlane
+editorconfig
 GitHub
 inversify
 jetpack
@@ -11,4 +13,3 @@ typebot
 typings
 uglify
 vorpal
-classnames

@@ -27,6 +27,7 @@ echo "  - PATH          = $PATH"
 
 ############ Repos ############
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/bangja.git
+~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/clean-code-toolbox.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/clean-code.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/cli-toolbox.git
 ~/work/src/virtualized-open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/cross-js-env-tests.git
