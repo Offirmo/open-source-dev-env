@@ -2,7 +2,7 @@
 echo "* hello from: offirmo_aliases.sh"
 
 alias x='exit'
-alias maintain='curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash'
+alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash'
 
 ## works if installed via umake
 alias ws='jetbrains-webstorm &'
