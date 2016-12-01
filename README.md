@@ -12,23 +12,42 @@ curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/hello.sh | sudo 
 
 
 ## Install
-```
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_setup_apt.sh      | sudo bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_install_base.sh   | sudo bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_work_structure.sh | sudo bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_install_dev.sh    | sudo bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh        | sudo bash
 
+Ubuntu
+
+```
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/superuser_setup_apt.sh      | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/superuser_install_base.sh   | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/superuser_install_dev.sh    | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh        | sudo bash
+
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_work_structure.sh  | bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_install.sh         | bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_clone.sh           | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_clone.sh           | bash
+```
+
+Mac
+
+```
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
+
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/macos/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/macos/user_install.sh         | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
 
 ## Maintain
+
+Ubuntu
+
 ```
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
 ```
 
 
