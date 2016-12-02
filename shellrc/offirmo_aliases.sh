@@ -1,6 +1,13 @@
 #@IgnoreInspection BashAddShebang
 echo "* hello from: offirmo_aliases.sh"
 
+## standard Ubuntu "some more ls aliases"
+## but we may not be on Ubuntu
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+## mine ;)
 alias x='exit'
 alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash'
 
