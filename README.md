@@ -34,10 +34,10 @@ Mac
 ```
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/macos/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/macos/user_install.sh         | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/macos/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
