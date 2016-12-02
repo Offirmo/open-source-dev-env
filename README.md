@@ -81,6 +81,16 @@ sudo gedit /etc/samba/smb.conf
 npm adduser
 ```
 
+## TODO
+
+```
+echo "hello from .profile"
+echo "hello from .bashrc"
+echo "hello from .bash_profile"
+echo "hello from .bash_logout"
+
+```
+
 
 ## Notes
 
@@ -92,3 +102,5 @@ git rebase -i master
 ```
 
 ### Useful unicode chars ’☑☐✓❌
+
+
