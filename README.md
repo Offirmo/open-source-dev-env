@@ -2,6 +2,10 @@
 
 Bootstrap shell scripts for provisioning my personal dev box. Targeting Ubuntu or macOS.
 
+See also:
+* https://github.com/Offirmo-team/wiki/wiki/macOS
+* https://github.com/Offirmo-team/wiki/wiki/dev-env
+
 
 ## Test
 Check that bootstrap will work with:
