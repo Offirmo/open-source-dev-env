@@ -87,6 +87,7 @@ npm adduser
 echo "hello from .profile"
 echo "hello from .bashrc"
 echo "hello from .bash_profile"
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 echo "hello from .bash_logout"
 
 ```
