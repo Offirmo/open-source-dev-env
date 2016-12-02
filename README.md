@@ -36,8 +36,10 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuse
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_install.sh         | bash
+(relaunch terminal here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
+(create git public key here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
@@ -54,21 +56,23 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuse
 ## manual steps
 
 ### Generate a private key and register it to GitHub
-https://github.com/settings/keys
 ```
 ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com"
 cat ~/.ssh/id_rsa.pub 
 ```
+* go here https://github.com/settings/keys
+* test it: `ssh -T git@github.com`
 
 ### Add a debug line to shellrc existing files
 ```bash
 echo "* hello from: .profile"
 echo "* hello from: .bashrc"
 echo "* hello from: .bash_profile"
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 echo "* hello from: .bash_logout"
 ```
 
-### Setup the Windows share
+### (if needed) Setup the Windows share
 * http://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7
 ```
 sudo smbpasswd -a sam
@@ -76,21 +80,11 @@ sudo gedit /etc/samba/smb.conf
 ```
 * https://github.com/Offirmo-team/wiki/wiki/partage-samba
 
-### login to npm
+### login to npm (?)
 ```
 npm adduser
 ```
 
-## TODO
-
-```
-echo "hello from .profile"
-echo "hello from .bashrc"
-echo "hello from .bash_profile"
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
-echo "hello from .bash_logout"
-
-```
 
 
 ## Notes
