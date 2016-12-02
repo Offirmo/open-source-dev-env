@@ -51,7 +51,8 @@ popd > /dev/null
 pushd ~/work/src > /dev/null
 if [[ ! -d open-source-dev-env ]]; then
     git clone --recursive https://github.com/Offirmo/open-source-dev-env.git
-    echo "source ~/work/src/open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
+    echo "source ~/work/src/open-source-dev-env/bin/load_shellrc.sh" >> ~/.bashrc
+
 fi
 popd > /dev/null
 
