@@ -2,7 +2,7 @@
 echo "* hello from: offirmo_aliases.sh"
 
 alias x='exit'
-alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/virtualized-open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash'
+alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/superuser_cleanup.sh | sudo bash'
 
 ## works if installed via umake
 alias ws='jetbrains-webstorm &'
@@ -41,6 +41,7 @@ alias hwrat='cd ~/work/src/hello-world-react-app-typescript; git_offirmo.sh; nvm
 alias mw='cd ~/work/src/m-w; git_offirmo.sh; nvm use'
 alias ntc='cd ~/work/src/node-typescript-compiler; git_offirmo.sh; nvm use'
 alias oa='cd ~/work/src/oa; git_offirmo.sh; nvm use'
+alias ode='cd ~/work/src/open-source-dev-env; git_offirmo.sh'
 alias ogi='cd ~/work/src/offirmo.github.io; git_offirmo.sh; nvm use'
 alias oin='cd ~/work/src/i18n; git_offirmo.sh; nvm use'
 alias orn='cd ~/work/src/random-js; git_offirmo.sh; nvm use'
@@ -49,7 +50,6 @@ alias slr='cd ~/work/src/sync-local-repos; git_offirmo.sh; nvm use 6'
 alias tbd='cd ~/work/src/tb-static-data; git_offirmo.sh; nvm use'
 alias tbm='cd ~/work/src/tb-model; git_offirmo.sh; nvm use'
 alias utt='cd ~/work/src/unit-test-toolbox; git_offirmo.sh; nvm use'
-alias vde='cd ~/work/src/virtualized-open-source-dev-env; git_offirmo.sh'
 alias wmt='cd ~/work/src/web-module-toolbox; git_offirmo.sh; nvm install'
 alias wte='cd ~/work/src/web-tech-experiments; git_offirmo.sh; nvm install'
 

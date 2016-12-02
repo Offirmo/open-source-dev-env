@@ -1,6 +1,6 @@
-## Virtualized Open Source Development Environment
+## Open Source Development Environment
 
-Bootstrap shell scripts for provisioning my personal dev box. Targeting Ubuntu.
+Bootstrap shell scripts for provisioning my personal dev box. Targeting Ubuntu or macOS.
 
 
 ## Test

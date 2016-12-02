@@ -49,9 +49,9 @@ popd > /dev/null
 
 ############ Offirmo shared scripts ############
 pushd ~/work/src > /dev/null
-if [[ ! -d virtualized-open-source-dev-env ]]; then
-    git clone --recursive git@github.com:Offirmo/virtualized-open-source-dev-env.git
-    echo "source ~/work/src/virtualized-open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
+if [[ ! -d open-source-dev-env ]]; then
+    git clone --recursive git@github.com:Offirmo/open-source-dev-env.git
+    echo "source ~/work/src/open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
 fi
 popd > /dev/null
 
