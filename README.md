@@ -29,7 +29,9 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuse
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
+(relaunch terminal here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
@@ -39,7 +41,7 @@ Mac
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_install.sh         | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 (relaunch terminal here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
@@ -101,5 +103,3 @@ git rebase -i master
 ```
 
 ### Useful unicode chars ’☑☐✓❌
-
-

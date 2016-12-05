@@ -24,12 +24,6 @@ echo "  - PATH          = $PATH"
 ## full env
 #env
 
-############ Node ############
-## NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash -s stable
-source ~/.nvm/nvm.sh
-nvm install 6
-
 
 ############ Ruby ############
 ## RVM https://rvm.io/
@@ -59,15 +53,6 @@ if [[ ! -d ~/work/install/$POWERLINE_INSTALL_DIR ]]; then
     git clone --recursive https://github.com/powerline/fonts.git $POWERLINE_INSTALL_DIR
     cd $POWERLINE_INSTALL_DIR
     ./install.sh
-fi
-popd > /dev/null
-
-
-############ Offirmo shared scripts ############
-pushd ~/work/src > /dev/null
-if [[ ! -d open-source-dev-env ]]; then
-    git clone --recursive git@github.com:Offirmo/open-source-dev-env.git
-    echo "source ~/work/src/open-source-dev-env/shellrc/bashrc.sh" >> ~/.bashrc
 fi
 popd > /dev/null
 
