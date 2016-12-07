@@ -48,6 +48,10 @@ pushd ~/work/install > /dev/null
 JETBRAINS_SOLARIZED_INSTALL_DIR=intellij-colors-solarized
 if [[ ! -d ~/work/install/$JETBRAINS_SOLARIZED_INSTALL_DIR ]]; then
     git clone --recursive https://github.com/jkaving/intellij-colors-solarized.git $JETBRAINS_SOLARIZED_INSTALL_DIR
+else
+    cd $JETBRAINS_SOLARIZED_INSTALL_DIR
+    git fetch
+    git pull
 fi
 popd > /dev/null
 
@@ -57,5 +61,9 @@ pushd ~/work/install > /dev/null
 FIRACODE_INSTALL_DIR=FiraCode
 if [[ ! -d ~/work/install/$FIRACODE_INSTALL_DIR ]]; then
     git clone --recursive https://github.com/tonsky/FiraCode.git $FIRACODE_INSTALL_DIR
+else
+    cd $FIRACODE_INSTALL_DIR
+    git fetch
+    git pull
 fi
 popd > /dev/null

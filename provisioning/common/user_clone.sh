@@ -27,6 +27,7 @@ echo "  - PATH          = $PATH"
 ~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/Etendard.git
 ~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/hello-world-npm.git
 ~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/internationalize.git
+~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/minisite-bookmarks.git
 ~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/minisite-w.git             m-w
 ~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/node-typescript-compiler.git
 ~/work/src/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/offirmo.github.io.git

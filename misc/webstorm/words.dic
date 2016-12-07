@@ -1,4 +1,5 @@
 authentified
+authentify
 autofill
 autologin
 consumption
@@ -8,6 +9,7 @@ devops
 dropdown
 iframe
 informations
+linter
 mana
 onboarding
 overriden
@@ -18,6 +20,8 @@ prng
 stringify
 subdomain
 timeline
+transpile
+truthy
 uniformize
 unmount
 versioning
@@ -27,6 +31,3 @@ webpage
 webservices
 whitelist
 whitelisted
-transpile
-authentify
-linter
