@@ -42,7 +42,20 @@ popd > /dev/null
 
 ############ misc ############
 
-## jetbrains color scheme
+## solarized color scheme
+## http://ethanschoonover.com/solarized
+pushd ~/work/install > /dev/null
+SOLARIZED_INSTALL_DIR=solarized
+if [[ ! -d ~/work/install/$SOLARIZED_INSTALL_DIR ]]; then
+    git clone --recursive https://github.com/altercation/solarized.git $SOLARIZED_INSTALL_DIR
+else
+    cd $SOLARIZED_INSTALL_DIR
+    git fetch
+    git pull
+fi
+popd > /dev/null
+
+## jetbrains solarized color scheme
 ## https://github.com/jkaving/intellij-colors-solarized
 pushd ~/work/install > /dev/null
 JETBRAINS_SOLARIZED_INSTALL_DIR=intellij-colors-solarized
