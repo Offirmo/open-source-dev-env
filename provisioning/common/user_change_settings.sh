@@ -26,13 +26,13 @@ git config --global color.ui "auto"
 npm config set init-license UNLICENSED
 npm config set init-version 0.0.1
 # TODO
-#globalconfig = "/home/yjutard/.nvm/versions/node/v6.8.1/etc/npmrc"
-#globalignorefile = "/home/yjutard/.nvm/versions/node/v6.8.1/etc/npmignore"
+#globalconfig = "/home/x/.nvm/versions/node/v6.8.1/etc/npmrc"
+#globalignorefile = "/home/x/.nvm/versions/node/v6.8.1/etc/npmignore"
 #init-author-email = ""
 #init-author-name = ""
 #init-author-url = ""
-#init-module = "/home/yjutard/.npm-init.js"
-#userconfig = "/home/yjutard/.npmrc"
+#init-module = "/home/x/.npm-init.js"
+#userconfig = "/home/x/.npmrc"
 
 ## https://yarnpkg.com/en/docs/cli/config
 # TODO check if inherited from npm ? maybe not if config in alternate place
