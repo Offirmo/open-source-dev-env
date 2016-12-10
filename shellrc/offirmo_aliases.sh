@@ -24,7 +24,7 @@ alias gac='git add . && git commit -m "+" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
-alias tpx='rm .awcache -rf bower…components node_modules typings'
+alias tpx='rm -rf .awcache bower…components node_modules typings'
 
 ## node
 alias kng='killall node grunt gulp tsc phantomjs'
