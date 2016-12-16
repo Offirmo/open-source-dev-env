@@ -31,3 +31,7 @@ sudo apt-get install -y  p7zip-full p7zip-rar gnome-terminal
 ## useful to disable some animations etc.
 sudo apt-get install -y unity-tweak-tool
 ```
+
+
+## To read
+http://askubuntu.com/questions/860952/if-the-key-is-not-named-id-rsa-it-does-not-work
