@@ -27,8 +27,9 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuse
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh        | sudo bash
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
 (relaunch terminal here)
@@ -38,14 +39,16 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 Mac
 
 ```
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_change_settings.sh | sudo bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+(add keys to github here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 (relaunch terminal here)
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
-(create git public key here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
