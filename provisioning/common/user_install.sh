@@ -80,3 +80,10 @@ else
     git pull
 fi
 popd > /dev/null
+
+
+## Offline doc TODO
+## devdocs
+## reactive extensions
+## CSS
+## https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/
