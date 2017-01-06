@@ -84,6 +84,7 @@ popd > /dev/null
 
 ## Offline doc TODO
 ## devdocs
+#git clone https://github.com/Thibaut/devdocs.git && cd devdocs
 ## reactive extensions
 ## CSS
 ## https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/
