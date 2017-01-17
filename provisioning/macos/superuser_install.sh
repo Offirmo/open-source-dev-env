@@ -20,5 +20,16 @@ echo "  - PATH          = $PATH"
 
 ################################
 
+## brew
+cd ~
+mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+brew update
+brew analytics off
+
+
 ## needed on OSX
+
+
+
 #brew install gpg
+#xcode-select --install

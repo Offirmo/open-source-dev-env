@@ -7,7 +7,9 @@ debounce
 debounced
 devops
 dropdown
+fieldset
 iframe
+inferrable
 informations
 linter
 mana
@@ -17,6 +19,7 @@ passphrase
 persistable
 polyfilling
 prng
+quotemark
 stringify
 subdomain
 timeline
@@ -32,5 +35,3 @@ webpage
 webservices
 whitelist
 whitelisted
-inferrable
-quotemark
