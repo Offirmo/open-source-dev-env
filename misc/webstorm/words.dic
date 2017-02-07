@@ -11,6 +11,7 @@ fieldset
 iframe
 inferrable
 informations
+infos
 linter
 mana
 onboarding
@@ -22,7 +23,9 @@ prng
 quotemark
 stringify
 subdomain
+subdomains
 timeline
+transpilation
 transpile
 truthy
 unformatted
