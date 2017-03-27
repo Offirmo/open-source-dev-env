@@ -34,7 +34,7 @@ alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
 ## note: no yarn upgrade since it's not the same as npm upgrade
 alias uyt='yarn && ./node_modules/.bin/typings i'
-alias onn='npm i -g outdated diff-so-fancy git-recent git-standup typings gulp yarn'
+alias onn='npm i -g outdated diff-so-fancy git-recent git-standup typings gulp yarn updtr'
 alias npm-reset='npm cache clean; '
 
 ## projects
