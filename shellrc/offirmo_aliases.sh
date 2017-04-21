@@ -20,7 +20,7 @@ alias b='git branch'
 alias ga='echo "Current git account :"; echo "   `git config --get user.name` (`git config --get user.email`)"'
 alias gfp='git fetch && git pull'
 alias ur='CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout master; git pull; git checkout $CURRENT_BRANCH; git fetch origin master; git rebase origin/master'
-alias gac='git add . && git commit -m "+" --no-verify'
+alias gac='git add . && git commit -m "TLTWGCMOMPP :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
@@ -39,9 +39,11 @@ alias npm-reset='npm cache clean; '
 
 ## projects
 alias ba='cd ~/work/src/bangja; git_offirmo.sh; nvm use'
+alias blog='cd ~/work/src/blog; git_offirmo.sh; rvm use ruby-2.1'
 alias cct='cd ~/work/src/clean-code-toolbox; git_offirmo.sh; nvm install'
 alias clt='cd ~/work/src/cli-toolbox; git_offirmo.sh; nvm use'
 alias cro='cd ~/work/src/cross-js-env-tests; git_offirmo.sh; nvm install 6'
+alias hre='cd ~/work/src/coding-exercises-hr; git_offirmo.sh; nvm use'
 alias hwe='cd ~/work/src/hello-world-npm; git_offirmo.sh; nvm use'
 alias hwra='cd ~/work/src/hello-world-react-app; git_offirmo.sh; nvm use'
 alias hwrat='cd ~/work/src/hello-world-react-app-typescript; git_offirmo.sh; nvm use'
