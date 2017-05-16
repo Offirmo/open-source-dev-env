@@ -38,6 +38,7 @@ alias onn='npm i -g outdated diff-so-fancy git-recent git-standup typings gulp y
 alias npm-reset='npm cache clean; '
 
 ## projects
+alias dac='cd ~/work/src/distributed-accountancy; git_offirmo.sh; nvm install'
 alias ba='cd ~/work/src/bangja; git_offirmo.sh; nvm use'
 alias blog='cd ~/work/src/blog; git_offirmo.sh; rvm use ruby-2.1'
 alias cct='cd ~/work/src/clean-code-toolbox; git_offirmo.sh; nvm install'
