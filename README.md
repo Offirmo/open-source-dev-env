@@ -46,7 +46,7 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_wor
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
 (add keys to github here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
-(relaunch terminal here)
+(relaunch terminal here, ensure nvm / npm is working)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
@@ -72,6 +72,7 @@ cat ~/.ssh/id_rsa.pub
 * go here https://github.com/settings/keys
 * test it: `ssh -T git@github.com`
 
+
 ### Add a debug line to shellrc existing files
 ```bash
 echo "* hello from: .profile"
@@ -80,6 +81,13 @@ echo "* hello from: .bash_profile"
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 echo "* hello from: .bash_logout"
 ```
+
+### Load settings
+
+* WebStorm: File -> Import -> folder "install/intellij-colors-solarized"
+* iTerm (macOs) -> import the profile
+* Terminal (macOs) -> import from "install/solarized"
+
 
 ### (if needed) Setup the Windows share
 * http://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7
@@ -106,3 +114,10 @@ git rebase -i master
 ```
 
 ### Useful unicode chars ’☑☐✓❌
+
+
+## TODO
+* create the shellrc file if they don't already exist !!!
+* intelligent gitc ! + upgrade open-source-dev-env accordingly
+* document Dual ssh key
+
