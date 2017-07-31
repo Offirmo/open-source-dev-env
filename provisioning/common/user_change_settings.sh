@@ -22,6 +22,11 @@ echo "  - PATH          = $PATH"
 ############ Git ############
 git config --global push.default simple
 git config --global color.ui "auto"
+## global gitignore
+## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
+touch ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
+
 
 npm config set init-license UNLICENSED
 npm config set init-version 0.0.1

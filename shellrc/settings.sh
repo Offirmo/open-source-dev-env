@@ -4,11 +4,6 @@ echo "* hello from: …open-source-dev-env/shellrc/settings.sh"
 #ulimit -n 4096
 #ulimit -c unlimited
 
-############ Git ############
-git config --global push.default simple
-git config --global color.ui "auto"
-git config --global core.excludesfile "$HOME/work/src/open-source-dev-env/misc/global.gitignore"
-
 ## JAVA
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 # export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre/bin/java
@@ -39,7 +34,7 @@ if [ -n "$force_color_prompt" ]; then
         # a case would tend to support setf rather than setaf.)
         color_prompt=yes
     else
-	    color_prompt=
+        color_prompt=
     fi
 fi
 

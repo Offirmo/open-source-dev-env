@@ -22,6 +22,4 @@ echo "  - PATH          = $PATH"
 
 ############ Global settings ############
 ## global gitignore
-## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-echo "Thumbs.db" > ~/.gitignore
-git config --global core.excludesfile %USERPROFILE%\.gitignore
+echo "Thumbs.db" >> ~/.gitignore

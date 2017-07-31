@@ -29,6 +29,4 @@ defaults write -g AppleShowAllFiles -bool true
 
 ############ Global settings ############
 ## global gitignore
-## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-echo ".DS_Store" > ~/.gitignore
-git config --global core.excludesfile ~/.gitignore
+echo ".DS_Store" >> ~/.gitignore

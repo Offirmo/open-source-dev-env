@@ -17,10 +17,12 @@ TEMP=${REPOSITORY_URL%"/$LAST_URL_SEGMENT"}
 TEMP="$(basename "$TEMP")"
 
 # if recognized as an expected subdir, change parent dir
-if [[ $TEMP = "offirmo" ]]; then
+if [[ $TEMP = "Offirmo" ]]; then
     PARENT_DIR=$PARENT_DIR/off
 elif [[ $TEMP = "online-adventures" ]]; then
     PARENT_DIR=$PARENT_DIR/oa
+elif [[ $TEMP = "Offirmo-team" ]]; then
+    PARENT_DIR=$PARENT_DIR/offirmo-team
 fi
 
 if [[ -n "$CUSTOM_REPO_DIR" ]]; then
