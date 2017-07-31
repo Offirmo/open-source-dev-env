@@ -16,5 +16,5 @@ source_bash_files_from_dir()
 	done
 }
 
-source_bash_files_from_dir "$HOME/work/src/open-source-dev-env/shellrc"
+source_bash_files_from_dir "$HOME/work/src/off/open-source-dev-env/shellrc"
 source_bash_files_from_dir "$HOME/work/bin/shellrc"

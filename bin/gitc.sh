@@ -18,9 +18,9 @@ TEMP="$(basename "$TEMP")"
 
 # if recognized as an expected subdir, change parent dir
 if [[ $TEMP = "offirmo" ]]; then
-    PARENT_DIR=$PARENT_DIR/$TEMP
+    PARENT_DIR=$PARENT_DIR/off
 elif [[ $TEMP = "online-adventures" ]]; then
-    PARENT_DIR=$PARENT_DIR/$TEMP
+    PARENT_DIR=$PARENT_DIR/oa
 fi
 
 if [[ -n "$CUSTOM_REPO_DIR" ]]; then

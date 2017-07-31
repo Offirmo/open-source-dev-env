@@ -2,9 +2,9 @@
 
 ## Shell provision script
 
-echo "#####################"
-echo "# root provisioning #"
-echo "#####################"
+echo "#########################"
+echo "# NON root provisioning #"
+echo "#########################"
 
 ## debug informations
 echo "* start ENV"
@@ -18,19 +18,10 @@ echo "  - PATH          = $PATH"
 ## full env
 #env
 
-################################
-
-## brew
-# XXX TOREVIEW
-#cd ~
-#mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
-#brew update
-#brew analytics off
 
 
-## needed on OSX
-
-
-
-#brew install gpg
-#xcode-select --install
+############ Global settings ############
+## global gitignore
+## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
+echo "Thumbs.db" > ~/.gitignore
+git config --global core.excludesfile %USERPROFILE%\.gitignore

@@ -25,3 +25,10 @@ defaults write com.apple.finder AppleShowAllFiles YES
 
 ## http://apple.stackexchange.com/a/99214/214344
 defaults write -g AppleShowAllFiles -bool true
+
+
+############ Global settings ############
+## global gitignore
+## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
+echo ".DS_Store" > ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
