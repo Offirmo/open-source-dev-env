@@ -35,3 +35,8 @@ sudo apt-get install -y unity-tweak-tool
 
 ## To read
 http://askubuntu.com/questions/860952/if-the-key-is-not-named-id-rsa-it-does-not-work
+
+
+Bash
+https://stackoverflow.com/questions/229551/string-contains-in-bash
+https://stackoverflow.com/questions/2829613/how-do-you-tell-if-a-string-contains-another-string-in-unix-shell-scripting
