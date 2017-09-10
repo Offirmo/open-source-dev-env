@@ -23,6 +23,8 @@ elif [[ $TEMP = "online-adventures" ]]; then
     PARENT_DIR=$PARENT_DIR/oa
 elif [[ $TEMP = "Offirmo-team" ]]; then
     PARENT_DIR=$PARENT_DIR/offirmo-team
+elif [[ $TEMP = "Offirmo-graveyard" ]]; then
+    PARENT_DIR=$PARENT_DIR/offirmo-graveyard
 fi
 
 if [[ -n "$CUSTOM_REPO_DIR" ]]; then

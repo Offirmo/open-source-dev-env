@@ -55,7 +55,11 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 
 ## Maintain
 
-Ubuntu
+### macos
+
+brew upgrade
+
+### Ubuntu
 
 ```
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
@@ -114,6 +118,9 @@ git rebase -i master
 ```
 
 ### Useful unicode chars ’☑☐✓❌
+
+### Useful npm modules
+* https://github.com/jonathaneunice/iterm2-tab-set
 
 
 ## TODO
