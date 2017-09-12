@@ -57,7 +57,11 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 
 ### macos
 
+brew update
 brew upgrade
+brew doctor
+rvm get stable
+
 
 ### Ubuntu
 

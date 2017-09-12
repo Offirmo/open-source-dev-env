@@ -34,11 +34,12 @@ alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
 ## note: no yarn upgrade since it's not the same as npm upgrade
 alias uyt='yarn && ./node_modules/.bin/typings i'
-alias onn='npm i -g diff-so-fancy yarn updtr lerna iterm2-tab-set'
+alias onn='npm i -g diff-so-fancy yarn updtr lerna iterm2-tab-set avn avn-nvm'
 # git-recent git-standup gulp
 alias npm-reset='npm cache clean; '
 
 ## projects
+alias off='cd ~/work/src/off; git_offirmo.sh; nvm use 8; tabset --badge 'off-X' --color "#F012BE"'
 #alias ba='cd ~/work/src/off/bangja; git_offirmo.sh; nvm use'
 #alias oa='cd ~/work/src/online-adventures; git_offirmo.sh; nvm use'
 #alias tbd='cd ~/work/src/tb-static-data; git_offirmo.sh; nvm use'
