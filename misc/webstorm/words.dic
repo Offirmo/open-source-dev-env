@@ -9,6 +9,7 @@ debounce
 debounced
 devops
 dropdown
+emoji
 expirable
 fieldset
 iframe
@@ -28,6 +29,9 @@ polyfilling
 prng
 processings
 quotemark
+rsrc
+rsrcs
+statsd
 stringify
 subdomain
 subdomains

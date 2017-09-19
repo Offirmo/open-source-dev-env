@@ -69,6 +69,7 @@ alias omr11='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/lo
 alias omr12='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/logic-weapons; ./.tabset omr12'
 alias omr13='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/logic-shop; ./.tabset omr13'
 alias omr14='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/logic-adventures; ./.tabset omr14'
+alias omr15='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/logic-monsters; ./.tabset omr15'
 alias omr21='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/state-prng; ./.tabset omr21'
 alias omr22='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/state-wallet; ./.tabset omr22'
 alias omr23='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/state-inventory; ./.tabset omr23'
