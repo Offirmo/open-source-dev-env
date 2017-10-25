@@ -25,6 +25,8 @@ elif [[ $TEMP = "Offirmo-team" ]]; then
     PARENT_DIR=$PARENT_DIR/offirmo-team
 elif [[ $TEMP = "Offirmo-graveyard" ]]; then
     PARENT_DIR=$PARENT_DIR/offirmo-graveyard
+elif [[ $TEMP = "CYEF" ]]; then
+    PARENT_DIR=$PARENT_DIR/cyef
 fi
 
 if [[ -n "$CUSTOM_REPO_DIR" ]]; then

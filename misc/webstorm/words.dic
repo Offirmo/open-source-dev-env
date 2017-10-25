@@ -3,8 +3,10 @@ authentified
 authentify
 autofill
 autologin
+composable
 consumption
 cooldown
+cors
 debounce
 debounced
 devops
@@ -20,6 +22,7 @@ inspectable
 linter
 mana
 mixins
+namespaced
 noob
 onboarding
 overriden
@@ -29,6 +32,7 @@ polyfilling
 prng
 processings
 quotemark
+resized
 rsrc
 rsrcs
 statsd
