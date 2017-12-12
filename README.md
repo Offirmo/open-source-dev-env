@@ -10,6 +10,7 @@ See also:
 ## Test
 Check that bootstrap will work with:
 ```
+sudo apt-get install curl
 curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 ```

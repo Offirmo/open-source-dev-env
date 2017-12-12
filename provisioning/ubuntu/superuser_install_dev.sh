@@ -36,9 +36,6 @@ sudo apt install -y  man-db
 ## obviously
 sudo apt install -y  git
 
-## a better shell for dev
-sudo apt install -y  zsh
-
 ## a tool to install more tools !
 sudo apt install -y  ubuntu-make
 

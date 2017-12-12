@@ -33,8 +33,10 @@ sudo apt install -y  software-properties-common python-software-properties
 sudo apt install -y  apt-transport-https
 
 ## add important apt repositories
-sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
 #sudo add-apt-repository -y ppa:webupd8team/java
+sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo add-apt-repository -y ppa:bitcoin/bitcoin
 
 ## prepare further installations
 sudo apt update

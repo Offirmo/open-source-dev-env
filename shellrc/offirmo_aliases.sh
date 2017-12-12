@@ -78,6 +78,8 @@ alias omr32='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/vi
 alias omr33='cd ~/work/src/oa/oh-my-rpg; git_offirmo.sh; nvm use; cd packages/view-chat; ./.tabset omr33'
 alias omrA='cd ~/work/src/oa/oh-my-rpg && git_offirmo.sh && nvm use && cd packages/the-npm-rpg && ./.tabset omrA'
 alias omrB='cd ~/work/src/oa/oh-my-rpg && git_offirmo.sh && nvm use && cd packages/the-boring-rpg && ./.tabset omrB'
+alias omrCS='cd ~/work/src/oa/cheatsheets && git_offirmo.sh && nvm use 9 && rvm use ruby-2.1'
+
 alias orn='cd ~/work/src/off/random-js; git_offirmo.sh; nvm use'
 alias pre='cd ~/work/src/off/prefixed-log; git_offirmo.sh; nvm use'
 alias rxa='cd ~/work/src/off/rx-auto; git_offirmo.sh; nvm install'
