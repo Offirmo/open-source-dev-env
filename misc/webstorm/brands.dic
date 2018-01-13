@@ -11,9 +11,12 @@ inversify
 jetpack
 Jira
 jsen
+lodash
+ngrok
 Optimizely
 paypal
 Redux
+Requestly
 requirejs
 satismeter
 sinon
@@ -24,4 +27,6 @@ typebot
 typings
 uglify
 vorpal
+webdriver
 xflow
+YAML
