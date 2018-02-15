@@ -1,0 +1,50 @@
+
+/* lighter borders in general */
+.tab {
+   border: solid 1px #00000012; 
+ }
+
+
+/* unread tabs */
+.tab.unread .label {
+  font-weight: bold;
+}
+
+/* private browsing indicator */
+.tab.private-browsing .label:before {
+  content: "🕶";
+}
+
+/* As little space before the tab name as possible.
+   The fold/unfold icon is not affected. */
+.tab:not(.pinned) {
+  padding-left: 0px !important; /* !important is required when there are enough tabs to cause a scrollbar */
+}
+
+/* Change styling of pending (unloaded) tabs */
+.tab.discarded .label {
+  color: gray !important;
+  font-style: italic !important;
+}
+
+.tab {
+  height: 25px !important;
+}
+
+.tab.active {
+  background: gray;
+}
+.tab.active .label {
+   color: white;
+}
+
+.tab:not(:hover) .closebox {
+  display: none;
+}
+
+
+/*
+  color: gray !important;
+  font-style: italic !important;
+    opacity: 0.75;
+ */
