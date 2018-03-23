@@ -62,6 +62,7 @@ alias sec='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd s
 alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format; ./.tabset mono21'
 alias mono23='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono23'
 alias mono24='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono24'
+alias mono25='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-css; ./.tabset mono25'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
 alias omr11='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd logic-armors; ./.tabset omr11'
@@ -76,6 +77,7 @@ alias omr24='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr25='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-meta; ./.tabset omr25'
 alias omr26='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-the-boring-rpg; ./.tabset omr26'
 alias omr32='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-rich-text; ./.tabset omr32'
+alias omr33='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser; ./.tabset omr33'
 alias omrA=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-npm-rpg && ./.tabset omrA'
 alias omrB=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg && ./.tabset omrB'
 
