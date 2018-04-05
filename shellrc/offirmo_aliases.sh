@@ -27,7 +27,7 @@ alias gitc='gitc.sh'
 alias tpx='rm -rf .awcache bower_components node_modules typings'
 
 ## node
-alias kng='killall node grunt gulp yarn tsc phantomjs'
+alias kng='killall node grunt gulp yarn tsc phantomjs flow'
 alias un='npm install && npm outdated'
 alias uy='yarn && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
