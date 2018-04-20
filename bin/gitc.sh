@@ -36,13 +36,13 @@ else
 fi
 
 
-echo "* cloning $REPOSITORY_URL into ${PARENT_DIR}/${TARGET_DIR}..."
+echo "* cloning $REPOSITORY_URL into ${PARENT_DIR}/${TARGET_DIR} ..."
 
 mkdir -p $PARENT_DIR
 pushd $PARENT_DIR > /dev/null
 
 if [[ ! -d $TARGET_DIR ]]; then
-    git clone --recursive "$REPOSITORY_URL" "$TARGET_DIR"
+    git clone --recursive --recurse-submodules "$REPOSITORY_URL" "$TARGET_DIR"
 else
     echo "! Already cloned."
 fi
