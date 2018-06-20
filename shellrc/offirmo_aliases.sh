@@ -28,7 +28,7 @@ alias tpx='rm -rf .awcache bower_components node_modules typings'
 alias p='puer --no-launch'
 
 ## node
-alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack'
+alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 alias un='npm install && npm outdated'
 alias uy='yarn && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
@@ -58,9 +58,16 @@ alias ntc='cd ~/work/src/off/node-typescript-compiler; git_offirmo.sh'
 alias ode='cd ~/work/src/off/open-source-dev-env; git_offirmo.sh'
 alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; ./.tabset offirmo.net'
 
+
+
 alias mono='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; tabset --badge "mono" --color "#FF4136"'
-alias sec='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd soft-execution-context; ./.tabset SEC'
+
 alias mono02='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd timestamps; ./.tabset mono02'
+alias mono03='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd uuid; ./.tabset mono03'
+
+alias sec='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd soft-execution-context; ./.tabset SEC'
+alias mono10='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd print-error-to-ansi; ./.tabset mono10'
+alias mono11='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-core; ./.tabset mono11'
 alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format; ./.tabset mono21'
 alias mono23='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono23'
 alias mono24='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono24'
@@ -74,15 +81,16 @@ alias omr14='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr15='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd logic-monsters; ./.tabset omr15'
 alias omr21='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-prng; ./.tabset omr21'
 alias omr22='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-wallet; ./.tabset omr22'
-alias omr23='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-inventory; ./.tabset omr23'
-alias omr24='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-character; ./.tabset omr24'
-alias omr25='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-meta; ./.tabset omr25'
-alias omr26='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-energy; ./.tabset omr26'
+alias omr23='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-character; ./.tabset omr23'
+alias omr24='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-energy; ./.tabset omr24'
+alias omr25='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-inventory; ./.tabset omr25'
+alias omr26='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-meta; ./.tabset omr26'
 alias omr30='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd state-the-boring-rpg; ./.tabset omr30'
 alias omr32='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-rich-text; ./.tabset omr32'
 alias omr33='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser; ./.tabset omr33'
 alias omrA=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-npm-rpg && ./.tabset omrA'
 alias omrB=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg && ./.tabset omrB'
+alias omrC=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd clicker && ./.tabset omrC'
 
 alias orn='cd ~/work/src/off/random-js; git_offirmo.sh'
 alias pre='cd ~/work/src/off/prefixed-log; git_offirmo.sh'

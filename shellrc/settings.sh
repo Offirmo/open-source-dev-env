@@ -31,3 +31,6 @@ unset color_prompt force_color_prompt
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+## disable sentry and other stuff
+export OFFIRMO_IS_HERE=1
