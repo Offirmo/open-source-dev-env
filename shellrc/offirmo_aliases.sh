@@ -9,7 +9,7 @@ alias l='ls -CF'
 
 ## mine ;)
 alias x='exit'
-alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
+#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
 
 ## works if installed via umake
 alias ws='jetbrains-webstorm &'
@@ -25,7 +25,7 @@ alias gitc='gitc.sh'
 
 ## JS
 alias tpx='rm -rf .awcache bower_components node_modules typings'
-alias p='puer --no-launch'
+alias p='puer --no-launch --port 1981'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
@@ -33,7 +33,7 @@ alias un='npm install && npm outdated'
 alias uy='yarn && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
-alias onn='npm i -g iterm2-tab-set avn avn-nvm yarn'
+alias onn='npm i -g iterm2-tab-set avn avn-nvm yarn @atlassian/volt'
 # yarn diff-so-fancy
 
 ## projects
@@ -46,6 +46,11 @@ alias clt='cd ~/work/src/off/cli-toolbox; git_offirmo.sh'
 alias cro='cd ~/work/src/off/cross-js-env-tests; git_offirmo.sh'
 alias hre='cd ~/work/src/off/coding-exercises-hr; git_offirmo.sh'
 alias hwe='cd ~/work/src/off/hello-world-npm; git_offirmo.sh'
+alias hwns='cd ~/work/src/off/hello-world-netlify-site; git_offirmo.sh'
+alias hwnf='cd ~/work/src/off/hello-world-netlify-functions; git_offirmo.sh'
+alias hwni='cd ~/work/src/off/hello-world-netlify-identity; git_offirmo.sh'
+alias hwndb='cd ~/work/src/off/hello-world-netlify-db; git_offirmo.sh'
+alias hwnp='cd ~/work/src/off/hello-world-netlify-pro; git_offirmo.sh'
 alias hwgp='cd ~/work/src/off/hello-world-github-pages; git_offirmo.sh'
 alias hwgpj='cd ~/work/src/off/hello-world-react-app; git_offirmo.sh'
 alias hwra='cd ~/work/src/off/hello-world-react-app; git_offirmo.sh'
@@ -57,7 +62,6 @@ alias mw='cd ~/work/src/off/minisite-wedding-ghpages; git_offirmo.sh'
 alias ntc='cd ~/work/src/off/node-typescript-compiler; git_offirmo.sh'
 alias ode='cd ~/work/src/off/open-source-dev-env; git_offirmo.sh'
 alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; ./.tabset offirmo.net'
-
 
 
 alias mono='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; tabset --badge "mono" --color "#FF4136"'
@@ -89,8 +93,8 @@ alias omr30='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr32='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-rich-text; ./.tabset omr32'
 alias omr33='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser; ./.tabset omr33'
 alias omr34='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser-react; ./.tabset omr34'
-alias omrA=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-npm-rpg && ./.tabset omrA'
-alias omrB=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg && ./.tabset omrB'
+alias omrA=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg-node && ./.tabset omrA'
+alias omrB=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg-browser && ./.tabset omrB'
 alias omrC=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd clicker && ./.tabset omrC'
 
 alias orn='cd ~/work/src/off/random-js; git_offirmo.sh'
