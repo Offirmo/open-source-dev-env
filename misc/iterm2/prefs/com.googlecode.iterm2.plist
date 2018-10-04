@@ -527,9 +527,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1190 351 700 622 -1680 30 1680 1050 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-1411 169 606 456 -1680 30 1680 1050 </string>
+	<string>847 158 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>373 482 1018 447 0 0 1920 1080 </string>
+	<string>373 443 918 512 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>-1637 30 1633 1050 -1680 30 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -1200,7 +1200,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1226,6 +1226,15 @@
 				<real>0.89001238346099854</real>
 				<key>Red Component</key>
 				<real>0.91611063480377197</real>
+			</dict>
+			<key>Semantic History</key>
+			<dict>
+				<key>action</key>
+				<string>command</string>
+				<key>editor</key>
+				<string>com.sublimetext.3</string>
+				<key>text</key>
+				<string>/usr/local/bin/webstorm \1</string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -1993,6 +2002,8 @@
 			<string>/Users/yjutard</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -2055,7 +2066,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-05T01:55:47Z</date>
+	<date>2018-09-23T03:25:15Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -2071,7 +2082,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.2.0</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
