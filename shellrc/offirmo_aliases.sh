@@ -25,7 +25,7 @@ alias gitc='gitc.sh'
 
 ## JS
 alias tpx='rm -rf .awcache bower_components node_modules typings'
-alias p='puer --no-launch --port 1981'
+alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
@@ -33,7 +33,7 @@ alias un='npm install && npm outdated'
 alias uy='yarn && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
-alias onn='npm i -g iterm2-tab-set avn avn-nvm yarn @atlassian/volt'
+alias onn='npm i -g iterm2-tab-set avn avn-nvm yarn @atlassian/volt && yarn global add bolt'
 # yarn diff-so-fancy
 
 ## projects
@@ -72,10 +72,12 @@ alias mono03='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd uu
 alias sec='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd soft-execution-context; ./.tabset SEC'
 alias mono10='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd print-error-to-ansi; ./.tabset mono10'
 alias mono11='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-core; ./.tabset mono11'
-alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format; ./.tabset mono21'
-alias mono23='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono23'
-alias mono24='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono24'
-alias mono25='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-css; ./.tabset mono25'
+alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd react-error-boundary; ./.tabset mono21'
+alias mono22='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format; ./.tabset mono22'
+alias mono23='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format-to-react; ./.tabset mono23'
+alias mono25='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono25'
+alias mono26='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono26'
+alias mono30='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-css; ./.tabset mono30'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
 alias omr11='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd logic-armors; ./.tabset omr11'
