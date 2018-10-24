@@ -29,6 +29,7 @@ klass
 linter
 mana
 microservice
+middlewares
 mixins
 namespaced
 noob
@@ -41,8 +42,10 @@ prng
 processings
 quotemark
 resized
+rollout
 rsrc
 rsrcs
+savegame
 signup
 statsd
 stringify
@@ -58,6 +61,7 @@ unenrollment
 unflushed
 unformatted
 uniformize
+uniformized
 unmount
 unsubscribe
 upsell

@@ -1,4 +1,6 @@
+atlaskit
 Atlassian
+atlassiansox
 axios
 classnames
 cloudfront
@@ -6,6 +8,7 @@ Confluence
 Dashlane
 editorconfig
 eslint
+eslintrc
 FIFA
 GitHub
 Gmail
@@ -17,6 +20,8 @@ lodash
 ngrok
 Optimizely
 paypal
+prettierrc
+Reddit
 Redux
 Requestly
 requirejs
@@ -24,6 +29,7 @@ satismeter
 sinon
 Stride
 superagent
+Transifex
 tslint
 typebot
 typings
