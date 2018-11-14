@@ -17,6 +17,7 @@ jetpack
 Jira
 jsen
 lodash
+Netlify
 ngrok
 Optimizely
 paypal
@@ -30,6 +31,7 @@ sinon
 Stride
 superagent
 Transifex
+tsconfig
 tslint
 typebot
 typings
