@@ -10,7 +10,7 @@ See also:
 ## Test
 Check that bootstrap will work with:
 ```
-sudo apt-get install curl
+[ubuntu] sudo apt-get install curl
 curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 ```
@@ -40,11 +40,11 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 Mac
 
 ```
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_change_settings.sh | sudo bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+(here remove the src from the global search)
+(TODO, copy your keys from previous machine here) curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
 (add keys to github here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 (relaunch terminal here, ensure nvm / npm is working)
@@ -58,10 +58,19 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 
 ### macos
 
+```bash
 brew update
 brew upgrade
 brew doctor
+
+pip install --upgrade pip
+
 rvm get stable
+
+docker system prune --all
+docker volume prune
+```
+
 
 
 ### Ubuntu

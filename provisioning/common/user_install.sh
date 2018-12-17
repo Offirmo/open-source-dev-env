@@ -26,9 +26,9 @@ echo "  - PATH          = $PATH"
 
 ############ Node ############
 ## NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash -s stable
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash -s stable
 source ~/.nvm/nvm.sh
-nvm install 6
+nvm install 10
 
 
 ############ Offirmo shared scripts ############
