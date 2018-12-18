@@ -18,25 +18,6 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 
 ## Install
 
-Ubuntu
-
-```
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_setup_apt.sh      | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_install_base.sh   | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_install_dev.sh    | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh        | sudo bash
-
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
-(relaunch terminal here)
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
-```
-
 Mac
 
 ```
@@ -45,7 +26,11 @@ install brew https://brew.sh/
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 Install base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
-brew cask install dropbox adobe-acrobat-reader station virtualbox visual-studio-code
+brew cask install iterm2 dropbox adobe-acrobat-reader station virtualbox visual-studio-code
+
+TODO ensure the profiles files exists:
+touch ~/.profile ~/.bashrc ~/.bash_profile
+
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
@@ -64,8 +49,8 @@ chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa_offirmo
 chmod 644 ~/.ssh/id_rsa_offirmo.pub
-			 ls -la ~/.ssh
-			 DELETE SSH KEYS FROM THE DISK/USB KEY!
+        ls -la ~/.ssh
+        DELETE SSH KEYS FROM THE DISK/USB KEY!
 
 GIT NEEDED + git ssh keys:
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
@@ -73,6 +58,25 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ins
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
+```
+
+Ubuntu
+
+```
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_setup_apt.sh      | sudo bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_install_base.sh   | sudo bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_install_dev.sh    | sudo bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh        | sudo bash
+
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
+(relaunch terminal here)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
