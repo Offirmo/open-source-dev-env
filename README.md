@@ -56,9 +56,9 @@ chmod 644 ~/.ssh/id_rsa_offirmo.pub
 
 GIT NEEDED + git ssh keys:
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
-(relaunch terminal here, ensure nvm / npm is working)
-
-Here type "onn"
+   (relaunch terminal here, ensure nvm / npm is working)
+   (here install the FiraCode font, TrueType preferred)
+   (here type "onn")
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
