@@ -40,14 +40,37 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 Mac
 
 ```
+Install and run xcode
+install brew https://brew.sh/
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Install base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
+brew cask install dropbox adobe-acrobat-reader station virtualbox visual-studio-code
+
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
-(here remove the src from the global search)
-(TODO, copy your keys from previous machine here) curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
-(add keys to github here)
+         then remove `src` from the spotlight search
+
+EITHER curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+       + add the new keys to github
+EITHER copy your keys from previous machine here
+       fix permissions: https://gist.github.com/grenade/6318301
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_rsa_offirmo
+chmod 644 ~/.ssh/id_rsa_offirmo.pub
+			 ls -la ~/.ssh
+			 DELETE SSH KEYS FROM THE DISK/USB KEY!
+
+GIT NEEDED + git ssh keys:
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 (relaunch terminal here, ensure nvm / npm is working)
+
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
