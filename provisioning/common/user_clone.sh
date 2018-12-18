@@ -22,6 +22,13 @@ echo "  - PATH          = $PATH"
 ############ Repos ############
 ## git@github.com:
 ## https://github.com/
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/clean-code-toolbox.git
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/cli-toolbox.git
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/hello-world-browser-extension.git
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/hello-world-npm.git
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/hello-world-npx.git
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/prefixed-log.git
+#~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/unit-test-toolbox.git
 #~/work/src/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/bangja.git
 #~/work/src/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/cross-js-env-tests.git
 #~/work/src/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/Etendard.git
@@ -36,13 +43,12 @@ echo "  - PATH          = $PATH"
 #~/work/src/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/tbrpg-static-data.git
 #~/work/src/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/web-module-toolbox.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo-team/wiki.wiki.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/clean-code-toolbox.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/cli-toolbox.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/hello-world-browser-extension.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/hello-world-npm.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/hello-world-npx.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/blog.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/minisite-bookmarks-ghpages.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/prefixed-log.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo-monorepo.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo.github.io.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/sync-local-repos.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/unit-test-toolbox.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/web-tech-experiments.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/x.git
+
+~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/online-adventures/online-adventures.github.io.git

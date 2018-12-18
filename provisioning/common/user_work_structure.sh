@@ -35,3 +35,18 @@ mkdir -p ~/work/docs
 mkdir -p ~/work/install
 mkdir -p ~/work/src
 mkdir -p ~/work/tmp
+
+###### profiles #######
+
+if [ ! -f ~/.profile ]; then
+	echo "echo \"* hello from: .profile\"" > ~/.profile
+fi
+if [ ! -f ~/.bashrc ]; then
+	echo "echo \"* hello from: .bashrc\"" > ~/.bashrc
+fi
+if [ ! -f ~/.bash_profile ]; then
+	echo "echo \"* hello from: .bash_profile\"" > ~/.bash_profile
+fi
+if [ ! -f ~/.bash_logout ]; then
+	echo "echo \"* hello from: .bash_logout\"" > ~/.bash_logout
+fi

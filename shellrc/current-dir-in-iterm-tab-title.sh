@@ -3,7 +3,7 @@ echo "* hello from: …open-source-dev-env/shellrc/current-dir-in-iterm-tab-titl
 
 # put this in your .bash_profile
 if [ $ITERM_SESSION_ID ]; then
-  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; '
 fi
 
 # Piece-by-Piece Explanation:

@@ -40,32 +40,19 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clo
 Mac
 
 ```
-Install and run xcode
-install brew https://brew.sh/
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-Install base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
-brew cask install dropbox adobe-acrobat-reader station virtualbox visual-studio-code
-
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
          then remove `src` from the spotlight search
 
-EITHER curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
-       + add the new keys to github
-EITHER copy your keys from previous machine here
-       fix permissions: https://gist.github.com/grenade/6318301
-chmod 700 ~/.ssh
-chmod 644 ~/.ssh/authorized_keys
-chmod 644 ~/.ssh/known_hosts
-chmod 644 ~/.ssh/config
-chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/id_rsa_offirmo
-chmod 644 ~/.ssh/id_rsa_offirmo.pub
-			 ls -la ~/.ssh
-			 DELETE SSH KEYS FROM THE DISK/USB KEY!
+Install and run xcode
+
+IF WANTED copy your keys from previous machine here.
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+       + if new, add the new keys to github
+         - go here https://github.com/settings/keys
+         - test it: `ssh -T git@github.com`
+       + DELETE SSH KEYS FROM THE DISK/USB KEY!
 
 GIT NEEDED + git ssh keys:
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
@@ -106,20 +93,15 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuse
 ## manual steps
 
 ### Generate a private key and register it to GitHub
-```
-ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com"
-cat ~/.ssh/id_rsa.pub 
-```
 * go here https://github.com/settings/keys
 * test it: `ssh -T git@github.com`
 
 
-### Add a debug line to shellrc existing files
+### If missing, add a debug line to shellrc existing files
 ```bash
 echo "* hello from: .profile"
 echo "* hello from: .bashrc"
 echo "* hello from: .bash_profile"
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 echo "* hello from: .bash_logout"
 ```
 

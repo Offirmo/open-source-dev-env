@@ -34,8 +34,8 @@ alias un='npm install && npm outdated'
 alias uy='yarn && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
-alias onn='npm i -g mocha iterm2-tab-set avn avn-nvm yarn @atlassian/volt && yarn global add bolt'
-# yarn diff-so-fancy
+alias onn='npm i -g mocha iterm2-tab-set avn avn-nvm yarn && yarn global add bolt'
+# yarn diff-so-fancy @atlassian/volt 
 
 ## projects
 alias off='cd ~/work/src/off; git_offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
