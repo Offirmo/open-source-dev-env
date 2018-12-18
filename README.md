@@ -30,6 +30,8 @@ brew cask install iterm2 dropbox adobe-acrobat-reader station virtualbox visual-
 
 TODO ensure the profiles files exists:
 touch ~/.profile ~/.bashrc ~/.bash_profile
+echo "* hello from: .bash_profile"
+echo "* hello from: .bashrc"
 
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
@@ -56,8 +58,11 @@ GIT NEEDED + git ssh keys:
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 (relaunch terminal here, ensure nvm / npm is working)
 
+Here type "onn"
+
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
+   (need yarn)
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
