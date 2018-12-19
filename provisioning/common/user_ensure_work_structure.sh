@@ -46,6 +46,9 @@ if [ ! -f ~/.bashrc ]; then
 fi
 if [ ! -f ~/.bash_profile ]; then
 	echo "echo \"* hello from: .bash_profile\"" > ~/.bash_profile
+	echo "" >> ~/.bash_profile
+	echo "if [ -f ~/.profile ]; then . ~/.profile; fi" >> ~/.bash_profile
+	echo "if [ -f ~/.bashrc ]; then . ~/.bashrc; fi" >> ~/.bash_profile
 fi
 if [ ! -f ~/.bash_logout ]; then
 	echo "echo \"* hello from: .bash_logout\"" > ~/.bash_logout
