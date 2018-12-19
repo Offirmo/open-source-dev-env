@@ -18,6 +18,63 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 
 ## Install
 
+Mac
+
+```
+
+Install and run xcode
+install brew https://brew.sh/
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Install base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
+brew cask install iterm2 dropbox adobe-acrobat-reader station virtualbox visual-studio-code
+
+TODO ensure the profiles files exists:
+touch ~/.profile ~/.bashrc ~/.bash_profile
+echo "* hello from: .bash_profile"
+echo "* hello from: .bashrc"
+
+
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
+
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+         then remove `src` from the spotlight search
+
+Install and run xcode
+
+IF WANTED copy your keys from previous machine here.
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+       + if new, add the new keys to github
+         - go here https://github.com/settings/keys
+         - test it: `ssh -T git@github.com`
+       + DELETE SSH KEYS FROM THE DISK/USB KEY!
+EITHER curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+       + add the new keys to github
+EITHER copy your keys from previous machine here
+       fix permissions: https://gist.github.com/grenade/6318301
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_rsa_offirmo
+chmod 644 ~/.ssh/id_rsa_offirmo.pub
+        ls -la ~/.ssh
+        DELETE SSH KEYS FROM THE DISK/USB KEY!
+
+GIT NEEDED + git ssh keys:
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
+   (relaunch terminal here, ensure nvm / npm is working)
+   (here install the FiraCode font, TrueType preferred)
+   (here type "onn")
+
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
+   (need yarn)
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
+```
+
 Ubuntu
 
 ```
@@ -34,32 +91,6 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
 (relaunch terminal here)
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
-```
-
-Mac
-
-```
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
-
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
-         then remove `src` from the spotlight search
-
-Install and run xcode
-
-IF WANTED copy your keys from previous machine here.
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
-       + if new, add the new keys to github
-         - go here https://github.com/settings/keys
-         - test it: `ssh -T git@github.com`
-       + DELETE SSH KEYS FROM THE DISK/USB KEY!
-
-GIT NEEDED + git ssh keys:
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
-(relaunch terminal here, ensure nvm / npm is working)
-
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
 ```
 
