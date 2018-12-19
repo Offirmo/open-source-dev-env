@@ -10,7 +10,7 @@ See also:
 ## Test
 Check that bootstrap will work with:
 ```
-[ubuntu] sudo apt-get install curl
+[if ubuntu] sudo apt-get install curl
 curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | bash
 curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 ```
@@ -18,86 +18,53 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 
 ## Install
 
-Mac
+macOS
 
 ```
-
 Install and run xcode
-install brew https://brew.sh/
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Install base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
-brew cask install iterm2 dropbox adobe-acrobat-reader station virtualbox visual-studio-code
-
-TODO ensure the profiles files exists:
-touch ~/.profile ~/.bashrc ~/.bash_profile
-echo "* hello from: .bash_profile"
-echo "* hello from: .bashrc"
-
-
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
-
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash
          then remove `src` from the spotlight search
 
-Install and run xcode
 
 IF WANTED copy your keys from previous machine here.
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_ssh_keys.sh  | bash
        + if new, add the new keys to github
          - go here https://github.com/settings/keys
          - test it: `ssh -T git@github.com`
        + DELETE SSH KEYS FROM THE DISK/USB KEY!
-EITHER curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
-       + add the new keys to github
-EITHER copy your keys from previous machine here
-       fix permissions: https://gist.github.com/grenade/6318301
-chmod 700 ~/.ssh
-chmod 644 ~/.ssh/authorized_keys
-chmod 644 ~/.ssh/known_hosts
-chmod 644 ~/.ssh/config
-chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/id_rsa_offirmo
-chmod 644 ~/.ssh/id_rsa_offirmo.pub
-        ls -la ~/.ssh
-        DELETE SSH KEYS FROM THE DISK/USB KEY!
+
 
 GIT NEEDED + git ssh keys:
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_basic_tools_installed.sh  | bash
    (relaunch terminal here, ensure nvm / npm is working)
    (here install the FiraCode font, TrueType preferred)
    (here type "onn")
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_basic_tools_installed.sh  | bash
 
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_change_settings.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
-   (need yarn)
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
+
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/superuser_ensure_settings.sh  | bash
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_settings.sh  | bash
+   (need npm and yarn)
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_settings.sh  | bash
+
+
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_common_repos_cloned.sh  | bash
 ```
 
 Ubuntu
 
 ```
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_setup_apt.sh      | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_install_base.sh   | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_work_structure.sh | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_install_dev.sh    | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh        | sudo bash
-
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_change_settings.sh | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_work_structure.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_gen_ssh_keys.sh    | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_install.sh         | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/user_install.sh         | bash
-(relaunch terminal here)
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_clone.sh           | bash
+TODO (re)
 ```
 
 
 ## Maintain
 
 ### macos
+
+`bin/user_update.sh`
 
 ```bash
 brew update
@@ -113,20 +80,11 @@ docker volume prune
 ```
 
 
-
 ### Ubuntu
 
 ```
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
 ```
-
-
-## manual steps
-
-### Generate a private key and register it to GitHub
-* go here https://github.com/settings/keys
-* test it: `ssh -T git@github.com`
-
 
 ### If missing, add a debug line to shellrc existing files
 ```bash
@@ -138,7 +96,7 @@ echo "* hello from: .bash_logout"
 
 ### Load settings
 
-* WebStorm: File -> Import -> folder "install/intellij-colors-solarized"
+* WebStorm: File -> Import -> folder "ode/misc/intellij-colors-solarized"
 * iTerm (macOs) -> import the profile
 * Terminal (macOs) -> import from "install/solarized"
 
@@ -172,9 +130,25 @@ git rebase -i master
 ### Useful npm modules
 * https://github.com/jonathaneunice/iterm2-tab-set
 
+### dual ssh keys
+https://github.com/Offirmo-team/wiki/wiki/git
+```
+[remote "origin"]
+	url = git@offirmo.github.com:Offirmo/offirmo-monorepo.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[user]
+	email = offirmo.net@gmail.com
+	name = Offirmo
+[github]
+	user = Offirmo
+[color]
+	ui = auto
+[push]
+	default = simple
+```
 
 ## TODO
-* create the shellrc file if they don't already exist !!!
-* intelligent gitc ! + upgrade open-source-dev-env accordingly
-* document Dual ssh key
-
+...
