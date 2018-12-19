@@ -21,10 +21,12 @@ echo "  - PATH          = $PATH"
 
 ############ macOS settings ############
 ## http://www.macworld.co.uk/how-to/mac-software/how-show-hidden-files-in-mac-os-x-finder-funter-macos-sierra-3520878/
-defaults write com.apple.finder AppleShowAllFiles YES
+## TODO check
+#defaults write com.apple.finder AppleShowAllFiles YES
 
 ## http://apple.stackexchange.com/a/99214/214344
-defaults write -g AppleShowAllFiles -bool true
+## TODO check
+#defaults write -g AppleShowAllFiles -bool true
 
 
 ############ Global settings ############

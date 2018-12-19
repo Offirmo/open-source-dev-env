@@ -19,4 +19,4 @@ echo "  - pwd           = `pwd`"
 ## disable boot chime
 ## http://osxdaily.com/2012/11/04/disable-mac-boot-chime/
 ## TODO check if working / needed
-nvram SystemAudioVolume=%01
+#nvram SystemAudioVolume=%01

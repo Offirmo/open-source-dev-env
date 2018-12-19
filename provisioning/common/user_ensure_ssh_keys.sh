@@ -21,10 +21,10 @@ fi
 ## fix permissions
 ## https://gist.github.com/grenade/6318301
 chmod 700 ~/.ssh
-chmod 644 ~/.ssh/authorized_keys
-chmod 644 ~/.ssh/known_hosts
 chmod 644 ~/.ssh/config
 chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa_offirmo
 chmod 644 ~/.ssh/id_rsa_offirmo.pub
+[ -f ~/.ssh/authorized_keys ] && chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
