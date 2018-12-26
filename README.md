@@ -21,6 +21,8 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 macOS
 
 ```
+show hidden files: Apple + sgift + . https://apple.stackexchange.com/a/340543
+
 Either:
 - type 'git' and accept everyhing asked
 - Install xcode and lauch it once
