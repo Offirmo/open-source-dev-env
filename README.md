@@ -21,7 +21,11 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 macOS
 
 ```
-Install and run xcode
+show hidden files: Apple + sgift + . https://apple.stackexchange.com/a/340543
+
+Either:
+- type 'git' and accept everyhing asked
+- Install xcode and lauch it once
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash
