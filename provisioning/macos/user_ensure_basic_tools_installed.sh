@@ -31,4 +31,8 @@ echo "  - PATH          = $PATH"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
-brew cask install dropbox adobe-acrobat-reader station virtualbox visual-studio-code
+## in order of importance, to allow ctrl+C
+brew cask install visual-studio-code
+brew install git-cola
+brew cask install iterm
+brew cask dropbox adobe-acrobat-reader station virtualbox visual-studio-code
