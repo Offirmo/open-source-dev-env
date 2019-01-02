@@ -79,6 +79,7 @@ alias mono18='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; c
 alias sec='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd soft-execution-context; ./.tabset SEC'
 
 alias orn='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd random; ./.tabset orn'
+alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd favicon-notifications; ./.tabset mono21'
 alias mono24='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd react-error-boundary; ./.tabset mono24'
 alias mono25='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format; ./.tabset mono25'
 alias mono26='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format-to-ansi; ./.tabset mono26'
