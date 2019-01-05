@@ -43,6 +43,8 @@ if [ ! -f ~/.profile ]; then
 fi
 if [ ! -f ~/.bashrc ]; then
 	echo "echo \"* hello from: .bashrc\"" > ~/.bashrc
+	## https://docs.reactioncommerce.com/docs/requirements
+	echo "ulimit -n 65536 65536" >> ~/.bashrc
 fi
 if [ ! -f ~/.bash_profile ]; then
 	echo "echo \"* hello from: .bash_profile\"" > ~/.bash_profile

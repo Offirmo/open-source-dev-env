@@ -20,3 +20,8 @@ echo "  - pwd           = `pwd`"
 ## http://osxdaily.com/2012/11/04/disable-mac-boot-chime/
 ## TODO check if working / needed
 #nvram SystemAudioVolume=%01
+
+## increase file limits
+## https://stackoverflow.com/a/27982223
+echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf

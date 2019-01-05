@@ -25,8 +25,8 @@ alias gitc='gitc.sh'
 
 ## JS
 alias tpx='rm -rf .awcache bower_components node_modules typings'
-alias p='puer --no-launch --port 1981'
-#alias p='puer --no-launch --port 1981 --allow-cors'
+#alias p='puer --no-launch --port 1981'
+alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
