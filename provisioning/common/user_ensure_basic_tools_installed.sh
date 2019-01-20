@@ -82,6 +82,18 @@ else
 fi
 popd > /dev/null
 
+## Comic Neue font
+## http://comicneue.com/
+pushd ~/work/install > /dev/null
+COMICNEUE_INSTALL_DIR=ComicNeue
+if [[ ! -d ~/work/install/COMICNEUE_INSTALL_DIR ]]; then
+    git clone --recursive https://github.com/crozynski/comicneue.git COMICNEUE_INSTALL_DIR
+else
+    cd COMICNEUE_INSTALL_DIR
+    git fetch
+    git pull
+fi
+popd > /dev/null
 
 ## Offline doc TODO
 ## devdocs

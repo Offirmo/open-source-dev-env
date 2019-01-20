@@ -28,6 +28,9 @@ echo "  - PATH          = $PATH"
 ## TODO check
 #defaults write -g AppleShowAllFiles -bool true
 
+## Use shortcut: (in finder) Cmd ⌘ + Shift ⇧ + .  (full stop, period)
+## https://apple.stackexchange.com/a/340543
+
 
 ############ Global settings ############
 ## global gitignore

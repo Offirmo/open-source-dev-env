@@ -34,3 +34,7 @@ fi
 
 ## disable sentry and other stuff
 export OFFIRMO_IS_HERE=1
+
+## iterm shell integration
+## https://iterm2.com/documentation-shell-integration.html
+source ~/.iterm2_shell_integration.bash

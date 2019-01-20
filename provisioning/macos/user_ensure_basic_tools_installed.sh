@@ -36,3 +36,6 @@ brew cask install visual-studio-code
 brew install git-cola
 brew cask install iterm
 brew cask dropbox adobe-acrobat-reader station virtualbox visual-studio-code
+
+## https://iterm2.com/documentation-shell-integration.html
+curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash

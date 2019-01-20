@@ -34,8 +34,8 @@ alias un='npm install && npm outdated'
 alias uy='yarn && yarn outdated'
 alias ut='./node_modules/.bin/typings i'
 alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
-alias onn='npm i -g mocha iterm2-tab-set avn avn-nvm yarn && yarn global add bolt'
-# yarn diff-so-fancy @atlassian/volt 
+alias onn='npm i -g iterm2-tab-set puer avn avn-nvm yarn && yarn global add bolt'
+# mocha yarn diff-so-fancy @atlassian/volt
 
 ## projects
 alias off='cd ~/work/src/off; git_offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
@@ -88,7 +88,6 @@ alias mono28='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd 
 alias mono29='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd unicode-magic; ./.tabset mono29'
 alias mono30='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono30'
 alias mono31='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono31'
-
 alias mono33='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-css; ./.tabset mono33'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
@@ -111,9 +110,13 @@ alias omr40='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr50='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-rich-text; ./.tabset omr50'
 alias omr51='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser; ./.tabset omr51'
 alias omr52='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser-react; ./.tabset omr52'
-alias omrA=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg-node && ./.tabset omrA'
-alias omrB=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd the-boring-rpg-browser && ./.tabset omrB'
-alias omrC=' cd ~/work/src/off/offirmo-monorepo/apps; git_offirmo.sh; cd clicker && ./.tabset omrC'
+
+alias omrA1=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset omrA1'
+alias omrA2=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset omrA2'
+alias omrA3=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset omrA3'
+
+alias omrB1=' cd ~/work/src/off/offirmo-monorepo/apps/tree-clicker; git_offirmo.sh; cd xxx && ./.tabset omrB1'
+
 
 alias wiki='cd ~/work/src/off/wiki.wiki; git_offirmo.sh'
 alias pre='cd ~/work/src/off/prefixed-log; git_offirmo.sh'
