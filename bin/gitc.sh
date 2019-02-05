@@ -17,6 +17,7 @@ TEMP=${REPOSITORY_URL%"/$LAST_URL_SEGMENT"}
 TEMP="$(basename "$TEMP")"
 
 # if recognized as an expected subdir, change parent dir
+echo "TEMP = $TEMP"
 if [[ $TEMP = "Offirmo" ]]; then
     PARENT_DIR=$PARENT_DIR/off
 elif [[ $TEMP = "online-adventures" ]]; then

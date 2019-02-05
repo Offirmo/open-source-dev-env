@@ -39,3 +39,7 @@ brew cask dropbox adobe-acrobat-reader station virtualbox visual-studio-code
 
 ## https://iterm2.com/documentation-shell-integration.html
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+
+## quick look plugins
+## https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode qlstephen webpquicklook

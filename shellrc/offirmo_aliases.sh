@@ -111,9 +111,10 @@ alias omr50='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr51='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser; ./.tabset omr51'
 alias omr52='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser-react; ./.tabset omr52'
 
-alias omrA1=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset omrA1'
-alias omrA2=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset omrA2'
-alias omrA3=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset omrA3'
+alias tbr1=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset tbr1'
+alias tbr2=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset tbr2'
+alias tbr3=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd functions && ./.tabset tbr3'
+alias tbr4=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset tbr4'
 
 alias omrB1=' cd ~/work/src/off/offirmo-monorepo/apps/tree-clicker; git_offirmo.sh; cd xxx && ./.tabset omrB1'
 
