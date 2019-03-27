@@ -67,10 +67,10 @@ alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; ./.tabset offirm
 
 alias mono='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; tabset --badge "mono" --color "#FF4136"'
 
-alias mono01='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd normalize-string; ./.tabset mono01'
-alias mono04='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd prettify-json; ./.tabset mono04'
+alias mono01='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd deferred; ./.tabset mono01'
+alias mono02='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd murmurhash; ./.tabset mono02'
+alias mono05='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd prettify-json; ./.tabset mono05'
 alias mono07='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd timestamps; ./.tabset mono07'
-alias mono08='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd ts-types; ./.tabset mono08'
 alias mono09='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd uuid; ./.tabset mono09'
 
 alias mono110='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-types; ./.tabset mono110'
@@ -79,9 +79,11 @@ alias mono112='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; 
 alias mono113='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-node; ./.tabset mono113'
 alias mono114='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-minimal-to-void; ./.tabset mono114'
 alias mono120='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd print-error-to-ansi; ./.tabset mono120'
+alias mono121='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd ts-types; ./.tabset mono121'
 
 alias orn='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd random; ./.tabset orn'
 alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd favicon-notifications; ./.tabset mono21'
+alias mono24='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd normalize-string; ./.tabset mono24'
 alias mono25='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd react-error-boundary; ./.tabset mono25'
 alias mono27='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd state; ./.tabset mono27'
 alias mono28='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd unicode-data; ./.tabset mono28'
@@ -124,8 +126,8 @@ alias omr51='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr52='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser-react; ./.tabset omr52'
 
 alias tbr01=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset tbr01'
-alias tbr02=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd flux && ./.tabset tbr02'
-alias tbr03=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd rpc-interface && ./.tabset tbr03'
+alias tbr02=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd interfaces && ./.tabset tbr02'
+alias tbr03=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd flux && ./.tabset tbr03'
 alias tbr11=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd functions && ./.tabset tbr11'
 alias tbr21=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset tbr21'
 alias tbr31=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset tbr31'
