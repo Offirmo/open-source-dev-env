@@ -73,7 +73,7 @@ alias mono05='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd pr
 alias mono07='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd timestamps; ./.tabset mono07'
 alias mono09='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd uuid; ./.tabset mono09'
 
-alias mono110='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-types; ./.tabset mono110'
+alias mono110='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-interface; ./.tabset mono110'
 alias mono111='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-core; ./.tabset mono111'
 alias mono112='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-browser; ./.tabset mono112'
 alias mono113='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-node; ./.tabset mono113'
