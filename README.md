@@ -21,7 +21,7 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 macOS
 
 ```
-show hidden files: Apple + sgift + . https://apple.stackexchange.com/a/340543
+show hidden files: Apple + shift + . https://apple.stackexchange.com/a/340543
 
 Either:
 - type 'git' and accept everyhing asked
@@ -55,6 +55,9 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensu
 
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_common_repos_cloned.sh  | bash
+
+# Ruby: https://rvm.io/rvm/install
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
 Ubuntu
