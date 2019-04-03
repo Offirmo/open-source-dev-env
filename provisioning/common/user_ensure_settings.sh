@@ -30,6 +30,8 @@ git config --global core.excludesfile ~/.gitignore
 
 npm config set init-license UNLICENSED
 npm config set init-version 0.0.1
+
+
 # TODO
 #globalconfig = "/home/x/.nvm/versions/node/v6.8.1/etc/npmrc"
 #globalignorefile = "/home/x/.nvm/versions/node/v6.8.1/etc/npmignore"

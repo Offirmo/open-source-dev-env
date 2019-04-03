@@ -73,13 +73,15 @@ alias mono05='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd pr
 alias mono07='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd timestamps; ./.tabset mono07'
 alias mono09='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd uuid; ./.tabset mono09'
 
+alias mono104='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd globalthis-ponyfill; ./.tabset mono104'
 alias mono110='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-interface; ./.tabset mono110'
 alias mono111='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-core; ./.tabset mono111'
 alias mono112='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-browser; ./.tabset mono112'
 alias mono113='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-node; ./.tabset mono113'
-alias mono114='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-minimal-to-void; ./.tabset mono114'
+alias mono114='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-minimal-noop; ./.tabset mono114'
 alias mono120='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd print-error-to-ansi; ./.tabset mono120'
 alias mono121='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd ts-types; ./.tabset mono121'
+
 
 alias orn='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd random; ./.tabset orn'
 alias mono21='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd favicon-notifications; ./.tabset mono21'
@@ -92,7 +94,7 @@ alias mono211='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd
 alias mono212='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format-to-ansi; ./.tabset mono212'
 alias mono213='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format-to-react; ./.tabset mono213'
 alias mono221='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-interface; ./.tabset mono221'
-alias mono222='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minimal-to-void; ./.tabset mono222'
+alias mono222='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minimal-noop; ./.tabset mono222'
 alias mono223='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-full-browser; ./.tabset mono223'
 alias mono231='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono231'
 alias mono232='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono232'
@@ -102,8 +104,9 @@ alias sec1='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd so
 alias sec2='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd soft-execution-context-browser; ./.tabset SEC2'
 
 
-alias monoX1='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd experiment-bootstrap; ./.tabset monoX1'
+alias xbl='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd experiment-bootstrap; ./.tabset xbl'
 alias monoX2='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoX2'
+alias mono403='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd hello-world-npm; ./.tabset mono403'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
 alias omr11='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd logic-armors; ./.tabset omr11'
@@ -139,7 +142,7 @@ alias wiki='cd ~/work/src/off/wiki.wiki; git_offirmo.sh'
 alias pre='cd ~/work/src/off/prefixed-log; git_offirmo.sh'
 alias rxa='cd ~/work/src/off/rx-auto; git_offirmo.sh'
 alias slr='cd ~/work/src/off/sync-local-repos; git_offirmo.sh; ./.tabset slr'
-alias utt='cd ~/work/src/off/unit-test-toolbox; git_offirmo.sh'
+alias utt=' cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd unit-test-toolbox && ./.tabset utt'
 alias wmt='cd ~/work/src/off/web-module-toolbox; git_offirmo.sh'
 alias wte='cd ~/work/src/off/web-tech-experiments; git_offirmo.sh; ./.tabset wte'
 alias put='cd ~/work/src/off/promise-utils; git_offirmo.sh; tabset --badge "p-u" --color "#FF4136"'
