@@ -60,7 +60,6 @@ alias hwet='cd ~/work/src/off/hello-world-express-typescript; git_offirmo.sh'
 alias hweta1='cd ~/work/src/off/hello-world-express-typescript-advanced-1; git_offirmo.sh'
 alias mbo='cd ~/work/src/off/minisite-bookmarks-ghpages; git_offirmo.sh'
 alias mw='cd ~/work/src/off/minisite-wedding-ghpages; git_offirmo.sh'
-alias ntc='cd ~/work/src/off/node-typescript-compiler; git_offirmo.sh'
 alias ode='cd ~/work/src/off/open-source-dev-env; git_offirmo.sh'
 alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; ./.tabset offirmo.net'
 
@@ -103,8 +102,8 @@ alias sec0='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd so
 alias sec1='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd soft-execution-context-node; ./.tabset SEC1'
 alias sec2='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd soft-execution-context-browser; ./.tabset SEC2'
 
+alias ntc='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd node-typescript-compiler; ./.tabset node-tsc'
 
-alias xbl='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd experiment-bootstrap; ./.tabset xbl'
 alias monoX2='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoX2'
 alias mono403='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd hello-world-npm; ./.tabset mono403'
 
