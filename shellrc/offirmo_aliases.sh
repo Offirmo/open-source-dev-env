@@ -66,13 +66,13 @@ alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; ./.tabset offirm
 
 alias mono='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; tabset --badge "mono" --color "#FF4136"'
 
-alias mono01='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd deferred; ./.tabset mono01'
-alias mono02='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd murmurhash; ./.tabset mono02'
+alias mono02='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd deferred; ./.tabset mono02'
+alias mono03='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd globalthis-ponyfill; ./.tabset mono03'
+alias mono04='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd murmurhash; ./.tabset mono04'
 alias mono05='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd prettify-json; ./.tabset mono05'
 alias mono07='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd timestamps; ./.tabset mono07'
 alias mono09='cd ~/work/src/off/offirmo-monorepo/0-stdlib; git_offirmo.sh; cd uuid; ./.tabset mono09'
 
-alias mono104='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd globalthis-ponyfill; ./.tabset mono104'
 alias mono110='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-interface; ./.tabset mono110'
 alias mono111='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-core; ./.tabset mono111'
 alias mono112='cd ~/work/src/off/offirmo-monorepo/1-foundation; git_offirmo.sh; cd practical-logger-browser; ./.tabset mono112'
