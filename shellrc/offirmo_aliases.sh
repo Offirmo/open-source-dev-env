@@ -11,14 +11,17 @@ alias l='ls -CF'
 alias x='exit'
 #alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
 
+## tools
 ## works if installed via umake
 alias ws='jetbrains-webstorm &'
+## need to be built
+alias rdm='~/work/src/rdm/bin/osx/debug/rdm'
 
 ## git
 alias s='git status'
 alias b='git branch'
 alias ga='echo "Current git account :"; echo "   `git config --get user.name` (`git config --get user.email`)"'
-alias gfp='git fetch && git pull'
+alias gfp='git fetch && git pull --recurse-submodules'
 alias ur='CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout master; git pull; git checkout $CURRENT_BRANCH; git fetch origin master; git rebase origin/master'
 alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
