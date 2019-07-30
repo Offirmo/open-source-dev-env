@@ -86,13 +86,6 @@ docker system prune --all
 docker volume prune
 ```
 
-
-### Ubuntu
-
-```
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
-```
-
 ### If missing, add a debug line to shellrc existing files
 ```bash
 echo "* hello from: .profile"
@@ -101,11 +94,13 @@ echo "* hello from: .bash_profile"
 echo "* hello from: .bash_logout"
 ```
 
-### Load settings
+### Manual installs
+https://www.jetbrains.com/toolbox/app/
 
-* WebStorm: File -> Import -> folder "ode/misc/intellij-colors-solarized"
-* iTerm (macOs) -> import the profile
-* Terminal (macOs) -> import from "install/solarized"
+### Load settings
+* WebStorm: File -> Import settings... -> folder "install/intellij-colors-solarized"
+* iTerm (macOs) -> Prefs -> Profiles -> Colors -> color preset -> "ode/misc/iterm2"
+* Terminal (macOs) -> Shell -> import -> "install/solarized"
 
 
 ### (if needed) Setup the Windows share
@@ -159,3 +154,12 @@ https://github.com/Offirmo-team/wiki/wiki/git
 
 ## TODO
 ...
+
+
+## Outdated
+
+### Ubuntu
+
+```
+curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
+```
