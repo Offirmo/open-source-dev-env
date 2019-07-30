@@ -20,16 +20,9 @@ echo "  - PATH          = $PATH"
 
 
 ############ macOS settings ############
-## http://www.macworld.co.uk/how-to/mac-software/how-show-hidden-files-in-mac-os-x-finder-funter-macos-sierra-3520878/
-## TODO check
-#defaults write com.apple.finder AppleShowAllFiles YES
-
-## http://apple.stackexchange.com/a/99214/214344
-## TODO check
-#defaults write -g AppleShowAllFiles -bool true
-
-## Use shortcut: (in finder) Cmd ⌘ + Shift ⇧ + .  (full stop, period)
-## https://apple.stackexchange.com/a/340543
+## https://apple.stackexchange.com/questions/340542/show-hidden-files-on-mac-os-x-mojave-using-terminal/340543#340543
+defaults write com.apple.finder AppleShowAllFiles -boolean true
+## Or use shortcut: (in finder) Cmd ⌘ + Shift ⇧ + .  (full stop, period)
 
 
 ############ Global settings ############
