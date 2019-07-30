@@ -21,7 +21,9 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 macOS
 
 ```
-show hidden files: Apple + shift + . https://apple.stackexchange.com/a/340543
+show hidden files:
+- temp Apple + shift + . https://apple.stackexchange.com/a/340543
+- définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder 
 
 Either:
 - type 'git' and accept everyhing asked
