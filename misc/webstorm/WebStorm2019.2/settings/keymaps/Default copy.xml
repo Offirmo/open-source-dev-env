@@ -1,0 +1,8 @@
+<keymap version="1" name="Default copy" parent="Mac OS X 10.5+">
+  <action id="EditorCompleteStatement" />
+  <action id="EditorDeleteLine" />
+  <action id="FindNext" />
+  <action id="QuickImplementations">
+    <keyboard-shortcut first-keystroke="meta y" />
+  </action>
+</keymap>
