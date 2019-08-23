@@ -108,6 +108,7 @@ alias sec1='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd so
 alias sec2='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd soft-execution-context-browser; ./.tabset SEC2'
 
 alias ntc='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd node-typescript-compiler; ./.tabset node-tsc'
+alias monoT2='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd photos-sorter; ./.tabset monoT2'
 
 alias monoX2='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoX2'
 alias mono403='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd hello-world-npm; ./.tabset mono403'
