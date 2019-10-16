@@ -4,6 +4,7 @@ authentify
 autofill
 autologin
 changelogs
+cohorted
 composable
 consumption
 cooldown
@@ -62,7 +63,10 @@ timeline
 touchpoint
 transpilation
 transpile
+transpiling
 truthy
+unenroll
+unenrolled
 unenrollment
 unflushed
 unformatted

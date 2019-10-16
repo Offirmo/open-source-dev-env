@@ -33,11 +33,7 @@ alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
-alias un='npm install && npm outdated'
-alias uy='yarn && yarn outdated'
-alias ut='./node_modules/.bin/typings i'
-alias unt='npm prune && npm upgrade && ./node_modules/.bin/typings i'
-alias onn='npm i -g iterm2-tab-set puer avn avn-nvm yarn && yarn global add bolt'
+alias onn='npm i -g iterm2-tab-set netlify-cli puer avn avn-nvm avn-n yarn && yarn global add bolt'
 # mocha yarn diff-so-fancy @atlassian/volt
 
 ## projects
@@ -143,6 +139,10 @@ alias tbr21=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirm
 alias tbr31=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset tbr31'
 
 alias omrB1=' cd ~/work/src/off/offirmo-monorepo/apps/tree-clicker; git_offirmo.sh; cd xxx && ./.tabset omrB1'
+
+alias monodbm='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/db-migrations && ./.tabset MonoDB'
+alias monodb='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/db && ./.tabset MonoDB'
+alias monof='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/functions && ./.tabset MonoF'
 
 
 alias wiki='cd ~/work/src/off/wiki.wiki; git_offirmo.sh'
