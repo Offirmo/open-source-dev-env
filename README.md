@@ -26,8 +26,8 @@ show hidden files:
 - définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder 
 
 Either:
-- type 'git' and accept everyhing asked
-- Install xcode and lauch it once
+- type launch 'git' and accept everyhing asked
+- or install xcode and lauch it once (but takes disk space!)
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash
@@ -136,6 +136,22 @@ git rebase -i master
 
 ### dual ssh keys
 https://github.com/Offirmo-team/wiki/wiki/git
+In `.ssh/config`:
+
+```
+Host offirmo.github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_offirmo
+   IdentitiesOnly yes
+
+Host xyz.github.com
+   HostName xyz.github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa
+   IdentitiesOnly yes
+```
+
 ```
 [remote "origin"]
 	url = git@offirmo.github.com:Offirmo/offirmo-monorepo.git
@@ -153,6 +169,12 @@ https://github.com/Offirmo-team/wiki/wiki/git
 [push]
 	default = simple
 ```
+
+Test GitHub SSH: https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection
+```bash
+ssh -T git@github.com
+```
+
 
 ## TODO
 ...
