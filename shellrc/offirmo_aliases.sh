@@ -96,6 +96,7 @@ alias mono213='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd
 alias mono221='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-interface; ./.tabset mono221'
 alias mono222='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minimal-noop; ./.tabset mono222'
 alias mono223='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-full-browser; ./.tabset mono223'
+alias mono224='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minisite; ./.tabset mono224'
 alias mono231='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono231'
 alias mono232='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono232'
 alias mono233='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-css; ./.tabset mono233'
