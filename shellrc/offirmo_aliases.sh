@@ -94,9 +94,10 @@ alias mono211='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd
 alias mono212='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format-to-ansi; ./.tabset mono212'
 alias mono213='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd rich-text-format-to-react; ./.tabset mono213'
 alias mono221='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-interface; ./.tabset mono221'
-alias mono222='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minimal-noop; ./.tabset mono222'
-alias mono223='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-full-browser; ./.tabset mono223'
-alias mono224='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minisite; ./.tabset mono224'
+alias mono222='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-placeholder; ./.tabset mono222'
+alias mono223='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-browser; ./.tabset mono223'
+alias mono224='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-node; ./.tabset mono224'
+alias mono225='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd universal-debug-api-minisite; ./.tabset mono225'
 alias mono231='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono231'
 alias mono232='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono232'
 alias mono233='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd view-css; ./.tabset mono233'
@@ -105,10 +106,11 @@ alias sec1='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd so
 alias sec2='cd ~/work/src/off/offirmo-monorepo/2-advanced; git_offirmo.sh; cd soft-execution-context-browser; ./.tabset SEC2'
 
 alias ntc='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd node-typescript-compiler; ./.tabset node-tsc'
-alias monoT2='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd photos-sorter; ./.tabset monoT2'
+alias monoT2='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoT2'
 
-alias monoX2='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoX2'
-alias mono403='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd hello-world-npm; ./.tabset mono403'
+alias monoX2='cd ~/work/src/off/offirmo-monorepo/3-tools; git_offirmo.sh; cd photos-sorter; ./.tabset monoX2'
+alias monoX3='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd hello-world-npm; ./.tabset monoX3'
+alias monoF='cd ~/work/src/off/offirmo-monorepo/4-incubator; git_offirmo.sh; cd map; ./.tabset monoF'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
 alias omr11='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd logic-armors; ./.tabset omr11'
@@ -141,7 +143,7 @@ alias tbr31=' cd ~/work/src/off/offirmo-monorepo/apps/the-boring-rpg; git_offirm
 
 alias omrB1=' cd ~/work/src/off/offirmo-monorepo/apps/tree-clicker; git_offirmo.sh; cd xxx && ./.tabset omrB1'
 
-alias monodbm='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/db-migrations && ./.tabset MonoDB'
+alias monodbm='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/db-migrations && ./.tabset MonoDBm'
 alias monodb='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/db && ./.tabset MonoDB'
 alias monof='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; cd apps/shared/functions && ./.tabset MonoF'
 
