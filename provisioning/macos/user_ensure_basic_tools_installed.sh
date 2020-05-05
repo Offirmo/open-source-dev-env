@@ -33,7 +33,7 @@ echo "  - PATH          = $PATH"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 brew cask install visual-studio-code
-brew install git-cola
+brew install git-cola git-delta
 brew cask install iterm
 brew cask dropbox adobe-acrobat-reader station virtualbox visual-studio-code
 ## https://github.com/be5invis/Iosevka
