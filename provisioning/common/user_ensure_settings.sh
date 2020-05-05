@@ -26,7 +26,9 @@ git config --global color.ui "auto"
 ## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
 touch ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
-
+## https://github.com/dandavison/delta/blob/master/README.md
+git config --global core.pager "delta --theme='Solarized (light)'"
+git config --global interactive.diffFilter "delta --color-only"
 
 npm config set init-license UNLICENSED
 npm config set init-version 0.0.1
