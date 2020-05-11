@@ -100,6 +100,8 @@ alias mono224='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd
 alias mono231='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd view-chat; ./.tabset mono231'
 alias mono232='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono232'
 alias mono233='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd view-css; ./.tabset mono233'
+alias mono234='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd xoff; ./.tabset mono234'
+alias mono235='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd iframe-loading; ./.tabset mono235'
 alias sec0='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd soft-execution-context; ./.tabset SEC0'
 alias sec1='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd soft-execution-context-node; ./.tabset SEC1'
 alias sec2='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd soft-execution-context-browser; ./.tabset SEC2'
@@ -108,7 +110,6 @@ alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-t
 alias monoT2='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoT2'
 
 alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/photos-sorter; ./.tabset monoX1'
-alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/iframe-loading; ./.tabset monoX2'
 alias monoX3='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/simple-upgradable-template; ./.tabset monoX3'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
