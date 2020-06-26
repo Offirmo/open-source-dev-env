@@ -33,7 +33,7 @@ alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
-alias onn='npm i -g iterm2-tab-set netlify-cli puer avn avn-nvm avn-n yarn && yarn global add bolt'
+alias onn='npm i -g iterm2-tab-set netlify-cli puer avn avn-nvm avn-n cordova yarn && yarn global add bolt'
 # mocha yarn diff-so-fancy @atlassian/volt
 
 ## projects
@@ -134,13 +134,13 @@ alias omr51='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias omr52='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd view-browser-react; ./.tabset omr52'
 alias omr53='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd audio-browser; ./.tabset omr53'
 
-alias tbr01=' cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset tbr01'
-alias tbr02=' cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd interfaces && ./.tabset tbr02'
-alias tbr03=' cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd flux && ./.tabset tbr03'
-alias tbr11=' cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd functions && ./.tabset tbr11'
-alias tbr21=' cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset tbr21'
-alias tbr31=' cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset tbr31'
-
+alias tbr01='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset tbr01'
+alias tbr02='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd interfaces && ./.tabset tbr02'
+alias tbr03='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd flux && ./.tabset tbr03'
+alias tbr10='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd functions && ./.tabset tbr10'
+alias tbr20='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset tbr20'
+alias tbr30='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-cordova && ./.tabset tbr30'
+alias tbr40='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset tbr40'
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/A-apps/shared; git_offirmo.sh; cd db-migrations && ./.tabset monodbm'
 alias monodb='cd ~/work/src/off/offirmo-monorepo/A-apps/shared; git_offirmo.sh; cd db && ./.tabset monodb'
@@ -154,7 +154,7 @@ alias wiki='cd ~/work/src/off/wiki.wiki; git_offirmo.sh'
 alias pre='cd ~/work/src/off/prefixed-log; git_offirmo.sh'
 alias rxa='cd ~/work/src/off/rx-auto; git_offirmo.sh'
 alias slr='cd ~/work/src/off/sync-local-repos; git_offirmo.sh; ./.tabset slr'
-alias utt=' cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd unit-test-toolbox && ./.tabset utt'
+alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd unit-test-toolbox && ./.tabset utt'
 alias wmt='cd ~/work/src/off/web-module-toolbox; git_offirmo.sh'
 alias wte='cd ~/work/src/off/web-tech-experiments; git_offirmo.sh; ./.tabset wte'
 alias put='cd ~/work/src/off/promise-utils; git_offirmo.sh; tabset --badge "p-u" --color "#FF4136"'
