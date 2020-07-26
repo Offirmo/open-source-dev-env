@@ -27,7 +27,7 @@ alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
-alias tpx='rm -rf .awcache bower_components node_modules typings'
+alias tpx='rm -rf .awcache node_modules .npm npm-debug.log yarn-error.log .yalc bower_components typings'
 #alias p='puer --no-launch --port 1981'
 alias p='puer --no-launch --port 1981 --allow-cors'
 
