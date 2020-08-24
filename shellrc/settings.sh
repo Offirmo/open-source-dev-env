@@ -1,14 +1,19 @@
 echo "* hello from: …open-source-dev-env/shellrc/settings.sh"
 
+## remove duplicated bash history https://askubuntu.com/a/15929
+export HISTCONTROL=ignoreboth:erasedups
+
 ## set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	## with user + machine (not very useful if always the same)
+	#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	PS1=' \[\033[01;34m\]\w\[\033[00m\] —► '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 
 ## enable color support of ls and also add handy aliases
@@ -34,7 +39,3 @@ fi
 
 ## disable sentry and other stuff
 export OFFIRMO_IS_HERE=1
-
-## iterm shell integration
-## https://iterm2.com/documentation-shell-integration.html
-source ~/.iterm2_shell_integration.bash

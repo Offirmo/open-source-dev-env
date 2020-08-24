@@ -28,7 +28,7 @@ echo "  - PATH          = $PATH"
 ## NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash -s stable
 source ~/.nvm/nvm.sh
-nvm install 10
+nvm install latest
 
 
 ############ Offirmo shared scripts ############
@@ -100,4 +100,3 @@ popd > /dev/null
 #git clone https://github.com/Thibaut/devdocs.git && cd devdocs
 ## reactive extensions
 ## CSS
-## https://blogs.msdn.microsoft.com/typescript/2016/12/07/announcing-typescript-2-1/
