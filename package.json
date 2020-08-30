@@ -1,0 +1,16 @@
+{
+	"license": "UNLICENSE",
+	"scripts": {
+		"provision--01": "sudo ./provisioning/common/superuser_ensure_work_structure.sh",
+		"provision--02":      "./provisioning/common/user_ensure_work_structure.sh",
+
+		"provision--03":      "./provisioning/common/user_ensure_ssh_keys.sh",
+		"provision--04":      "./provisioning/common/user_ensure_basic_tools_installed.sh",
+		"provision--05":      "./provisioning/macos/user_ensure_basic_tools_installed.sh",
+		"provision--06":      "./provisioning/common/user_ensure_common_repos_cloned.sh",
+
+		"provision--07": "sudo ./provisioning/macos/superuser_ensure_settings.sh",
+		"provision--08":      "./provisioning/common/user_ensure_settings.sh",
+		"provision--09":      "./provisioning/macos/user_ensure_settings.sh"
+	}
+}

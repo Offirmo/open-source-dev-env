@@ -23,11 +23,11 @@ macOS
 ```
 show hidden files:
 - temp Apple + shift + . https://apple.stackexchange.com/a/340543
-- définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder 
+- définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
 
 Either:
-- type launch 'git' and accept everyhing asked
-- or install xcode and lauch it once (but takes disk space!)
+- type 'git' and accept everyhing asked
+- or/and install xcode and lauch it once (but takes disk space!)
 
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
 curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash

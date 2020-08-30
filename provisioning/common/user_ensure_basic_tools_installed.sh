@@ -44,6 +44,7 @@ popd > /dev/null
 ############ misc ############
 
 ## solarized color scheme
+## https://github.com/altercation/solarized
 ## http://ethanschoonover.com/solarized
 pushd ~/work/install > /dev/null
 SOLARIZED_INSTALL_DIR=solarized
@@ -56,7 +57,7 @@ else
 fi
 popd > /dev/null
 
-## jetbrains solarized color scheme
+## jetbrains solarized color scheme (better than the above)
 ## https://github.com/jkaving/intellij-colors-solarized
 pushd ~/work/install > /dev/null
 JETBRAINS_SOLARIZED_INSTALL_DIR=intellij-colors-solarized

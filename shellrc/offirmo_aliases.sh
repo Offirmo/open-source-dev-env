@@ -104,8 +104,11 @@ alias uda0='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh
 alias uda1='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd universal-debug-api-placeholder; ./.tabset uda1'
 alias uda2='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd universal-debug-api-browser; ./.tabset uda2'
 alias uda3='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd universal-debug-api-node; ./.tabset uda3'
-alias mono341='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd view-chat; ./.tabset mono341'
-alias mono342='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono342'
+alias mono331='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd view-chat; ./.tabset mono331'
+alias mono332='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono332'
+
+alias mono351='cd ~/work/src/off/offirmo-monorepo/3-advanced--node; git_offirmo.sh; cd state-migration-tester; ./.tabset mono351'
+
 
 alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-typescript-compiler; ./.tabset node-tsc'
 alias monoT2='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoT2'
