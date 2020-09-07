@@ -33,8 +33,9 @@ alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
-alias onn='npm i -g iterm2-tab-set netlify-cli puer avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt'
-# mocha yarn diff-so-fancy @atlassian/volt
+alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt'
+# mocha netlify-cli puer
+# yarn diff-so-fancy @atlassian/volt
 
 ## projects
 alias off='cd ~/work/src/off; git_offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
@@ -142,7 +143,6 @@ alias omr53='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 alias tbr01='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset tbr01'
 alias tbr02='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd interfaces && ./.tabset tbr02'
 alias tbr03='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd flux && ./.tabset tbr03'
-alias tbr10='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd functions && ./.tabset tbr10'
 alias tbr20='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-browser && ./.tabset tbr20'
 alias tbr30='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-cordova && ./.tabset tbr30'
 alias tbr40='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd client-node && ./.tabset tbr40'
