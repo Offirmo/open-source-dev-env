@@ -5,7 +5,7 @@ brew upgrade
 
 pip install --upgrade pip
 
-nvm install 14
+nvm install 'lts/*'
 onn
 avn setup
 

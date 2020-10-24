@@ -28,7 +28,8 @@ echo "  - PATH          = $PATH"
 ## NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash -s stable
 source ~/.nvm/nvm.sh
-nvm install latest
+nvm install 'lts/*'
+nvm alias default 'lts/*'
 
 
 ############ Offirmo shared scripts ############

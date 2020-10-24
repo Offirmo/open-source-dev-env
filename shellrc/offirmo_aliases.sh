@@ -27,7 +27,7 @@ alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
-alias tpx='rm -rf .awcache node_modules .npm npm-debug.log yarn-error.log .yalc bower_components typings'
+alias tpx='rm -rf .awcache node_modules .npm npm-debug.log yarn-error.log yarn.lock .yalc bower_components typings'
 #alias p='puer --no-launch --port 1981'
 alias p='puer --no-launch --port 1981 --allow-cors'
 
@@ -36,6 +36,7 @@ alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt'
 # mocha netlify-cli puer
 # yarn diff-so-fancy @atlassian/volt
+#alias onn='volta install bolt iterm2-tab-set cordova heroku'
 
 ## projects
 alias off='cd ~/work/src/off; git_offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
@@ -43,7 +44,6 @@ alias oa='cd ~/work/src/oa/online-adventures.github.io; git_offirmo.sh'
 alias blog='cd ~/work/src/off/blog; git_offirmo.sh; rvm use ruby-2.1'
 alias blogx='cd ~/work/src/off/x; git_offirmo.sh'
 alias cct='cd ~/work/src/off/clean-code-toolbox; git_offirmo.sh'
-alias clt='cd ~/work/src/off/cli-toolbox; git_offirmo.sh'
 alias cro='cd ~/work/src/off/cross-js-env-tests; git_offirmo.sh'
 alias hre='cd ~/work/src/off/coding-exercises-hr; git_offirmo.sh'
 alias hwe='cd ~/work/src/off/hello-world-npm; git_offirmo.sh'
@@ -110,6 +110,7 @@ alias mono331='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo
 alias mono332='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo.sh; cd view-chat-ui-tty; ./.tabset mono332'
 
 alias mono351='cd ~/work/src/off/offirmo-monorepo/3-advanced--node; git_offirmo.sh; cd state-migration-tester; ./.tabset mono351'
+alias clt='cd ~/work/src/off/offirmo-monorepo/3-advanced--node; git_offirmo.sh; cd cli-toolbox; ./.tabset clt'
 
 
 alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-typescript-compiler; ./.tabset node-tsc'
