@@ -90,6 +90,7 @@ alias mono303='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offir
 alias mono305='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd react-error-boundary; ./.tabset mono305'
 alias mono306='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd view-css; ./.tabset mono306'
 alias mono307='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd xoff; ./.tabset mono307'
+alias mono308='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd embeddable-chat; ./.tabset mono308'
 
 alias mono320='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd async-utils; ./.tabset mono320'
 alias mono321='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd normalize-string; ./.tabset mono321'
