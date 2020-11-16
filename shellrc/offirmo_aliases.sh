@@ -145,9 +145,14 @@ alias omr53='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd 
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd db-migrations && ./.tabset monodbm'
 alias monodb='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd db && ./.tabset monodb'
-alias monofi='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd functions-interface && ./.tabset monofi'
+alias monoi='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd api-interface && ./.tabset monoi'
+alias monoc='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd api-client && ./.tabset monoc'
 alias monof='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd functions && ./.tabset monof'
 alias monoh='cd ~/work/src/off/offirmo-monorepo/A-apps/online-adventur.es; git_offirmo.sh; cd heroku && ./.tabset monoh'
+
+alias bv01='cd ~/work/src/off/offirmo-monorepo/A-apps/bhbv; git_offirmo.sh; cd state--isomorphic && ./.tabset bv01'
+alias bv02='cd ~/work/src/off/offirmo-monorepo/A-apps/bhbv; git_offirmo.sh; cd flux--isomorphic && ./.tabset bv02'
+alias bv03='cd ~/work/src/off/offirmo-monorepo/A-apps/bhbv; git_offirmo.sh; cd client--browser--core && ./.tabset bv03'
 
 alias tbr01='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd state && ./.tabset tbr01'
 alias tbr02='cd ~/work/src/off/offirmo-monorepo/A-apps/the-boring-rpg; git_offirmo.sh; cd interfaces && ./.tabset tbr02'
