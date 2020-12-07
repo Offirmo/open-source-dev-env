@@ -18,7 +18,7 @@ curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 
 ## Install
 
-macOS
+### macOS
 
 ```
 show hidden files:
@@ -62,7 +62,7 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ens
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
-Ubuntu
+### Ubuntu
 
 ```
 TODO (re)
@@ -103,7 +103,7 @@ https://www.jetbrains.com/toolbox/app/
 * WebStorm: File -> Import settings... -> folder "install/intellij-colors-solarized"
 * iTerm (macOs) -> Prefs -> Profiles -> Colors -> color preset -> "ode/misc/iterm2"
 * Terminal (macOs) -> Shell -> import -> "install/solarized"
-
+* xcode -> Preferences -> Locations -> Command line tools  https://stackoverflow.com/a/36726612
 
 ### (if needed) Setup the Windows share
 * http://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7
