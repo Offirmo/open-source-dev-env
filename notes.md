@@ -40,3 +40,12 @@ http://askubuntu.com/questions/860952/if-the-key-is-not-named-id-rsa-it-does-not
 Bash
 https://stackoverflow.com/questions/229551/string-contains-in-bash
 https://stackoverflow.com/questions/2829613/how-do-you-tell-if-a-string-contains-another-string-in-unix-shell-scripting
+
+
+
+```bash
+# libffi instructions from brew 2021/01
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export CPPFLAGS="-I/usr/local/opt/libffi/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+```
