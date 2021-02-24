@@ -116,11 +116,11 @@ alias clt='cd ~/work/src/off/offirmo-monorepo/3-advanced--node; git_offirmo.sh; 
 
 alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-typescript-compiler; ./.tabset node-tsc'
 alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd unit-test-toolbox && ./.tabset utt'
-alias monoT2='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoT2'
+alias monoT1='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; ./.tabset monoT1'
+alias monoT2='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd memories-sorter; ./.tabset monoT2'
 
-alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/photos-sorter; ./.tabset monoX1'
-alias monoX3='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/simple-upgradable-template; ./.tabset monoX3'
-#alias mono29='cd ~/work/src/off/offirmo-monorepo/3-advanced; git_offirmo.sh; cd unicode-magic; ./.tabset mono29'
+alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/rpg-frame; ./.tabset monoX1'
+alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/simple-upgradable-template; ./.tabset monoX2'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
 alias omr11='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd logic-armors; ./.tabset omr11'
