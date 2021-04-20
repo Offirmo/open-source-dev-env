@@ -18,7 +18,7 @@ docker volume prune
 yarn cache clean
 npm cache clean --force
 
-vboxmanage modifymedium disk "/Users/yjutard/VirtualBox VMs/Ubuntu 16 C/Ubuntu 16 C-disk1.vdi" --compact
+vboxmanage modifymedium disk "/Users/xxx/VirtualBox VMs/Ubuntu 16 C/Ubuntu 16 C-disk1.vdi" --compact
 
 
 
