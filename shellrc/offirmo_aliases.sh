@@ -9,7 +9,7 @@ alias l='ls -CF'
 
 ## mine ;)
 alias x='exit'
-#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
+#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
 
 ## tools
 ## works if installed via umake
@@ -90,7 +90,7 @@ alias mono302='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offir
 alias mono303='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd iframe--chat; ./.tabset mono303'
 alias mono304='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd iframe--loading; ./.tabset mono304'
 alias mono305='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd react-error-boundary; ./.tabset mono305'
-alias mono306='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd view-css; ./.tabset mono306'
+alias mono306='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd ui--browser--css; ./.tabset mono306'
 alias mono307='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd xoff; ./.tabset mono307'
 
 alias mono320='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd async-utils; ./.tabset mono320'
@@ -123,6 +123,7 @@ alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd
 alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/simple-upgradable-template; ./.tabset monoX2'
 
 alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd assets--background--artbreeder; ./.tabset omr01'
+alias omr50='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd ui--browser--css; ./.tabset omr50'
 ##alias omr01='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; git_offirmo.sh; cd definitions; ./.tabset omr01'
 
 alias tbrA01='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; git_offirmo.sh; cd definitions;        ./.tabset tbrA01'

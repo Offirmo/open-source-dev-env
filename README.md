@@ -11,8 +11,8 @@ See also:
 Check that bootstrap will work with:
 ```
 [if ubuntu] sudo apt-get install curl
-curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
+curl -o- https://www.offirmo.net/open-source-dev-env/hello.sh | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 ```
 
 
@@ -29,13 +29,13 @@ Either:
 - type 'git' and accept everyhing asked
 - or/and install xcode and lauch it once (but takes disk space!)
 
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash
          then remove `src` from the spotlight search
 
 
 IF WANTED copy your keys from previous machine here.
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_ssh_keys.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_ssh_keys.sh  | bash
        + if new, add the new keys to github
          - go here https://github.com/settings/keys
          - test it: `ssh -T git@github.com`
@@ -43,20 +43,20 @@ curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ens
 
 
 GIT NEEDED + git ssh keys:
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_basic_tools_installed.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_basic_tools_installed.sh  | bash
    (relaunch terminal here, ensure nvm / npm is working)
    (here install the FiraCode font, TrueType preferred)
    (here type "onn")
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_basic_tools_installed.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_basic_tools_installed.sh  | bash
 
 
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/superuser_ensure_settings.sh  | bash
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_settings.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/superuser_ensure_settings.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_settings.sh  | bash
    (need npm and yarn)
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_settings.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_settings.sh  | bash
 
 
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_common_repos_cloned.sh  | bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_common_repos_cloned.sh  | bash
 
 # Ruby: https://rvm.io/rvm/install
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
@@ -106,7 +106,7 @@ https://www.jetbrains.com/toolbox/app/
 * xcode -> Preferences -> Locations -> Command line tools  https://stackoverflow.com/a/36726612
 
 ### (if needed) Setup the Windows share
-* http://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7
+* https://www.digitalcitizen.life/how-access-ubuntu-shared-folders-windows-7
 ```
 sudo smbpasswd -a sam
 sudo gedit /etc/samba/smb.conf
@@ -185,5 +185,5 @@ ssh -T git@github.com
 ### Ubuntu
 
 ```
-curl -o- http://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
 ```

@@ -7,7 +7,7 @@ echo "# NON root provisioning #"
 echo "#########################"
 
 ## safety
-## http://serverfault.com/a/500778
+## https://serverfault.com/a/500778
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -46,7 +46,7 @@ popd > /dev/null
 
 ## solarized color scheme
 ## https://github.com/altercation/solarized
-## http://ethanschoonover.com/solarized
+## https://ethanschoonover.com/solarized
 pushd ~/work/install > /dev/null
 SOLARIZED_INSTALL_DIR=solarized
 if [[ ! -d ~/work/install/$SOLARIZED_INSTALL_DIR ]]; then
@@ -85,7 +85,7 @@ fi
 popd > /dev/null
 
 ## Comic Neue font
-## http://comicneue.com/
+## https://comicneue.com/
 pushd ~/work/install > /dev/null
 COMICNEUE_INSTALL_DIR=ComicNeue
 if [[ ! -d ~/work/install/COMICNEUE_INSTALL_DIR ]]; then

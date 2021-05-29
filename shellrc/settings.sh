@@ -18,7 +18,7 @@ fi
 
 ## enable color support of ls and also add handy aliases
 if [ "$color_prompt" = yes ]; then
-    ## http://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output/33678?newreg=ead977f7838b41bba240c9e030f4b005
+    ## https://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output/33678?newreg=ead977f7838b41bba240c9e030f4b005
     export CLICOLOR=1
     alias ls='ls -Gp'
 
