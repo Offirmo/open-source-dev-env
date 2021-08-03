@@ -84,6 +84,7 @@ alias mono214='cd ~/work/src/off/offirmo-monorepo/2-foundation; git_offirmo.sh; 
 alias mono219='cd ~/work/src/off/offirmo-monorepo/2-foundation; git_offirmo.sh; cd prettify-any; ./.tabset mono219'
 alias mono220='cd ~/work/src/off/offirmo-monorepo/2-foundation; git_offirmo.sh; cd print-error-to-ansi; ./.tabset mono220'
 alias mono221='cd ~/work/src/off/offirmo-monorepo/2-foundation; git_offirmo.sh; cd ts-types; ./.tabset mono221'
+alias mono222='cd ~/work/src/off/offirmo-monorepo/2-foundation; git_offirmo.sh; cd ts-utils; ./.tabset mono222'
 
 alias mono301='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd favicon-notifications; ./.tabset mono301'
 alias mono302='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd features-detection-browser; ./.tabset mono302'
@@ -91,7 +92,8 @@ alias mono303='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offir
 alias mono304='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd iframe--loading; ./.tabset mono304'
 alias mono305='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd react-error-boundary; ./.tabset mono305'
 alias mono306='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd ui--browser--css; ./.tabset mono306'
-alias mono307='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd xoff; ./.tabset mono307'
+alias mono307='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd storybook--utils; ./.tabset mono307'
+alias mono310='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd xoff; ./.tabset mono310'
 
 alias mono320='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd async-utils; ./.tabset mono320'
 alias mono321='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd normalize-string; ./.tabset mono321'
@@ -150,6 +152,8 @@ alias tbrA52='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; gi
 alias tbrA53='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; git_offirmo.sh; cd audio-browser;      ./.tabset tbrA53'
 alias tbrA60='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state;              ./.tabset tbrA60'
 alias tbrAC1='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; git_offirmo.sh; cd interfaces;         ./.tabset tbrAC1'
+
+alias icA01='cd ~/work/src/off/offirmo-monorepo/A-apps--core/isekai-capitalist; git_offirmo.sh; cd sandbox;          ./.tabset icA01'
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/B-apps--support/online-adventur.es; git_offirmo.sh; cd db-migrations; ./.tabset monodbm'
 alias monodb='cd ~/work/src/off/offirmo-monorepo/B-apps--support/online-adventur.es; git_offirmo.sh; cd db;             ./.tabset monodb'
