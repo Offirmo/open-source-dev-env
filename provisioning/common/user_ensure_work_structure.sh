@@ -38,25 +38,24 @@ mkdir -p ~/work/tmp
 
 ###### profiles #######
 
-if [ ! -f ~/.profile ]; then
-	echo "echo \"* hello from: .profile\"" > ~/.profile
-fi
-echo "" >> ~/.profile
-echo "source ~/work/src/off/open-source-dev-env/bin/load_shellrc.sh" >> ~/.profile
-
-if [ ! -f ~/.bashrc ]; then
-	echo "echo \"* hello from: .bashrc\"" > ~/.bashrc
-	## https://docs.reactioncommerce.com/docs/requirements
-	echo "ulimit -n 65536 65536" >> ~/.bashrc
-fi
+## bash
 if [ ! -f ~/.bash_profile ]; then
 	echo "echo \"* hello from: .bash_profile\"" > ~/.bash_profile
 	echo "" >> ~/.bash_profile
 	echo "if [ -f ~/.profile ]; then . ~/.profile; fi" >> ~/.bash_profile
 	echo "if [ -f ~/.bashrc ]; then . ~/.bashrc; fi" >> ~/.bash_profile
 fi
+if [ ! -f ~/.bashrc ]; then
+	echo "echo \"* hello from: .bashrc\"" > ~/.bashrc
 
-
+fi
 if [ ! -f ~/.bash_logout ]; then
 	echo "echo \"* hello from: .bash_logout\"" > ~/.bash_logout
 fi
+
+
+if [ ! -f ~/.profile ]; then
+	echo "echo \"* hello from: .profile\"" > ~/.profile
+fi
+echo "" >> ~/.profile
+echo "source ~/work/src/off/open-source-dev-env/bin/load_shellrc.sh" >> ~/.profile

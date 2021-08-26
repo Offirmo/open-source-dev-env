@@ -26,7 +26,8 @@ echo "  - PATH          = $PATH"
 
 ############ Node ############
 ## NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash -s stable
+## https://github.com/nvm-sh/nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash -s stable
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'

@@ -14,17 +14,21 @@ echo "  - whoami        = `whoami`"
 echo "  - pwd           = `pwd`"
 
 ## generate if missing
-if [ ! -f ~/.ssh/id_rsa.pub ]; then
-	ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com"
+## 100 rounds: https://crypto.stackexchange.com/a/40902
+if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
+	ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 fi
+#if [ ! -f ~/.ssh/id_rsa.pub ]; then
+#	ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com" -f ~/.ssh/id_rsa_foo
+#fi
 
 ## fix permissions
 ## https://gist.github.com/grenade/6318301
 chmod 700 ~/.ssh
+## strict default (for private keys)
+chmod 600 ~/.ssh/*
+## less strict for non-private
+chmod 644 ~/.ssh/*.pub
 chmod 644 ~/.ssh/config
-chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/id_rsa_offirmo
-chmod 644 ~/.ssh/id_rsa_offirmo.pub
 chmod 644 ~/.ssh/known_hosts
 [ -f ~/.ssh/authorized_keys ] && chmod 644 ~/.ssh/authorized_keys
