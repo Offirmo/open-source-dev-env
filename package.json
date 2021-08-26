@@ -1,5 +1,5 @@
 {
-	"license": "UNLICENSE",
+	"license": "Unlicense",
 	"scripts": {
 		"provision--01": "sudo ./provisioning/common/superuser_ensure_work_structure.sh",
 		"provision--02":      "./provisioning/common/user_ensure_work_structure.sh",

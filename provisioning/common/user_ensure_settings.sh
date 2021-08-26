@@ -73,7 +73,7 @@ git config --global interactive.diffFilter "delta --color-only"
 npm config set init-author-email offirmo.net@gmail.com
 npm config set init-author-name Offirmo
 npm config set init-author-url https://www.offirmo.net
-npm config set init-license UNLICENSED
+npm config set init-license Unlicense
 npm config set init-version 0.0.1
 
 
@@ -81,7 +81,7 @@ npm config set init-version 0.0.1
 ## https://yarnpkg.com/en/docs/cli/config
 # TODO check if inherited from npm ? maybe not if config in alternate place
 yarn config set color always
-yarn config set init-license UNLICENSED
+yarn config set init-license Unlicense
 yarn config set init-version 0.0.1
 
 echo "* all done."

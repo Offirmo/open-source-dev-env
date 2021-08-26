@@ -29,14 +29,12 @@ alias gitc='gitc.sh'
 ## JS
 alias tpx='rm -rf .awcache node_modules .npm npm-debug.log yarn-error.log yarn.lock .yalc bower_components typings'
 #alias p='puer --no-launch --port 1981'
-alias p='puer --no-launch --port 1981 --allow-cors'
+#alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt'
-# mocha netlify-cli puer
-# yarn diff-so-fancy @atlassian/volt
-#alias onn='volta install bolt iterm2-tab-set cordova heroku'
+# yarn diff-so-fancy
 
 ## projects
 alias off='cd ~/work/src/off; git_offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'

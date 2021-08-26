@@ -39,6 +39,3 @@ ulimit -n 65536 65536
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
 fi
-
-## disable sentry and other stuff
-export OFFIRMO_IS_HERE=1

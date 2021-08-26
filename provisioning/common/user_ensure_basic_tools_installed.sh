@@ -108,6 +108,14 @@ else
 fi
 popd > /dev/null
 
+
+### MISC ###
+echo "* misc…"
+
+## seems to be used by "virtualenv"
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
+
 ## Offline doc TODO
 ## devdocs
 #git clone https://github.com/Thibaut/devdocs.git && cd devdocs
