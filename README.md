@@ -21,6 +21,11 @@ curl -o- https://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 ### macOS
 
 ```
+Bash as default:
+https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/
+cat /etc/shells  <-- check if /bin/bash is present
+chsh -s /bin/bash
+
 show hidden files:
 - temp Apple + shift + . https://apple.stackexchange.com/a/340543
 - définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
@@ -64,10 +69,7 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_en
 ```
 
 ### Ubuntu
-
-```
-TODO (re)
-```
+(no longer using)
 
 
 ## Maintain
@@ -78,16 +80,8 @@ TODO (re)
 `bin/user_clean.sh`
 
 ```bash
-brew update
-brew upgrade
-brew doctor
 
-pip install --upgrade pip
 
-rvm get stable
-
-docker system prune --all
-docker volume prune
 ```
 
 ### Cleanup git repo:

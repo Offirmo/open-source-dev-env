@@ -5,6 +5,7 @@
 ## brew
 brew upgrade
 brew update
+brew doctor
 
 ## Python
 pip install --upgrade pip
@@ -12,3 +13,5 @@ pip install --upgrade pip
 nvm install 'lts/*'
 #onn
 #avn setup
+
+#rvm get stable

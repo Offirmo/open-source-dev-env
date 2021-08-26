@@ -28,23 +28,30 @@ echo "  - PATH          = $PATH"
 
 ## Brew
 ## https://brew.sh/
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
+
+brew cask install sizeup keepassx xnviewmp
+
 brew cask install visual-studio-code
 
 brew install git-cola git-delta
 
 brew cask install iterm2
 
-brew cask adobe-acrobat-reader station
+brew cask adobe-acrobat-reader
+
+brew cask steam
 
 ## disabled: virtualbox dropbox
 
-## https://github.com/be5invis/Iosevka
+## fonts
 brew tap homebrew/cask-fonts
+## https://github.com/be5invis/Iosevka
 brew cask install font-iosevka
+brew cask install font-fira-code
 
 ## https://iterm2.com/documentation-shell-integration.html
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
@@ -54,3 +61,13 @@ curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration
 ## TODO check if they are working / worth it
 #brew cask install qlcolorcode qlstephen webpquicklook
 #brew uninstall qlcolorcode qlstephen webpquicklook
+
+
+## ruby
+## https://rvm.io/rvm/install
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+## python
+brew cask install pyenv
+pyenv install 3.9.6
+pyenv global 3.9.6
