@@ -14,6 +14,7 @@ export LC_ALL=en_US.UTF-8
 
 ## debug informations
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -41,3 +42,5 @@ sudo add-apt-repository -y ppa:bitcoin/bitcoin
 ## prepare further installations
 sudo apt update
 sudo apt upgrade --yes
+
+echo "* all done."

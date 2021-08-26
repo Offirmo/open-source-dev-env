@@ -7,7 +7,9 @@ echo "# root provisioning #"
 echo "#####################"
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -23,3 +25,5 @@ echo "  - PATH          = $PATH"
 mkdir -p /work
 mkdir -p /work/bin
 mkdir -p /work/install
+
+echo "* all done."

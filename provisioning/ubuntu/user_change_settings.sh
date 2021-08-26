@@ -14,6 +14,7 @@ export LC_ALL=en_US.UTF-8
 
 ## debug informations
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -28,3 +29,5 @@ echo "  - PATH          = $PATH"
 ############ Ubuntu settings ############
 gsettings set org.gtk.Settings.FileChooser show-hidden true
 gsettings set com.canonical.Unity always-show-menus true
+
+echo "* all done."

@@ -7,7 +7,9 @@ echo "# NON root provisioning #"
 echo "#########################"
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -35,3 +37,5 @@ echo ".DS_Store" >> ~/.gitignore
 
 ############ Tools settings ############
 echo "test -e \"${HOME}/.iterm2_shell_integration.bash\" && source \"${HOME}/.iterm2_shell_integration.bash\"" >> ~/.profile
+
+echo "* all done."

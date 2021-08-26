@@ -12,3 +12,5 @@ sudo apt-get install --fix-broken
 sudo apt-get -y autoclean
 sudo apt-get -y clean
 sudo apt-get -y autoremove --purge
+
+echo "* all done."

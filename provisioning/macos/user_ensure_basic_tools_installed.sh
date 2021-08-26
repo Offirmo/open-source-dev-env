@@ -13,7 +13,9 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -71,3 +73,5 @@ curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration
 brew cask install pyenv
 pyenv install 3.9.6
 pyenv global 3.9.6
+
+echo "* all done."

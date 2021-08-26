@@ -14,6 +14,7 @@ export LC_ALL=en_US.UTF-8
 
 ## debug informations
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -55,3 +56,5 @@ sudo apt install -y  libssl-dev
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #sudo dpkg -i google-chrome-stable_current_amd64.deb
 #rm google-chrome-stable_current_amd64.deb
+
+echo "* all done."

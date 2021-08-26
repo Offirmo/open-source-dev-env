@@ -8,7 +8,9 @@ See also:
 
 
 ## Test
+
 Check that bootstrap will work with:
+
 ```
 [if ubuntu] sudo apt-get install curl
 curl -o- https://www.offirmo.net/open-source-dev-env/hello.sh | bash
@@ -21,7 +23,7 @@ curl -o- https://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 ### macOS
 
 ```
-Bash as default:
+Set bash as default:
 https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/
 cat /etc/shells  <-- check if /bin/bash is present
 chsh -s /bin/bash
@@ -31,8 +33,8 @@ show hidden files:
 - définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
 
 Either:
-- type 'git' and accept everyhing asked
-- or/and install xcode and lauch it once (but takes disk space!)
+- type 'git' and accept everything asked
+- or/and install xcode and lauch it once (but takes time & lot of disk space!)
 
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/superuser_ensure_work_structure.sh  | sudo bash
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_work_structure.sh  | bash

@@ -7,7 +7,9 @@ echo "# NON root provisioning #"
 echo "#########################"
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -16,10 +18,23 @@ echo "  - pwd           = `pwd`"
 ## generate if missing
 mkdir -p ~/.ssh
 
+if [ ! -f ~/.ssh/config ]; then
+	echo "" >> ~/.ssh/config
+fi
+
+if [ ! -f ~/.ssh/known_hosts ]; then
+	echo "" >> ~/.ssh/known_hosts
+fi
+
+if [ ! -f ~/.ssh/authorized_keys ]; then
+	echo "" >> ~/.ssh/authorized_keys
+fi
+
 ## 100 rounds: https://crypto.stackexchange.com/a/40902
 if [ ! -f ~/.ssh/id_ed25519.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "$USER"
 fi
+
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 fi
@@ -36,4 +51,6 @@ chmod 600 ~/.ssh/*
 chmod 644 ~/.ssh/*.pub
 chmod 644 ~/.ssh/config
 chmod 644 ~/.ssh/known_hosts
-[ -f ~/.ssh/authorized_keys ] && chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/authorized_keys
+
+echo "* all done."

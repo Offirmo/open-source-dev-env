@@ -7,7 +7,9 @@ echo "# NON root provisioning #"
 echo "#########################"
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -81,3 +83,5 @@ npm config set init-version 0.0.1
 yarn config set color always
 yarn config set init-license UNLICENSED
 yarn config set init-version 0.0.1
+
+echo "* all done."

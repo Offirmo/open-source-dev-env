@@ -14,6 +14,7 @@ export LC_ALL=en_US.UTF-8
 
 ## debug informations
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -56,3 +57,5 @@ sudo apt install -y  jq curl vim nano
 ## for extensions
 sudo apt install -y  linux-headers-$(uname -r)
 sudo apt install -y dkms
+
+echo "* all done."

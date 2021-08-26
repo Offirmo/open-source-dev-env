@@ -13,7 +13,9 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -27,6 +29,7 @@ echo "  - PATH          = $PATH"
 ############ Node ############
 ## NVM
 ## https://github.com/nvm-sh/nvm
+echo "* installing nvm…"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash -s stable
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
@@ -34,16 +37,23 @@ nvm alias default 'lts/*'
 
 
 ############ Offirmo shared scripts ############
+echo "* checkout ODE repo…"
 mkdir -p ~/work/src/off
 pushd ~/work/src/off > /dev/null
-if [[ ! -d open-source-dev-env ]]; then
+ODE_INSTALL_DIR=solarized
+if [[ ! -d $ODE_INSTALL_DIR ]]; then
     git clone --recursive git@github.com:Offirmo/open-source-dev-env.git
     echo "source ~/work/src/off/open-source-dev-env/bin/load_shellrc.sh" >> ~/.bashrc
+else
+    cd $ODE_INSTALL_DIR
+    git fetch
+    git pull
 fi
 popd > /dev/null
 
 
 ############ misc ############
+echo "* downloading some stuff…"
 
 ## solarized color scheme
 ## https://github.com/altercation/solarized
@@ -103,3 +113,5 @@ popd > /dev/null
 #git clone https://github.com/Thibaut/devdocs.git && cd devdocs
 ## reactive extensions
 ## CSS
+
+echo "* all done."

@@ -7,7 +7,9 @@ echo "# NON root provisioning #"
 echo "#########################"
 
 ## debug informations
+echo "* revision = circa 2021"
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -49,3 +51,5 @@ echo "  - PATH          = $PATH"
 ## https://github.com/online-adventures
 #~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:online-adventures/online-adventures.github.io.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/online-adventures/online-adventures.github.io.git
+
+echo "* all done."

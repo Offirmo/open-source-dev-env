@@ -14,6 +14,7 @@ export LC_ALL=en_US.UTF-8
 
 ## debug informations
 echo "* start ENV"
+echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
 echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
@@ -59,3 +60,5 @@ popd > /dev/null
 
 ############ TOSORT ############
 #umake ide webstorm
+
+echo "* all done."
