@@ -35,6 +35,7 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_en
 
 
 IF WANTED copy your keys from previous machine here.
+If not found, some will be generated:
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_ssh_keys.sh  | bash
        + if new, add the new keys to github
          - go here https://github.com/settings/keys
@@ -74,6 +75,7 @@ TODO (re)
 ### macos
 
 `bin/user_update.sh`
+`bin/user_clean.sh`
 
 ```bash
 brew update
@@ -86,6 +88,14 @@ rvm get stable
 
 docker system prune --all
 docker volume prune
+```
+
+### Cleanup git repo:
+
+```bash
+git remote prune origin
+git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+git gc
 ```
 
 ### If missing, add a debug line to shellrc existing files
@@ -142,16 +152,17 @@ In `.ssh/config`:
 Host offirmo.github.com
    HostName github.com
    User git
-   IdentityFile ~/.ssh/id_rsa_offirmo
+   IdentityFile ~/.ssh/id_ed25519_offirmo
    IdentitiesOnly yes
 
 Host xyz.github.com
    HostName xyz.github.com
    User git
-   IdentityFile ~/.ssh/id_rsa
+   IdentityFile ~/.ssh/id_ed25519
    IdentitiesOnly yes
 ```
 
+In git configs:
 ```
 [remote "origin"]
 	url = git@offirmo.github.com:Offirmo/offirmo-monorepo.git

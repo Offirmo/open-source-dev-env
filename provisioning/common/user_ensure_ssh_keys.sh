@@ -15,14 +15,17 @@ echo "  - pwd           = `pwd`"
 
 ## generate if missing
 ## 100 rounds: https://crypto.stackexchange.com/a/40902
+if [ ! -f ~/.ssh/id_ed25519.pub ]; then
+	ssh-keygen -a 100 -t ed25519 -C "$USER"
+fi
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
-	ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
+	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 fi
 #if [ ! -f ~/.ssh/id_rsa.pub ]; then
 #	ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com" -f ~/.ssh/id_rsa_foo
 #fi
 
-## fix permissions
+## ensure correct permissions
 ## https://gist.github.com/grenade/6318301
 chmod 700 ~/.ssh
 ## strict default (for private keys)
