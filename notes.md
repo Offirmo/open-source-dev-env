@@ -1,4 +1,11 @@
 
+TODO
+- HOWTO generate SSH keys
+
+
+
+
+
 ## To copy
 * https://github.com/tregagnon/dotfiles
 * https://github.com/camwiegert/dotfiles

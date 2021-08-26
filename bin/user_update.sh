@@ -2,7 +2,9 @@
 
 ############ updates ############
 
-brew update
+## brew
 brew upgrade
+brew update
 
+## Python
 pip install --upgrade pip
