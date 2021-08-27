@@ -1,0 +1,35 @@
+[push]
+	default = simple
+[color]
+	ui = auto
+[core]
+	excludesfile = /Users/yjutard/.gitignore
+	pager = delta --theme='Solarized (light)'
+[cola]
+	spellcheck = false
+	fontdiff = Fira Code,13,-1,5,50,0,0,0,0,0
+	tabwidth = 3
+	textwidth = 92
+	maxrecent = 17
+[gui]
+	editor = gvim
+[user]
+	email = offirmo.net@gmail.com
+	name = Offirmo
+[core "interactive"]
+	diffFilter = delta --color-only
+[interactive]
+	diffFilter = delta --color-only
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/yjutard/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/yjutard/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

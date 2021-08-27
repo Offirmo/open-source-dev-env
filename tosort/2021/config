@@ -1,0 +1,279 @@
+# vi: ft=sshconfig
+
+##
+## Place your local overrides here.
+##
+## Configuration placed in this file has precedence over everything else
+## so most local defaults should be placed in `100.defaults` instead.
+##
+
+Host offirmo.github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_offirmo
+   IdentitiesOnly yes
+
+Host yjutard.github.com
+   HostName yjutard.github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa
+   IdentitiesOnly yes
+
+
+## Copy to or merge with ~/.ssh/config
+## For more information, see: https://sdog.jira.com/wiki/display/JST/SSH+Config+File
+
+ServerAliveInterval 300
+
+# Proxy command
+Host *.jira.com *.jira-dev.com *.atlassian.net
+    User root
+    ProxyCommand nohup ssh -Ax jump-101-1-internal.$(dig -x $(dig %h +short) +short | cut -d. -f2).uc-inf.net.internal nc %h.internal %p
+
+# Your own dev instance on Unicorn
+Host unicorn
+    User root
+    ProxyCommand ssh -A -C jump-101-1-internal.sc2.uc-inf.net.internal nc ${USER}.jira-dev.com.internal 22
+    StrictHostKeyChecking no
+
+# Managers in dev2
+Host manager-0.dev2.uc-inf.net man0-dev2 manager-0.dev2
+    Hostname manager-0.dev2.uc-inf.net
+    ForwardAgent yes
+Host manager-1.dev2.uc-inf.net man1-dev2 manager-1.dev2
+    Hostname manager-1.dev2.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in dev2
+Host jump-101-1-internal.dev2.uc-inf.net.internal jump1-dev2 jump1-dev2.uc-inf.net jump-101-1.dev2 jump-101-1.dev2.uc-inf.net
+    Hostname jump-101-1-internal.dev2.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.dev2.uc-inf.net.internal jump2-dev2 jump2-dev2.uc-inf.net jump-102-1.dev2 jump-102-1.dev2.uc-inf.net
+    Hostname jump-102-1-internal.dev2.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in dev2
+Host *.dev2.uc-inf.net.internal !jump-*-internal.dev2.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.dev2.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in sc2
+Host manager-0.sc2.uc-inf.net man0-sc2 manager-0.sc2
+    Hostname manager-0.sc2.uc-inf.net
+    ForwardAgent yes
+Host manager-1.sc2.uc-inf.net man1-sc2 manager-1.sc2
+    Hostname manager-1.sc2.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in sc2
+Host jump-101-1-internal.sc2.uc-inf.net.internal jump1-sc2 jump1-sc2.uc-inf.net jump-101-1.sc2 jump-101-1.sc2.uc-inf.net
+    Hostname jump-101-1-internal.sc2.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.sc2.uc-inf.net.internal jump2-sc2 jump2-sc2.uc-inf.net jump-102-1.sc2 jump-102-1.sc2.uc-inf.net
+    Hostname jump-102-1-internal.sc2.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in sc2
+Host *.sc2.uc-inf.net.internal !jump-*-internal.sc2.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.sc2.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in sc1
+Host manager-0.sc1.uc-inf.net man0-sc1 manager-0.sc1
+    Hostname manager-0.sc1.uc-inf.net
+    ForwardAgent yes
+Host manager-1.sc1.uc-inf.net man1-sc1 manager-1.sc1
+    Hostname manager-1.sc1.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in sc1
+Host jump-101-1-internal.sc1.uc-inf.net.internal jump1-sc1 jump1-sc1.uc-inf.net jump-101-1.sc1 jump-101-1.sc1.uc-inf.net
+    Hostname jump-101-1-internal.sc1.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.sc1.uc-inf.net.internal jump2-sc1 jump2-sc1.uc-inf.net jump-102-1.sc1 jump-102-1.sc1.uc-inf.net
+    Hostname jump-102-1-internal.sc1.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in sc1
+Host *.sc1.uc-inf.net.internal !jump-*-internal.sc1.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.sc1.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in sc3
+Host manager-0.sc3.uc-inf.net man0-sc3 manager-0.sc3
+    Hostname manager-0.sc3.uc-inf.net
+    ForwardAgent yes
+Host manager-1.sc3.uc-inf.net man1-sc3 manager-1.sc3
+    Hostname manager-1.sc3.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in sc3
+Host jump-101-1-internal.sc3.uc-inf.net.internal jump1-sc3 jump1-sc3.uc-inf.net jump-101-1.sc3 jump-101-1.sc3.uc-inf.net
+    Hostname jump-101-1-internal.sc3.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.sc3.uc-inf.net.internal jump2-sc3 jump2-sc3.uc-inf.net jump-102-1.sc3 jump-102-1.sc3.uc-inf.net
+    Hostname jump-102-1-internal.sc3.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in sc3
+Host *.sc3.uc-inf.net.internal !jump-*-internal.sc3.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.sc3.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in sm1
+Host manager-0.sm1.uc-inf.net man0-sm1 manager-0.sm1
+    Hostname manager-0.sm1.uc-inf.net
+    ForwardAgent yes
+Host manager-1.sm1.uc-inf.net man1-sm1 manager-1.sm1
+    Hostname manager-1.sm1.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in sm1
+Host jump-101-1-internal.sm1.uc-inf.net.internal jump1-sm1 jump1-sm1.uc-inf.net jump-101-1.sm1 jump-101-1.sm1.uc-inf.net
+    Hostname jump-101-1-internal.sm1.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.sm1.uc-inf.net.internal jump2-sm1 jump2-sm1.uc-inf.net jump-102-1.sm1 jump-102-1.sm1.uc-inf.net
+    Hostname jump-102-1-internal.sm1.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in sm1
+Host *.sm1.uc-inf.net.internal !jump-*-internal.sm1.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.sm1.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in sm3
+Host manager-0.sm3.uc-inf.net man0-sm3 manager-0.sm3
+    Hostname manager-0.sm3.uc-inf.net
+    ForwardAgent yes
+Host manager-1.sm3.uc-inf.net man1-sm3 manager-1.sm3
+    Hostname manager-1.sm3.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in sm3
+Host jump-101-1-internal.sm3.uc-inf.net.internal jump1-sm3 jump1-sm3.uc-inf.net jump-101-1.sm3 jump-101-1.sm3.uc-inf.net
+    Hostname jump-101-1-internal.sm3.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.sm3.uc-inf.net.internal jump2-sm3 jump2-sm3.uc-inf.net jump-102-1.sm3 jump-102-1.sm3.uc-inf.net
+    Hostname jump-102-1-internal.sm3.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in sm3
+Host *.sm3.uc-inf.net.internal !jump-*-internal.sm3.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.sm3.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in ash2
+Host manager-0.ash2.uc-inf.net man0-ash2 manager-0.ash2
+    Hostname manager-0.ash2.uc-inf.net
+    ForwardAgent yes
+Host manager-1.ash2.uc-inf.net man1-ash2 manager-1.ash2
+    Hostname manager-1.ash2.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in ash2
+Host jump-101-1-internal.ash2.uc-inf.net.internal jump1-ash2 jump1-ash2.uc-inf.net jump-101-1.ash2 jump-101-1.ash2.uc-inf.net
+    Hostname jump-101-1-internal.ash2.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.ash2.uc-inf.net.internal jump2-ash2 jump2-ash2.uc-inf.net jump-102-1.ash2 jump-102-1.ash2.uc-inf.net
+    Hostname jump-102-1-internal.ash2.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in ash2
+Host *.ash2.uc-inf.net.internal !jump-*-internal.ash2.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.ash2.uc-inf.net.internal nc %h %p
+    User root
+
+# Managers in ash3
+Host manager-0.ash3.uc-inf.net man0-ash3 manager-0.ash3
+    Hostname manager-0.ash3.uc-inf.net
+    ForwardAgent yes
+Host manager-1.ash3.uc-inf.net man1-ash3 manager-1.ash3
+    Hostname manager-1.ash3.uc-inf.net
+    ForwardAgent yes
+
+# Jumphosts in ash3
+Host jump-101-1-internal.ash3.uc-inf.net.internal jump1-ash3 jump1-ash3.uc-inf.net jump-101-1.ash3 jump-101-1.ash3.uc-inf.net
+    Hostname jump-101-1-internal.ash3.uc-inf.net.internal
+    ForwardAgent yes
+Host jump-102-1-internal.ash3.uc-inf.net.internal jump2-ash3 jump2-ash3.uc-inf.net jump-102-1.ash3 jump-102-1.ash3.uc-inf.net
+    Hostname jump-102-1-internal.ash3.uc-inf.net.internal
+    ForwardAgent yes
+
+# Infrastructure instances in ash3
+Host *.ash3.uc-inf.net.internal !jump-*-internal.ash3.uc-inf.net.internal
+    ProxyCommand ssh -A -C jump-101-1-internal.ash3.uc-inf.net.internal nc %h %p
+    User root
+
+# All instances - enable multiplexing to minimize Duo prompts
+Host *.internal *.uc-inf.net
+    ControlMaster auto
+    ControlPersist 3600
+    ControlPath ~/.ssh/%r@%h:%p
+
+# Minimal set of configuration for Micros jumpboxes
+# Watch https://sdog.jira.com/browse/MICROS-1617 for named login to instances
+#
+# For help - our docs are at
+# https://extranet.atlassian.com/pages/viewpage.action?pageId=2439774230
+# https://extranet.atlassian.com/display/MDEV/Jumpboxes
+
+
+## Development
+Host ddev
+    Hostname jumpbox.ap-southeast-2.dev.paas-inf.net
+Host pdev
+    Hostname jumpbox--platform.ap-southeast-2.dev.paas-inf.net
+Host adev
+    Hostname jumpbox--app.ap-southeast-2.dev.paas-inf.net
+Host adev-west2
+    Hostname jumpbox--app.us-west-2.dev.paas-inf.net
+Host dev-west2
+    Hostname jumpbox.us-west-2.dev.paas-inf.net
+
+
+## Production
+Host prod-east
+    Hostname jumpbox.us-east-1.prod.paas-inf.net
+Host prod-west
+    Hostname jumpbox.us-west-1.prod.paas-inf.net
+Host prod-west2
+    Hostname jumpbox.us-west-2.prod.paas-inf.net
+Host prod-euwest
+    Hostname jumpbox.eu-west-1.prod.paas-inf.net
+Host prod-euwest-beta
+    Hostname jumpbox.eu-west-1-beta.prod.paas-inf.net
+
+
+## Staging
+Host stg-east
+    Hostname jumpbox.us-east-1.staging.paas-inf.net
+Host stg-euwest
+    Hostname jumpbox.eu-west-1.staging.paas-inf.net
+Host stg-euwest-beta
+    Hostname jumpbox.eu-west-1-beta.staging.paas-inf.net
+Host stg-west
+    Hostname jumpbox.us-west-1.staging.paas-inf.net
+Host stg-west2
+    Hostname jumpbox.us-west-2.staging.paas-inf.net
+
+
+Host *.paas-inf.net
+    ServerAliveInterval 30
+    ServerAliveCountMax 120
+    ForwardAgent no
+    Compression yes
+    ControlMaster auto
+    ControlPath ~/.ssh/%r@%h:%p
+    ControlPersist 3600
+
+# vi: ft=sshconfig
+
+##
+## Place generic *defaults* here. It's ok to use wildcards because
+## any earlier matches will take precedence.
+##
+
+# Atlassian username != local username
+#Host *
+#    User flastname
+
