@@ -45,9 +45,9 @@ brew install git-cola git-delta
 
 brew install --cask iterm2
 
-brew cask adobe-acrobat-reader
+brew install --cask adobe-acrobat-reader
 
-brew cask steam
+brew install --cask steam
 
 ## disabled: virtualbox dropbox
 
