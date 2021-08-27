@@ -1,0 +1,1635 @@
+https-strict: * true
+https-strict: behind-the-scene false
+https-strict: computerhistory.org false
+https-strict: macbidouille.com false
+matrix-off: about-scheme true
+matrix-off: aidtochurch.org true
+matrix-off: airbnb.com.au true
+matrix-off: airfrance.com true
+matrix-off: airfrance.com.au true
+matrix-off: aleteia.org true
+matrix-off: allianz.fr true
+matrix-off: amplitude.com true
+matrix-off: amundi-ee.com true
+matrix-off: athena.com.au true
+matrix-off: atl-paas.net true
+matrix-off: atlassian.com true
+matrix-off: atlassian.net true
+matrix-off: auspost.com.au true
+matrix-off: axa.fr true
+matrix-off: babyvillage.com.au true
+matrix-off: beforeyoubid.com.au true
+matrix-off: behind-the-scene true
+matrix-off: benevity.org true
+matrix-off: bitbucket.org true
+matrix-off: capeasi.com true
+matrix-off: carnextdoor.com.au true
+matrix-off: centrify.com true
+matrix-off: chrome-extension-scheme true
+matrix-off: chrome-scheme true
+matrix-off: chrome.com true
+matrix-off: cliniko.com true
+matrix-off: codepen.io true
+matrix-off: codetinkerer.com true
+matrix-off: creditmutuel-epargnesalariale.fr true
+matrix-off: diagrams.net true
+matrix-off: digitalalchemy.net.au true
+matrix-off: disqus.com true
+matrix-off: docusign.net true
+matrix-off: dropbox.com true
+matrix-off: el-artista.herokuapp.com true
+matrix-off: eventbrite.com.au true
+matrix-off: file-scheme true
+matrix-off: fortuneo.fr true
+matrix-off: getclockwise.com true
+matrix-off: getlytics.com true
+matrix-off: githistory.xyz true
+matrix-off: glassdoor.com.au true
+matrix-off: google.com true
+matrix-off: gumroad.com true
+matrix-off: hackerrank.com true
+matrix-off: hellofresh.com.au true
+matrix-off: heroku.com true
+matrix-off: howwasqantas.com true
+matrix-off: humblebundle.com true
+matrix-off: icloud.com true
+matrix-off: idaptive.app true
+matrix-off: immi.gov.au true
+matrix-off: indiehackers.com true
+matrix-off: ing.fr true
+matrix-off: intoli.com true
+matrix-off: jakebresnehan.com true
+matrix-off: jetstar.com true
+matrix-off: jetstarholidays.com.au true
+matrix-off: jira-dev.com true
+matrix-off: kinedu.com true
+matrix-off: kotaku.com true
+matrix-off: launchdarkly.com true
+matrix-off: leafletjs.com true
+matrix-off: leekspin.com true
+matrix-off: lever.co true
+matrix-off: list-manage.com true
+matrix-off: litmus.com true
+matrix-off: localhost true
+matrix-off: lydia-app.com true
+matrix-off: lytics.io true
+matrix-off: marvel.com true
+matrix-off: moz-extension-scheme true
+matrix-off: mozilla.org true
+matrix-off: munrocket.github.io true
+matrix-off: mural.co true
+matrix-off: nasa.gov true
+matrix-off: newbook.cloud true
+matrix-off: ngrok.com true
+matrix-off: nsw.gov.au true
+matrix-off: offirmo-monorepo.netlify.app true
+matrix-off: offirmo.net true
+matrix-off: online-adventur.es true
+matrix-off: opera-scheme true
+matrix-off: opsgeni.us true
+matrix-off: osb.pf true
+matrix-off: paywithpoli.com true
+matrix-off: peoplepulse.com.au true
+matrix-off: philandteds.com true
+matrix-off: qantas.com true
+matrix-off: renderforest.com true
+matrix-off: responsinator.com true
+matrix-off: service-public.fr true
+matrix-off: skype.com true
+matrix-off: spatial.io true
+matrix-off: stoneraise.com true
+matrix-off: stonerealestate.com.au true
+matrix-off: stpatschurchhill.org true
+matrix-off: surveymonkey.com true
+matrix-off: swoogo.com true
+matrix-off: sydneylivingmuseums.com.au true
+matrix-off: sydneymetro.info true
+matrix-off: touchtechpayments.com true
+matrix-off: transferwise.com true
+matrix-off: trellis.coffee true
+matrix-off: trello.com true
+matrix-off: unity.com true
+matrix-off: vente-privee.com true
+matrix-off: victordibia.github.io true
+matrix-off: vivaldi-scheme true
+matrix-off: wanakakiwiholidaypark.nz true
+matrix-off: washingtonpost.com true
+matrix-off: webdirections.org true
+matrix-off: whoishorsejs.com true
+matrix-off: woolworths.com.au true
+matrix-off: wyciwyg-scheme true
+matrix-off: yargs.js.org true
+noscript-spoof: 9gag.com false
+noscript-spoof: aidtochurch.org false
+noscript-spoof: airbnb.com.au false
+noscript-spoof: airfrance.com false
+noscript-spoof: airfrance.com.au false
+noscript-spoof: allianz.fr false
+noscript-spoof: athena.com.au false
+noscript-spoof: atl-paas.net false
+noscript-spoof: atlassian.com false
+noscript-spoof: atlassian.net false
+noscript-spoof: auspost.com.au false
+noscript-spoof: barradeau.com false
+noscript-spoof: beforeyoubid.com.au false
+noscript-spoof: benevity.org false
+noscript-spoof: bitbucket.org false
+noscript-spoof: centrify.com false
+noscript-spoof: cliniko.com false
+noscript-spoof: codepen.io false
+noscript-spoof: cssanimation.rocks false
+noscript-spoof: disqus.com false
+noscript-spoof: docusign.net false
+noscript-spoof: dropbox.com false
+noscript-spoof: eventbrite.com.au false
+noscript-spoof: forevergreenmontessori.com.au false
+noscript-spoof: fortuneo.fr false
+noscript-spoof: francetvinfo.fr false
+noscript-spoof: ganttpro.com false
+noscript-spoof: getclockwise.com false
+noscript-spoof: getlytics.com false
+noscript-spoof: github.com false
+noscript-spoof: goget.com.au false
+noscript-spoof: google.com false
+noscript-spoof: gumroad.com false
+noscript-spoof: hackerrank.com false
+noscript-spoof: hellofresh.com.au false
+noscript-spoof: humblebundle.com false
+noscript-spoof: icloud.com false
+noscript-spoof: indiehackers.com false
+noscript-spoof: ing.fr false
+noscript-spoof: intoli.com false
+noscript-spoof: jakebresnehan.com false
+noscript-spoof: jetstar.com false
+noscript-spoof: jetstarholidays.com.au false
+noscript-spoof: jira-dev.com false
+noscript-spoof: jsfiddle.net false
+noscript-spoof: kapwing.com false
+noscript-spoof: knowyourmeme.com false
+noscript-spoof: kotaku.com false
+noscript-spoof: leekspin.com false
+noscript-spoof: list-manage.com false
+noscript-spoof: litmus.com false
+noscript-spoof: mossburncountrypark.co.nz false
+noscript-spoof: mozilla.org false
+noscript-spoof: mural.co false
+noscript-spoof: myabsorb.com false
+noscript-spoof: nasa.gov false
+noscript-spoof: npmjs.com false
+noscript-spoof: nsw.gov.au false
+noscript-spoof: offirmo-monorepo.netlify.com false
+noscript-spoof: online-adventur.es false
+noscript-spoof: osb.pf false
+noscript-spoof: outline.com false
+noscript-spoof: paywithpoli.com false
+noscript-spoof: peoplepulse.com.au false
+noscript-spoof: philandteds.com false
+noscript-spoof: qantas.com false
+noscript-spoof: stonerealestate.com.au false
+noscript-spoof: stpatschurchhill.org false
+noscript-spoof: sydneylivingmuseums.com.au false
+noscript-spoof: theonion.com false
+noscript-spoof: touchtechpayments.com false
+noscript-spoof: transferwise.com false
+noscript-spoof: webdirections.org false
+noscript-spoof: woolworths.com.au false
+referrer-spoof: 9gag.com false
+referrer-spoof: aidtochurch.org false
+referrer-spoof: airbnb.com.au false
+referrer-spoof: airfrance.com false
+referrer-spoof: airfrance.com.au false
+referrer-spoof: allianz.fr false
+referrer-spoof: athena.com.au false
+referrer-spoof: atl-paas.net false
+referrer-spoof: atlassian.com false
+referrer-spoof: atlassian.net false
+referrer-spoof: auspost.com.au false
+referrer-spoof: barradeau.com false
+referrer-spoof: beforeyoubid.com.au false
+referrer-spoof: behind-the-scene false
+referrer-spoof: benevity.org false
+referrer-spoof: bitbucket.org false
+referrer-spoof: centrify.com false
+referrer-spoof: cliniko.com false
+referrer-spoof: codepen.io false
+referrer-spoof: cssanimation.rocks false
+referrer-spoof: disqus.com false
+referrer-spoof: docusign.net false
+referrer-spoof: dropbox.com false
+referrer-spoof: eventbrite.com.au false
+referrer-spoof: forevergreenmontessori.com.au false
+referrer-spoof: fortuneo.fr false
+referrer-spoof: francetvinfo.fr false
+referrer-spoof: ganttpro.com false
+referrer-spoof: getclockwise.com false
+referrer-spoof: getlytics.com false
+referrer-spoof: github.com false
+referrer-spoof: goget.com.au false
+referrer-spoof: google.com false
+referrer-spoof: gumroad.com false
+referrer-spoof: hackerrank.com false
+referrer-spoof: hellofresh.com.au false
+referrer-spoof: humblebundle.com false
+referrer-spoof: icloud.com false
+referrer-spoof: indiehackers.com false
+referrer-spoof: ing.fr false
+referrer-spoof: intoli.com false
+referrer-spoof: jakebresnehan.com false
+referrer-spoof: jetstar.com false
+referrer-spoof: jetstarholidays.com.au false
+referrer-spoof: jira-dev.com false
+referrer-spoof: jsfiddle.net false
+referrer-spoof: kapwing.com false
+referrer-spoof: knowyourmeme.com false
+referrer-spoof: kotaku.com false
+referrer-spoof: leekspin.com false
+referrer-spoof: list-manage.com false
+referrer-spoof: litmus.com false
+referrer-spoof: mossburncountrypark.co.nz false
+referrer-spoof: mozilla.org false
+referrer-spoof: mural.co false
+referrer-spoof: myabsorb.com false
+referrer-spoof: nasa.gov false
+referrer-spoof: npmjs.com false
+referrer-spoof: nsw.gov.au false
+referrer-spoof: offirmo-monorepo.netlify.com false
+referrer-spoof: online-adventur.es false
+referrer-spoof: osb.pf false
+referrer-spoof: outline.com false
+referrer-spoof: paywithpoli.com false
+referrer-spoof: peoplepulse.com.au false
+referrer-spoof: philandteds.com false
+referrer-spoof: qantas.com false
+referrer-spoof: stonerealestate.com.au false
+referrer-spoof: stpatschurchhill.org false
+referrer-spoof: sydneycatholic.org false
+referrer-spoof: sydneycustomshouse.com.au false
+referrer-spoof: sydneylivingmuseums.com.au false
+referrer-spoof: tapas.io false
+referrer-spoof: theonion.com false
+referrer-spoof: touchtechpayments.com false
+referrer-spoof: transferwise.com false
+referrer-spoof: webdirections.org false
+referrer-spoof: woolworths.com.au false
+* * * block
+* * css allow
+* * frame block
+* * image allow
+* 1st-party * allow
+* 1st-party frame allow
+* ajax.googleapis.com * allow
+* algolia.net * allow
+* algolianet.com * allow
+* cloudflare.com * allow
+* cloudfront.net * allow
+* fonts.googleapis.com * allow
+* githubusercontent.com * allow
+* gravatar.com * allow
+* polyfill.io script allow
+* typekit.net * allow
+9gag.com * frame inherit
+9gag.com 9cache.com * allow
+9gag.com ggpht.com * allow
+9gag.com google.com * allow
+9gag.com googlevideo.com * allow
+9gag.com gstatic.com * allow
+9gag.com js-webt-lol.9cache.com * inherit
+9gag.com t.9gag.com * inherit
+9gag.com web-t.9gag.com * inherit
+9gag.com youtube.com * allow
+9gag.com youtube.com frame allow
+9gag.com ytimg.com * allow
+9news.com.au google.com * allow
+9news.com.au gstatic.com * allow
+abc.net.au akamaized.net * allow
+abc.net.au elections-us2020-results-data.web.app * allow
+abc.net.au gfycat.com * allow
+abc.net.au gigya.com * allow
+abc.net.au jwpcdn.com * allow
+abc.net.au licensekeyserver.com * allow
+abc.net.au oztam.com.au * allow
+abc.net.au scribblelive.com * allow
+abc.net.au youborafds01.com * allow
+abch.world shopify.com * allow
+abch.world shopifycloud.com * allow
+abch.world shopifysvc.com * allow
+acoup.blog wordpress.com * allow
+acoup.blog wp.com * allow
+acs.org.au * frame inherit
+acs.org.au disqus.com * allow
+acs.org.au disqus.com frame allow
+acs.org.au disquscdn.com * allow
+acs.org.au referrer.disqus.com * inherit
+adobe.com ftcdn.net * allow
+adobe.com gstatic.com * allow
+adobe.com jquery.com * allow
+ageeye.cn jsdelivr.net * allow
+airbnb.io gstatic.com * allow
+airbnb.io unpkg.com * allow
+alfakingdom.com mixmarvel.com * allow
+alfakingdom.com youtube.com * allow
+aliexpress.com aliapp.org * allow
+aliexpress.com alibaba.com * allow
+aliexpress.com alicdn.com * allow
+aliexpress.com aliyun.com * allow
+aliexpress.com aliyuncs.com * allow
+amazon.com awsstatic.com * allow
+amazon.com media-amazon.com * allow
+amazon.com ssl-images-amazon.com * allow
+amazon.com.au * frame inherit
+amazon.com.au amazon.co.jp * allow
+amazon.com.au amazon.com * allow
+amazon.com.au media-amazon.com * allow
+amazon.com.au siege-amazon.com * allow
+amazon.com.au ssl-images-amazon.com * allow
+amplitude.com amplitude.com * inherit
+amplitude.com api.amplitude.com * inherit
+amplitude.com p.typekit.net * inherit
+android.com gstatic.com * allow
+ankama.com google.com * allow
+ankama.com google.com frame allow
+ankama.com gstatic.com * allow
+apa.org execute-api.us-east-1.amazonaws.com * allow
+apache.org jsdelivr.net * allow
+apache.org npmsearch.com * allow
+app.netlify.com api.netlify.com * allow
+app.netlify.com cdn.netlify.com * allow
+app.netlify.com www.netlify.com * allow
+appbase.io embedly.com * allow
+appbase.io embedly.com frame allow
+appbase.io medium.com * allow
+apple.com cdn-apple.com * allow
+aq.com bootstrapcdn.com * allow
+aq.com jquery.com * allow
+architectureau.com architecturemedia.net * allow
+arena.net staticwars.com * allow
+arrivalguides.com mapbox.com * allow
+arrivalguides.com timezonedb.com * allow
+artblocks.io alchemyapi.io * allow
+artblocks.io infura.io * allow
+artbreeder.com b-cdn.net * allow
+artnome.com gstatic.com * allow
+artnome.com squarespace.com * allow
+asgardia.space www.google.com * allow
+asgardia.space www.google.com frame allow
+askubuntu.com sstatic.net * allow
+askubuntu.com stackexchange.com * allow
+askubuntu.com stackoverflow.com * allow
+atl-paas.net atlassian.com * allow
+atl-paas.net atlassian.net * allow
+atl-paas.net bitbucket.org * allow
+atl-paas.net gstatic.com * allow
+atl-paas.net swagger.io * allow
+atl-paas.net unpkg.com * allow
+atlassian.com ajax.googleapis.com * allow
+atlassian.com atl-paas.net * allow
+atlassian.com atl-paas.net frame allow
+atlassian.com atlassian.io * allow
+atlassian.com atlassian.io frame allow
+atlassian.com atlassian.net * allow
+atlassian.com atlassian.net frame allow
+atlassian.com google.com * allow
+atlassian.com jira.com * allow
+atlassian.com jira.com frame allow
+atlassian.io atl-paas.net * allow
+atlassian.io atlassian.com * allow
+atlassian.net * frame inherit
+atlassian.net atl-paas.net * allow
+atlassian.net atl-paas.net frame allow
+atlassian.net atlassian.com * allow
+atlassian.net atlassian.com frame allow
+atlassian.net atlassian.io * allow
+atlassian.net bitbucket.io * allow
+atlassian.net cello.atlassian.io frame allow
+atlassian.net jira-dev.com * allow
+atlassian.net pndsn.com * allow
+atlassian.net rps-bucket-prod-east.s3.amazonaws.com * allow
+atlassian.net slack-edge.com * allow
+atlassian.net slack.com * allow
+atlassian.net trellocdn.com * allow
+atwonline.com.au unpkg.com script allow
+auratenewyork.com jquery.com * allow
+auratenewyork.com polyfill.io * allow
+auratenewyork.com s3-us-west-2.amazonaws.com * allow
+auratenewyork.com shopify.com * allow
+auratenewyork.com shopifycloud.com * allow
+auspost.com.au adobedtm.com * allow
+auspost.com.au assets.adobedtm.com * inherit
+auspost.com.au google.com * allow
+auspost.com.au googletagmanager.com * allow
+auspost.com.au jquery.com * allow
+auspost.com.au www.google.com frame allow
+auspost.com.au www.googletagmanager.com * allow
+auspost.com.au www.gstatic.com * allow
+austinmann.com jquery.com * allow
+austinmann.com squarespace-cdn.com * allow
+austinmann.com squarespace.com * allow
+auth0.com auth0-extend.com * allow
+auth0.com ctfassets.net * allow
+auth0.com rawgit.com * allow
+avalon.fun www.google.com * allow
+avalon.fun www.google.com frame allow
+avalon.fun www.gstatic.com * allow
+avatar.com s3.amazonaws.com * allow
+bandcamp.com bcbits.com * allow
+barangaroo.com * frame inherit
+barangaroo.com youtube.com * allow
+bbc.co.uk bbci.co.uk * allow
+bbc.com bbc.co.uk * allow
+bbc.com bbci.co.uk * allow
+beamafilm.com * frame inherit
+beamafilm.com akamaized.net * allow
+beamafilm.com vimeo.com * allow
+beamafilm.com vimeocdn.com * allow
+bedetheque.com bdgest.com * allow
+bedetheque.com d31qbv1cthcecs.cloudfront.net * inherit
+belleproperty.com * frame inherit
+belleproperty.com google.com * allow
+belleproperty.com gstatic.com * allow
+belleproperty.com maps.googleapis.com * allow
+bettereducation.com.au google.com * allow
+bettereducation.com.au google.com.au * allow
+bettereducation.com.au gstatic.com * allow
+bettereducation.com.au maps.googleapis.com * allow
+bewarethewizard.com wp.com * allow
+binaryify.github.io gstatic.com * allow
+binaryify.github.io unpkg.com * allow
+bitsrc.io embed.ly * allow
+bitsrc.io github.com * allow
+bitsrc.io medium.com * allow
+blackillustrations.com webflow.com * allow
+blizzard.com akamaihd.net * allow
+blizzard.com akamaized.net * allow
+bloomberg.com bwbx.io frame allow
+bloomberg.com google.com * allow
+bloomberg.com google.com frame allow
+bloomberg.com gstatic.com * allow
+bloomberg.com recaptcha.net * allow
+bluemic.com s3.amazonaws.com * allow
+bluemic.com sndcdn.com * allow
+bluemic.com soundcloud.com * allow
+boardgamegeek.com geekdo-static.com * allow
+booking.com bstatic.com * allow
+booking.com maps.googleapis.com * allow
+booking.com tiqcdn.com * allow
+bresicwhitney.com.au cloudinary.com * allow
+bridgehilluno.com.au cbreresidentialprojects.com.au * allow
+bridgehilluno.com.au jquery.com * allow
+bstats.org datatables.net * allow
+bstats.org github.com * allow
+bstats.org highcharts.com * allow
+bstats.org jquery.com * allow
+bullionbaranddining.com.au * frame inherit
+bullionbaranddining.com.au thefork.com.au * allow
+bundlephobia.com npms.io * allow
+canvasquery.com google.com * allow
+carloacutis.com * frame inherit
+carloacutis.com google-analytics.com * allow
+carloacutis.com www.google-analytics.com * inherit
+carnextdoor.com.au maps.googleapis.com * allow
+cat.com * frame inherit
+cat.com scene7.com * allow
+cbeebies.com bbcchannels.com * allow
+cbeebies.com jquery.com * allow
+cbsnews.com cbsi.com * allow
+cbsnews.com cbsistatic.com * allow
+ccn.com ampproject.org * allow
+chromestatus.com gstatic.com * allow
+chromestatus.com unpkg.com * allow
+clickmeeting.com braintreegateway.com * allow
+climatecentral.org akamai.net * allow
+climatecentral.org gstatic.com * allow
+climatecentral.org jquery.com * allow
+climatecentral.org mapbox.com * allow
+climatecentral.org maps.googleapis.com * allow
+climatecentral.org ss3-static-prod.s3.amazonaws.com * allow
+climatecentral.org transifex.com * allow
+climatecentral.org ubembed.com * allow
+cnn.com cnn.io * allow
+coastalrisk.com.au bootstrapcdn.com * allow
+coastalrisk.com.au google.com * allow
+coastalrisk.com.au gstatic.com * allow
+coastalrisk.com.au maps.googleapis.com * allow
+coastalrisk.com.au telerik.com * allow
+cocomelon.com p.typekit.net image allow
+cocomelon.com squarespace-cdn.com * allow
+cocomelon.com squarespace.com * allow
+code-cartoons.com medium.com * allow
+codebarrel.io medium.com * allow
+codebarrel.io optimizely.com * allow
+codenames.game cge.as * allow
+codepen.io * frame allow
+codepen.io cdpn.io * allow
+codepen.io cdpn.io frame allow
+codepen.io ghibliapi.herokuapp.com * allow
+codepen.io googletagmanager.com * inherit
+codepen.io gstatic.com * allow
+codepen.io jsdelivr.net * allow
+codepen.io rawgit.com * block
+codepen.io s3-us-west-2.amazonaws.com * allow
+codepen.io unpkg.com * allow
+codesandbox.io * frame inherit
+codesandbox.io 8ckkw.csb.app frame allow
+codesandbox.io amazonaws.com * allow
+codesandbox.io bundlephobia.com * allow
+codesandbox.io codefund.app * allow
+codesandbox.io csb.app * allow
+codesandbox.io github.com * allow
+codesandbox.io jsdelivr.com * allow
+codesandbox.io jsdelivr.net * allow
+codesandbox.io unpkg.com * allow
+codeshare.io google.com * allow
+codesource.io ovl.me * allow
+codesource.io wp.com * allow
+colourise.sg bootstrapcdn.com * allow
+colourise.sg google.com * allow
+colourise.sg gstatic.com * allow
+colourise.sg jquery.com * allow
+colourise.sg unpkg.com * allow
+community.netlify.com discourse-cdn.com * allow
+computerhistory.org * frame inherit
+contentful.com ctfassets.net * allow
+convertio.co convertio.me * allow
+coupahost.com js-agent.newrelic.com * inherit
+coupahost.com newrelic.com * allow
+couriersplease.com.au ap3prod.com * allow
+couriersplease.com.au licdn.com * allow
+creditsimple.com.au * frame inherit
+creditsimple.com.au az416426.vo.msecnd.net * inherit
+creditsimple.com.au google-analytics.com * allow
+creditsimple.com.au google.com * allow
+creditsimple.com.au googletagmanager.com * allow
+creditsimple.com.au gstatic.com * allow
+creditsimple.com.au msecnd.net * allow
+creditsimple.com.au www.google-analytics.com * inherit
+creditsimple.com.au www.googletagmanager.com * inherit
+criticalhit.net stats.wp.com * inherit
+criticalhit.net wp.com * allow
+cspisawesome.com google-analytics.com * inherit
+cspisawesome.com googletagmanager.com * allow
+cspisawesome.com www.google-analytics.com * inherit
+cspisawesome.com www.googletagmanager.com * inherit
+css-tricks.com cdpn.io * allow
+css-tricks.com cdpn.io frame allow
+css-tricks.com cloudinary.com * allow
+css-tricks.com codepen.io * allow
+css-tricks.com codepen.io frame allow
+css-tricks.com wp.com * allow
+cssanimation.rocks codepen.io * allow
+cssanimation.rocks jquery.com * allow
+cssanimation.rocks www.youtube-nocookie.com frame allow
+cssanimation.rocks youtube-nocookie.com * allow
+cssinjs.org github.com * allow
+csv.js.org shields.io cookie allow
+dailytelegraph.com.au news.com.au * allow
+darkhorseanalytics.com squarespace-cdn.com * allow
+darkhorseanalytics.com squarespace.com * allow
+datadoghq.com datadoghq-browser-agent.com * allow
+datarepublic.com jquery.com * allow
+datawrapper.de dwcdn.net * allow
+dbwnss.com xshoppy.shop * allow
+decathlon.com.au easy-redirects.s3-eu-west-1.amazonaws.com * allow
+decathlon.com.au shopify.com * allow
+decathlon.com.au shopifysvc.com * allow
+decathlon.net google.com * allow
+deezer.com dzcdn.net * allow
+deezer.com google.com * allow
+deezer.com google.com frame allow
+deezer.com gstatic.com * allow
+degreed.com degreedcdn.com * allow
+dev.to cloudinary.com * allow
+dev.to dev-to.s3.us-east-2.amazonaws.com * allow
+dev.to ggpht.com * allow
+dev.to github.com * allow
+dev.to google.com * allow
+dev.to googlevideo.com * allow
+dev.to gstatic.com * allow
+dev.to practicaldev-herokuapp-com.freetls.fastly.net * allow
+dev.to thepracticaldev.s3.amazonaws.com * allow
+dev.to unpkg.com * allow
+dev.to www.youtube.com frame allow
+dev.to youtube.com * allow
+dev.to ytimg.com * allow
+devdocs.io * frame inherit
+devdocs.io mozilla.net * allow
+devdocs.io mozit.cloud * allow
+developereconomics.net parastorage.com * allow
+developereconomics.net quora.com * allow
+developereconomics.net reddit.com * allow
+developereconomics.net redditstatic.com * allow
+developereconomics.net wix-code.com * allow
+developereconomics.net wix.com * allow
+developereconomics.net wixstatic.com * allow
+deviantart.com deviantart.net * allow
+deviantart.com parastorage.com * allow
+deviantart.com wix.com * allow
+dexerto.com ampproject.org * allow
+dexerto.com jwplayer.com * allow
+dexerto.com redditstatic.com * allow
+dexerto.com resized.co * allow
+dexerto.fr * frame inherit
+dexerto.fr ampproject.org * allow
+dexerto.fr instagram.com * allow
+dexerto.fr instagram.com frame allow
+digitalviolence.org digitaloceanspaces.com * allow
+directfreight.com.au www.google.com * allow
+directfreight.com.au www.google.com frame allow
+discordapp.com discord.gg * allow
+docker.com discourse-cdn.com * allow
+docker.com gstatic.com * allow
+dogeminer2.com ampproject.org * allow
+dogeminer2.com dogeminer.se * block
+dogeminer2.com g.doubleclick.net * allow
+dogeminer2.com google-analytics.com * allow
+dogeminer2.com google.com * allow
+dogeminer2.com google.com frame allow
+dogeminer2.com google.com.au * allow
+dogeminer2.com googleads.g.doubleclick.net * inherit
+dogeminer2.com googleads.g.doubleclick.net frame allow
+dogeminer2.com googleadservices.com * allow
+dogeminer2.com googlesyndication.com * allow
+dogeminer2.com googletagmanager.com * allow
+dogeminer2.com googletagservices.com * allow
+dogeminer2.com gstatic.com * allow
+dogeminer2.com pagead2.googlesyndication.com * inherit
+dogeminer2.com partner.googleadservices.com * inherit
+dogeminer2.com stats.g.doubleclick.net * inherit
+dogeminer2.com www.google-analytics.com * allow
+dogeminer2.com www.googletagmanager.com * allow
+dogeminer2.com www.googletagservices.com * inherit
+domain.com.au * frame inherit
+domain.com.au domain-transactions.s3.amazonaws.com * allow
+domain.com.au domainstatic.com.au * allow
+domain.com.au ggpht.com * allow
+domain.com.au google.com * allow
+domain.com.au googlevideo.com * allow
+domain.com.au maps.googleapis.com * allow
+domain.com.au youtube.com * allow
+domain.com.au ytimg.com * allow
+donateblood.com.au maps.googleapis.com * allow
+dota2.com akamaihd.net * allow
+dpth.app static-assets.strikinglycdn.com * allow
+dropbox.com * frame inherit
+dropbox.com dropboxcaptcha.com * allow
+dropbox.com dropboxcaptcha.com frame allow
+dropbox.com dropboxstatic.com * allow
+dropbox.com dropboxusercontent.com * allow
+dropbox.com google.com * allow
+dropbox.com google.com frame allow
+dropbox.com gstatic.com * allow
+dropbox.com uc6675f97ba75234fdd357465980.dl.dropboxusercontent.com frame allow
+dropbox.com uceb109af6a208a1bcebc8780640.dl.dropboxusercontent.com frame allow
+dsolver.ca bootstrapcdn.com * allow
+dsolver.ca socket.io * allow
+earlymatch.com.au gstatic.com * allow
+earlymatch.com.au p.typekit.net image allow
+earlymatch.com.au squarespace-cdn.com * allow
+earlymatch.com.au squarespace.com * allow
+ebay.com.au ebay.com * allow
+ebay.com.au ebayimg.com * allow
+ebay.com.au ebaystatic.com * allow
+ecsy.io gstatic.com * allow
+ecsy.io unpkg.com * allow
+epiphany.pub freewill.app * allow
+epiphany.pub freewill.app frame allow
+europcar.com.au europcar.com * allow
+fandom.com nocookie.net * allow
+figma.com ctfassets.net * allow
+figma.com imgix.net * allow
+flickr.com staticflickr.com * allow
+flotato.com d3js.org * allow
+flotato.com flotato.netlify.app * allow
+fontbooks.org firebaseio.com * allow
+fontbooks.org sheety.co * allow
+forbes.com forbesimg.com * allow
+forevergreenmontessori.com.au * frame allow
+forevergreenmontessori.com.au parastorage.com * allow
+forevergreenmontessori.com.au parastorage.com frame allow
+forevergreenmontessori.com.au wix.com * allow
+forevergreenmontessori.com.au wixstatic.com * allow
+forms.gle gstatic.com * allow
+francetvinfo.fr * frame allow
+francetvinfo.fr akamai.net * allow
+francetvinfo.fr akamaihd.net * allow
+francetvinfo.fr akamaihd.net frame allow
+francetvinfo.fr francetelevisions.fr * allow
+francetvinfo.fr webservices.francetelevisions.fr * allow
+frandroid.com static-od.com * allow
+frandroid.com unpkg.com * allow
+free-for.dev unpkg.com * allow
+freecodecamp.org discourse-cdn.com * allow
+freecodecamp.org medium.com * allow
+freepik.com cdnpk.net * allow
+freepik.com freepikcompany.com * allow
+freepik.com google.com * allow
+freepik.com google.com frame allow
+freepik.com gstatic.com * allow
+freepik.com gstatic.com frame allow
+freepik.com www.google.com * allow
+freepik.com www.google.com frame allow
+freepik.com www.gstatic.com * allow
+frequentvalues.com.au google.com script allow
+frequentvalues.com.au jquery.com script allow
+frontarm.com frontarm-production.herokuapp.com * allow
+frontarm.com gstatic.com * allow
+frontarm.com unpkg.com * allow
+fstoppers.com jquery.com * allow
+fstoppers.com wp.com * allow
+fstoppers.com www.youtube.com frame allow
+fstoppers.com youtube.com * allow
+fusejs.io bootstrapcdn.com * allow
+fusejs.io ghbtns.com * allow
+fusejs.io ghbtns.com frame allow
+fusejs.io jquery.com * allow
+game-icons.net jsdelivr.net * allow
+gamejolt.com gjcdn.net * allow
+gamespress.com bootstrapcdn.com * allow
+gamespress.com jquery.com * allow
+gamespress.com jsdelivr.net * allow
+gamesradar.com futurecdn.net * allow
+ganttpro.com * frame inherit
+ganttpro.com azureedge.net * allow
+ganttpro.com bugsnag.com * allow
+ganttpro.com calendly.com * allow
+ganttpro.com d2wy8f7a9ursnm.cloudfront.net * inherit
+ganttpro.com ganttrpo.azureedge.net frame allow
+ganttpro.com notify.bugsnag.com * inherit
+ganttpro.com sessions.bugsnag.com * inherit
+ganttpro.com windows.net * allow
+gather.town clearbit.com * allow
+gather.town clearbitjs.com * allow
+gather.town digitaloceanspaces.com * allow
+gather.town licdn.com * allow
+gather.town unpkg.com * allow
+geenes.app geenes-server.herokuapp.com * allow
+getabstract.com centrify.com * allow
+getabstract.com idaptive.app * allow
+getclockwise.com * frame inherit
+getclockwise.com google.com * allow
+getclockwise.com gstatic.com * allow
+getlytics.com googletagmanager.com * allow
+getlytics.com lytics.com * allow
+getphotostick.io amazonaws.com * allow
+getphotostick.io giddyup.io * allow
+getpino.io unpkg.com * allow
+getpocket.com cdn-apple.com * allow
+getpocket.com google.com * allow
+getpocket.com google.com frame allow
+getpocket.com gstatic.com * allow
+getpocket.com sentry.io * allow
+github.com collector.githubapp.com * inherit
+github.com github-production-user-asset-6210df.s3.amazonaws.com * allow
+github.com githubapp.com * allow
+github.com githubassets.com * allow
+github.com jquery.com * allow
+github.com render.githubusercontent.com frame allow
+github.com s3.amazonaws.com * allow
+gitlab.com gitlab-static.net * allow
+givemesomeenglish.com w.org * allow
+givemesomeenglish.com wp.com * allow
+gizmodo.com kinja-img.com * allow
+gizmodo.com kinja-static.com * allow
+gizmodo.com kinja.com * allow
+gizmodo.com.au * frame inherit
+gizmodo.com.au jsdelivr.net * allow
+gizmodo.com.au www.youtube.com frame allow
+gizmodo.com.au youtube.com * allow
+glassdoor.com.au glassdoor.com * allow
+glazestock.com glaze-ecom.appspot.com * allow
+glazestock.com glaze-ecom.appspot.com xhr allow
+glazestock.com js.stripe.com frame allow
+glazestock.com storage.googleapis.com * allow
+glazestock.com storage.googleapis.com xhr allow
+glazestock.com stripe.com * allow
+glitch.me glitch.com * allow
+glitch.me jsdelivr.net * allow
+goblinscomic.com hiveworkscomics.com * allow
+gog.com gog-statics.com * allow
+goget.com.au * frame inherit
+goget.com.au braintreegateway.com * allow
+goget.com.au code.jquery.com script allow
+goget.com.au jquery.com * allow
+goget.com.au maps.googleapis.com * allow
+google.com accounts.youtube.com frame allow
+google.com googleusercontent.com * allow
+google.com gstatic.com * allow
+google.com youtube.com * allow
+googleblog.com blogblog.com * allow
+googleblog.com blogger.com * allow
+googleblog.com bp.blogspot.com * allow
+googletagmanager.com * * allow
+googletagmanager.com * frame inherit
+googletagmanager.com google.com * allow
+googletagmanager.com googletagmanager.com * inherit
+googletagmanager.com www.googletagmanager.com * inherit
+graphql.org jsdelivr.net script allow
+gumtree.com.au classistatic.com * allow
+hackernoon.com embed.ly * allow
+hackernoon.com medium.com * allow
+hastingsdeering.com.au dataweavers.io * allow
+helion3.com jquery.com * allow
+hellofresh.com.au google.com * allow
+hellofresh.com.au hellofresh.com * allow
+hellofresh.com.au licdn.com * allow
+hellofresh.com.au mypurecloud.com * allow
+hellofresh.com.au use.fontawesome.com script allow
+hellveticafont.com squarespace-cdn.com * allow
+hellveticafont.com squarespace.com * allow
+heredragonsabound.blogspot.com blogblog.com * allow
+heredragonsabound.blogspot.com blogger.com * allow
+heredragonsabound.blogspot.com bp.blogspot.com * allow
+heroku.com herokucdn.com * allow
+heroku.com herokudata-frontend.freetls.fastly.net * allow
+heroku.com s3.amazonaws.com * allow
+heroku.com statuspage.io * allow
+heytiger.com.au shopify.com * allow
+heytiger.com.au shopifycdn.com * allow
+homely.com.au * frame inherit
+homely.com.au maps.googleapis.com * allow
+homely.com.au maps.googleapis.com frame allow
+humblebundle.com * frame inherit
+humblebundle.com akamaihd.net * allow
+humblebundle.com amazon.com * allow
+humblebundle.com assets.hcaptcha.com frame allow
+humblebundle.com hcaptcha.com * allow
+humblebundle.com js.stripe.com frame allow
+humblebundle.com payments-amazon.com * allow
+humblebundle.com sift.com * allow
+humblebundle.com stripe.com * allow
+ideasfilter.com 192.95.30.65 * allow
+ideasfilter.com jquery.com * allow
+ideasfilter.com jsdelivr.net * allow
+ign.com ignimgs.com * allow
+ikea.com tiqcdn.com * allow
+independent.co.uk ampproject.org * allow
+independent.co.uk h-cdn.com * allow
+indieboost.com jsdelivr.net * allow
+indiegogo.com iggcdn.com * allow
+indiegogo.com p.typekit.net * inherit
+inkarnate.com gstatic.com * allow
+inkarnate.com inkarnate-api-as-production.s3.amazonaws.com * allow
+inkarnate.com inkarnate-landing.s3.amazonaws.com * allow
+inkarnate.com jsdelivr.net * allow
+inkarnate.com recaptcha.net * allow
+inputmag.com bustle.com * allow
+insiderattack.net github.com * allow
+insiderattack.net medium.com * allow
+insiderattack.net medium.systems * allow
+inspectitfirst.com.au bootstrapcdn.com * allow
+inspectitfirst.com.au jsdelivr.net * allow
+intellijobs.ai bootstrapcdn.com * allow
+intellijobs.ai firebaseinstallations.googleapis.com * allow
+intellijobs.ai firestore.googleapis.com * allow
+intellijobs.ai google.com * allow
+intellijobs.ai gstatic.com * allow
+inverse.com bustle.com * allow
+invisionapp.com d24n15hnbwhuhn.cloudfront.net * inherit
+invisionapp.com invisionapp-cdn.com * allow
+inviterick.com gstatic.com * allow
+inviterick.com unpkg.com * allow
+ironhorsegames.org parastorage.com * allow
+ironhorsegames.org wix.com * allow
+ironhorsegames.org wixstatic.com * allow
+is-gatsby-translated-yet.netlify.app github.com * allow
+isekaiscan.com b-cdn.net * allow
+itch.io * frame allow
+itch.io commondatastorage.googleapis.com * allow
+itch.io gstatic.com * allow
+itch.io hwcdn.net * allow
+itch.io itch.zone * allow
+itch.io ytimg.com * allow
+jalandaverde.github.io gstatic.com * allow
+jalandaverde.github.io opentdb.com * allow
+jbhifi.com.au shopify.com * allow
+jbhifi.com.au shopifysvc.com * allow
+jestjs.io jsdelivr.net * allow
+jetstar.com reserveair.net * allow
+jetstarholidays.com.au cdn-net.com * allow
+joelonsoftware.com gstatic.com * allow
+joelonsoftware.com netdna-ssl.com * allow
+joelonsoftware.com stats.wp.com * inherit
+joelonsoftware.com wp.com * allow
+join.me azureedge.net * allow
+jorgejacinto.com instagram.com * allow
+jorgejacinto.com p.typekit.net * inherit
+jorgejacinto.com squarespace.com * allow
+jotform.co events.jotform.com * inherit
+jotform.co jotfor.ms * allow
+jotform.co jotform.com * allow
+jotform.co ravenjs.com * allow
+jsbin.com unpkg.com * allow
+jsdelivr.com jsdelivr.net * allow
+jsfiddle.net fiddle.jshell.net frame allow
+jsfiddle.net jshell.net * allow
+jucy.com.au jucy.co.nz * allow
+kapwing.com drift.com * allow
+kapwing.com driftt.com * allow
+kapwing.com google-analytics.com * allow
+kapwing.com imgur.com * allow
+kapwing.com js.driftt.com frame allow
+kapwing.com sentry.io * allow
+kapwing.com www.google-analytics.com * inherit
+kartridge.com kongregate.com * allow
+kathmandu.com.au imgix.net * allow
+kentcdodds.com embed.ly * allow
+kentcdodds.com medium.com * allow
+khoandlee.com.au agentboxcdn.com.au * allow
+khoandlee.com.au google.com * allow
+khoandlee.com.au gstatic.com * allow
+kmartphotos.com.au * frame inherit
+kmartphotos.com.au braintree-api.com * allow
+kmartphotos.com.au braintreegateway.com * allow
+kmartphotos.com.au jquery.com * allow
+kmartphotos.com.au paypal.com * allow
+knightlab.com bootstrapcdn.com * allow
+knightlab.com google.com * allow
+knowyourmeme.com accounts.google.com frame allow
+knowyourmeme.com apis.google.com frame allow
+knowyourmeme.com google.com * allow
+knowyourmeme.com googlevideo.com * allow
+knowyourmeme.com gstatic.com * allow
+knowyourmeme.com kym-cdn.com * allow
+knowyourmeme.com trends.google.com frame allow
+knowyourmeme.com www.youtube.com frame allow
+knowyourmeme.com youtube.com * allow
+koajs.com embed.runkit.com script allow
+koajs.com runkit.com frame allow
+konghq.com instant.page * allow
+konghq.com netdna-ssl.com * allow
+kongregate.com kongcdn.com * allow
+kongregate.com mathjax.org * allow
+kotaku.com digitru.st * allow
+kotaku.com kinja-img.com * allow
+kotaku.com kinja-static.com * allow
+kotaku.com kinja.com * allow
+kotaku.com kotaku.com.au * allow
+kotaku.com.au www.youtube.com frame allow
+kotaku.com.au youtube.com * allow
+kurtosh.com.au squarespace.com * allow
+lecourrieraustralien.com jsdelivr.net * allow
+lefigaro.fr * frame inherit
+lefigaro.fr instagram.com * allow
+levels.fyi bootstrapcdn.com * allow
+levels.fyi jquery.com * allow
+levels.fyi jsdelivr.net * allow
+lever.co googleusercontent.com * allow
+liberation.fr ampproject.net * allow
+liberation.fr ampproject.net frame allow
+liberation.fr ampproject.org * allow
+liberation.fr d-21412928964122534356.ampproject.net frame allow
+liberation.fr d-30095595514130028047.ampproject.net frame allow
+liberation.fr d-34827279922862467880.ampproject.net frame allow
+liberation.fr gstatic.com * allow
+linkedin.com licdn.com * allow
+linkedin.com licdn.com frame allow
+litmus.com litmuscdn.com * allow
+litmus.com p.typekit.net * inherit
+litmus.com static.zuora.com frame allow
+litmus.com www.zuora.com frame allow
+litmus.com zuora.com * allow
+livelybg.com jquery.com * allow
+livelybg.com unpkg.com * allow
+livescience.com futurecdn.net * allow
+ljhooker.com.au * frame inherit
+ljhooker.com.au google.com * allow
+ljhooker.com.au google.com frame allow
+ljhooker.com.au ljh-public.s3.amazonaws.com * allow
+ljhooker.com.au ljhooker.com * allow
+localhost identity.netlify.com * allow
+localhost tlk.io * allow
+logitech.com bootstrapcdn.com * allow
+logitech.com player.vimeo.com frame allow
+logitech.com vimeo.com * allow
+logitech.com vimeo.com frame allow
+logrocket.com licdn.com * allow
+logrocket.com logrocket.io * allow
+logrocket.com wordpress.com * allow
+logrocket.com wp.com * allow
+loom.fr shopify.com * allow
+loom.fr shopifycdn.com * allow
+lucidchart.com doug1izaerwt3.cloudfront.net * inherit
+lytics.io lytics.io * inherit
+maas.museum * frame inherit
+maas.museum google.com * allow
+maas.museum google.com frame allow
+maas.museum gstatic.com * allow
+maas.museum maps.googleapis.com * allow
+macbidouille.com google.com * allow
+macbidouille.com platform.twitter.com frame allow
+macbidouille.com syndication.twitter.com frame allow
+macbidouille.com twimg.com * allow
+macbidouille.com twitter.com * allow
+macbidouille.com www.google.com frame allow
+maggieappleton.com * frame inherit
+makethemasks.com squarespace-cdn.com * allow
+makethemasks.com squarespace.com * allow
+managemypreferences.com activepipe.com * allow
+managemypreferences.com maps.googleapis.com * allow
+mangarock.com mangarockhd.com * allow
+mangarock.com mrcdn.info * allow
+mapbox.com vimeo.com * allow
+mapbox.com website-files.com * allow
+maptalks.org cartocdn.com * allow
+maptalks.org d3js.org * allow
+maptalks.org jsdelivr.net * allow
+markmap.js.org jsdelivr.net * allow
+markmap.js.org sentry-cdn.com * allow
+markmatyas.dev bootstrapcdn.com * allow
+markmatyas.dev ghbtns.com * allow
+markmatyas.dev restcountries.eu * allow
+markmatyas.dev twitter.com * allow
+marmiton.org afcdn.com * allow
+mastercard.us mastercard.com * allow
+material.io google.com * allow
+material.io gstatic.com * allow
+material.io storage.googleapis.com * allow
+matrix.org gstatic.com * allow
+matrix.org riot.im * allow
+matthubelart.com squarespace-cdn.com * allow
+matthubelart.com squarespace.com * allow
+mebank.com.au membersequity.com.au * allow
+mebank.com.au vixverify.com * allow
+medium.com * frame inherit
+medium.com app.link * allow
+medium.com branch.io * allow
+medium.com cdpn.io * allow
+medium.com codepen.io * allow
+medium.com codepen.io frame allow
+medium.com d1z2jf7jlzjs58.cloudfront.net * inherit
+medium.com embed.ly * allow
+medium.com embedly.com * allow
+medium.com embedly.com frame allow
+medium.com github.com * allow
+medium.com githubassets.com * allow
+medium.com lightstep.com * allow
+medium.com medium.systems * allow
+medium.com s3-us-west-2.amazonaws.com * allow
+medium.com twitter.com * allow
+meriton.com.au * frame inherit
+meriton.com.au google.com * allow
+meriton.com.au gstatic.com * allow
+meriton.com.au jsdelivr.net * allow
+meriton.com.au maps.googleapis.com * allow
+mermaid-js.github.io gstatic.com * allow
+mermaid-js.github.io jsdelivr.net * allow
+mermaid-js.github.io unpkg.com * allow
+mermaidjs.github.io gstatic.com * allow
+mermaidjs.github.io jsdelivr.net * allow
+mermaidjs.github.io unpkg.com * allow
+mobirise.com ampproject.org * allow
+mobirise.com bootstrapcdn.com * allow
+mobirise.com vimeo.com * allow
+modalvr.com p.typekit.net image allow
+modalvr.com squarespace-cdn.com * allow
+modalvr.com squarespace.com * allow
+moment.github.io unpkg.com * allow
+monaca.io monaca.mobi * allow
+monaca.io onsenui.github.io * allow
+mossburncountrypark.co.nz * frame inherit
+mossburncountrypark.co.nz nzfishing.com * allow
+mossburncountrypark.co.nz nzfishing.com frame allow
+mozilla.org mozilla-community.org * allow
+mozilla.org mozilla.net * allow
+munrocket.github.io jsdelivr.net * allow
+munrocket.github.io tfhub.dev * allow
+mural.co cloudimg.io * allow
+musixmatch.com mxmcdn.net * allow
+musixmatch.com website-files.com * allow
+myabsorb.com google.com * allow
+myabsorb.com gstatic.com * allow
+myfairfax.com.au smh.com.au * allow
+myfonts.com myfonts.net * allow
+namemydaughter.com disqus.com * allow
+nasa.gov google.com * allow
+nasa.gov gstatic.com * allow
+netflixtechblog.com medium.com * allow
+netflixtechblog.com medium.com script allow
+newbook.cloud curtinsprings.com * allow
+newrelic.com newrelic.com * inherit
+news.com.au api.news * allow
+news.com.au wp.com * allow
+nexon.net gstatic.com * allow
+northernterritory.com adobedtm.com * allow
+northernterritory.com assets.adobedtm.com * inherit
+northernterritory.com atdw-online.com.au * allow
+northernterritory.com cdninstagram.com * allow
+northernterritory.com embed.videodelivery.net frame allow
+northernterritory.com google.com * allow
+northernterritory.com googletagmanager.com * allow
+northernterritory.com videodelivery.net * allow
+northernterritory.com www.googletagmanager.com * inherit
+npmjs.com js.hs-scripts.com * inherit
+npmjs.com npm.red * allow
+nsw.gov.au google.com * allow
+nsw.gov.au s3-ap-southeast-2.amazonaws.com * allow
+nsw.gov.au utatti.github.io * allow
+nswlrs.com.au arcgis.com * allow
+nswlrs.com.au nsw.gov.au * allow
+ntaskmanager.com app-us1.com * allow
+ntaskmanager.com unpkg.com * allow
+nytimes.com nyt.com * allow
+nytimes.com s3.amazonaws.com * allow
+observablehq.com b-cdn.net * allow
+observablehq.com jsdelivr.net * allow
+observablehq.com observableusercontent.com * allow
+observablehq.com observableusercontent.com frame allow
+ocn.org.au google.com * allow
+ocn.org.au jsdelivr.net * allow
+oculus.com facebook.net * allow
+oculus.com fbcdn.net * allow
+odoo.com licdn.com * allow
+odoo.com odoocdn.com * allow
+offirmo-monorepo.netlify.com * frame allow
+offirmo-monorepo.netlify.com google-analytics.com * allow
+offirmo-monorepo.netlify.com googletagmanager.com * allow
+offirmo-monorepo.netlify.com identity.netlify.com * allow
+offirmo-monorepo.netlify.com tlk.io * allow
+offirmo-monorepo.netlify.com www.google-analytics.com * inherit
+offirmo-monorepo.netlify.com www.googletagmanager.com * inherit
+online-adventur.es identity.netlify.com * allow
+online-adventur.es tlk.io * allow
+online-adventures-staging.herokuapp.com * frame allow
+online-adventures-staging.herokuapp.com herokucdn.com * allow
+online-adventures-staging.herokuapp.com herokucdn.com frame allow
+openlayers.org mapbox.com * allow
+openlayers.org polyfill.io * allow
+openlayers.org unpkg.com * allow
+opera.com gstatic.com * allow
+opera.com operacdn.com * allow
+opsgeni.us * * allow
+opsgeni.us * frame inherit
+opsgeni.us js-agent.newrelic.com * inherit
+opsgeni.us newrelic.com * inherit
+opsgenie.com atl-paas.net * allow
+opsgenie.com atlassian.com * allow
+opsgenie.com atlassian.net * allow
+opsgenie.com jsdelivr.net script allow
+oracle.com compendium.com * allow
+oracle.com oracleimg.com * allow
+osb.pf * frame allow
+ourcodeworld.com jsdelivr.net * allow
+outline.com outlineapi.com * allow
+outline.com s3.amazonaws.com * allow
+painterlegend.com wp.com * allow
+paperspace.com website-files.com * allow
+parents.com s3.amazonaws.com * allow
+pathofexile.com poecdn.com * allow
+patreon.com patreonusercontent.com * allow
+patreon.com unpkg.com * allow
+pavellaptev.github.io glitch.com * allow
+pavellaptev.github.io gstatic.com * allow
+pavellaptev.github.io jquery.com * allow
+paypal.com * frame inherit
+paypal.com paypalobjects.com * allow
+pcgamer.com future.net.uk * allow
+pcgamer.com futurecdn.net * allow
+peekobot.github.io unpkg.com * allow
+pendo.io app.pendo.io * inherit
+phonegap.com medium.com * allow
+pinterest.dk pinimg.com * allow
+pixelplumbing.com jsdelivr.net * allow
+platinumgames.com youtube.com * allow
+platinumgames.com youtube.com frame allow
+pocket-lint.com amp.services * allow
+pocket-lint.com ampproject.org * allow
+pocket-lint.com jsdelivr.net * allow
+polishedman.com raisely.com * allow
+pragli.com firebasestorage.googleapis.com * allow
+producthunt.com imgix.net * allow
+producthunt.com s3.amazonaws.com * allow
+producthunt.com youtube.com * allow
+prototypr.io medium.com * allow
+pstmrk.it pstmrk.it * inherit
+publicdomainreview.org * frame inherit
+publicdomainreview.org archive.org * allow
+pulsesecure.net cludo.com * allow
+pumabrowser.com gstatic.com * allow
+pumabrowser.com webflow.com * allow
+qtip2.com jquery.com * allow
+quora.com quoracdn.net * allow
+rankers.co.nz maps.googleapis.com * allow
+raywhite.com rw-media.s3.amazonaws.com * allow
+raywhiteerskineville.com.au dynamics.net * allow
+raywhitekingsford.com.au dynamics.net * allow
+react-bootstrap.github.io github.com * allow
+react-bootstrap.github.io unpkg.com * allow
+react-svgr.com jsdelivr.net * allow
+reactjs.org unpkg.com script allow
+reactnative.dev * frame inherit
+reactnative.dev appetize.io * allow
+reactnative.dev expo.io * allow
+reactnative.dev jsdelivr.net * allow
+reactnative.dev s3.amazonaws.com * allow
+reactnative.dev youtube.com * allow
+reacttraining.com * frame inherit
+reacttraining.com codesandbox.io * allow
+realestate.com.au reastatic.net * allow
+realestate.com.au smetrics.realestate.com.au * block
+reddit.com embedly.com * allow
+reddit.com redd.it * allow
+reddit.com redditmedia.com * allow
+reddit.com redditstatic.com * allow
+reddit.com www.redditmedia.com frame allow
+redditmedia.com ggpht.com * allow
+redditmedia.com google.com * allow
+redditmedia.com googlevideo.com * allow
+redditmedia.com redditstatic.com * allow
+redditmedia.com www.youtube.com frame allow
+redditmedia.com youtube.com * allow
+redditmedia.com ytimg.com * allow
+remotereactions.com firebaseio.com * allow
+remove.bg accounts.kaleido.ai frame allow
+remove.bg google-analytics.com * allow
+remove.bg google.com * allow
+remove.bg google.com frame allow
+remove.bg gstatic.com * allow
+remove.bg kaleido.ai * allow
+remove.bg kaleidousercontent.com * allow
+remove.bg recaptcha.net * allow
+remove.bg www.google-analytics.com * inherit
+repl.it * frame inherit
+repl.it clui-demo--moudy.repl.co * allow
+repl.it google.com * allow
+repl.it gstatic.com * allow
+repl.it polyfill.io * allow
+repl.it storage.googleapis.com * allow
+repl.it util.repl.co * allow
+researchgate.net rgstatic.net * allow
+revenuecat.com jsdelivr.net * allow
+revenuecat.com website-files.com * allow
+rewardgateway.com.au rewardgateway.net * allow
+riotgames.com akamaihd.net * allow
+riotgames.com contentstack.io * allow
+rnz.co.nz shorthand.com * allow
+rnz.co.nz shorthandstories.com * allow
+roblox.com rbxcdn.com * allow
+romper.com * media allow
+romper.com bustle.com * allow
+romper.com p.typekit.net * inherit
+runkit.com 0f7p11fr47sie8er63mopnk14pfdbl293ptnr4ej6mkjaj9vcn6f.runkit-rendered-html.com frame allow
+runkit.com 14k55cqieih3ea5qvg18vooq9ud72uof2qmgeecj2mq98rbm2ee8.runkit-rendered-html.com frame allow
+runkit.com 1i22f83hav6cpb9hq5phl2ns2u5cof89iubfiqkag69rshpfh4nc.runkit-rendered-html.com frame allow
+runkit.com gstatic.com * allow
+runkit.com runkit-rendered-html.com * allow
+runkit.com runkitcdn.com * allow
+runkit.com runkitcdn.com frame allow
+rw-designer.com * frame inherit
+rw-designer.com google.com * allow
+rw-designer.com google.com frame allow
+rw-designer.com gstatic.com * allow
+samanthaming.com * frame inherit
+samanthaming.com placeholder.com * allow
+samlearner.com firebaseio.com * allow
+samlearner.com gstatic.com * allow
+samlearner.com mapbox.com * allow
+samlearner.com unpkg.com * allow
+samlearner.com usgs.gov * allow
+scabard.com jquery.com * allow
+scabard.com jsdelivr.net * allow
+schlockmercenary.com shopify.com * allow
+script-8.github.io script-8-api-evuw02z4d.now.sh * allow
+scroll.com imgix.net * allow
+scroll.com ravenjs.com * allow
+scwcchurch.com squarespace-cdn.com * allow
+scwcchurch.com squarespace.com * allow
+segment.com cdn.segment.com * inherit
+segment.com segment.com * inherit
+sentral.com bb-mw-production.herokuapp.com * allow
+sentral.com contentful.com * allow
+serpentsoundstudios.com creativecommons.org * allow
+serpentsoundstudios.com squarespace-cdn.com * allow
+serpentsoundstudios.com squarespace.com * allow
+sharkshock.net creativecloud.com * allow
+sheetbase.net firebaseio.com * allow
+sheetbase.net gstatic.com * allow
+sheetbase.net sheetbase-themes.github.io * allow
+sheetbase.net sheetbase-themes.github.io frame allow
+si.edu openseadragon.github.io * allow
+si.edu smithsonian.museum * allow
+simplecss.eu bootstrapcdn.com * allow
+simplecss.eu jquery.com * allow
+sindresorhus.com medium.com * allow
+sketchful.io googletagmanager.com * allow
+sketchful.io www.googletagmanager.com * inherit
+skullkickers.com ajax.googleapis.com * inherit
+skymall.com gstatic.com * allow
+skymall.com shopify.com * allow
+skymall.com shopifycdn.com * allow
+skymall.com shopifysvc.com * allow
+skymall.com storage.googleapis.com * allow
+skype.com live.com * allow
+skype.com s-microsoft.com * allow
+skype.com skypeassets.com * allow
+slack.com slack-edge.com * allow
+slack.com slack-files2.s3-us-west-2.amazonaws.com * allow
+slack.com slack-imgs.com * allow
+slides.com slid.es * allow
+slideshare.net slidesharecdn.com * allow
+smartpropertyinvestment.com.au s3.amazonaws.com * allow
+smashingmagazine.com cdpn.io * allow
+smashingmagazine.com cdpn.io frame allow
+smashingmagazine.com cloudinary.com * allow
+smashingmagazine.com codepen.io * allow
+smashingmagazine.com codepen.io frame allow
+smashingmagazine.com netlifyusercontent.com * allow
+smashingmagazine.com smashing-delivery.herokuapp.com * allow
+smashingmagazine.com smashingcomments.netlify.com * allow
+snackwize.com bootstrapcdn.com * allow
+snackwize.com fontawesome.com * allow
+snackwize.com jquery.com * allow
+snackwize.com s3.amazonaws.com * allow
+snackwize.com shopify.com * allow
+snackwize.com shopifycdn.com * allow
+snackwize.com shopifysvc.com * allow
+snackwize.com squarespace-cdn.com * allow
+snackwize.com squarespace.com * allow
+sneek.io s3-eu-west-1.amazonaws.com * allow
+sneek.io youtube.com * allow
+softr.io d3js.org * allow
+softr.io jsdelivr.net * allow
+softr.io licdn.com * allow
+softr.io softr-assets-eu-shared.s3.eu-central-1.amazonaws.com * allow
+sony.com.au sony.eu * allow
+sony.com.au sony.net * allow
+soundclick.com hwcdn.net * allow
+soundclick.com www.youtube.com frame allow
+soundclick.com youtube.com * allow
+soundcloud.com sndcdn.com * allow
+soundiiz.com www.google.com * allow
+soundiiz.com www.google.com frame allow
+sourceforge.net fsdn.com * allow
+space.com * frame inherit
+space.com future-fie.co.uk * allow
+space.com future.net.uk * allow
+space.com futurecdn.net * allow
+space.com jwplatform.com * allow
+space.com jwplayer.com * allow
+spacetime.how d3js.org * allow
+spacetime.how jsdelivr.net * allow
+spacetime.how unpkg.com * allow
+spatial.io spatial.is * allow
+spectator.co.uk jquery.com * allow
+stackexchange.com gravatar.com * allow
+stackexchange.com imgur.com * allow
+stackexchange.com sstatic.net * allow
+stackexchange.com stackoverflow.com * allow
+stackoverflow.com askubuntu.com * allow
+stackoverflow.com cookielaw.org * allow
+stackoverflow.com gravatar.com * allow
+stackoverflow.com maps.googleapis.com * allow
+stackoverflow.com mathoverflow.net * allow
+stackoverflow.com serverfault.com * allow
+stackoverflow.com sstatic.net * allow
+stackoverflow.com stackapps.com * allow
+stackoverflow.com stackexchange.com * allow
+stackoverflow.com superuser.com * allow
+stackshare.io gstatic.com * allow
+stackshare.io jsdelivr.net * allow
+statista.com statcdn.com * allow
+stayz.com.au homeaway.com * allow
+steampowered.com akamaihd.net * allow
+steampowered.com steamcommunity.com * allow
+steampowered.com steamstatic.com * allow
+sto.re p.typekit.net image allow
+sto.re squarespace-cdn.com * allow
+sto.re squarespace.com * allow
+store-mg.com shopify.com * allow
+store-mg.com shopifycdn.com * allow
+store-mg.com shopifysvc.com * allow
+stylecaster.com lightboxcdn.com * allow
+stylecaster.com s3.amazonaws.com * allow
+superhuman.com medium.com * allow
+superuser.com sstatic.net * allow
+superuser.com stackexchange.com * allow
+surveymonkey.co.uk smassets.net * allow
+surveymonkey.co.uk surveymonkey-assets.s3.amazonaws.com * allow
+surveymonkey.co.uk surveymonkey.com * allow
+swagger.io cdn.rawgit.com script allow
+sweetalert2.github.io ghbtns.com * allow
+sweetalert2.github.io github.com * allow
+sweetalert2.github.io jsdelivr.com * allow
+sweetalert2.github.io jsdelivr.net * allow
+sweetalert2.github.io npmjs.org * allow
+swimtraineraustralia.com.au google.com * allow
+swimtraineraustralia.com.au paypal.com * allow
+swimtraineraustralia.com.au paypalobjects.com * allow
+swimtraineraustralia.com.au shopify.com * allow
+swimtraineraustralia.com.au shopifycdn.com * allow
+swimtraineraustralia.com.au shopifycloud.com * allow
+swimtraineraustralia.com.au shopifysvc.com * allow
+swoogo.com * frame inherit
+swoogo.com amazonaws.com * allow
+swoogo.com arena.im * allow
+swoogo.com bootstrapcdn.com * allow
+swoogo.com eventusaiemojiapp.herokuapp.com * allow
+swoogo.com eventusaiemojiapp.herokuapp.com frame allow
+swoogo.com firestore.googleapis.com * allow
+swoogo.com fontawesome.com * allow
+swoogo.com google.com * allow
+swoogo.com jquery.com * allow
+swoogo.com maps.googleapis.com * allow
+swoogo.com swoogo.s3.amazonaws.com * allow
+swoogo.com swoogo.s3.amazonaws.com frame allow
+swoogo.com vimeo.com * allow
+swoogo.com vimeo.com frame allow
+swyx.io webmention.io * allow
+sydneyairport.com.au jquery.com * allow
+sydneyairport.com.au jsdelivr.net * allow
+sydneycatholic.org * frame inherit
+sydneycatholic.org google.com * allow
+sydneycatholic.org gstatic.com * allow
+sydneycatholic.org maps.googleapis.com * allow
+sydneycoveproperty.com agentboxcdn.com.au * allow
+sydneycoveproperty.com google.com * allow
+sydneycoveproperty.com google.com frame allow
+sydneycoveproperty.com gstatic.com * allow
+sydneycoveproperty.com maps.googleapis.com * allow
+sydneycustomshouse.com.au * frame inherit
+sydneycustomshouse.com.au datocms-assets.com * allow
+sydneycustomshouse.com.au matterport.com * allow
+sydneylivingmuseums.com.au tnew-assets.com * allow
+tachyons.io * frame inherit
+tachyons.io ghbtns.com * allow
+tachyons.io ghbtns.com frame allow
+tachyons.io unpkg.com * allow
+tapas.io * frame inherit
+tapas.io gstatic.com script allow
+tapas.io paypal.com * allow
+tapas.io paypalobjects.com * allow
+tapas.io s3.amazonaws.com * allow
+tapas.io stripe.com * allow
+tapas.io t.paypal.com * inherit
+techradar.com futurecdn.net * allow
+teleport.fm p.typekit.net * inherit
+teleport.fm s3-us-east-2.amazonaws.com * allow
+tellmebaby.com.au shopify.com * allow
+tellmebaby.com.au shopifysvc.com * allow
+tesla.com teslamotors.com * allow
+theappguruz.com jquery.com * allow
+theatlantic.com d3js.org * allow
+theaustralian.com.au news.com.au * allow
+thecollector.com b-cdn.net * allow
+theguardian.com twimg.com * allow
+thenextweb.com jwplayer.com * allow
+thenextweb.com tnwcdn.com * allow
+thenextweb.com www.youtube.com frame allow
+thenextweb.com youtube.com * allow
+thenextweb.com youtube.com frame allow
+thenextweb.com ytimg.com * allow
+theonion.com * frame inherit
+theonion.com scroll.com * allow
+theonion.com scroll.com frame allow
+theprintbar.com www.google.com * allow
+theprintbar.com www.google.com frame allow
+thesprintbook.com embedly.com * allow
+thesprintbook.com embedly.com frame allow
+thesprintbook.com squarespace-cdn.com * allow
+thesprintbook.com squarespace.com * allow
+theverge.com vox-cdn.com * allow
+theverge.com voxmedia.com * allow
+theverge.com youtube.com * allow
+theverge.com youtube.com frame allow
+thistooshallgrow.com squarespace-cdn.com * allow
+thistooshallgrow.com squarespace.com * allow
+thymeleaf.org unpkg.com script allow
+tictoc.com.au tictoc.ai * allow
+tiermaker.com jsdelivr.net * allow
+tinyletter.com www.google.com * allow
+tinyletter.com www.google.com frame allow
+titounis.fr sentry-cdn.com * allow
+titounis.fr wix.com * allow
+titounis.fr wixstatic.com * allow
+tomsguide.com * media allow
+tomsguide.com futurecdn.net * allow
+touchtechpayments.com * frame allow
+touchtechpayments.com * other allow
+tozicode.com gstatic.com * allow
+tozicode.com rawgit.com * allow
+trello.com atlassian.com * allow
+trello.com trello-avatars.s3.amazonaws.com * allow
+trello.com trello-backgrounds.s3.amazonaws.com * allow
+trello.com trello-logos.s3.amazonaws.com * allow
+trello.com trello-members.s3.amazonaws.com * allow
+trello.com trellocdn.com * allow
+trello.com unsplash.com * allow
+tubersongs.com * frame inherit
+tubersongs.com googlevideo.com * allow
+tubersongs.com gumroad.com * allow
+tubersongs.com s3.amazonaws.com * allow
+tubersongs.com youtube.com * allow
+tubersongs.com ytimg.com * allow
+twitter.com google.com * allow
+twitter.com twimg.com * allow
+tylerxhobbs.com squarespace-cdn.com * allow
+tylerxhobbs.com squarespace.com * allow
+tympanus.net jquery.com * allow
+tympanus.net jsdelivr.net * allow
+tympanus.net netdna-ssl.com * allow
+tympanus.net p.typekit.net * inherit
+tympanus.net s3-us-west-2.amazonaws.com * allow
+tympanus.net threejs.org * allow
+typematrix.com jquery.com * allow
+uber.com licdn.com script allow
+uber.com netdna-ssl.com * allow
+uber.com uber.comdist * allow
+udonis.co giphy.com * allow
+udonis.co jquery.com * allow
+udonis.co npmcdn.com * allow
+udonis.co wpmucdn.com * allow
+ulule.com s3-eu-west-1.amazonaws.com * allow
+uniqlo.com ui-uniqlo-media.s3-ap-southeast-2.amazonaws.com * allow
+up-for-grabs.net gstatic.com * allow
+up-for-grabs.net jsdelivr.net * allow
+uxdesign.cc * frame inherit
+uxdesign.cc d1z2jf7jlzjs58.cloudfront.net * inherit
+uxdesign.cc embedly.com * allow
+uxdesign.cc embedly.com frame allow
+uxdesign.cc gfycat.com * allow
+uxdesign.cc gfycat.com frame allow
+uxdesign.cc medium.com * allow
+uxplanet.org * frame inherit
+uxplanet.org embedly.com * allow
+uxplanet.org embedly.com frame allow
+uxplanet.org medium.com * allow
+vanschneider.com netdna-ssl.com * allow
+vanschneider.com rawgit.com * allow
+vanschneider.com webtype.com * allow
+vasilis.nl s3-ap-southeast-2.amazonaws.com * allow
+verou.me disqus.com * allow
+verou.me disqus.com frame allow
+verou.me disquscdn.com * allow
+verou.me referrer.disqus.com * inherit
+vimeo.com vimeocdn.com * allow
+vtech.com.au jquery.com script allow
+wanakakiwiholidaypark.nz 1848378337.rsc.cdn77.org * allow
+wanakakiwiholidaypark.nz cmswebsite2go.com * allow
+wanakakiwiholidaypark.nz www.jscache.com script allow
+warwickdailynews.com.au dnn506yrbagrg.cloudfront.net * inherit
+warwickdailynews.com.au s3.amazonaws.com * allow
+web.dev firebaseinstallations.googleapis.com * allow
+web.dev gstatic.com * allow
+web.dev imgix.net * allow
+webdirections.org braintreegateway.com * allow
+webplatform.github.io webplatform.org * allow
+westfield.com.au cloudinary.com * allow
+westfield.com.au scentregroup.io * allow
+westpac.com.au maps.googleapis.com * allow
+westpac.com.au stgeorge.com.au * allow
+wetransfer.com wetransfer.net * allow
+wikidot.com * frame inherit
+wikidot.com scpdb.org * allow
+wikidot.com scpdb.org frame allow
+wikidot.com wdfiles.com * allow
+wikidot.com wdfiles.com frame allow
+wikipedia.org wikimedia.org * allow
+williamrchase.com d3js.org * allow
+williamrchase.com jsdelivr.net script allow
+williamrchase.com mapbox.com * allow
+williamrchase.com unpkg.com script allow
+woolworths.com.au akamaihd.net * allow
+woolworths.com.au ds-aksb-a.akamaihd.net * inherit
+woolworths.com.au maps.googleapis.com * allow
+woolworths.com.au woolworths.media * allow
+woolworthsrewards.com.au api-wr.com * allow
+workresponsibly.org p.typekit.net image allow
+workresponsibly.org website-files.com * allow
+worldofwarcraft.com akamaihd.net * allow
+worldofwarcraft.com akamaized.net * allow
+wowhead.com zamimg.com * allow
+wuxiaworld.com d31qbv1cthcecs.cloudfront.net * inherit
+wuxiaworld.com jsdelivr.net * allow
+wuxiaworld.com stripe.com * allow
+wuxiaworld.com www.google.com * allow
+wuxiaworld.com www.google.com frame allow
+wuxiaworld.site b-cdn.net * allow
+www.netlify.com cdn.netlify.com * allow
+xero.com * frame inherit
+xero.com autax-static-files-prod.s3.amazonaws.com * allow
+xero.com autax-static-files-prod.s3.amazonaws.com frame allow
+xero.com echocdn.com * allow
+xero.com echosign.com * allow
+xero.com echosign.com frame allow
+xkcd.com * frame inherit
+xkcd.com creativecommons.org * allow
+xsolla.com xsolla.net * allow
+yahoo.com yimg.com * allow
+yam.finance gstatic.com * allow
+youtube.com ggpht.com * allow
+youtube.com google.com * allow
+youtube.com google.com.au * allow
+youtube.com googlevideo.com * allow
+youtube.com gstatic.com * allow
+youtube.com ytimg.com * allow
+youtubekids.com * frame inherit
+youtubekids.com google.com * allow
+youtubekids.com googlevideo.com * allow
+youtubekids.com gstatic.com * allow
+youtubekids.com youtubetoken-pa.googleapis.com * allow
+youtubekids.com ytimg.com * allow
+zdnet.com cbsi.com * allow
+zdnet.com cbsistatic.com * allow
+zeroqode.com bubble.is * allow
+zeroqode.com s3.amazonaws.com * allow
+zohopublic.com zoho.com * allow
+zohopublic.com zohocdn.com * allow
+zohopublic.com zohostatic.com * allow

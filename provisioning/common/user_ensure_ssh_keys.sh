@@ -20,6 +20,16 @@ mkdir -p ~/.ssh
 
 if [ ! -f ~/.ssh/config ]; then
 	echo "" >> ~/.ssh/config
+	TODO
+#ControlMaster auto
+#ControlPath ~/.ssh/socket-%r@%h:%p
+#
+#ServerAliveInterval 300
+#
+## Hosts
+#Host *
+#AddKeysToAgent yes
+#UseKeychain yes
 fi
 
 if [ ! -f ~/.ssh/known_hosts ]; then

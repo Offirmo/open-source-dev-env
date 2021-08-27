@@ -46,6 +46,8 @@ If not found, some will be generated:
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_ssh_keys.sh  | bash
        + if new, add the new keys to github
          - go here https://github.com/settings/keys
+         cat ~/.ssh/id_ecdsa_offirmo.pub | pbcopy
+         cat ~/.ssh/id_ecdsa.pub | pbcopy
          - test it: `ssh -T git@github.com`
        + DELETE SSH KEYS FROM THE DISK/USB KEY!
 
@@ -66,8 +68,6 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ens
 
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_common_repos_cloned.sh  | bash
 
-# Ruby: https://rvm.io/rvm/install
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
 ### Ubuntu

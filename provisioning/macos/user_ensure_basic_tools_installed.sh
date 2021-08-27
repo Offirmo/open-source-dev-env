@@ -32,10 +32,15 @@ echo "  - PATH          = $PATH"
 ## https://brew.sh/
 echo "******* installing brew…"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+## Make brew support multiple versions
+brew tap homebrew/cask-versions
+
 
 echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
+
+brew install git-lfs
 
 brew install --cask sizeup keepassx xnviewmp
 
@@ -81,3 +86,15 @@ pyenv install 3.9.6
 pyenv global 3.9.6
 
 echo "* all done."
+
+## Java
+## install v8
+## see https://github.com/AdoptOpenJDK/homebrew-openjdk
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk8
+
+## install latest version
+brew cask install java
+
+## Install mvnvm. DO NOT install normal maven
+brew install mvnvm
