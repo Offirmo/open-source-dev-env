@@ -42,9 +42,9 @@ echo "******* installing base apps through brew…"
 
 brew install git-lfs
 
-brew install --cask sizeup keepassx xnviewmp
+brew install --cask sizeup keepassx xnviewmp kdiff3
 
-brew install --cask visual-studio-code
+brew install --cask visual-studio-code inkscape
 
 brew install git-cola git-delta
 
@@ -88,13 +88,16 @@ pyenv global 3.9.6
 echo "* all done."
 
 ## Java
+brew install --cask temurin
+
 ## install v8
-## see https://github.com/AdoptOpenJDK/homebrew-openjdk
-brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
+# deprecated https://github.com/AdoptOpenJDK/homebrew-openjdk
+#brew tap adoptopenjdk/openjdk/adoptopenjdk8
+brew tap homebrew/cask-versions
+brew install --cask temurin8
 
 ## install latest version
-brew cask install java
+brew install java
 
 ## Install mvnvm. DO NOT install normal maven
 brew install mvnvm
