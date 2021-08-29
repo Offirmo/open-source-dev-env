@@ -4,6 +4,10 @@
 <dict>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>ColoredSelectedTabOutlineStrength</key>
+	<real>1</real>
+	<key>ColoredUnselectedTabTextProminence</key>
+	<real>1</real>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>SolarizedLightOffirmo</key>
@@ -354,6 +358,8 @@
 	<integer>3</integer>
 	<key>DimBackgroundWindows</key>
 	<true/>
+	<key>DimOnlyText</key>
+	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
 	<key>EnableProxyIcon</key>
@@ -480,6 +486,8 @@
 	<false/>
 	<key>LeftTabBarWidth</key>
 	<real>311</real>
+	<key>MinimalTabStyleBackgroundColorDifference</key>
+	<real>1</real>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1129,6 +1137,8 @@
 				<key>Red Component</key>
 				<real>0.023000000044703484</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.50395584106445312</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>

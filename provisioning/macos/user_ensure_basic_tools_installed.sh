@@ -44,7 +44,7 @@ brew install git-lfs
 
 brew install --cask sizeup keepassx xnviewmp kdiff3
 
-brew install --cask visual-studio-code inkscape
+brew install --cask visual-studio-code inkscape lepton
 
 brew install git-cola git-delta
 
