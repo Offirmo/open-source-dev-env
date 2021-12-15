@@ -5,6 +5,7 @@
 ## brew
 brew upgrade
 brew update
+brew cleanup
 brew doctor
 
 ## Python

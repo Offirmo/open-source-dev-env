@@ -4,6 +4,8 @@
 <dict>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>CloseBookmarksWindowAfterOpening</key>
+	<true/>
 	<key>ColoredSelectedTabOutlineStrength</key>
 	<real>1</real>
 	<key>ColoredUnselectedTabTextProminence</key>
@@ -1963,6 +1965,8 @@
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
+	<false/>
+	<key>OpenBookmark</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>

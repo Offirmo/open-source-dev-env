@@ -2,6 +2,8 @@
 
 ############ cleanups ############
 
+brew cleanup
+
 yarn cache clean
 npm cache clean --force
 rm -rf ~/.npm-pkgr/

@@ -95,6 +95,20 @@ else
 fi
 popd > /dev/null
 
+## Fira sans
+## https://en.wikipedia.org/wiki/Fira_(typeface)
+pushd ~/work/install > /dev/null
+FIRASANS_INSTALL_DIR=FiraSans
+if [[ ! -d ~/work/install/$FIRASANS_INSTALL_DIR ]]; then
+    git clone --recursive https://github.com/bBoxType/FiraSans.git $FIRASANS_INSTALL_DIR
+else
+    cd $FIRASANS_INSTALL_DIR
+    git fetch
+    git pull
+fi
+popd > /dev/null
+
+
 ## Comic Neue font
 ## https://comicneue.com/
 pushd ~/work/install > /dev/null

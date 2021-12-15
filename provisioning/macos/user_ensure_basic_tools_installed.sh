@@ -48,7 +48,7 @@ brew install --cask visual-studio-code inkscape lepton
 
 brew install git-cola git-delta
 
-brew install --cask iterm2
+brew install --cask iterm2 responsively
 
 brew install --cask adobe-acrobat-reader
 
