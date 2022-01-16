@@ -18,6 +18,7 @@ xcrun simctl erase all
 
 #vboxmanage modifymedium disk "/Users/xxx/VirtualBox VMs/Ubuntu 16 C/Ubuntu 16 C-disk1.vdi" --compact
 
+
 nvm ls
 
 
