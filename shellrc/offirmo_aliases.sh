@@ -10,6 +10,8 @@ alias l='ls -CF'
 ## mine ;)
 alias x='exit'
 #alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
+alias ydl='yt-dlp --verbose'
+
 
 ## tools
 ## works if installed via umake
