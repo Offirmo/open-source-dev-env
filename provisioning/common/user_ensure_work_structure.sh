@@ -13,7 +13,7 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## debug informations
-echo "* revision = circa 2021"
+echo "* revision = circa 2022"
 echo "* start ENV"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"

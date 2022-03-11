@@ -13,7 +13,7 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## debug informations
-echo "* revision = circa 2021"
+echo "* revision = circa 2022"
 echo "* start ENV"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
@@ -30,9 +30,10 @@ echo "  - PATH          = $PATH"
 
 ## Brew
 ## https://brew.sh/
-echo "******* installing brew…"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-## Make brew support multiple versions
+## XXX need superuser
+#echo "******* installing brew…"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+### Make brew support multiple versions
 brew tap homebrew/cask-versions
 
 

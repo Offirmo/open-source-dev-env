@@ -57,6 +57,7 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_en
    (relaunch terminal here, ensure nvm / npm is working)
    (here install the FiraCode font, TrueType preferred)
    (here type "onn")
+[MACOS: install brew] /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_basic_tools_installed.sh  | bash
 
 
