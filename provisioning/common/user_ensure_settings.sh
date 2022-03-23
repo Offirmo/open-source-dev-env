@@ -65,8 +65,12 @@ git config --global color.ui "auto"
 touch ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
 ## https://github.com/dandavison/delta/blob/master/README.md
-git config --global core.pager "delta --theme='Solarized (light)'"
+git config --global core.pager "delta --syntax-theme='Solarized (light)'"
 git config --global interactive.diffFilter "delta --color-only"
+git config --global delta.navigate true
+git config --global delta.merge "conflictstyle = diff3"
+git config --global delta.side-by-side true
+git config --global diff.colorMoved "default"
 
 
 ############ npm ############

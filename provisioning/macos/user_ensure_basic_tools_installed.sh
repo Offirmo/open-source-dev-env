@@ -47,7 +47,7 @@ brew install --cask sizeup keepassx xnviewmp kdiff3
 
 brew install --cask visual-studio-code inkscape lepton
 
-brew install git-cola git-delta
+brew install git-cola git-delta rsync
 
 brew install --cask iterm2 responsively
 

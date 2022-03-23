@@ -29,13 +29,14 @@ alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
-alias tpx='rm -rf .awcache node_modules .npm npm-debug.log yarn-error.log yarn.lock .yalc bower_components typings'
+alias tpx='rm -rf .awcache node_modules  .npm npm-debug.log  yarn-error.log yarn.lock .yalc  bower_components typings'
 #alias p='puer --no-launch --port 1981'
 #alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
-alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt'
+#alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt rush'
+alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn bolt rush'
 # yarn diff-so-fancy
 
 ## projects
