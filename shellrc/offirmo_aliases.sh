@@ -29,15 +29,16 @@ alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
-alias tpx='rm -rf .awcache node_modules  .npm npm-debug.log  yarn-error.log yarn.lock .yalc  bower_components typings'
+alias tpx='rm -rf node_modules yarn.lock package-lock.json .npm npm-debug.log yarn-error.log .yalc .awcache .parcel-cache bower_components typings'
 #alias p='puer --no-launch --port 1981'
 #alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
-#alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt rush'
-alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn bolt rush'
-# yarn diff-so-fancy
+# for bolt to work properly, it has to be installed globally via yarn
+alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn && yarn global add bolt'
+# @microsoft/rush
+#alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn'
 
 ## projects
 alias off='cd ~/work/src/off; git_offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
@@ -68,7 +69,6 @@ alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; ./.tabset offirm
 
 alias mono='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; tabset --badge "mono" --color "#FF4136"'
 
-alias mono01='cd ~/work/src/off/offirmo-monorepo/1-stdlib; git_offirmo.sh; cd better-console-group; ./.tabset mono01'
 alias mono02='cd ~/work/src/off/offirmo-monorepo/1-stdlib; git_offirmo.sh; cd deferred; ./.tabset mono02'
 alias mono03='cd ~/work/src/off/offirmo-monorepo/1-stdlib; git_offirmo.sh; cd globalthis-ponyfill; ./.tabset mono03'
 alias mono04='cd ~/work/src/off/offirmo-monorepo/1-stdlib; git_offirmo.sh; cd murmurhash; ./.tabset mono04'
