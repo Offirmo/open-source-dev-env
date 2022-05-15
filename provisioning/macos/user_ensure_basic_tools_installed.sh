@@ -49,7 +49,7 @@ brew install --cask visual-studio-code inkscape lepton
 
 brew install git-cola git-delta rsync
 
-brew install --cask iterm2 responsively
+brew install --cask iterm2 responsively insomnia
 
 brew install --cask adobe-acrobat-reader
 
