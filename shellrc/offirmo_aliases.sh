@@ -36,7 +36,7 @@ alias tpx='rm -rf node_modules .npm npm-debug.log package-lock.json yarn.lock ya
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 # for bolt to work properly, it has to be installed globally via yarn
-alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n netlify-cli heroku yarn && yarn global add bolt'
+alias onn='npm install --location=global iterm2-tab-set avn avn-nvm avn-n netlify-cli heroku yarn && yarn global add bolt'
 # cordova
 #alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn'
 
@@ -70,6 +70,11 @@ alias ogi='cd ~/work/src/off/offirmo.github.io; git_offirmo.sh; tabset --color "
 alias mono='cd ~/work/src/off/offirmo-monorepo; git_offirmo.sh; tabset --badge "mono" --color "#FF4136"'
 alias mono2='cd ~/work/src/off/offirmo-monorepo/stack--2022; git_offirmo.sh; tabset --badge "mono2022" --color "#FF4136"'
 
+
+alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-typescript-compiler; tabset --color "#a4d4dd" --badge node-tsc'
+alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd unit-test-toolbox && tabset --color "#a4d4dd" --badge utt'
+
+
 alias mono101='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd deferred;              tabset --color "#a4d4dd" --badge mono101'
 alias mono102='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd globalthis-ponyfill;   tabset --color "#a4d4dd" --badge mono102'
 alias mono103='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd json-stable-stringify; tabset --color "#a4d4dd" --badge mono103'
@@ -90,14 +95,18 @@ alias mono214='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_
 alias mono219='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd prettify-any;                  tabset --color "#a4d4dd" --badge mono219'
 alias mono220='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd print-error-to-ansi;           tabset --color "#a4d4dd" --badge mono220'
 
-alias mono301='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd favicon-notifications; tabset --color "#a4d4dd" --badge mono301'
-alias mono302='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd features-detection-browser; tabset --color "#a4d4dd" --badge mono302'
-alias mono303='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd iframe--chat; tabset --color "#a4d4dd" --badge mono303'
-alias mono304='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd iframe--loading; tabset --color "#a4d4dd" --badge mono304'
-alias mono305='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd react-error-boundary; tabset --color "#a4d4dd" --badge mono305'
-alias mono306='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd ui--browser--css; tabset --color "#a4d4dd" --badge mono306'
-alias mono307='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd storybook--utils; tabset --color "#a4d4dd" --badge mono307'
-alias mono310='cd ~/work/src/off/offirmo-monorepo/3-advanced--browser; git_offirmo.sh; cd xoff; tabset --color "#a4d4dd" --badge mono310'
+alias mono301='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd css--reset;       tabset --color "#a4d4dd" --badge mono301'
+alias mono302='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd css--foundation;  tabset --color "#a4d4dd" --badge mono302'
+alias mono303='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd css--framework;   tabset --color "#a4d4dd" --badge mono303'
+
+#alias mono301='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd favicon-notifications; tabset --color "#a4d4dd" --badge mono301'
+#alias mono302='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd features-detection-browser; tabset --color "#a4d4dd" --badge mono302'
+#alias mono303='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd iframe--chat; tabset --color "#a4d4dd" --badge mono303'
+#alias mono304='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd iframe--loading; tabset --color "#a4d4dd" --badge mono304'
+#alias mono305='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd react-error-boundary; tabset --color "#a4d4dd" --badge mono305'
+#alias mono306='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd ui--browser--css; tabset --color "#a4d4dd" --badge mono306'
+#alias mono307='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd storybook--utils; tabset --color "#a4d4dd" --badge mono307'
+#alias mono310='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browser; git_offirmo.sh; cd xoff; tabset --color "#a4d4dd" --badge mono310'
 
 alias mono320='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd async-utils; tabset --color "#a4d4dd" --badge mono320'
 alias mono321='cd ~/work/src/off/offirmo-monorepo/3-advanced--isomorphic; git_offirmo.sh; cd normalize-string; tabset --color "#a4d4dd" --badge mono321'
@@ -119,9 +128,6 @@ alias mono332='cd ~/work/src/off/offirmo-monorepo/3-advanced--multi; git_offirmo
 
 alias mono351='cd ~/work/src/off/offirmo-monorepo/3-advanced--node; git_offirmo.sh; cd state-migration-tester; tabset --color "#a4d4dd" --badge mono351'
 alias clt='cd ~/work/src/off/offirmo-monorepo/3-advanced--node; git_offirmo.sh; cd cli-toolbox; tabset --color "#a4d4dd" --badge clt'
-
-alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-typescript-compiler; tabset --color "#a4d4dd" --badge node-tsc'
-alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd unit-test-toolbox && tabset --color "#a4d4dd" --badge utt'
 alias monoT1='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
 alias monoT2='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd memories-sorter; tabset --color "#a4d4dd" --badge monoT2'
 
