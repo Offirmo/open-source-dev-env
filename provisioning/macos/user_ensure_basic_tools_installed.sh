@@ -41,7 +41,8 @@ echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
-brew install git-lfs
+## no no no!!
+#brew install git-lfs
 
 brew install --cask sizeup keepassx xnviewmp kdiff3
 
@@ -89,16 +90,15 @@ pyenv global 3.9.6
 echo "* all done."
 
 ## Java
-brew install --cask temurin
+#brew install --cask temurin
 
 ## install v8
-# deprecated https://github.com/AdoptOpenJDK/homebrew-openjdk
-#brew tap adoptopenjdk/openjdk/adoptopenjdk8
+#brew tap adoptopenjdk/openjdk/adoptopenjdk8 # deprecated https://github.com/AdoptOpenJDK/homebrew-openjdk
 brew tap homebrew/cask-versions
-brew install --cask temurin8
+#brew install --cask temurin8
 
 ## install latest version
-brew install java
+#brew install java
 
 ## Install mvnvm. DO NOT install normal maven
-brew install mvnvm
+#brew install mvnvm
