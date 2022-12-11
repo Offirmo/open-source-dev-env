@@ -1,0 +1,10 @@
+# https://github.com/yt-dlp/yt-dlp/#configuration
+# $HOME/.config/yt-dlp/config
+
+--split-chapters
+
+--format bestaudio[ext=mp3]/bestaudio[ext=m4a]/bestaudio
+
+--output ~/Documents/ytdl/%(release_date)s-%(id)s-%(title)s.%(ext)s
+
+--output chapter:~/Documents/ytdl/%(channel)s/[%(id)s]-%(title)s/%(section_title)s.%(ext)s

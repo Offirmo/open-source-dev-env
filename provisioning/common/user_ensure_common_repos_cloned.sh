@@ -34,22 +34,14 @@ echo "  - PATH          = $PATH"
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/sync-local-repos.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/blog.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/x.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/blog.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/minisite-bookmarks-ghpages.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/offirmo-monorepo.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/offirmo.github.io.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/sync-local-repos.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/web-tech-experiments.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo/x.git
 
 ## Offirmo team
 ## https://github.com/Offirmo-team
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo-team/wiki.git
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:Offirmo-team/wiki.wiki.git
 
 ## Offirmo's Online Adventures
 ## https://github.com/online-adventures
-#~/work/src/off/open-source-dev-env/bin/gitc.sh  git@github.com:online-adventures/online-adventures.github.io.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/online-adventures/online-adventures.github.io.git
+
 
 echo "* all done."

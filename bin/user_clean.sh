@@ -2,22 +2,29 @@
 
 ############ cleanups ############
 
+## brew
 brew cleanup
 
+## various node/js package managers
 yarn cache clean
 npm cache clean --force
 rm -rf ~/.npm-pkgr/
 rm -rf ~/.npm_lazy
 rm -rf ~/.npm
 
+## docker
 #docker system prune --all
 #docker volume prune
 
+## xcode device emulators
 xcrun simctl delete unavailable
 xcrun simctl erase all
 
+## virtualbox
 #vboxmanage modifymedium disk "/Users/xxx/VirtualBox VMs/Ubuntu 16 C/Ubuntu 16 C-disk1.vdi" --compact
 
+## list available node installs
+## but cleaning will need to be done manually
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm ls
 

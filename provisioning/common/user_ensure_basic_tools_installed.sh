@@ -30,7 +30,7 @@ echo "  - PATH          = $PATH"
 ## NVM
 ## https://github.com/nvm-sh/nvm
 echo "* installing nvm…"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash -s stable
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash -s stable
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'
@@ -84,16 +84,17 @@ popd > /dev/null
 
 ## FiraCode font
 ## https://github.com/tonsky/FiraCode
-pushd ~/work/install > /dev/null
-FIRACODE_INSTALL_DIR=FiraCode
-if [[ ! -d ~/work/install/$FIRACODE_INSTALL_DIR ]]; then
-    git clone --recursive https://github.com/tonsky/FiraCode.git $FIRACODE_INSTALL_DIR
-else
-    cd $FIRACODE_INSTALL_DIR
-    git fetch
-    git pull
-fi
-popd > /dev/null
+## (disabled, trying brew cask font)
+#pushd ~/work/install > /dev/null
+#FIRACODE_INSTALL_DIR=FiraCode
+#if [[ ! -d ~/work/install/$FIRACODE_INSTALL_DIR ]]; then
+#    git clone --recursive https://github.com/tonsky/FiraCode.git $FIRACODE_INSTALL_DIR
+#else
+#    cd $FIRACODE_INSTALL_DIR
+#    git fetch
+#    git pull
+#fi
+#popd > /dev/null
 
 ## Fira sans
 ## https://en.wikipedia.org/wiki/Fira_(typeface)
@@ -111,16 +112,16 @@ popd > /dev/null
 
 ## Comic Neue font
 ## https://comicneue.com/
-pushd ~/work/install > /dev/null
-COMICNEUE_INSTALL_DIR=ComicNeue
-if [[ ! -d ~/work/install/COMICNEUE_INSTALL_DIR ]]; then
-    git clone --recursive https://github.com/crozynski/comicneue.git COMICNEUE_INSTALL_DIR
-else
-    cd COMICNEUE_INSTALL_DIR
-    git fetch
-    git pull
-fi
-popd > /dev/null
+#pushd ~/work/install > /dev/null
+#COMICNEUE_INSTALL_DIR=ComicNeue
+#if [[ ! -d ~/work/install/COMICNEUE_INSTALL_DIR ]]; then
+#    git clone --recursive https://github.com/crozynski/comicneue.git COMICNEUE_INSTALL_DIR
+#else
+#    cd COMICNEUE_INSTALL_DIR
+#    git fetch
+#    git pull
+#fi
+#popd > /dev/null
 
 
 ### MISC ###

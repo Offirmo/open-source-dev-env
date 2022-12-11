@@ -1,6 +1,6 @@
 #! /bin/bash
 
-## expects a HTTPS web url rather than SSH
+## expects an HTTPS web url rather than SSH
 
 REPOSITORY_URL=$1
 CUSTOM_REPO_DIR=$2

@@ -30,18 +30,18 @@ echo "  - PATH          = $PATH"
 
 ## Brew
 ## https://brew.sh/
-## XXX need superuser
+## NO, bc need superuser!
 #echo "******* installing brew…"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 ### Make brew support multiple versions
 brew tap homebrew/cask-versions
-
 
 echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
-## no no no!!
+## Nooo this horror corrupts repos!
 #brew install git-lfs
 
 brew install --cask sizeup keepassx xnviewmp kdiff3
@@ -60,10 +60,15 @@ brew install --cask steam
 
 ## fonts
 echo "******* installing some fonts through brew…"
+### Allow fonts  https://github.com/Homebrew/homebrew-cask-fonts
 brew tap homebrew/cask-fonts
 ## https://github.com/be5invis/Iosevka
 brew install --cask font-iosevka
+brew install --cask font-comic-neue
 brew install --cask font-fira-code
+brew install --cask font-fira-sans
+brew install --cask font-fira-sans-condensed
+brew install --cask font-fira-sans-extra-condensed
 
 ## https://iterm2.com/documentation-shell-integration.html
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
@@ -84,17 +89,18 @@ source ~/.rvm/scripts/rvm
 ## python
 echo "******* python through pyenv…"
 brew install pyenv
+## version needed by Netlify
 pyenv install 3.9.6
 pyenv global 3.9.6
 
 echo "* all done."
 
 ## Java
+# disabled 2022/12
 #brew install --cask temurin
 
 ## install v8
 #brew tap adoptopenjdk/openjdk/adoptopenjdk8 # deprecated https://github.com/AdoptOpenJDK/homebrew-openjdk
-brew tap homebrew/cask-versions
 #brew install --cask temurin8
 
 ## install latest version

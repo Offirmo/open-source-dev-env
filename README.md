@@ -26,13 +26,16 @@ curl -o- https://www.offirmo.net/open-source-dev-env/hello.sh | sudo bash
 Set bash as default:
 https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/
 cat /etc/shells  <-- check if /bin/bash is present
+echo $SHELL , $0 , $BASH  <-- check current shell
 chsh -s /bin/bash
 
-show hidden files:
-- temp Apple + shift + . https://apple.stackexchange.com/a/340543
-- définitif: defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
+Show hidden files:
+## temp: ref. https://apple.stackexchange.com/a/340543
+##Apple + shift + .
+## définitif:
+defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
 
-Either:
+Install git: either:
 - type 'git' and accept everything asked
 - or/and install xcode and lauch it once (but takes time & lot of disk space!)
 
@@ -46,8 +49,8 @@ If not found, some will be generated:
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_ssh_keys.sh  | bash
        + if new, add the new keys to github
          - go here https://github.com/settings/keys
-         cat ~/.ssh/id_ecdsa_offirmo.pub | pbcopy
-         cat ~/.ssh/id_ecdsa.pub | pbcopy
+         cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy
+         cat ~/.ssh/id_ed25519.pub | pbcopy
          - test it: `ssh -T git@github.com`
        + DELETE SSH KEYS FROM THE DISK/USB KEY!
 
@@ -55,7 +58,6 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_en
 GIT NEEDED + git ssh keys:
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_ensure_basic_tools_installed.sh  | bash
    (relaunch terminal here, ensure nvm / npm is working)
-   (here install the FiraCode font, TrueType preferred)
    (here type "onn")
 [MACOS: install brew] /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user_ensure_basic_tools_installed.sh  | bash
@@ -79,12 +81,9 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_en
 
 ### macos
 
-`bin/user_update.sh`
-`bin/user_clean.sh`
-
 ```bash
-
-
+user_update.sh
+user_clean.sh
 ```
 
 ### Cleanup git repo:
