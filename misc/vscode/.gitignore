@@ -1,0 +1,6 @@
+/data-dir/*
+!/data-dir/Preferences
+!/data-dir/User
+/data-dir/User/*
+!/data-dir/User/settings.json
+/home

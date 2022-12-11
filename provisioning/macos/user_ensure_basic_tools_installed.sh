@@ -56,6 +56,8 @@ brew install --cask adobe-acrobat-reader
 
 brew install --cask steam
 
+brew install --cask grandperspective
+
 ## disabled: virtualbox dropbox
 
 ## fonts

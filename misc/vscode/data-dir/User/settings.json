@@ -1,0 +1,6 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "search.exclude": {
+        "**/tosort": true
+    }
+}
