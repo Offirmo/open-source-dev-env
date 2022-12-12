@@ -76,6 +76,10 @@ curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user_en
 ### Ubuntu
 (no longer using)
 
+### common
+
+Edit and check the bash config files
+
 
 ## Maintain
 

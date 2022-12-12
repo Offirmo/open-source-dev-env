@@ -58,7 +58,9 @@ brew install --cask steam
 
 brew install --cask grandperspective
 
-## disabled: virtualbox dropbox
+## NO!
+## Those apps should NOT be installed through brew
+## virtualbox dropbox
 
 ## fonts
 echo "******* installing some fonts through brew…"
