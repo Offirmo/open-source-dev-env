@@ -44,11 +44,11 @@ echo "******* installing base apps through brew…"
 ## Nooo this horror corrupts repos!
 #brew install git-lfs
 
+brew install git-cola git-delta rsync
+
 brew install --cask sizeup keepassx xnviewmp kdiff3
 
 brew install --cask visual-studio-code inkscape lepton
-
-brew install git-cola git-delta rsync
 
 brew install --cask iterm2 responsively insomnia
 
@@ -84,12 +84,14 @@ curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration
 #brew uninstall qlcolorcode qlstephen webpquicklook
 
 
+#############################################################
 ## ruby
 ## https://rvm.io/rvm/install
 echo "******* installing ruby through rvm…"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 source ~/.rvm/scripts/rvm
 
+#############################################################
 ## python
 echo "******* python through pyenv…"
 brew install pyenv
@@ -97,10 +99,11 @@ brew install pyenv
 pyenv install 3.9.6
 pyenv global 3.9.6
 
-echo "* all done."
 
+#############################################################
 ## Java
 # disabled 2022/12
+
 #brew install --cask temurin
 
 ## install v8
@@ -112,3 +115,6 @@ echo "* all done."
 
 ## Install mvnvm. DO NOT install normal maven
 #brew install mvnvm
+
+#############################################################
+echo "* all done."

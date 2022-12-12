@@ -37,7 +37,7 @@ fi
 unset color_prompt force_color_prompt
 
 ## https://docs.reactioncommerce.com/docs/requirements
-## seems outdated anyway, check with ulimit -l
+## outdated, check with ulimit -l = unlimited
 #ulimit -n 65536 65536
 
 ## enable brew autocomplete

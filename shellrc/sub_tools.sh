@@ -14,11 +14,13 @@ export NVM_DIR="$HOME/.nvm"
 ## (copied from what is set on install)
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ## Java
 ## taken from???
+export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home --version 1.8)
+
+## jenv???
 ##export PATH="$HOME/.jenv/bin:$PATH"
 ##eval "$(jenv init -)"
-export JAVA_HOME=$(/usr/libexec/java_home --version 1.8)

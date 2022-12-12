@@ -78,13 +78,13 @@ alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd node-t
 alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools; git_offirmo.sh; cd unit-test-toolbox && tabset --color "#a4d4dd" --badge utt'
 
 
+alias mono100='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd ts-types;              tabset --color "#a4d4dd" --badge mono100'
 alias mono101='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd deferred;              tabset --color "#a4d4dd" --badge mono101'
 alias mono102='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd globalthis-ponyfill;   tabset --color "#a4d4dd" --badge mono102'
 alias mono103='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd json-stable-stringify; tabset --color "#a4d4dd" --badge mono103'
 alias mono105='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd promise-try;           tabset --color "#a4d4dd" --badge mono105'
 alias mono106='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd timestamps;            tabset --color "#a4d4dd" --badge mono106'
 alias mono107='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd tiny-singleton;        tabset --color "#a4d4dd" --badge mono107'
-alias mono108='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd ts-types;              tabset --color "#a4d4dd" --badge mono108'
 alias mono109='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd ts-utils;              tabset --color "#a4d4dd" --badge mono109'
 #alias mono09='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd uuid; tabset --color "#a4d4dd" --badge mono09'
 
