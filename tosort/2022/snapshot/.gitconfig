@@ -1,0 +1,34 @@
+[push]
+	default = simple
+[color]
+	ui = auto
+[core]
+	excludesfile = /Users/xxx/.gitignore
+	pager = delta --syntax-theme='Solarized (light)'
+[cola]
+	spellcheck = false
+	fontdiff = Fira Code,13,-1,5,50,0,0,0,0,0
+	tabwidth = 3
+	textwidth = 92
+	maxrecent = 17
+	icontheme = light
+	hidpi = 0
+	statusshowtotals = true
+	statusindent = true
+[interactive]
+	diffFilter = delta --color-only
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = Offirmo
+
+[delta]
+	navigate = true
+	merge = conflictstyle = diff3
+	side-by-side = true
+[diff]
+	colorMoved = default
