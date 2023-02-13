@@ -128,6 +128,7 @@ popd > /dev/null
 echo "* misc…"
 
 ## seems to be used by "virtualenv"
+## TODO install virtualenv? https://virtualenv.pypa.io/en/latest/index.html
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 

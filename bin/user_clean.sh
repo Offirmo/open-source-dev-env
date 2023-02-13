@@ -26,6 +26,7 @@ xcrun simctl erase all
 ## list available node installs
 ## but cleaning will need to be done manually
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+nvm cache clear
 nvm ls
 
 
