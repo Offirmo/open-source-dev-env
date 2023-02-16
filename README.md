@@ -132,6 +132,15 @@ npm adduser
 
 ## Notes
 
+https://youtrack.jetbrains.com/articles/IDEA-A-19/Shell-Environment-Loading
+```bash
+if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+	...
+fi
+```
+
+Also TODO compatibility with non-interactive shells, need no output
+
 ### Useful commands
 ```
 git stash --include-untracked
