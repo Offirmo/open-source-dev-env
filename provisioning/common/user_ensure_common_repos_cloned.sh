@@ -27,7 +27,7 @@ echo "  - PATH          = $PATH"
 ## Offirmo
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/open-source-dev-env.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/minisite-bookmarks-ghpages.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo-monorepo.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo-monorepo--2022.git      offirmo-monorepo
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/web-tech-experiments.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo.github.io.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/my.dev.to.git

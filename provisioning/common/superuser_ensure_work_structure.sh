@@ -26,4 +26,9 @@ mkdir -p /work
 mkdir -p /work/bin
 mkdir -p /work/install
 
+## seen missing on fresh MacOs Ventura
+## absence prevents yarn global from working :-(
+## https://stackoverflow.com/a/25654791/587407
+sudo mkdir -p -m 775 /usr/local/bin
+
 echo "* all done."

@@ -8,11 +8,10 @@ echo "* hello from: …open-source-dev-env/bin/load_shellrc.sh"
 ## useful function
 source_bash_files_from_dir()
 {
-	local target="$1/*"
-
 	for file in `ls -tr $1/*`
 	do
-		[ -f "$file" ] && source "$file"
+		#echo "sourcing $file"
+		source "$file"
 	done
 }
 
