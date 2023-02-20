@@ -9,7 +9,10 @@ export PATH="$PATH:/usr/local/sbin"
 
 ## yarn just in case
 if command -v yarn &> /dev/null; then
+    #echo "yarn PRESENT"
 	export PATH="$PATH:$(yarn global bin)"
+#else
+#    echo "yarn ABSENT"
 fi
 
 ## rvm
