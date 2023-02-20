@@ -24,3 +24,5 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 ## jenv???
 ##export PATH="$HOME/.jenv/bin:$PATH"
 ##eval "$(jenv init -)"
+
+test -e "/Users/sam/.iterm2_shell_integration.bash" && source "/Users/sam/.iterm2_shell_integration.bash"
