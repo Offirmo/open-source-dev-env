@@ -41,6 +41,9 @@ echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
+## needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
+brew install jq
+
 ## Nooo this horror corrupts repos!
 #brew install git-lfs
 

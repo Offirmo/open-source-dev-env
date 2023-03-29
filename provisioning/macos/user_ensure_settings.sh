@@ -38,4 +38,10 @@ echo ".DS_Store" >> ~/.gitignore
 ############ Tools settings ############
 echo "test -e \"${HOME}/.iterm2_shell_integration.bash\" && source \"${HOME}/.iterm2_shell_integration.bash\"" >> ~/.profile
 
+## now that jq was installed (previous script) we can auto-update GitHub's known host
+## ref. https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
+ssh-keygen -R github.com
+curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+
+
 echo "* all done."

@@ -87,7 +87,7 @@ alias mono105='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offi
 alias mono106='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd timestamps;            tabset --color "#a4d4dd" --badge mono106'
 alias mono107='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd tiny-singleton;        tabset --color "#a4d4dd" --badge mono107'
 alias mono109='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd ts-utils;              tabset --color "#a4d4dd" --badge mono109'
-#alias mono09='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd uuid; tabset --color "#a4d4dd" --badge mono09'
+alias mono110='cd ~/work/src/off/offirmo-monorepo/stack--2022/1-stdlib; git_offirmo.sh; cd random;                tabset --color "#a4d4dd" --badge mono110'
 
 alias mono201='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd error-utils;                   tabset --color "#006EDB" --badge mono201'
 alias mono202='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd murmurhash;                    tabset --color "#006EDB" --badge mono202'
@@ -98,6 +98,7 @@ alias mono213='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_
 alias mono214='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd practical-logger-node;         tabset --color "#a4d4dd" --badge mono214'
 alias mono219='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd prettify-any;                  tabset --color "#a4d4dd" --badge mono219'
 alias mono220='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd print-error-to-ansi;           tabset --color "#a4d4dd" --badge mono220'
+alias mono221='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd uuid;                          tabset --color "#a4d4dd" --badge mono221'
 
 alias mono301='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--isomorphic; git_offirmo.sh; cd async-utils;      tabset --color "#a4d4dd" --badge mono301'
 alias mono302='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--isomorphic; git_offirmo.sh; cd normalize-string; tabset --color "#a4d4dd" --badge mono302'
