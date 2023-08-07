@@ -170,7 +170,8 @@ alias tbrA53='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-bo
 alias tbrA60='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state;              tabset --color "#a4d4dd" --badge tbrA60'
 alias tbrAC1='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd interfaces;         tabset --color "#a4d4dd" --badge tbrAC1'
 
-alias icA01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/isekai-capitalist; git_offirmo.sh; cd sandbox;          tabset --color "#a4d4dd" --badge icA01'
+alias ic01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/immortal-clicker; git_offirmo.sh; cd sandbox;          tabset --color "#a4d4dd" --badge ic01'
+alias ikc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/isekai-capitalist; git_offirmo.sh; cd sandbox;          tabset --color "#a4d4dd" --badge ikc01'
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/stack--2022/B-apps--support/online-adventur.es; git_offirmo.sh; cd db-migrations; tabset --color "#a4d4dd" --badge monodbm'
 alias monodb='cd ~/work/src/off/offirmo-monorepo/stack--2022/B-apps--support/online-adventur.es; git_offirmo.sh; cd db;             tabset --color "#a4d4dd" --badge monodb'
