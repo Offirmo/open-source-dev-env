@@ -1,6 +1,43 @@
 {
-    "workbench.colorTheme": "Solarized Light",
-    "search.exclude": {
-        "**/tosort": true
-    }
+	"workbench.colorTheme": "Solarized Light",
+	"workbench.editor.wrapTabs": true,
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.showTabs": false,
+
+	"search.exclude": {
+		"**/tosort": true
+	},
+
+	"editor.tabSize": 3,
+	"editor.renderWhitespace": "boundary",
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.dragAndDrop": false,
+	"editor.dropIntoEditor.enabled": false,
+	"editor.emptySelectionClipboard": false,
+	"editor.unicodeHighlight.includeComments": true,
+	"editor.unicodeHighlight.allowedCharacters": {
+		"ꓽ": true,
+		"ⵧ": true,
+		"ꘌ": true,
+		"‿": true
+	},
+	"editor.unicodeHighlight.nonBasicASCII": true,
+
+	"explorer.excludeGitIgnore": true,
+
+	"javascript.preferences.quoteStyle": "single",
+
+	"typescript.preferences.quoteStyle": "single",
+
+
+	"diffEditor.ignoreTrimWhitespace": false,
+	"files.trimTrailingWhitespace": true,
+
+	"sortLines.filterBlankLines": true,
+	"editor.stickyScroll.enabled": true,
+	"search.useParentIgnoreFiles": true,
+	"files.exclude": {
+		"**/open-source-dev-env/misc/vscode/data-dir/*": true
+	}
 }
