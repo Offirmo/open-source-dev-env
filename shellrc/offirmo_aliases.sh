@@ -39,8 +39,8 @@ alias tpx='rm -rf node_modules .npm npm-debug.log package-lock.json yarn.lock ya
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 # for bolt to work properly, it has to be installed globally via yarn
-alias onn='npm install --location=global iterm2-tab-set avn avn-nvm avn-n netlify-cli heroku yarn && yarn global add bolt'
-# cordova
+alias onn='npm install --location=global iterm2-tab-set avn avn-nvm avn-n yarn && yarn global add bolt'
+# netlify-cli cordova heroku
 #alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn'
 
 ## projects
@@ -98,7 +98,8 @@ alias mono213='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_
 alias mono214='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd practical-logger-node;         tabset --color "#a4d4dd" --badge mono214'
 alias mono219='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd prettify-any;                  tabset --color "#a4d4dd" --badge mono219'
 alias mono220='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd print-error-to-ansi;           tabset --color "#a4d4dd" --badge mono220'
-alias mono221='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd uuid;                          tabset --color "#a4d4dd" --badge mono221'
+alias mono221='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd state--graph;                  tabset --color "#a4d4dd" --badge mono221'
+alias mono222='cd ~/work/src/off/offirmo-monorepo/stack--2022/2-foundation; git_offirmo.sh; cd uuid;                          tabset --color "#a4d4dd" --badge mono222'
 
 alias mono301='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--isomorphic; git_offirmo.sh; cd async-utils;      tabset --color "#a4d4dd" --badge mono301'
 alias mono302='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--isomorphic; git_offirmo.sh; cd normalize-string; tabset --color "#a4d4dd" --badge mono302'
@@ -135,43 +136,50 @@ alias mono350='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--browse
 alias mono351='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node; git_offirmo.sh; cd state-migration-tester; tabset --color "#a4d4dd" --badge mono351'
 alias clt='cd ~/work/src/off/offirmo-monorepo/stack--2022/3-advanced--node; git_offirmo.sh; cd cli-toolbox; tabset --color "#a4d4dd" --badge clt'
 
-alias monoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
+
+alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/4-tools; git_offirmo.sh; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
 alias monoT2='cd ~/work/src/off/offirmo-monorepo/stack--2022/4-tools; git_offirmo.sh; cd memories-sorter; tabset --color "#a4d4dd" --badge monoT2'
+
 
 alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/rpg-frame; tabset --color "#a4d4dd" --badge monoX1'
 alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator; git_offirmo.sh; cd active/simple-upgradable-template; tabset --color "#a4d4dd" --badge monoX2'
 
-alias omr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
-alias omr50='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd ui--browser--css; tabset --color "#a4d4dd" --badge omr50'
-##alias omr01='cd ~/work/src/off/offirmo-monorepo/A-apps--core/the-boring-rpg; git_offirmo.sh; cd definitions; tabset --color "#a4d4dd" --badge omr01'
+
+alias omr01='cd ~/work/src/off/offirmo-monorepo/stack--2022/9-rpg/; git_offirmo.sh; cd state--codes;       tabset --color "#a4d4dd" --badge omr01'
+alias omr02='cd ~/work/src/off/offirmo-monorepo/stack--2022/9-rpg/; git_offirmo.sh; cd state--engagement;  tabset --color "#a4d4dd" --badge omr02'
+alias omr03='cd ~/work/src/off/offirmo-monorepo/stack--2022/9-rpg/; git_offirmo.sh; cd state--prng;        tabset --color "#a4d4dd" --badge omr03'
+alias omr04='cd ~/work/src/off/offirmo-monorepo/stack--2022/9-rpg/; git_offirmo.sh; cd state--meta;        tabset --color "#a4d4dd" --badge omr04'
+
+alias ic01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/immortal-clicker; git_offirmo.sh; cd sandbox;            tabset --color "#a4d4dd" --badge ic01'
+alias ikc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/isekai-capitalist; git_offirmo.sh; cd sandbox;          tabset --color "#a4d4dd" --badge ikc01'
 
 alias tbrA01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd definitions;        tabset --color "#a4d4dd" --badge tbrA01'
+
 alias tbrA11='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--armors;      tabset --color "#a4d4dd" --badge tbrA11'
 alias tbrA12='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--weapons;     tabset --color "#a4d4dd" --badge tbrA12'
 alias tbrA13='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--monsters;    tabset --color "#a4d4dd" --badge tbrA13'
 alias tbrA14='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--adventures;  tabset --color "#a4d4dd" --badge tbrA14'
-alias tbrA15='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--shop;        tabset --color "#a4d4dd" --badge tbrA16'
-alias tbrA16='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--power;       tabset --color "#a4d4dd" --badge tbrA15'
-alias tbrA21='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd rsrc--backgrounds;  tabset --color "#a4d4dd" --badge tbrA21'
-alias tbrA22='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
-alias tbrA33='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--character;   tabset --color "#a4d4dd" --badge tbrA33'
-alias tbrA34='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--codes;       tabset --color "#a4d4dd" --badge tbrA34'
-alias tbrA35='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--energy;      tabset --color "#a4d4dd" --badge tbrA35'
-alias tbrA36='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--engagement;  tabset --color "#a4d4dd" --badge tbrA36'
-alias tbrA37='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--inventory;   tabset --color "#a4d4dd" --badge tbrA37'
-alias tbrA38='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--meta;        tabset --color "#a4d4dd" --badge tbrA38'
-alias tbrA39='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--prng;        tabset --color "#a4d4dd" --badge tbrA39'
-alias tbrA40='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--progress;    tabset --color "#a4d4dd" --badge tbrA40'
-alias tbrA41='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--wallet;      tabset --color "#a4d4dd" --badge tbrA41'
-alias tbrA50='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd ui--rich-text;      tabset --color "#a4d4dd" --badge tbrA50'
-alias tbrA51='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd ui--browser-css     tabset --color "#a4d4dd" --badge tbrA51'
-alias tbrA52='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd ui--browser--react; tabset --color "#a4d4dd" --badge tbrA52'
-alias tbrA53='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd audio-browser;      tabset --color "#a4d4dd" --badge tbrA53'
-alias tbrA60='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state;              tabset --color "#a4d4dd" --badge tbrA60'
-alias tbrAC1='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd interfaces;         tabset --color "#a4d4dd" --badge tbrAC1'
+alias tbrA15='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--shop;        tabset --color "#a4d4dd" --badge tbrA15'
 
-alias ic01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/immortal-clicker; git_offirmo.sh; cd sandbox;          tabset --color "#a4d4dd" --badge ic01'
-alias ikc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/isekai-capitalist; git_offirmo.sh; cd sandbox;          tabset --color "#a4d4dd" --badge ikc01'
+alias tbrA21='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--character;   tabset --color "#a4d4dd" --badge tbrA21'
+alias tbrA22='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--energy;      tabset --color "#a4d4dd" --badge tbrA22'
+alias tbrA23='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--inventory;   tabset --color "#a4d4dd" --badge tbrA23'
+alias tbrA24='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--progress;    tabset --color "#a4d4dd" --badge tbrA24'
+alias tbrA25='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state--wallet;      tabset --color "#a4d4dd" --badge tbrA25'
+alias tbrA26='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd logic--power;       tabset --color "#a4d4dd" --badge tbrA26'
+
+alias tbrA30='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd state;              tabset --color "#a4d4dd" --badge tbrA30'
+alias tbrA31='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd interfaces;         tabset --color "#a4d4dd" --badge tbrA31'
+
+alias tbrA40='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd ui--rich-text;      tabset --color "#a4d4dd" --badge tbrA40'
+alias tbrA41='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd ui--browser-css     tabset --color "#a4d4dd" --badge tbrA41'
+alias tbrA42='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd ui--browser--react; tabset --color "#a4d4dd" --badge tbrA42'
+alias tbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd rsrc--backgrounds;  tabset --color "#a4d4dd" --badge tbrA43'
+
+alias xxtbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd audio-browser;      tabset --color "#a4d4dd" --badge tbrA43'
+alias xxtbrA22='cd ~/work/src/off/offirmo-monorepo/stack--2022/A-apps--core/the-boring-rpg; git_offirmo.sh; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
+alias xxomr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg; git_offirmo.sh; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
+
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/stack--2022/B-apps--support/online-adventur.es; git_offirmo.sh; cd db-migrations; tabset --color "#a4d4dd" --badge monodbm'
 alias monodb='cd ~/work/src/off/offirmo-monorepo/stack--2022/B-apps--support/online-adventur.es; git_offirmo.sh; cd db;             tabset --color "#a4d4dd" --badge monodb'

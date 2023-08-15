@@ -1,5 +1,8 @@
 echo "* hello from: …open-source-dev-env/shellrc/consts.sh"
 
+## instructs some lib to expect debug API + SEC
+export OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED=1
+
 ## disable sentry and other stuff
 export OFFIRMO_IS_HERE=1
 
