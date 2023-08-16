@@ -1,6 +1,8 @@
 #! /bin/bash
 
-## expects an HTTPS web url rather than SSH
+## clones can be with ssh or https:
+## - https is not inherently worse than ssh https://stackoverflow.com/questions/11041729/git-clone-with-https-or-ssh-remote
+## - GitHub gives an https link ex. https://github.com/Offirmo/offirmo-monorepo.git
 
 REPOSITORY_URL=$1
 CUSTOM_REPO_DIR=$2
@@ -45,7 +47,8 @@ mkdir -p $PARENT_DIR
 pushd $PARENT_DIR > /dev/null
 
 if [[ ! -d $TARGET_DIR ]]; then
-    git clone --recursive --recurse-submodules "$REPOSITORY_URL" "$TARGET_DIR"
+	## --single-branch  cf. https://stackoverflow.com/questions/1778088/how-do-i-clone-a-single-branch-in-git
+	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
 else
 	echo "! Already cloned."
 fi

@@ -64,13 +64,20 @@ git config --global color.ui "auto"
 ## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
 touch ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
-## https://github.com/dandavison/delta/blob/master/README.md
+## from https://github.com/dandavison/delta/blob/master/README.md
 git config --global core.pager "delta --syntax-theme='Solarized (light)'"
 git config --global interactive.diffFilter "delta --color-only"
 git config --global delta.navigate true
 git config --global delta.merge "conflictstyle = diff3"
 git config --global delta.side-by-side true
 git config --global diff.colorMoved "default"
+## from https://stackoverflow.com/questions/18308535/automatic-prune-with-git-fetch-or-pull/40842589#40842589
+# Enable automatic pruning for all your repos
+git config --global fetch.prune true
+git config --global fetch.pruneTags true
+# Enable if you use a git GUI
+git config --global gui.pruneDuringFetch true
+
 
 
 ############ npm ############
@@ -87,5 +94,6 @@ npm config set init-version 0.0.1
 yarn config set color always
 yarn config set init-license Unlicense
 yarn config set init-version 0.0.1
+
 
 echo "* all done."

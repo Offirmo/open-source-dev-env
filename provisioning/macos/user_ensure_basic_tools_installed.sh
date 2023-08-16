@@ -127,5 +127,9 @@ pipx install virtualenv
 ## Install mvnvm. DO NOT install normal maven
 #brew install mvnvm
 
+## java env switcher
+#brew install jenv
+#jenv doctor
+
 #############################################################
 echo "* all done."

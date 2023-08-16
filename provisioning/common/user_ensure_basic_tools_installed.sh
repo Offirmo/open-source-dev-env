@@ -127,7 +127,7 @@ popd > /dev/null
 ### MISC ###
 echo "* misc…"
 
-## seems to be used by "virtualenv"
+## seems to be used by "virtualenv" (= recommended python env)
 ## TODO install virtualenv? https://virtualenv.pypa.io/en/latest/index.html
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
