@@ -3,6 +3,7 @@
 ## clones can be with ssh or https:
 ## - https is not inherently worse than ssh https://stackoverflow.com/questions/11041729/git-clone-with-https-or-ssh-remote
 ## - GitHub gives an https link ex. https://github.com/Offirmo/offirmo-monorepo.git
+## - bitbucket auths better with an SSH url
 
 REPOSITORY_URL=$1
 CUSTOM_REPO_DIR=$2
