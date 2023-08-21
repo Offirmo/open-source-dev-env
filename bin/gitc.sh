@@ -50,6 +50,7 @@ pushd $PARENT_DIR > /dev/null
 if [[ ! -d $TARGET_DIR ]]; then
 	## --single-branch  cf. https://stackoverflow.com/questions/1778088/how-do-i-clone-a-single-branch-in-git
 	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
+	## XXX if want all branch, git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 else
 	echo "! Already cloned."
 fi
