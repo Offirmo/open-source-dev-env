@@ -96,14 +96,16 @@ source ~/.rvm/scripts/rvm
 
 #############################################################
 ## python
-echo "******* python through pipx/virtualenv…"
+## TODO REVIEW disabled 2023/08
+
+#echo "******* python through pipx/virtualenv…"
 ## Note: current Netlify requires 3.9.6
 
 ## https://pypi.org/project/pipx/
-brew install pipx
-pipx ensurepath
+#brew install pipx
+#pipx ensurepath
 ## virtualenv via pipx  https://virtualenv.pypa.io/en/latest/installation.html
-pipx install virtualenv
+#pipx install virtualenv
 
 #pyenv: not recommended (2022/12)
 #brew install pyenv

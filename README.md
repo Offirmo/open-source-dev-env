@@ -60,7 +60,7 @@ GIT NEEDED + git ssh keys:
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--installed--basic_tools.sh  | bash
    (relaunch terminal here, ensure nvm / npm is working)
    (here type "onn")
-[MACOS: install brew] /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+[MACOS: install brew, easier to install by hand:] /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user--ensure--installed--basic_tools.sh   | bash
 
 
