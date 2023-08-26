@@ -1,5 +1,6 @@
 #! /bin/bash
 
+## Clone a git repo in the appropriate folder.
 ## clones can be with ssh or https:
 ## - https is not inherently worse than ssh https://stackoverflow.com/questions/11041729/git-clone-with-https-or-ssh-remote
 ## - GitHub gives an https link ex. https://github.com/Offirmo/offirmo-monorepo.git
@@ -50,7 +51,7 @@ pushd $PARENT_DIR > /dev/null
 if [[ ! -d $TARGET_DIR ]]; then
 	## --single-branch  cf. https://stackoverflow.com/questions/1778088/how-do-i-clone-a-single-branch-in-git
 	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
-	## XXX if want all branch, git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+	echo "cloned in single branch mode! If you want all branches: git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*"
 else
 	echo "! Already cloned."
 fi

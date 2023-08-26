@@ -7,7 +7,7 @@ echo "# NON root provisioning #"
 echo "#########################"
 
 ## debug informations
-echo "* revision = circa 2022"
+echo "* revision = circa 2023"
 echo "* start ENV"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
@@ -36,7 +36,6 @@ echo ".DS_Store" >> ~/.gitignore
 
 
 ############ Tools settings ############
-echo "test -e \"${HOME}/.iterm2_shell_integration.bash\" && source \"${HOME}/.iterm2_shell_integration.bash\"" >> ~/.profile
 
 ## now that jq was installed (previous script) we can auto-update GitHub's known host
 ## ref. https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/

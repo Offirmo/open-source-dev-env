@@ -1,3 +1,5 @@
+#@IgnoreInspection BashAddShebang
+
 echo "* hello from: …open-source-dev-env/shellrc/settings.sh"
 
 ## remove duplicated bash history https://askubuntu.com/a/15929

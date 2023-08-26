@@ -1,3 +1,4 @@
+#@IgnoreInspection BashAddShebang
 echo "* hello from: …open-source-dev-env/shellrc/consts.sh"
 
 ## instructs some lib to expect debug API + SEC

@@ -1,3 +1,5 @@
+#@IgnoreInspection BashAddShebang
+
 ## source: https://gist.github.com/phette23/5270658
 echo "* hello from: …open-source-dev-env/shellrc/current-dir-in-iterm-tab-title.sh"
 

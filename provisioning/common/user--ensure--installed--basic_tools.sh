@@ -13,7 +13,7 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## debug informations
-echo "* revision = circa 2022"
+echo "* revision = circa 2023"
 echo "* start ENV"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
@@ -30,7 +30,7 @@ echo "  - PATH          = $PATH"
 ## NVM
 ## https://github.com/nvm-sh/nvm
 echo "* installing nvm…"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash -s stable
+PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash'
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'

@@ -7,7 +7,7 @@ echo "# root provisioning #"
 echo "#####################"
 
 ## debug informations
-echo "* revision = circa 2022"
+echo "* revision = circa 2023"
 echo "* start ENV"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
@@ -25,7 +25,7 @@ echo "  - pwd           = `pwd`"
 
 ## increase file limits
 ## https://stackoverflow.com/a/27982223
-echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
-echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+##echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+##echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
 
 echo "* all done."

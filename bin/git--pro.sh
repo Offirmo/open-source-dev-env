@@ -1,4 +1,5 @@
 #! /bin/bash
+
 git config user.email     `whoami`@$COMPANY_DOMAIN
 git config user.name      `whoami`
 

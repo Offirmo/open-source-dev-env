@@ -8,11 +8,6 @@
 https://github.com/rodyager/RWTS-PDFwriter
 
 ```
-ssh sam@192.168.88.10
-
-#alias ws='~/work/bin/WebStorm-162.1121.31/bin/webstorm.sh'
-#alias yed='java -jar /opt/bin/yed-3.12/yed.jar'
-
 ## minimal desktop env
 sudo apt-get install -y --no-install-recommends ubuntu-desktop
 sudo apt-get install -y python-gtk2
