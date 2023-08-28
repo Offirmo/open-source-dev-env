@@ -1,15 +1,14 @@
 #@IgnoreInspection BashAddShebang
-echo "* hello from: …open-source-dev-env/shellrc/aliases--tools.sh"
+echo "* hello from: …open-source-dev-env/shellrc/_aliases--tools.sh"
 
 ## standard Ubuntu "some more ls aliases"
-## but we may not be on Ubuntu
+## should work on any unix-like
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-## mine ;)
+## my own
 alias x='exit'
-#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
 alias ydl='yt-dlp --verbose'
 
 

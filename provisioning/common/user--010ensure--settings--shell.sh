@@ -67,5 +67,6 @@ if [ ! -f ~/.zshrc ]; then
 	echo "" >> ~/.zshrc
 fi
 
+echo "* PLEASE RESTART YOUR TERMINAL! ⚠️⚠️⚠️"
 #############################################################
 echo "* …all done ✅"

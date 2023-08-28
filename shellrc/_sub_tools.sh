@@ -1,6 +1,6 @@
 #@IgnoreInspection BashAddShebang
 
-echo "* hello from: …open-source-dev-env/shellrc/sub_tools.sh"
+echo "* hello from: …open-source-dev-env/shellrc/_sub_tools.sh"
 
 ## nvm
 ## (copied from what is set on install)

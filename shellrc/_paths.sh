@@ -1,15 +1,18 @@
 #@IgnoreInspection BashAddShebang
 
-echo "* hello from: …open-source-dev-env/shellrc/paths.sh"
+echo "* hello from: …open-source-dev-env/shellrc/_paths.sh"
 
 #####################
-## Set PATH, MANPATH, etc., for Homebrew.
-if [[ -f /opt/homebrew/bin/brew ]]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-## required by homebrew?
+## generic
 export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:~/.local/bin"
 
+#####################
+## required by homebrew?
+if command -v brew &> /dev/null; then
+	## Set PATH, MANPATH, etc., for Homebrew.
+	eval "$(brew shellenv)"
+fi
 
 #####################
 ## node env
@@ -33,7 +36,6 @@ fi
 #####################
 ## python env
 ## "userpath" ~ seems to be used by "virtualenv" (python)
-export PATH="$PATH:~/.local/bin"
 
 
 #####################

@@ -37,11 +37,11 @@ Show hidden files:
 
 Install git: either:
 - type `git` and accept everything asked
-- or/and install xcode and lauch it once (but takes time & lot of disk space!)
+- or/and `xcode-select --install`
+- or/and install xcode and launch it once (but takes time & lot of disk space!)
 
 Install
 ```
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/superuser--ensure--present--work_structure.sh  | sudo bash
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--present--work_structure.sh       |      bash
          then remove `src` from the spotlight search
 
@@ -60,7 +60,6 @@ GIT NEEDED + git ssh keys:
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--installed--basic_tools.sh  | bash
    (relaunch terminal here, ensure nvm / npm is working)
    (here type "onn")
-[MACOS: install brew, easier to install by hand:] /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user--ensure--installed--basic_tools.sh   | bash
 
 

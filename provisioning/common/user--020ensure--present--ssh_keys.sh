@@ -52,9 +52,15 @@ fi
 ## 100 rounds: https://crypto.stackexchange.com/a/40902
 if [ ! -f ~/.ssh/id_ed25519.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "$USER"
+	echo "please add your new key to GitHub!"
+	cat ~/.ssh/id_ed25519.pub | pbcopy
+	open https://github.com/settings/keys
 fi
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
+	echo "please add your new key to GitHub!"
+	cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy
+	open https://github.com/settings/keys
 fi
 
 

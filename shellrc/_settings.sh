@@ -1,6 +1,6 @@
 #@IgnoreInspection BashAddShebang
 
-echo "* hello from: …open-source-dev-env/shellrc/settings.sh"
+echo "* hello from: …open-source-dev-env/shellrc/_settings.sh"
 
 ## remove duplicated bash history https://askubuntu.com/a/15929
 export HISTCONTROL=ignoreboth:erasedups

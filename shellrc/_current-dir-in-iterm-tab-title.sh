@@ -1,7 +1,7 @@
 #@IgnoreInspection BashAddShebang
 
 ## source: https://gist.github.com/phette23/5270658
-echo "* hello from: …open-source-dev-env/shellrc/current-dir-in-iterm-tab-title.sh"
+echo "* hello from: …open-source-dev-env/shellrc/_current-dir-in-iterm-tab-title.sh"
 
 # put this in your .bash_profile
 if [ $ITERM_SESSION_ID ]; then
