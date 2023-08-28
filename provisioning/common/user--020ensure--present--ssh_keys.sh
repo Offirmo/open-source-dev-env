@@ -1,26 +1,37 @@
 #! /bin/bash
-
 ## Shell provision script
 
 echo "#########################"
-echo "# NON root provisioning #"
+echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
+echo "# \$BASH_SOURCE = $BASH_SOURCE"
+echo "# revision = circa 2023"
 echo "#########################"
 
+## safety  (https://serverfault.com/a/500778)
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 ## debug informations
-echo "* revision = circa 2023"
-echo "* start ENV"
+echo "* environment diagnostic:"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
-echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
 echo "  - pwd           = `pwd`"
+echo "  - LANG          = `echo $LANG`"
+echo "  - LC_ALL        = `echo $LC_ALL`"
+## full env
+#echo "  - PATH          = $PATH"
+#env
+############################################################
+echo "* starting ▶️"
 
 ## generate if missing
 mkdir -p ~/.ssh
 
 if [ ! -f ~/.ssh/config ]; then
 	echo "" >> ~/.ssh/config
-	TODO
+#TODO config
 #ControlMaster auto
 #ControlPath ~/.ssh/socket-%r@%h:%p
 #
@@ -31,11 +42,9 @@ if [ ! -f ~/.ssh/config ]; then
 #AddKeysToAgent yes
 #UseKeychain yes
 fi
-
 if [ ! -f ~/.ssh/known_hosts ]; then
 	echo "" >> ~/.ssh/known_hosts
 fi
-
 if [ ! -f ~/.ssh/authorized_keys ]; then
 	echo "" >> ~/.ssh/authorized_keys
 fi
@@ -44,13 +53,10 @@ fi
 if [ ! -f ~/.ssh/id_ed25519.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "$USER"
 fi
-
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 fi
-#if [ ! -f ~/.ssh/id_rsa.pub ]; then
-#	ssh-keygen -t rsa -b 4096 -C "offirmo.net@gmail.com" -f ~/.ssh/id_rsa_foo
-#fi
+
 
 ## ensure correct permissions
 ## https://gist.github.com/grenade/6318301
@@ -63,4 +69,5 @@ chmod 644 ~/.ssh/config
 chmod 644 ~/.ssh/known_hosts
 chmod 644 ~/.ssh/authorized_keys
 
-echo "* all done."
+############################################################
+echo "* …all done ✅"

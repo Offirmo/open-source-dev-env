@@ -1,25 +1,30 @@
 #! /bin/bash
-
 ## Shell provision script
 
 echo "#########################"
-echo "# NON root provisioning #"
+echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
+echo "# \$BASH_SOURCE = $BASH_SOURCE"
+echo "# revision = circa 2023"
 echo "#########################"
 
+## safety  (https://serverfault.com/a/500778)
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 ## debug informations
-echo "* revision = circa 2023"
-echo "* start ENV"
+echo "* environment diagnostic:"
 echo "  - BASH          = '$BASH' (should equal /bin/bash)"
 echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
-echo "  - BASH_SOURCE   = $BASH_SOURCE"
 echo "  - whoami        = `whoami`"
 echo "  - pwd           = `pwd`"
 echo "  - LANG          = `echo $LANG`"
 echo "  - LC_ALL        = `echo $LC_ALL`"
-echo "  - PATH          = $PATH"
 ## full env
+#echo "  - PATH          = $PATH"
 #env
-
+############################################################
+echo "* starting…"
 
 ############ Repos ############
 ## MUST use git@github.com: to allow ssh auth
@@ -43,5 +48,5 @@ echo "  - PATH          = $PATH"
 ## https://github.com/online-adventures
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/online-adventures/online-adventures.github.io.git
 
-
-echo "* all done."
+#############################################################
+echo "* …all done ✅"
