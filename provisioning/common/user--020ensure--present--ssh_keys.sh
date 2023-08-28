@@ -51,13 +51,14 @@ fi
 
 ## 100 rounds: https://crypto.stackexchange.com/a/40902
 if [ ! -f ~/.ssh/id_ed25519.pub ]; then
-	ssh-keygen -a 100 -t ed25519 -C "$USER"
+	ssh-keygen -a 100 -t ed25519 -C "$USER" -f ~/.ssh/id_ed25519
 	sleep 1
 	echo "please add your new key to GitHub & BB:"
 	open https://github.com/settings/keys
 	open https://bitbucket.org/account/settings/ssh-keys/
 	cat ~/.ssh/id_ed25519.pub | pbcopy
 fi
+
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 	sleep 1
