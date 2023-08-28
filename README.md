@@ -42,18 +42,27 @@ Install git: either:
 
 Install
 ```
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--present--work_structure.sh       |      bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--000ensure--present--work_structure.sh   |      bash
          then remove `src` from the spotlight search
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--010ensure--settings--shell.sh           |      bash
+
 
 IF WANTED copy your keys from previous machine here.
 If not found, some will be generated:
-   curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--present--ssh_keys.sh  | bash
+   curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--020ensure--present--ssh_keys.sh      | bash
    + if new, add the new keys to github
       - go here: https://github.com/settings/keys
         cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy
         cat ~/.ssh/id_ed25519.pub | pbcopy
 + test it: `ssh -T git@github.com`
 + DELETE SSH KEYS FROM THE DISK/USB KEY!
+
+
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--030ensure--installed--first.sh          |      bash
+
+
+
+
 
 
 GIT NEEDED + git ssh keys:
