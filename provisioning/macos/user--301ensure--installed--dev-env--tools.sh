@@ -34,6 +34,9 @@ echo "******* installing base apps through brew…"
 #brew install git-lfs
 
 brew install --cask iterm2
+# prepare shell integrations, cf. https://iterm2.com/documentation-shell-integration.html
+curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 
 brew install --cask jetbrains-toolbox
 

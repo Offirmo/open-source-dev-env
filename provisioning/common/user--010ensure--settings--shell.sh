@@ -38,6 +38,7 @@ if [ ! -f ~/.profile ]; then
 fi
 
 ## bash
+## bash = bash_profile -> profile, bashrc
 if [ ! -f ~/.bash_profile ]; then
 	echo "echo \"* hello from: .bash_profile\"" > ~/.bash_profile
 	echo "" >> ~/.bash_profile
@@ -57,13 +58,23 @@ if [ ! -f ~/.bash_logout ]; then
 	echo "" >> ~/.bash_logout
 fi
 
+
 ## zsh
+## zsh = zshrc -> zprofile -> profile
 if [ ! -f ~/.zlogin ]; then
 	echo "echo \"* hello from: .zlogin\"" > ~/.zlogin
 	echo "" >> ~/.zlogin
 fi
+if [ ! -f ~/.zprofile ]; then
+	echo "echo \"* hello from: .zprofile\"" > ~/.zprofile
+	echo "" >> ~/.zprofile
+	echo "if [ -f ~/.profile ]; then . ~/.profile; fi" >> ~/.zprofile
+	echo "" >> ~/.zprofile
+fi
 if [ ! -f ~/.zshrc ]; then
 	echo "echo \"* hello from: .zshrc\"" > ~/.zshrc
+	echo "" >> ~/.zshrc
+	echo "if [ -f ~/.zprofile ]; then . ~/.zprofile; fi" >> ~/.zshrc
 	echo "" >> ~/.zshrc
 fi
 

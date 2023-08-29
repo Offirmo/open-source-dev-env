@@ -14,9 +14,9 @@ alias ydl='yt-dlp --verbose'
 
 ## tools
 ## works if installed via umake
-alias ws='jetbrains-webstorm &'
+#alias ws='jetbrains-webstorm &'
 ## need to be built
-alias rdm='~/work/src/rdm/bin/osx/debug/rdm'
+#alias rdm='~/work/src/rdm/bin/osx/debug/rdm'
 ## VSCode with custom folder
 ## cf. https://stackoverflow.com/a/73718136
 alias vsc='HOME=~/work/src/off/open-source-dev-env/misc/vscode/home code --user-data-dir ~/work/src/off/open-source-dev-env/misc/vscode/data-dir'

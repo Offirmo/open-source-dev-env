@@ -6,13 +6,25 @@
 echo "* hello from: …open-source-dev-env/bin/load_shellrc.sh"
 
 ## useful function
-source_bash_files_from_dir()
-{
-	for file in `ls -tr $1/*`
-	do
-		#echo "sourcing $file"
+source_bash_files_from_dir() {
+	for file in $(ls -tr $1/*.sh); do
+		#echo "now loading $file..."
 		source "$file"
 	done
+
+	#case $SHELL in
+	#/bin/bash)
+	#	for file in $(ls -tr $1/*.bash); do
+	#		source "$file"
+	#	done
+	#	;;
+
+	#/bin/zsh)
+	#	for file in $(ls -tr $1/*.zsh); do
+	#		source "$file"
+	#	done
+	#	;;
+	#esac
 }
 
 source_bash_files_from_dir "$HOME/work/src/off/open-source-dev-env/shellrc"
