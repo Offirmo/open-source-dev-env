@@ -36,13 +36,10 @@ brew install --cask adobe-acrobat-reader
 
 brew install --cask grandperspective
 
-brew install --cask steam
-
 ## quick look plugins
 ## https://github.com/sindresorhus/quick-look-plugins
 ## TODO check if they are working / worth it
 #brew install --cask qlcolorcode qlstephen webpquicklook
-#brew uninstall qlcolorcode qlstephen webpquicklook
 
 #############################################################
 echo "* …all done ✅"

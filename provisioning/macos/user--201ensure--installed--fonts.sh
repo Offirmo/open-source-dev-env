@@ -30,6 +30,7 @@ echo "******* installing some fonts through brew…"
 ### Allow fonts  https://github.com/Homebrew/homebrew-cask-fonts
 brew tap homebrew/cask-fonts
 brew update
+
 ## https://github.com/be5invis/Iosevka
 #brew install --cask font-iosevka
 brew install --cask font-comic-neue

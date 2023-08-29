@@ -60,33 +60,12 @@ If not found, some will be generated:
 
 curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--030ensure--installed--first.sh          |      bash
 
-
-
-
-
-
-GIT NEEDED + git ssh keys:
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--installed--basic_tools.sh  | bash
-   (relaunch terminal here, ensure nvm / npm is working)
-   (here type "onn")
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user--ensure--installed--basic_tools.sh   | bash
-
-
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--settings_improved.sh      |      bash
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/superuser--ensure--settings_improved.sh  | sudo bash
-   (need npm and yarn)
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user--ensure--settings_improved.sh       | bash
-
-
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--ensure--cloned--common_repos.sh   | bash
-
 ```
 
 ### Ubuntu
 (no longer using)
 
 ### common
-
 Edit and check the bash config files
 
 
@@ -95,8 +74,8 @@ Edit and check the bash config files
 ### macos
 
 ```bash
-user_update.sh
-user_clean.sh
+user--update.sh
+user--clean.sh
 ```
 
 ### Cleanup git repo:
@@ -202,17 +181,4 @@ In git configs:
 Test GitHub SSH: https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection
 ```bash
 ssh -T git@github.com
-```
-
-
-## TODO
-...
-
-
-## Outdated
-
-### Ubuntu
-
-```
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash
 ```

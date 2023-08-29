@@ -75,5 +75,9 @@ else
 fi
 popd > /dev/null
 
+echo "* ODE repo cloned, please execute the provisioning scripts locally:"
+ls -l ~/work/src/off/open-source-dev-env/provisioning/common/
+ls -l ~/work/src/off/open-source-dev-env/provisioning/macos/
+
 #############################################################
 echo "* …all done ✅"

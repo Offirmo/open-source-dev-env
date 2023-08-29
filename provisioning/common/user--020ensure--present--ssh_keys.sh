@@ -56,7 +56,7 @@ if [ ! -f ~/.ssh/id_ed25519.pub ]; then
 	echo "please add your new key to GitHub & BB:"
 	open https://github.com/settings/keys
 	open https://bitbucket.org/account/settings/ssh-keys/
-	cat ~/.ssh/id_ed25519.pub | pbcopy
+	echo "cat ~/.ssh/id_ed25519.pub | pbcopy"
 fi
 
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
@@ -65,7 +65,7 @@ if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
 	echo "please add your new key to GitHub & BB:"
 	open https://github.com/settings/keys
 	open https://bitbucket.org/account/settings/ssh-keys/
-	cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy
+	echo "cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy"
 fi
 
 

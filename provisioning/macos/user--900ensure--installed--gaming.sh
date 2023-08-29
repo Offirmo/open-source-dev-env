@@ -24,19 +24,12 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 #echo "  - PATH          = $PATH"
 #env
 ############################################################
-echo "* starting…"
+echo "* starting ▶️"
 
+echo "******* installing apps through brew…"
+## in order of importance, to allow ctrl+C
 
-############ macOS settings ############
-
-## https://apple.stackexchange.com/questions/340542/show-hidden-files-on-mac-os-x-mojave-using-terminal/340543#340543
-## Or use shortcut: (in finder) Cmd ⌘ + Shift ⇧ + .  (full stop, period)
-defaults write com.apple.finder AppleShowAllFiles -boolean true
-
-## macOs disable shell warning
-## https://support.apple.com/en-us/HT208050
-# TODO if not exist
-echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> ~/.bash_profile
+brew install --cask steam
 
 #############################################################
 echo "* …all done ✅"

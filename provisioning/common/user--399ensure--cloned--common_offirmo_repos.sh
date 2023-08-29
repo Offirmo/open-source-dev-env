@@ -26,9 +26,6 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 ############################################################
 echo "* starting…"
 
-############ Repos ############
-## MUST use git@github.com: to allow ssh auth
-
 ## Offirmo
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/open-source-dev-env.git
 ~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/minisite-bookmarks-ghpages.git
