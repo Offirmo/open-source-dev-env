@@ -58,7 +58,7 @@ If not found, some will be generated:
 + DELETE SSH KEYS FROM THE DISK/USB KEY!
 
 
-curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/common/user--030ensure--installed--first.sh          |      bash
+curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/macos/user--099ensure--installed--first.sh           |      bash
 
 ```
 
