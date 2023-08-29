@@ -58,7 +58,7 @@ ssh-keygen -R github.com
 curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
 
 ## test if GitHub is connected
-ssh -T git@github.com
+ssh -T git@github.com || true
 
 ## We now have git, we can download this repo and launch scripts locally:
 echo "* checkout ODE repo…"
