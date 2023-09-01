@@ -1,13 +1,14 @@
 #@IgnoreInspection BashAddShebang
+echo "* hello from: …open-source-dev-env/shellrc/_00consts.sh"
 
-echo "* hello from: …open-source-dev-env/shellrc/_settings.sh"
+## instructs some lib to expect debug API + SEC
+export OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED=1
+
+## disable sentry and other stuff
+export OFFIRMO_IS_HERE=1
 
 ## remove duplicated bash history https://askubuntu.com/a/15929
 export HISTCONTROL=ignoreboth:erasedups
-
-## prevents installing libs without an active virtualenv
-## https://docs.python-guide.org/dev/pip-virtualenv/#requiring-an-active-virtual-environment-for-pip
-export PIP_REQUIRE_VIRTUALENV=true
 
 ## set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -15,9 +16,9 @@ case "$TERM" in
 esac
 
 if [ "$color_prompt" = yes ]; then
-	## with user + machine (not very useful if always the same)
+	## remove "user + machine" (not very useful if always the same)
 	#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-	PS1='™\[\033[01;34m\]\w\[\033[00m\] —► '
+	PS1='▶️  \[\033[01;34m\]\w\[\033[00m\] ⏩ '
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -41,11 +42,3 @@ unset color_prompt force_color_prompt
 ## https://docs.reactioncommerce.com/docs/requirements
 ## outdated, check with ulimit -l = unlimited
 #ulimit -n 65536 65536
-
-## enable brew autocomplete
-if command -v brew &> /dev/null
-then
-	if [ -f $(brew --prefix)/etc/bash_completion ]; then
-		. $(brew --prefix)/etc/bash_completion
-	fi
-fi
