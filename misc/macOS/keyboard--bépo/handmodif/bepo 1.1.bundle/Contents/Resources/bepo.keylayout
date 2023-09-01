@@ -179,7 +179,7 @@
 			<key code="42" action="ç"/>
 			<key code="43" action="g"/>
 			<key code="44" action="f"/>
-			<key code="45" action="’"/>
+			<key code="45" action="'"/><!-- index 0 -->
 			<key code="46" action="q"/>
 			<key code="47" action="h"/>
 			<key code="48" output="&#x0009;"/>
@@ -354,7 +354,7 @@
 			<key code="42" action="Ç"/>
 			<key code="43" action="G"/>
 			<key code="44" action="F"/>
-			<key code="45" action="?"/>
+			<key code="45" action="?"/><!-- index 1 -->
 			<key code="46" action="Q"/>
 			<key code="47" action="H"/>
 			<key code="48" output="&#x0009;"/>
@@ -528,7 +528,7 @@
 			<key code="42" action="Ç"/>
 			<key code="43" action="G"/>
 			<key code="44" action="F"/>
-			<key code="45" action="’"/>
+			<key code="45" action="'"/><!-- index 2 -->
 			<key code="46" action="Q"/>
 			<key code="47" action="H"/>
 			<key code="48" output="&#x0009;"/>
@@ -702,7 +702,7 @@
 			<key code="42" action="ç"/>
 			<key code="43" action="g"/>
 			<key code="44" action="f"/>
-			<key code="45" action="?"/>
+			<key code="45" action="?"/><!-- index 3 -->
 			<key code="46" action="q"/>
 			<key code="47" action="h"/>
 			<key code="48" output="&#x0009;"/>
@@ -876,7 +876,7 @@
 			<key code="42" action="✈"/>
 			<key code="43" action="grec"/>
 			<key code="44" action="ogonek"/>
-			<key code="45" action="¿"/>
+			<key code="45" action="’"/><!-- index 4 -->
 			<key code="46" action="rond"/>
 			<key code="47" action="pointsouscrit"/>
 			<key code="48" output="&#x0009;"/>
@@ -1050,7 +1050,7 @@
 			<key code="42" action="copyleft"/>
 			<key code="43" action="†"/>
 			<key code="44" action="⛄"/>
-			<key code="45" action="crochet"/>
+			<key code="45" action="crochet"/><!-- index 5 -->
 			<key code="46" action="corne"/>
 			<key code="47" action="‡"/>
 			<key code="48" output="&#x0009;"/>
@@ -1224,7 +1224,7 @@
 			<key code="42" action="copyleft"/>
 			<key code="43" action="†"/>
 			<key code="44" action="⛄"/>
-			<key code="45" action="crochet"/>
+			<key code="45" action="crochet"/><!-- index 6 -->
 			<key code="46" action="corne"/>
 			<key code="47" action="‡"/>
 			<key code="48" output="&#x0009;"/>
@@ -1398,7 +1398,7 @@
 			<key code="42" action="✈"/>
 			<key code="43" action="grec"/>
 			<key code="44" action="ogonek"/>
-			<key code="45" action="¿"/>
+			<key code="45" action="’"/><!-- index 7 -->
 			<key code="46" action="rond"/>
 			<key code="47" action="pointsouscrit"/>
 			<key code="48" output="&#x0009;"/>
@@ -1572,7 +1572,7 @@
 			<key code="42" action="✈"/>
 			<key code="43" action="grec"/>
 			<key code="44" action="ogonek"/>
-			<key code="45" action="¿"/>
+			<key code="45" action="’"/><!-- index 8 -->
 			<key code="46" action="rond"/>
 			<key code="47" action="pointsouscrit"/>
 			<key code="48" output="&#x0009;"/>
@@ -1746,7 +1746,7 @@
 			<key code="42" output="&#x001D;"/>
 			<key code="43" output="&#x0007;"/>
 			<key code="44" output="&#x000A;"/>
-			<key code="45" output="&#x0027;"/>
+			<key code="45" output="&#x0027;"/><!-- index 9 -->
 			<key code="46" output="&#x0011;"/>
 			<key code="47" output="&#x0018;"/>
 			<key code="48" output="&#x0009;"/>
