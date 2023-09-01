@@ -26,24 +26,25 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 ############################################################
 echo "* starting…"
 
+## WARNING this assumes that ssh config was altered for offirmo / dual ssh key
 ## Offirmo
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/open-source-dev-env.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/minisite-bookmarks-ghpages.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo-monorepo.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/web-tech-experiments.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/offirmo.github.io.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/my.dev.to.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/sync-local-repos.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/blog.git
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo/x.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/open-source-dev-env.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/minisite-bookmarks-ghpages.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo-monorepo.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/web-tech-experiments.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo.github.io.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/my.dev.to.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/sync-local-repos.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/blog.git
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo/x.git
 
 ## Offirmo team
-## https://github.com/Offirmo-team
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/Offirmo-team/wiki.git
+## git@offirmo.github.com:Offirmo-team
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:Offirmo-team/wiki.git
 
 ## Offirmo's Online Adventures
-## https://github.com/online-adventures
-~/work/src/off/open-source-dev-env/bin/gitc.sh  https://github.com/online-adventures/online-adventures.github.io.git
+## git@offirmo.github.com:online-adventures
+~/work/src/off/open-source-dev-env/bin/gitc.sh  git@offirmo.github.com:online-adventures/online-adventures.github.io.git
 
 #############################################################
 echo "* …all done ✅"

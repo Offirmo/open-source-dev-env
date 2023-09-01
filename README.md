@@ -164,18 +164,21 @@ In git configs:
 [remote "origin"]
 	url = git@offirmo.github.com:Offirmo/offirmo-monorepo.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
+
 [user]
 	email = offirmo.net@gmail.com
 	name = Offirmo
 [github]
 	user = Offirmo
+
+
+XXXAlready in root gitconfig:
 [color]
 	ui = auto
 [push]
 	default = simple
+[pull]
+	rebase = true
 ```
 
 Test GitHub SSH: https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection

@@ -62,10 +62,19 @@ fi
 if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
 	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 	sleep 1
+
 	echo "please add your new key to GitHub & BB:"
 	open https://github.com/settings/keys
 	open https://bitbucket.org/account/settings/ssh-keys/
 	echo "cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy"
+
+	echo ""                                          >> ~/.ssh/config
+	echo "Host offirmo.github.com"                   >> ~/.ssh/config
+	echo "   HostName github.com"                    >> ~/.ssh/config
+	echo "   User git"                               >> ~/.ssh/config
+	echo "   IdentityFile ~/.ssh/id_ed25519_offirmo" >> ~/.ssh/config
+	echo "   IdentitiesOnly yes"                     >> ~/.ssh/config
+	echo ""                                          >> ~/.ssh/config
 fi
 
 

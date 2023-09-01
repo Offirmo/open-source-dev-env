@@ -46,6 +46,7 @@ brew install --cask visual-studio-code lepton
 
 brew install --cask responsively insomnia
 
+brew install shellcheck
 
 ## NO!
 ## Those apps should NOT be installed through brew
