@@ -25,16 +25,16 @@ if [ $ITERM_SESSION_ID ]; then
 	# voilà!
 
 	if [ $SHELL = "/bin/bash" ]; then
-		if [ ! -s "~/.iterm2_shell_integration.bash" ]; then
+		if [ ! -f ~/.iterm2_shell_integration.bash ]; then
 			curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 		fi
-		source "~/.iterm2_shell_integration.bash"
+		source ~/.iterm2_shell_integration.bash
 	fi
 	if [ $SHELL = "/bin/zsh" ]; then
-		if [ ! -s "~/.iterm2_shell_integration.zsh" ]; then
+		if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
 			curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 		fi
-		source "~/.iterm2_shell_integration.zsh"
+		source ~/.iterm2_shell_integration.zsh
 	fi
 fi
 
