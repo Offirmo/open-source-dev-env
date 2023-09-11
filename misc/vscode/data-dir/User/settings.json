@@ -2,7 +2,6 @@
 	"workbench.colorTheme": "Solarized Light",
 	"workbench.editor.wrapTabs": true,
 	"workbench.editor.highlightModifiedTabs": true,
-	"workbench.editor.showTabs": false,
 
 	"search.exclude": {
 		"**/tosort": true

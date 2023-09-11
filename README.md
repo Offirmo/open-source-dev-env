@@ -27,6 +27,7 @@ Set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to
 cat /etc/shells  <-- check if /bin/bash is present
 echo $SHELL , $0 , $BASH  <-- check current shell
 chsh -s /bin/bash
+chsh -s /bin/zsh
 ```
 
 Show hidden files:

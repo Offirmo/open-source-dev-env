@@ -1,19 +1,39 @@
 #! /bin/bash
 
 ############ updates ############
+echo ""
+echo "************ Updating your system… ************"
 
-## brew
+
+## brew (macOS)
 if command -v brew > /dev/null; then
+	echo ""
+	echo "******* \`brew\` detected, updating… *******"
+
+	echo "  * \`brew upgrade\`…"
 	brew upgrade
+
+	echo "  * \`brew update\`…"
 	brew update
+
+	echo "  * \`brew cleanup\`…"
 	brew cleanup
+
+	echo "  * \`brew doctor\`…"
 	brew doctor
 fi
 
+
+## apt (Ubuntu)
+## TODO
+
 ## pip (Python)
 if command -v pip > /dev/null; then
+	echo ""
+	echo "******* pip detected, updating… *******"
 	pip install --upgrade pip
 fi
+
 
 ## JS
 ## 1) update nvm
