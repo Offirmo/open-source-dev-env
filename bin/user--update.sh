@@ -5,6 +5,7 @@ echo ""
 echo "************ Updating your system… ************"
 
 
+############ Global package managers ############
 ## brew (macOS)
 if command -v brew > /dev/null; then
 	echo ""
@@ -26,8 +27,32 @@ fi
 
 ## apt (Ubuntu)
 ## TODO
+#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
 
-## pip (Python)
+
+
+############ Dev Env -- node ############
+## nvm
+DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+echo "DETECTED_NVM_DIR = $DETECTED_NVM_DIR"
+echo "DETECTED_NVM_DIR- = ${DETECTED_NVM_DIR:-}"
+if [[ -n $DETECTED_NVM_DIR ]]; then
+	## https://github.com/nvm-sh/nvm
+	echo ""
+	echo "******* nvm detected, updating… *******"
+	## 1) update nvm
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+	## 2) (re)load it
+	. "${DETECTED_NVM_DIR:-}/nvm.sh"
+	## 3) install latest lts
+	nvm install 'lts/*'
+fi
+#avn setup
+
+
+
+############ Dev Env -- Python ############
+## pip
 if command -v pip > /dev/null; then
 	echo ""
 	echo "******* pip detected, updating… *******"
@@ -35,17 +60,18 @@ if command -v pip > /dev/null; then
 fi
 
 
-## JS
-## 1) update nvm
-PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash'
-## 2) (re)load it
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-## 3) install latest lts
-nvm install 'lts/*'
-#onn
-#avn setup
 
-## ruby
+############ Dev Env -- ruby ############
 #rvm get stable
 
-#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
+
+
+############ Dev Env -- Java ############
+
+
+
+############ Dev Env -- Rust ############
+
+
+
+############ Dev Env -- Go ############
