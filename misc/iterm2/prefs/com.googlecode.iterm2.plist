@@ -8,6 +8,8 @@
 	<false/>
 	<key>AnimateGraphStatusBarComponents</key>
 	<false/>
+	<key>BadgeFont</key>
+	<string>Fira Code</string>
 	<key>CloseBookmarksWindowAfterOpening</key>
 	<true/>
 	<key>ColoredSelectedTabOutlineStrength</key>

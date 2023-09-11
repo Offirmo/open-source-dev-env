@@ -6,8 +6,28 @@ echo "* hello from: …open-source-dev-env/shellrc/_sub_tools.sh"
 ############ TOOL -- iTerm ############
 if [ $ITERM_SESSION_ID ]; then
 
+	case "$SHELL" in
+		"/bin/bash")
+			if [ ! -f ~/.iterm2_shell_integration.bash ]; then
+				echo "  * downloading iTerm2 integration… (bash)"
+				curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+			fi
+			echo "  * enabling iTerm2 integration… (bash)"
+			source ~/.iterm2_shell_integration.bash
+			;;
+		"/bin/zsh")
+			if [ ! -f "~/.iterm2_shell_integration.zsh" ]; then
+				echo "  * downloading iTerm2 integration… (zsh)"
+				curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+			fi
+			echo "  * enabling iTerm2 integration… (zsh)"
+			source ~/.iterm2_shell_integration.zsh
+			;;
+	esac
+
 	## put current directory in iTerm tab title
 	## source: https://gist.github.com/phette23/5270658
+	#echo "CDT PROMPT_COMMAND = $PROMPT_COMMAND"
 	export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; '
 	# Piece-by-Piece Explanation:
 	# the if condition makes sure we only screw with $PROMPT_COMMAND if we're in an iTerm environment
@@ -23,19 +43,6 @@ if [ $ITERM_SESSION_ID ]; then
 	# see: stackoverflow.com/questions/1371261/get-current-directory-name-without-full-path-in-bash-script
 	# then we append the rest of $PROMPT_COMMAND so as not to remove what was already there
 	# voilà!
-
-	if [ $SHELL = "/bin/bash" ]; then
-		if [ ! -f ~/.iterm2_shell_integration.bash ]; then
-			curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
-		fi
-		source ~/.iterm2_shell_integration.bash
-	fi
-	if [ $SHELL = "/bin/zsh" ]; then
-		if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
-			curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
-		fi
-		source ~/.iterm2_shell_integration.zsh
-	fi
 fi
 
 

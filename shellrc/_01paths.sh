@@ -4,7 +4,7 @@ echo "* hello from: …open-source-dev-env/shellrc/_01paths.sh"
 
 pathDoesntContain() {
 	case $PATH in
-		*:$1:* ) return 1;; # note the :xyz: to avoid
+		*:$1:*) return 1;; # note the :xyz: to avoid
 		*) return 0;;
 	esac
 }

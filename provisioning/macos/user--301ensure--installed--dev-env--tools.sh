@@ -49,7 +49,7 @@ brew install --cask responsively insomnia
 brew install shellcheck
 
 ## NO!
-## Those apps should NOT be installed through brew
+## Those apps should NOT be installed through brew:
 ## virtualbox dropbox
 
 

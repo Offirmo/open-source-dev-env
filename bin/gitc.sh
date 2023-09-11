@@ -88,6 +88,8 @@ if [[ ! -d $TARGET_DIR ]]; then
 		echo "	name = Offirmo"                >> ".git/config"
 		echo "[github]"                         >> ".git/config"
 		echo "	user = Offirmo"                >> ".git/config"
+		echo "[pull]"                           >> ".git/config"
+		echo "	rebase = true"                 >> ".git/config" # my choice for my repos
 		echo ""                                 >> ".git/config"
 
 		popd > /dev/null
