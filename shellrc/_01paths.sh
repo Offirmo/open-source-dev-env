@@ -1,6 +1,5 @@
 #@IgnoreInspection BashAddShebang
-
-echo "* hello from: …open-source-dev-env/shellrc/_01paths.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_01paths.sh"
 
 pathDoesntContain() {
 	case $PATH in
@@ -19,6 +18,7 @@ PATH="~/work/src/off/open-source-dev-env/bin:$PATH"
 #####################
 ## generic
 ## https://news.ycombinator.com/item?id=31336396
+## This is important bc some tools install there and expect to be picked up
 ## in reverse order of importance
 pathDoesntContain "~/.local/bin"    && export PATH="~/.local/bin:$PATH"
 pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"

@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-echo "* hello from: …open-source-dev-env/shellrc/_aliases--tools.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_aliases--tools.sh"
 
 ## standard Ubuntu "some more ls aliases"
 ## should work on any unix-like

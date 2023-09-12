@@ -1,6 +1,5 @@
 #@IgnoreInspection BashAddShebang
-
-echo "* hello from: …open-source-dev-env/shellrc/_sub_tools.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_sub_tools.sh"
 
 
 ############ TOOL -- iTerm ############
@@ -35,7 +34,7 @@ if [ $ITERM_SESSION_ID ]; then
 			source ~/.iterm2_shell_integration.bash
 			;;
 		"/bin/zsh")
-			if [ ! -f "~/.iterm2_shell_integration.zsh" ]; then
+			if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
 				echo "  * downloading iTerm2 integration… (zsh)"
 				curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 			fi
@@ -50,25 +49,29 @@ fi
 ############ COMMAND -- Homebrew ############
 ## critical to even access "brew"
 if command -v brew &> /dev/null; then
-	echo "  * enabling brew… ($(which brew))"
+	echo "  * enabling brew… (from $(which brew))"
 	eval "$(brew shellenv)"
 else
 	# brew is not even available, try to locate it in known locations:
 	if [ -f "/opt/homebrew/bin/brew" ]; then
-		echo "  * enabling brew… (ꓽ/opt/homebrew/bin/brew)"
+		echo "  * enabling brew… (from /opt/homebrew/bin/brew)"
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	fi
 	if [ -f "/usr/local/bin/brew" ]; then
-		echo "  * enabling brew… (ꓽ/usr/local/bin/brew)"
+		echo "  * enabling brew… (from /usr/local/bin/brew)"
 		eval "$(/usr/local/bin/brew shellenv)"
 	fi
 fi
 
 ## enable brew autocomplete
 if command -v brew &> /dev/null; then
-	if [ -f $(brew --prefix)/etc/bash_completion ]; then
-		. $(brew --prefix)/etc/bash_completion
-	fi
+	case "$SHELL" in
+		"/bin/bash")
+			if [ -f $(brew --prefix)/etc/bash_completion ]; then
+				. $(brew --prefix)/etc/bash_completion
+			fi
+		;;
+	esac
 else
 	echo "brew not available???"
 fi

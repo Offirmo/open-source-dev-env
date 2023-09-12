@@ -27,6 +27,7 @@ fi
 
 ## apt (Ubuntu)
 ## TODO
+## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
 #alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
 
 
