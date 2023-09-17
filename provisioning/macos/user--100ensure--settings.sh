@@ -36,7 +36,12 @@ defaults write com.apple.finder AppleShowAllFiles -boolean true
 ## macOs disable shell warning
 ## https://support.apple.com/en-us/HT208050
 # TODO if not exist
-echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> ~/.bash_profile
+TARGET_FILE=~/.bash_profile
+LINE="export BASH_SILENCE_DEPRECATION_WARNING=1"
+if ! grep -q "${LINE}" "${TARGET_FILE}"; then
+	echo "Silencing Bash deprecation warning... ($TARGET_FILE)"
+	echo "$LINE" >> $TARGET_FILE
+fi
 
 #############################################################
 echo "* …all done ✅"

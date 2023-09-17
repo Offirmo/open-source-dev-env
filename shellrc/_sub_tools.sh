@@ -3,6 +3,7 @@
 
 
 ############ TOOL -- iTerm ############
+## last reviewed: 2023/09
 if [ $ITERM_SESSION_ID ]; then
 
 	## put current directory in iTerm tab title
@@ -46,6 +47,11 @@ fi
 
 
 
+############ TOOL -- Jetbrains Toolbox ############
+#export PATH="$PATH:/Users/yjutard/Library/Application Support/JetBrains/Toolbox/scripts"
+
+
+
 ############ COMMAND -- Homebrew ############
 ## critical to even access "brew"
 if command -v brew &> /dev/null; then
@@ -82,28 +88,44 @@ fi
 ## nvm
 ## (copied from what is set on install)
 ## https://github.com/nvm-sh/nvm#installing-and-updating
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-if [ -d "$NVM_DIR" ]; then
-	echo "  * enabling nvm… (\$NVM_DIR = $NVM_DIR)"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-	if [ $SHELL = "/bin/bash" ]; then
-		[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ -n "$NVM_DIR" ]]; then
+	echo "  * enabling nvm… already enabled"
+else
+	## TODO FIX
+	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+	if [ -d "$NVM_DIR" ]; then
+		echo "  * enabling nvm… (\$NVM_DIR = $NVM_DIR)"
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+		if [ $SHELL = "/bin/bash" ]; then
+			[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+		fi
 	fi
-fi
+ fi
 
-## avn
+## avn (auto nvm use on changing dirs)
+## TODO FIX
 ## (copied from what is set on install)
-if [ -s "~/.avn/bin/avn.sh" ]; then
-	echo "  * enabling avn…"
-	source "~/.avn/bin/avn.sh"
-fi
+#if [ -s "${HOME}/.avn/bin/avn.sh" ]; then
+#	echo "  * enabling avn…"
+#	source "${HOME}/.avn/bin/avn.sh"
+#else
+#	echo "NO AVN??"
+#fi
 
 ## yarn
 if command -v yarn &> /dev/null; then
 	echo "  * enabling yarn…"
 	export PATH="$PATH:$(yarn global bin)"
-#else
-#	echo "yarn ABSENT"
+else
+	## yarn is not available
+	## this may be normal if using a env manager with different yarn (ex. nvm)
+	## however we need to preemptively add yarn global path to $PATH
+	## cf. https://github.com/yarnpkg/yarn/issues/1027#issuecomment-336644907
+	if [ -d ~/.yarn/bin ]; then
+		export PATH="$PATH:~/.yarn/bin"
+	else
+		echo "XXX yarn MISSING?"
+	fi
 fi
 
 
@@ -112,15 +134,15 @@ fi
 ## rvm
 ## (copied from what is set on install)
 ## (note: PATH setup is in sibling file paths.sh)
-## TODO REVIEW
-if [[ -d "~/.rvm/bin" ]]; then
+## TODO REVIEW (long time not used)
+if [ -d "${HOME}/.rvm/bin" ]; then
 	echo "  * enabling rvm…"
 	# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 	export PATH="$PATH:~/.rvm/bin"
 fi
-if [ -s "~/.rvm/scripts/rvm" ]; then
+if [ -s "${HOME}/.rvm/scripts/rvm" ]; then
 	echo "  * enabling rvm…"
-	source "~/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+	source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
 

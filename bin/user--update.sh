@@ -5,8 +5,20 @@ echo ""
 echo "************ Updating your system… ************"
 
 
+
+############ OS ############
+## last reviewed: 2023/09
+if command -v softwareupdate > /dev/null; then
+	echo ""
+	echo "******* macOS updates… *******"
+	softwareupdate  --install  --safari-only  ## those don't require a restart
+	softwareupdate  --list
+fi
+
+
 ############ Global package managers ############
 ## brew (macOS)
+## last reviewed: 2023/09
 if command -v brew > /dev/null; then
 	echo ""
 	echo "******* \`brew\` detected, updating… *******"
@@ -34,6 +46,7 @@ fi
 
 ############ Dev Env -- node ############
 ## nvm
+## last reviewed: 2023/09
 DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 echo "DETECTED_NVM_DIR = $DETECTED_NVM_DIR"
 echo "DETECTED_NVM_DIR- = ${DETECTED_NVM_DIR:-}"
@@ -47,8 +60,11 @@ if [[ -n $DETECTED_NVM_DIR ]]; then
 	. "${DETECTED_NVM_DIR:-}/nvm.sh"
 	## 3) install latest lts
 	nvm install 'lts/*'
+	echo "INSTALL RETURN $?"
+	## 3b) install critical packages with this lts
+	npm install --global avn avn-nvm
+	#avn setup
 fi
-#avn setup
 
 
 

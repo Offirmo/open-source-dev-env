@@ -62,6 +62,7 @@ git config --global gui.pruneDuringFetch true
 echo "* downloading some stuff…"
 
 ## solarized color scheme
+## TODO REVIEW
 ## https://github.com/altercation/solarized
 ## https://ethanschoonover.com/solarized
 pushd ~/work/install > /dev/null

@@ -57,15 +57,19 @@ if [ ! -f ~/.bash_profile ]; then
 	echo "* creating a runtime config file: ~/.bash_profile"
 	{
 		echo '## user-wide profile for bash(1)'
-		## this config file should be the first user-level file to be sourced for bash
-		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi  ## uncomment this to troubleshoot'
+		echo '## this config file is usually the first user-level file to be sourced for bash (after /etc/bashrc)'
+		echo ''
+		echo '## for troubleshooting, uncomment as wished:'
+		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.bash_profile"'
+		echo '[ -n "$PS1" ] && echo "  * shell is interactive"'
+		echo 'shopt -q login_shell && echo "  * shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo ''
-		echo 'if shopt -q login_shell && [ -f ~/.bash_login ]; then . ~/.bash_login; fi ## call it if login shell as it may be shadowed by this file'
+		echo 'if shopt -q login_shell && [ -f ~/.bash_login ]; then . ~/.bash_login; fi ## call it if login shell since it may be unintentionally shadowed by this file'
 		echo 'if [ -f ~/.profile ]; then . ~/.profile; fi'
-		echo 'if [ -f ~/.bashrc  ]; then . ~/.bashrc;  fi'
+		echo 'if [ -f ~/.bashrc  ]; then . ~/.bashrc;  fi ## very common practice, most tools expect this file to be always sourced'
 		echo ''
 	} >> ~/.bash_profile
 fi
@@ -74,6 +78,7 @@ if [ ! -f ~/.bashrc ]; then
 	echo "* creating a runtime config file: ~/.bashrc"
 	{
 		echo '## user-wide runtime configuration for bash(1)'
+		echo '## in theory it’s non-login only but in practice everyone expect it to be always sourced'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.bashrc"'
 		echo ''
 	} >> ~/.bashrc
@@ -87,8 +92,10 @@ if [ ! -f ~/.zshenv ]; then
 	echo "* creating a runtime config file: ~/.zshenv"
 	{
 		echo '## user-wide configuration for zsh(1)'
-		## this config file should be the first user-level file to be sourced for zsh
-		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi  ## uncomment this to troubleshoot'
+		echo '## this config file should be the first user-level file to be sourced for zsh (after /etc/zshenv and /etc/zprofile)'
+		echo ''
+		echo '## for troubleshooting, uncomment as wished:'
+		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true fi  ## uncomment this to troubleshoot'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.zshenv"'
 		echo ''
 	} >> ~/.zshenv
