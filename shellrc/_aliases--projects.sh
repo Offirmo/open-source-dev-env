@@ -95,7 +95,7 @@ alias mono351='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--of
 alias clt='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd cli-toolbox; tabset --color "#a4d4dd" --badge clt'
 
 
-alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
+#alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
 alias monoT2='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter; tabset --color "#a4d4dd" --badge monoT2'
 
 
@@ -108,7 +108,7 @@ alias omr02='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offi
 alias omr03='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg//; cd state--prng;        tabset --color "#a4d4dd" --badge omr03'
 alias omr04='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg//; cd state--meta;        tabset --color "#a4d4dd" --badge omr04'
 
-alias ic01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/immortal-clicker/; cd sandbox;            tabset --color "#a4d4dd" --badge ic01'
+alias ic01=' cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/immortal-clicker/;  cd sandbox;          tabset --color "#a4d4dd" --badge ic01'
 alias ikc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/isekai-capitalist/; cd sandbox;          tabset --color "#a4d4dd" --badge ikc01'
 
 alias tbrA01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd definitions;        tabset --color "#a4d4dd" --badge tbrA01'
@@ -134,9 +134,9 @@ alias tbrA41='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--off
 alias tbrA42='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd ui--browser--react; tabset --color "#a4d4dd" --badge tbrA42'
 alias tbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--backgrounds;  tabset --color "#a4d4dd" --badge tbrA43'
 
-alias xxtbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd audio-browser;      tabset --color "#a4d4dd" --badge tbrA43'
-alias xxtbrA22='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
-alias xxomr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg/; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
+#alias xxtbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd audio-browser;      tabset --color "#a4d4dd" --badge tbrA43'
+#alias xxtbrA22='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
+#alias xxomr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg/; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
 
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd B-apps--support/online-adventur.es/; cd db-migrations; tabset --color "#a4d4dd" --badge monodbm'
@@ -159,9 +159,10 @@ alias mini01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--off
 alias mini02='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd D-minisites/; cd universal-debug-api-minisite; tabset --color "#a4d4dd" --badge mini02'
 
 alias wiki='cd ~/work/src/off/wiki.wiki; git--offirmo.sh'
-alias pre='cd ~/work/src/off/prefixed-log; git--offirmo.sh'
-alias rxa='cd ~/work/src/off/rx-auto; git--offirmo.sh'
-alias slr='cd ~/work/src/off/sync-local-repos; git--offirmo.sh; tabset --color "#a4d4dd" --badge slr'
-alias wmt='cd ~/work/src/off/web-module-toolbox; git--offirmo.sh'
-alias wte='cd ~/work/src/off/web-tech-experiments; git--offirmo.sh; tabset --color "#a4d4dd" --badge wte'
-alias put='cd ~/work/src/off/promise-utils; git--offirmo.sh; tabset --badge "p-u" --color "#FF4136"'
+alias slr=' cd ~/work/src/off/sync-local-repos; nvm use; git--offirmo.sh; tabset --color "#a4d4dd" --badge slr'
+alias wte=' cd ~/work/src/off/web-tech-experiments; git--offirmo.sh; tabset --color "#a4d4dd" --badge wte'
+
+#alias pre=' cd ~/work/src/off/prefixed-log; git--offirmo.sh'
+#alias rxa=' cd ~/work/src/off/rx-auto; git--offirmo.sh'
+#alias wmt=' cd ~/work/src/off/web-module-toolbox; git--offirmo.sh'
+#alias put=' cd ~/work/src/off/promise-utils; git--offirmo.sh; tabset --badge "p-u" --color "#FF4136"'

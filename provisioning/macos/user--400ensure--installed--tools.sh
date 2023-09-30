@@ -32,7 +32,8 @@ brew install --cask inkscape
 
 brew install ffmpeg yt-dlp
 
-# TODO REVIEW doesn't seem it's recommended
+## TODO iject config!
+# TODO REVIEW doesn't seem it's recommended way
 #brew install ffmpeg audacity
 
 #############################################################
