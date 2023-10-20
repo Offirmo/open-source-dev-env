@@ -28,6 +28,7 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 # disabled 2022/12
 exit 1
 
+
 # TODO evaluate a good java
 # Amazon Corretto JDK: https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/macos-install.html
 
@@ -44,6 +45,7 @@ exit 1
 #brew install mvnvm
 
 ## java env switcher
+# TODO evaluate https://www.jenv.be/
 #brew install jenv
 #jenv doctor
 

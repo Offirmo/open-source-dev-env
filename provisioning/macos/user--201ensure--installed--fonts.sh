@@ -31,13 +31,21 @@ echo "******* installing some fonts through brew…"
 brew tap homebrew/cask-fonts
 brew update
 
-## https://github.com/be5invis/Iosevka
-#brew install --cask font-iosevka
-brew install --cask font-comic-neue
+## programming
+## https://www.programmingfonts.org/
 brew install --cask font-fira-code
+brew install --cask font-jetbrains-mono
+#brew install --cask font-iosevka  ## https://github.com/be5invis/Iosevka
+## todo nerd fonts? https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/
+
+## UX
 brew install --cask font-fira-sans
 brew install --cask font-fira-sans-condensed
 brew install --cask font-fira-sans-extra-condensed
+
+## design
+brew install --cask font-comic-neue
+
 
 #############################################################
 echo "* …all done ✅"

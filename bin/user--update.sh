@@ -59,8 +59,11 @@ if [[ -n $DETECTED_NVM_DIR ]]; then
 	## 2) (re)load it
 	. "${DETECTED_NVM_DIR:-}/nvm.sh"
 	## 3) install latest lts
+	set +e
 	nvm install 'lts/*'
-	echo "INSTALL RETURN $?"
+	NVM_RETURN=$?
+	set -e
+	echo "INSTALL RETURN $NVM_RETURN"
 	## 3b) install critical packages with this lts
 	npm install --global avn avn-nvm
 	#avn setup

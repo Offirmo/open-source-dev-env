@@ -1,5 +1,8 @@
 #! /bin/bash
 
+## TODO check presence of $COMPANY_DOMAIN !!
+
+
 git config user.email     `whoami`@$COMPANY_DOMAIN
 git config user.name      `whoami`
 

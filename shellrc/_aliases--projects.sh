@@ -22,9 +22,9 @@ alias hwra='cd ~/work/src/off/hello-world-react-app; git--offirmo.sh'
 alias hwrat='cd ~/work/src/off/hello-world-react-app-typescript; git--offirmo.sh'
 alias hwet='cd ~/work/src/off/hello-world-express-typescript; git--offirmo.sh'
 alias hweta1='cd ~/work/src/off/hello-world-express-typescript-advanced-1; git--offirmo.sh'
-alias mbo='cd ~/work/src/off/minisite-bookmarks-ghpages; git--offirmo.sh'
-alias ode='cd ~/work/src/off/open-source-dev-env; git--offirmo.sh'
-alias ogi='cd ~/work/src/off/offirmo.github.io; git--offirmo.sh; tabset --color "#a4d4dd" --badge offirmo.net'
+alias mbo='cd ~/work/src/off/minisite-bookmarks-ghpages; nvm use; git--offirmo.sh'
+alias ode='cd ~/work/src/off/open-source-dev-env; nvm use; git--offirmo.sh'
+alias ogi='cd ~/work/src/off/offirmo.github.io; nvm use; git--offirmo.sh; tabset --color "#a4d4dd" --badge offirmo.net'
 
 
 alias mono='cd ~/work/src/off/offirmo-monorepo; git--offirmo.sh; tabset --badge "mono" --color "#FF4136"'
@@ -33,8 +33,8 @@ alias mono2='cd ~/work/src/off/offirmo-monorepo/stack--2022; git--offirmo.sh; nv
 alias mono2test='cd ~/work/src/off/offirmo-monorepo/stack--2022; nvm i; git--offirmo.sh; tabset --badge "mono2022" --color "#FF4136"'
 
 
-alias ntc='cd ~/work/src/off/offirmo-monorepo/4-tools/; cd node-typescript-compiler; tabset --color "#a4d4dd" --badge node-tsc'
-alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools/; cd unit-test-toolbox && tabset --color "#a4d4dd" --badge utt'
+alias ntc='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/node-typescript-compiler;        tabset --color "#a4d4dd" --badge ntc'
+#alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools/; cd unit-test-toolbox && tabset --color "#a4d4dd" --badge utt'
 
 
 alias mono100='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ts-types;              tabset --color "#a4d4dd" --badge mono100'
@@ -130,13 +130,16 @@ alias tbrA30='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--off
 alias tbrA31='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd interfaces;         tabset --color "#a4d4dd" --badge tbrA31'
 
 alias tbrA40='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd ui--rich-text;      tabset --color "#a4d4dd" --badge tbrA40'
-alias tbrA41='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd ui--browser-css     tabset --color "#a4d4dd" --badge tbrA41'
-alias tbrA42='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd ui--browser--react; tabset --color "#a4d4dd" --badge tbrA42'
-alias tbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--backgrounds;  tabset --color "#a4d4dd" --badge tbrA43'
+#alias tbrA41='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd ui--browser-css     tabset --color "#a4d4dd" --badge tbrA41'
+#alias tbrA42='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd ui--browser--react; tabset --color "#a4d4dd" --badge tbrA42'
+#alias tbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--backgrounds;  tabset --color "#a4d4dd" --badge tbrA43'
 
 #alias xxtbrA43='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd audio-browser;      tabset --color "#a4d4dd" --badge tbrA43'
 #alias xxtbrA22='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
 #alias xxomr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg/; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
+
+alias tbrA99='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd sandbox;      tabset --color "#a4d4dd" --badge tbrA99'
+
 
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd B-apps--support/online-adventur.es/; cd db-migrations; tabset --color "#a4d4dd" --badge monodbm'

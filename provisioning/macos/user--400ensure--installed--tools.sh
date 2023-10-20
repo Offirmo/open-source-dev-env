@@ -32,9 +32,19 @@ brew install --cask inkscape
 
 brew install ffmpeg yt-dlp
 
-## TODO iject config!
+if [ ! -f ~/.config/yt-dlp/config ]; then
+	echo "* creating ytdl config file: ~/.config/yt-dlp/config"
+	{
+		echo '# https://github.com/yt-dlp/yt-dlp/#configuration'
+		echo '--split-chapters'
+		echo '--format bestaudio[ext=mp3]/bestaudio[ext=m4a]/bestaudio'
+		echo '--output ~/Downloads/ytdl/%(release_date)s-%(id)s-%(title)s.%(ext)s'
+		echo '--output chapter:~/Downloads/ytdl/%(channel)s/[%(id)s]-%(title)s/%(section_title)s.%(ext)s'
+	} >> ~/.config/yt-dlp/config
+fi
+
 # TODO REVIEW doesn't seem it's recommended way
-#brew install ffmpeg audacity
+#brew install audacity
 
 #############################################################
 echo "* …all done ✅"
