@@ -96,7 +96,7 @@ alias clt='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirm
 
 
 #alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
-alias monoT2='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter; tabset --color "#a4d4dd" --badge monoT2'
+alias mms='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter; tabset --color "#a4d4dd" --badge mms'
 
 
 alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator/; cd active/rpg-frame; tabset --color "#a4d4dd" --badge monoX1'
