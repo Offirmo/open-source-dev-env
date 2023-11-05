@@ -3,6 +3,7 @@
 
 
 ############ TOOL -- iTerm ############
+## https://iterm2.com/documentation-shell-integration.html
 ## last reviewed: 2023/09
 if [ $ITERM_SESSION_ID ]; then
 
@@ -114,8 +115,12 @@ else
 
 ## yarn
 if command -v yarn &> /dev/null; then
-	echo "  * enabling yarn…"
-	export PATH="$PATH:$(yarn global bin)"
+	if [[ $(yarn -v) = 1.* ]]; then
+ 		echo "  * enabling yarn v1…"
+		export PATH="$PATH:$(yarn global bin)"
+	else
+ 		echo "  * enabling yarn v2+…"
+	fi
 else
 	## yarn is not available
 	## this may be normal if using a env manager with different yarn (ex. nvm)

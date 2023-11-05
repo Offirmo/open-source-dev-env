@@ -46,6 +46,7 @@ fi
 
 
 if ! grep -q "${HEADER}" "${TARGET_FILE}"; then
+	mkdir -p ...
 	{
 		echo ""
 		echo "${HEADER}"

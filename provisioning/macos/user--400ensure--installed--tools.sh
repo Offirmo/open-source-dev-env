@@ -34,6 +34,7 @@ brew install ffmpeg yt-dlp
 
 if [ ! -f ~/.config/yt-dlp/config ]; then
 	echo "* creating ytdl config file: ~/.config/yt-dlp/config"
+	mkdir -p ~/.config/yt-dlp
 	{
 		echo '# https://github.com/yt-dlp/yt-dlp/#configuration'
 		echo '--split-chapters'

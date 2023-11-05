@@ -39,5 +39,7 @@ alias tpx='rm -rf node_modules .npm npm-debug.log package-lock.json yarn.lock ya
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 # for bolt to work properly, it has to be installed globally via yarn
 alias onn='npm install --global iterm2-tab-set avn avn-nvm yarn && yarn global add bolt'
+# 2023/10 TODO yarn 4 but very hard to work
+#alias onn='corepack enable && npm install --global iterm2-tab-set avn avn-nvm'
 # netlify-cli cordova heroku avn-n
 #alias onn='npm i -g iterm2-tab-set avn avn-nvm avn-n cordova heroku yarn'
