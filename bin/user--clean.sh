@@ -3,7 +3,8 @@
 ############ cleanups ############
 
 ## brew
-brew cleanup
+brew cleanup --prune=14
+## brew cleanup -s
 
 ## various node/js package managers
 yarn cache clean
@@ -13,7 +14,7 @@ rm -rf ~/.npm_lazy
 rm -rf ~/.npm
 
 ## docker
-#docker system prune --all
+docker system prune --all
 #docker volume prune
 
 ## xcode device emulators

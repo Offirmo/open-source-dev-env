@@ -34,7 +34,7 @@ alias mono2test='cd ~/work/src/off/offirmo-monorepo/stack--2022; nvm i; git--off
 
 
 alias ntc='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/node-typescript-compiler;        tabset --color "#a4d4dd" --badge ntc'
-#alias utt='cd ~/work/src/off/offirmo-monorepo/4-tools/; cd unit-test-toolbox && tabset --color "#a4d4dd" --badge utt'
+alias utt='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/toolbox--unit-tests;             tabset --color "#a4d4dd" --badge utt'
 
 
 alias mono100='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ts-types;              tabset --color "#a4d4dd" --badge mono100'
@@ -91,8 +91,9 @@ alias mono343='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--of
 alias mono350='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd xoff; tabset --color "#a4d4dd" --badge mono310'
 
 
-alias mono351='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd state-migration-tester; tabset --color "#a4d4dd" --badge mono351'
 alias clt='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd cli-toolbox; tabset --color "#a4d4dd" --badge clt'
+alias mono351='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd state-migration-tester; tabset --color "#a4d4dd" --badge mono351'
+alias mono352='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd spawn-correctly;        tabset --color "#a4d4dd" --badge mono352'
 
 
 #alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
