@@ -21,7 +21,7 @@
 		"ꘌ": true,
 		"‿": true
 	},
-	"editor.unicodeHighlight.nonBasicASCII": true,
+	"editor.unicodeHighlight.nonBasicASCII": false,
 
 	"explorer.excludeGitIgnore": true,
 

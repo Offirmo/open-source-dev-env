@@ -25,6 +25,7 @@ if command -v brew > /dev/null; then
 
 	echo "  * \`brew upgrade\`…"
 	brew upgrade
+	echo "    * also consider running brew upgrade --greedy"
 
 	echo "  * \`brew update\`…"
 	brew update
@@ -78,7 +79,6 @@ if command -v pip > /dev/null; then
 	echo "******* pip detected, updating… *******"
 	pip install --upgrade pip
 fi
-
 
 
 ############ Dev Env -- ruby ############

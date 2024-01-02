@@ -1,5 +1,7 @@
 
 Candidate strings:
+`nvm i`
+`git-cola &`
 
 ✅❎❌✔️⚠️
 ☑ ☐  ✖ ✔ ⚠

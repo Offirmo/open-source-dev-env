@@ -77,10 +77,10 @@ alias uda3='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offir
 alias mono321='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd view-chat;         tabset --color "#a4d4dd" --badge mono331'
 alias mono322='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd view-chat-ui-tty;  tabset --color "#a4d4dd" --badge mono332'
 
-alias mono331='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--reset;       tabset --color "#a4d4dd" --badge mono301'
-alias mono332='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--foundation;  tabset --color "#a4d4dd" --badge mono302'
-alias mono333='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--framework;   tabset --color "#a4d4dd" --badge mono303'
-alias mono334='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--utils;       tabset --color "#a4d4dd" --badge mono303'
+alias mono331='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--reset;       tabset --color "#a4d4dd" --badge mono331'
+alias mono332='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--foundation;  tabset --color "#a4d4dd" --badge mono332'
+alias mono333='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--framework;   tabset --color "#a4d4dd" --badge mono333'
+alias mono334='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--utils;       tabset --color "#a4d4dd" --badge mono334'
 #alias mono301='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd favicon-notifications; tabset --color "#a4d4dd" --badge mono301'
 alias mono340='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd features-detection-browser; tabset --color "#a4d4dd" --badge mono302'
 alias mono341='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd iframe--chat; tabset --color "#a4d4dd" --badge mono303'
@@ -100,6 +100,8 @@ alias mono352='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--of
 alias mms='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter; tabset --color "#a4d4dd" --badge mms'
 
 
+alias inc1='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--website-entry-points; tabset --color "#a4d4dd" --badge inc1'
+alias inc2='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd client--browser;                 tabset --color "#a4d4dd" --badge inc2'
 #alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator/; cd active/rpg-frame; tabset --color "#a4d4dd" --badge monoX1'
 #alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator/; cd active/simple-upgradable-template; tabset --color "#a4d4dd" --badge monoX2'
 
