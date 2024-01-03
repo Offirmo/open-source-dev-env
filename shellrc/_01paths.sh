@@ -16,9 +16,13 @@ PATH="$PATH:~/work/bin"
 PATH="~/work/src/off/open-source-dev-env/bin:$PATH"
 
 #####################
-## generic
-## https://news.ycombinator.com/item?id=31336396
+## generic bins
 ## This is important bc some tools install there and expect to be picked up
+
+## references
+## https://linux.slashdot.org/story/23/12/24/221229/a-proposed-change-for-fedora-40-unify-usrbin-with-usrsbin
+## https://news.ycombinator.com/item?id=31336396
+
 ## in reverse order of importance
 pathDoesntContain "~/.local/bin"    && export PATH="~/.local/bin:$PATH"
 pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"
@@ -27,5 +31,7 @@ pathDoesntContain "/usr/bin"        && export PATH="/usr/bin:$PATH"
 pathDoesntContain "/usr/sbin"       && export PATH="/usr/sbin:$PATH"
 pathDoesntContain "/bin"            && export PATH="/bin:$PATH"
 pathDoesntContain "/sbin"           && export PATH="/sbin:$PATH"
+
+
 
 ## debug echo "\"$PATH\".split(\":\")"

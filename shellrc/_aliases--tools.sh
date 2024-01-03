@@ -20,6 +20,9 @@ alias ydl='yt-dlp --verbose'
 ## VSCode with custom folder
 ## cf. https://stackoverflow.com/a/73718136
 alias vsc='HOME=~/work/src/off/open-source-dev-env/misc/vscode/home code --user-data-dir ~/work/src/off/open-source-dev-env/misc/vscode/data-dir'
+#  --password-store=basic
+# mkdir ~/.local/share/keyrings
+
 
 ## git
 alias s='git status'

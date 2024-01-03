@@ -58,6 +58,14 @@ brew install shellcheck
 ## Those apps should NOT be installed through brew:
 ## virtualbox dropbox
 
+## TODO review
+#kern.maxfiles=10485760
+#kern.maxfiles: 245760 -> 10485760
+#kern.maxfilesperproc=1048576
+#kern.maxfilesperproc: 122880 -> 1048576
+#kern.maxvnodes=1048576
+#kern.maxvnodes: 263168 -> 1048576
+
 
 #############################################################
 echo "* …all done ✅"
