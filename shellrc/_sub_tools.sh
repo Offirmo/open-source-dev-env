@@ -30,7 +30,7 @@ if [ $ITERM_SESSION_ID ]; then
 		"/bin/bash")
 			if [ ! -f ~/.iterm2_shell_integration.bash ]; then
 				echo "  * downloading iTerm2 integration… (bash)"
-				curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
+				curl https://iterm2.com/shell_integration/bash --location --output ~/.iterm2_shell_integration.bash
 			fi
 			echo "  * enabling iTerm2 integration… (bash)"
 			source ~/.iterm2_shell_integration.bash
@@ -38,7 +38,7 @@ if [ $ITERM_SESSION_ID ]; then
 		"/bin/zsh")
 			if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
 				echo "  * downloading iTerm2 integration… (zsh)"
-				curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+				curl https://iterm2.com/shell_integration/zsh --location --output ~/.iterm2_shell_integration.zsh
 			fi
 			echo "  * enabling iTerm2 integration… (zsh)"
 			source ~/.iterm2_shell_integration.zsh
@@ -135,6 +135,14 @@ fi
 
 
 
+############ DEV ENV -- PYTHON ############
+## prevents installing libs without an active virtualenv
+## https://docs.python-guide.org/dev/pip-virtualenv/#requiring-an-active-virtual-environment-for-pip
+export PIP_REQUIRE_VIRTUALENV=true
+## "userpath" ~ seems to be used by "virtualenv" (python)
+
+
+
 ############ DEV ENV -- RUBY ############
 ## rvm
 ## (copied from what is set on install)
@@ -152,7 +160,7 @@ fi
 
 
 
-############ JAVA ############
+############ DEV ENV -- JAVA ############
 ## taken from???
 if [[ -f /usr/libexec/java_home ]]; then
 	if ! /usr/libexec/java_home 1>/dev/null 2>&1; then
@@ -170,12 +178,12 @@ fi
 
 
 
-############ PYTHON ############
-## prevents installing libs without an active virtualenv
-## https://docs.python-guide.org/dev/pip-virtualenv/#requiring-an-active-virtual-environment-for-pip
-export PIP_REQUIRE_VIRTUALENV=true
-## "userpath" ~ seems to be used by "virtualenv" (python)
-
+############ DEV ENV -- Rust ############
+## taken from the install logs
+if [ -d "${HOME}/.cargo/env" ]; then
+	echo "  * enabling cargo (Rust)…"
+	source "$HOME/.cargo/env"
+fi
 
 
 ############ TOOL -- docker ############

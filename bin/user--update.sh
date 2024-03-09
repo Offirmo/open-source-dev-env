@@ -91,6 +91,11 @@ fi
 
 
 ############ Dev Env -- Rust ############
+if command -v rustup > /dev/null; then
+	echo ""
+	echo "******* Rust detected, updating… *******"
+	rustup update
+fi
 
 
 

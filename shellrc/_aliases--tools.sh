@@ -7,6 +7,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+## helper for MacOS
+## https://github.com/memkind/memkind/issues/33#issuecomment-648317086
+alias nproc="sysctl -n hw.logicalcpu"
+
 ## my own
 alias x='exit'
 alias ydl='yt-dlp --verbose'
@@ -41,7 +45,8 @@ alias tpx='rm -rf node_modules/ .npm npm-debug.log package-lock.json yarn.lock y
 ## node
 alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
 # for bolt to work properly, it has to be installed globally via yarn
-alias onn='npm install --global iterm2-tab-set avn avn-nvm yarn && yarn global add bolt'
+alias onn='npm install --global iterm2-tab-set yalc yarn && yarn global add bolt'
+# 2024/02 avn no longerwork avn avn-nvm
 # 2023/10 TODO yarn 4 but very hard to work
 #alias onn='corepack enable && npm install --global iterm2-tab-set avn avn-nvm'
 # netlify-cli cordova heroku avn-n

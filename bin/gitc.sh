@@ -74,6 +74,7 @@ pushd $PARENT_DIR > /dev/null
 
 if [[ ! -d $TARGET_DIR ]]; then
 	## --single-branch  cf. https://stackoverflow.com/questions/1778088/how-do-i-clone-a-single-branch-in-git
+	export GIT_LFS_SKIP_SMUDGE=1 ## https://gitlab.ub.uni-giessen.de/jlugitlab/git-lfs-howto#option-prevent-download-of-lfs-files
 	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
 
 	if [ $IS_OFFIRMO = 1 ]; then

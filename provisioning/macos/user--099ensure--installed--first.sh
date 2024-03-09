@@ -47,6 +47,11 @@ fi
 echo "* updating brew ▶️"
 brew update
 
+if ! command -v wget > /dev/null; then
+	## for compatibility
+	brew install wget
+fi
+
 if ! command -v jq > /dev/null; then
 	## needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
 	brew install jq
