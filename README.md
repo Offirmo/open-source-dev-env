@@ -13,8 +13,8 @@ Check that bootstrap will work with:
 
 ```
 [if ubuntu] sudo apt-get install curl
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/hello.sh | bash
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/hello.sh | sudo bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | sudo bash
 ```
 
 
@@ -33,7 +33,7 @@ chsh -s /bin/zsh
 Show hidden files:
 * temp: <https://apple.stackexchange.com/a/340543>
   * `Apple + shift + .`
-* définitif: (see [provisioning file](./provisioning/macos/user--100ensure--settings.sh))
+* définitif: (see [provisioning file](./1-provisioning/macos/user--100ensure--settings.sh))
 
 Install git: either:
 - type `git` and accept everything asked
@@ -42,14 +42,14 @@ Install git: either:
 
 Install
 ```
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/provisioning/common/user--000ensure--present--work_structure.sh   |      bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh   |      bash
          then remove `src` from the spotlight search: "Spotlight privacy"
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/provisioning/common/user--010ensure--settings--shell.sh           |      bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh           |      bash
 
 
 IF WANTED copy your keys from previous machine here.
 If not found, some will be generated:
-   curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/provisioning/common/user--020ensure--present--ssh_keys.sh      | bash
+   curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh_keys.sh      | bash
    + if new, add the new keys to github
       - go here: https://github.com/settings/keys
         cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy
@@ -58,7 +58,7 @@ If not found, some will be generated:
 + DELETE SSH KEYS FROM THE DISK/USB KEY!
 
 
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/provisioning/macos/user--099ensure--installed--first.sh           |      bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh           |      bash
 
 ```
 

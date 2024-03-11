@@ -2,6 +2,7 @@
 
 ############ updates ############
 echo ""
+echo "* hello from: …open-source-dev-env/…/user--update.sh"
 echo "************ Updating your system… ************"
 
 
@@ -17,6 +18,7 @@ fi
 
 
 ############ Global package managers ############
+
 ## brew (macOS)
 ## last reviewed: 2023/09
 if command -v brew > /dev/null; then
@@ -37,12 +39,16 @@ if command -v brew > /dev/null; then
 	brew doctor
 fi
 
-
 ## apt (Ubuntu)
-## TODO
-## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
-#alias maintain='sudo apt-get update; sudo apt-get upgrade; curl -o- https://www.offirmo.net/open-source-dev-env/provisioning/ubuntu/superuser_cleanup.sh | sudo bash'
-
+## last reviewed: TODO!!!
+if command -v apt-get > /dev/null; then
+	echo ""
+	echo "******* Ubuntu's Advanced Packaging Tool detected, updating… *******"
+	## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
+	sudo apt-get update
+	sudo apt-get upgrade
+	curl -o- https://www.offirmo.net/open-source-dev-env/1-provisioning/ubuntu/superuser_cleanup.sh | sudo bash
+fi
 
 
 ############ Dev Env -- node ############

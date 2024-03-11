@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_aliases--offirmo.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_aliases--projects.sh"
 
 
 alias off='cd ~/work/src/off; git--offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'

@@ -43,7 +43,7 @@ if [ ! -f ~/.profile ]; then
 		echo '## may also be sourced by bash(1)'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.profile"'
 		echo ''
-		echo 'source ~/work/src/off/open-source-dev-env/bin/load_shellrc.sh'
+		echo 'source ~/work/src/off/open-source-dev-env/2-shell/bin/load_shellrc.sh'
 		echo ''
 	} >> ~/.profile
 fi

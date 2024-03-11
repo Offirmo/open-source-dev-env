@@ -3,7 +3,7 @@
 ## REM : this file is meant to conveniently complement ~/.bashrc
 ##       It is supposed to be called in login and non-login shells, after ~/.bashrc
 
-echo "* hello from: …open-source-dev-env/bin/load_shellrc.sh"
+echo "* hello from: …open-source-dev-env/…/load_shellrc.sh"
 
 ## useful function
 source_bash_files_from_dir() {
@@ -27,5 +27,5 @@ source_bash_files_from_dir() {
 	#esac
 }
 
-source_bash_files_from_dir "$HOME/work/src/off/open-source-dev-env/shellrc"
+source_bash_files_from_dir "$HOME/work/src/off/open-source-dev-env/2-shell/shellrc"
 source_bash_files_from_dir "$HOME/work/bin/shellrc"

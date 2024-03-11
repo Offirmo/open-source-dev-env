@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_01paths.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_01paths.sh"
 
 pathDoesntContain() {
 	case $PATH in
@@ -13,7 +13,7 @@ pathDoesntContain() {
 ## our own stuff
 ## 🥲🥲🥲 HACK that we add before and after for the :xyz: test below to work ()
 PATH="$PATH:~/work/bin"
-PATH="~/work/src/off/open-source-dev-env/bin:$PATH"
+PATH="~/work/src/off/open-source-dev-env/2-shell/bin:$PATH"
 
 #####################
 ## generic bins

@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_aliases--tools.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_aliases--tools.sh"
 
 ## standard Ubuntu "some more ls aliases"
 ## should work on any unix-like
@@ -23,7 +23,7 @@ alias ydl='yt-dlp --verbose'
 #alias rdm='~/work/src/rdm/bin/osx/debug/rdm'
 ## VSCode with custom folder
 ## cf. https://stackoverflow.com/a/73718136
-alias vsc='HOME=~/work/src/off/open-source-dev-env/misc/vscode/home code --user-data-dir ~/work/src/off/open-source-dev-env/misc/vscode/data-dir'
+alias vsc='HOME=~/work/src/off/open-source-dev-env/3-settings/vscode/home code --user-data-dir ~/work/src/off/open-source-dev-env/misc/vscode/data-dir'
 #  --password-store=basic
 # mkdir ~/.local/share/keyrings
 

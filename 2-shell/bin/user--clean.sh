@@ -1,6 +1,7 @@
 #! /bin/bash
 
 ############ cleanups ############
+echo "* hello from: …open-source-dev-env/…/user--clean.sh"
 
 ## brew
 brew cleanup --prune=14

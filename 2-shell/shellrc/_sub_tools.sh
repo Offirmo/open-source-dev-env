@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/shellrc/_sub_tools.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_sub_tools.sh"
 
 
 ############ TOOL -- iTerm ############

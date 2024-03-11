@@ -72,7 +72,7 @@ pushd ~/work/src/off > /dev/null
 ODE_INSTALL_DIR=open-source-dev-env
 if [[ ! -d $ODE_INSTALL_DIR ]]; then
     git clone --recursive git@github.com:Offirmo/open-source-dev-env.git
-    echo "source ~/work/src/off/open-source-dev-env/bin/load_shellrc.sh" >> ~/.bashrc
+    echo "source ~/work/src/off/open-source-dev-env/2-shell/bin/load_shellrc.sh" >> ~/.bashrc
 else
     cd $ODE_INSTALL_DIR
     git fetch
@@ -81,8 +81,8 @@ fi
 popd > /dev/null
 
 echo "* ODE repo cloned, please execute the provisioning scripts locally:"
-ls -l ~/work/src/off/open-source-dev-env/provisioning/common/
-ls -l ~/work/src/off/open-source-dev-env/provisioning/macos/
+ls -l ~/work/src/off/open-source-dev-env/1-provisioning/common/
+ls -l ~/work/src/off/open-source-dev-env/1-provisioning/macos/
 
 #############################################################
 echo "* …all done ✅"
