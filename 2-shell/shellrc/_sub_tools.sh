@@ -104,14 +104,12 @@ else
  fi
 
 ## avn (auto nvm use on changing dirs)
-## TODO FIX
 ## (copied from what is set on install)
-#if [ -s "${HOME}/.avn/bin/avn.sh" ]; then
-#	echo "  * enabling avn…"
-#	source "${HOME}/.avn/bin/avn.sh"
-#else
-#	echo "NO AVN??"
-#fi
+## Note: as of 2024/03 it's not working
+if [ -s "${HOME}/.avn/bin/avn.sh" ]; then
+	echo "  * enabling avn…"
+	source "${HOME}/.avn/bin/avn.sh"
+fi
 
 ## yarn
 if command -v yarn &> /dev/null; then

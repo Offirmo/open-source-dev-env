@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../offirmo-monorepo"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#5DA7AE",
+			"titleBar.activeBackground": "#543D46",
+			"titleBar.activeForeground": "#FFEBBC"
+		}
+	}
+}

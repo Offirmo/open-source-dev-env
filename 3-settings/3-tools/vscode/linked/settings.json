@@ -1,0 +1,77 @@
+{
+	"workbench.colorTheme": "Solarized Light",
+	"workbench.preferredDarkColorTheme": "Solarized Dark",
+	"workbench.preferredLightColorTheme": "Solarized Light",
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.wrapTabs": true,
+	"workbench.fontAliasing": "auto",
+	"workbench.iconTheme": "moxer-icons",
+	"workbench.startupEditor": "readme",
+	"workbench.tree.indent": 12,
+
+	"search.useParentIgnoreFiles": true,
+	"search.followSymlinks": false,
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/tosort": true
+	},
+
+	"editor.detectIndentation": false,
+	"editor.dragAndDrop": false,
+	"editor.dropIntoEditor.enabled": false,
+	"editor.emptySelectionClipboard": false,
+	"editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 13.5,
+	"editor.formatOnPaste": true,
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "boundary",
+	"editor.stickyScroll.enabled": true,
+	"editor.tabSize": 3,
+	"editor.unicodeHighlight.includeComments": true,
+	"editor.unicodeHighlight.nonBasicASCII": false,
+	"editor.unicodeHighlight.allowedCharacters": {
+		"ϟ": true,
+		"ೱ": true,
+		"ᐧ": true,
+		"ᝍ": true,
+		"‿": true,
+		"ↆ": true,
+		"ⳇ": true,
+		"ⵧ": true,
+		"ꓽ": true,
+		"ꘌ": true
+	},
+
+
+	"explorer.excludeGitIgnore": true,
+
+	"javascript.preferences.quoteStyle": "single",
+
+	"typescript.preferences.quoteStyle": "single",
+
+	"diffEditor.ignoreTrimWhitespace": false,
+
+	"sortLines.filterBlankLines": true,
+
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"files.exclude": {
+		"**/open-source-dev-env/misc/vscode/data-dir/*": true
+	},
+
+	"git.openRepositoryInParentFolders": "never",
+
+
+	"terminal.integrated.stickyScroll.enabled": true,
+	"terminal.integrated.hideOnStartup": "whenEmpty",
+	"terminal.integrated.fontFamily": "'Fira Code', monospace",
+
+	"todo-tree.tree.scanAtStartup": false,
+
+	"prettier.useTabs": true
+
+
+}
