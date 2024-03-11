@@ -71,7 +71,10 @@
 
 	"todo-tree.tree.scanAtStartup": false,
 
-	"prettier.useTabs": true
+	"prettier.useTabs": true,
+	"guides.active.enabled": false,
+	"editor.experimentalWhitespaceRendering": "font",
+	"editor.guides.indentation": false
 
 
 }

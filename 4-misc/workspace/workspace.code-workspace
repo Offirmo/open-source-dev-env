@@ -1,13 +1,22 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
 			"path": "../../../offirmo-monorepo"
 		},
 		{
 			"path": "../.."
+		},
+		{
+			"path": "../../../web-tech-experiments"
+		},
+		{
+			"path": "../../../blog"
+		},
+		{
+			"path": "../../../private-code-competitions"
+		},
+		{
+			"path": "."
 		}
 	],
 	"settings": {

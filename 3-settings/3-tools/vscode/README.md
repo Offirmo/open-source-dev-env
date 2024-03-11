@@ -6,7 +6,7 @@ Settings recommendation
 * sticky scroll
 * symlinks in search https://twitter.com/BHolmesDev/status/1749551516086685749
 * misc https://dev.to/softwaredotcom/vs-code-settings-you-should-customize-5e75
-*
+* Vertical tabs https://weberdominik.com/blog/vscode-vertical-tabs/
 
 
 
@@ -30,6 +30,8 @@ Themes
 
 ## Extensions
 See https://code.visualstudio.com/docs/editor/extension-marketplace#_command-line-extension-management
+
+See also https://open-vsx.org/ ??
 
 ```bash
 
@@ -83,6 +85,9 @@ stylelint.vscode-stylelint
 ## image preview? https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview
 ## HTML
 https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
+
+## shell
+https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
 
 ## AI
 GitHub.copilot
