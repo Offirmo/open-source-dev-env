@@ -17,13 +17,18 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"path": "../../../minisite-bookmarks-ghpages"
 		}
 	],
 	"settings": {
 		"workbench.colorCustomizations": {
-			"activityBar.background": "#FFEBBC",
-			"titleBar.activeBackground": "#543D46",
-			"titleBar.activeForeground": "#FFEBBC"
+			"activityBar.foreground": "#FFEBBC",
+			"activityBar.background": "#543D46",
+
+			"titleBar.activeForeground": "#FFEBBC",
+			"titleBar.activeBackground": "#543D46"
 		}
 	}
 }

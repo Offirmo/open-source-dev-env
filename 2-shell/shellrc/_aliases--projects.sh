@@ -60,6 +60,7 @@ alias mono221='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--of
 alias mono222='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 2-foundation/; cd uuid;                           tabset --color "#a4d4dd" --badge mono222'
 
 alias mono3001='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--isomorphic/; cd ts--types--web;    tabset --color "#a4d4dd" --badge mono3001'
+alias mono3002='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--isomorphic/; cd marketing;         tabset --color "#a4d4dd" --badge mono3002'
 alias mono3010='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--isomorphic/; cd utils--async;      tabset --color "#a4d4dd" --badge mono3010'
 alias mono3020='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--isomorphic/; cd normalize-string;  tabset --color "#a4d4dd" --badge mono3020'
 alias mono3030='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 3-advanced--isomorphic/; cd utils--state;      tabset --color "#a4d4dd" --badge mono3030'

@@ -1,11 +1,12 @@
 {
 	"workbench.colorTheme": "Solarized Light",
-	"workbench.preferredDarkColorTheme": "Solarized Dark",
-	"workbench.preferredLightColorTheme": "Solarized Light",
 	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.showTabs": "single",
 	"workbench.editor.wrapTabs": true,
 	"workbench.fontAliasing": "auto",
 	"workbench.iconTheme": "moxer-icons",
+	"workbench.preferredDarkColorTheme": "Solarized Dark",
+	"workbench.preferredLightColorTheme": "Solarized Light",
 	"workbench.startupEditor": "readme",
 	"workbench.tree.indent": 12,
 
@@ -20,10 +21,12 @@
 	"editor.dragAndDrop": false,
 	"editor.dropIntoEditor.enabled": false,
 	"editor.emptySelectionClipboard": false,
+	"editor.experimentalWhitespaceRendering": "font",
 	"editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 13.5,
 	"editor.formatOnPaste": true,
+	"editor.guides.indentation": false,
 	"editor.insertSpaces": false,
 	"editor.renderWhitespace": "boundary",
 	"editor.stickyScroll.enabled": true,
@@ -43,12 +46,13 @@
 		"ꘌ": true
 	},
 
-
 	"explorer.excludeGitIgnore": true,
 
 	"javascript.preferences.quoteStyle": "single",
-
 	"typescript.preferences.quoteStyle": "single",
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 
 	"diffEditor.ignoreTrimWhitespace": false,
 
@@ -64,20 +68,21 @@
 
 	"git.openRepositoryInParentFolders": "never",
 
-
 	"terminal.integrated.stickyScroll.enabled": true,
 	"terminal.integrated.hideOnStartup": "whenEmpty",
 	"terminal.integrated.fontFamily": "'Fira Code', monospace",
+	"terminal.integrated.defaultProfile.osx": "bash",
 
 	"todo-tree.tree.scanAtStartup": false,
 
 	"prettier.useTabs": true,
+
 	"guides.active.enabled": false,
-	"editor.experimentalWhitespaceRendering": "font",
-	"editor.guides.indentation": false,
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
 
+	"workspace-terminals.auto": "never",
 
+	"vscode-pets.petSize": "small",
+	"vscode-pets.petType": "rubber-duck",
+	"vscode-pets.throwBallWithMouse": true,
+	"vscode-pets.petColor": "akita"
 }

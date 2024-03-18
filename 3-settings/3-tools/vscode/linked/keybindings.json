@@ -1,0 +1,44 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "alt+space",
+		"command": "-workbench.action.terminal.sendSequence"
+	},
+
+
+	{
+		"key": "cmd+s",
+		"command": "-workbench.action.files.save"
+	},
+	{
+		"key": "cmd+s",
+		"command": "saveAll"
+	},
+	{
+		"key": "alt+cmd+s",
+		"command": "-saveAll"
+	},
+
+
+	{
+		"key": "cmd+k cmd+0",
+		"command": "-editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "shift+cmd+8",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		"key": "shift+cmd+8",
+		"command": "editor.foldAll"
+	},
+	{
+		"key": "shift+cmd+-",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		"key": "shift+cmd+-",
+		"command": "editor.foldAll"
+	}
+]
