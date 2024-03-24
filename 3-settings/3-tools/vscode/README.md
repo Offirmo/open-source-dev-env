@@ -49,7 +49,7 @@ joshx.workspace-terminals
 ## bookmarks? https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
 ## window color based on hash of dir
 https://marketplace.visualstudio.com/items?itemName=stuart.unique-window-colors
-https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines
+code --install-extension  Tyriar.sort-lines
 https://marketplace.visualstudio.com/items?itemName=SimonSiefke.svg-preview
 
 ## python
@@ -69,22 +69,22 @@ code --install-extension  ms-vscode.cpptools-themes
 
 ## Web
 ## prettier (microsoft)  https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-esbenp.prettier-vscode
+code --install-extension  esbenp.prettier-vscode
 ## ESLint (microsoft)
-dbaeumer.vscode-eslint
+code --install-extension  dbaeumer.vscode-eslint
 ## npm intellisense
-christian-kohler.npm-intellisense
+code --install-extension  christian-kohler.npm-intellisense
 ## color highlight
-naumovs.color-highlight
+code --install-extension  code --install-extension  naumovs.color-highlight
 ## official graphql
-GraphQL.vscode-graphql-syntax
+code --install-extension  GraphQL.vscode-graphql-syntax
 ## accessibility
-deque-systems.vscode-axe-linter
+code --install-extension  deque-systems.vscode-axe-linter
 ## CSS linting
-stylelint.vscode-stylelint
+code --install-extension  stylelint.vscode-stylelint
 ## image preview? https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview
 ## HTML
-https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
+XXX https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
 
 ## shell
 https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
@@ -97,7 +97,7 @@ VisualStudioExptTeam.vscodeintellicode
 
 ## Misc
 ## CSV
-mechatroner.rainbow-csv
+code --install-extension  mechatroner.rainbow-csv
 https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete
 
 ```
