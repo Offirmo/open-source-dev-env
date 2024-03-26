@@ -84,5 +84,7 @@
 	"vscode-pets.petSize": "small",
 	"vscode-pets.petType": "rubber-duck",
 	"vscode-pets.throwBallWithMouse": true,
-	"vscode-pets.petColor": "akita"
+	"vscode-pets.petColor": "akita",
+	"color-highlight.markerType": "dot-before",
+	"indentOnPaste.pasteMethod": "workaround"
 }

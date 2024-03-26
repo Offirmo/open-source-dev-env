@@ -1,25 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "../../../offirmo-monorepo"
+			"path": "../../..",
+			"name": "Offirmo"
 		},
 		{
-			"path": "../.."
-		},
-		{
-			"path": "../../../web-tech-experiments"
-		},
-		{
-			"path": "../../../blog"
-		},
-		{
-			"path": "../../../private-code-competitions"
-		},
-		{
-			"path": "."
-		},
-		{
-			"path": "../../../minisite-bookmarks-ghpages"
+			"path": "../../../../oa",
+			"name": "online-adventur.es"
 		}
 	],
 	"settings": {

@@ -1,6 +1,13 @@
+program your keyboard through https://www.caniusevia.com/  -> https://usevia.app/
+
+Doc https://www.keychron.com/blogs/archived/how-to-use-via-to-program-your-keyboard
+
+
+
 
 Candidate strings:
 `nvm i`
+`yarn dev`
 `git-cola &`
 
 ✅❎❌✔️⚠️
