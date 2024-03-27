@@ -34,6 +34,7 @@ See https://code.visualstudio.com/docs/editor/extension-marketplace#_command-lin
 See also https://open-vsx.org/ ??
 
 ```bash
+code --list-extensions
 
 code --install-extension  editorconfig.editorconfig
 
@@ -103,8 +104,10 @@ https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomp
 ```
 
 ### tosort
-`code --list-extensions`
 
+https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+https://hackernoon.com/24-coolest-vscode-extensions-that-will-rock-your-world-xpi3t0j
+https://marketplace.visualstudio.com/items?itemName=steoates.autoimport
 davidanson.vscode-markdownlint
 dotjoshjohnson.xml
 eamodio.gitlens
