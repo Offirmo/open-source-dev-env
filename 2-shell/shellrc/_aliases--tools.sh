@@ -43,7 +43,7 @@ alias tpx='rm -rf node_modules/ .npm npm-debug.log package-lock.json yarn.lock y
 #alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
-alias kng='killall node grunt gulp yarn tsc phantomjs flow webpack ngrok'
+alias kng='killall node yarn tsc esbuild webpack ngrok phantomjs flow grunt gulp'
 # for bolt to work properly, it has to be installed globally via yarn
 alias onn='npm install --global iterm2-tab-set yalc yarn && yarn global add bolt'
 # 2024/02 avn no longerwork avn avn-nvm
