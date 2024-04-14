@@ -103,6 +103,7 @@ alias mono3352='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--o
 alias mms='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter; tabset --color "#a4d4dd" --badge mms'
 
 
+alias inc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd credits;                          tabset --color "#a4d4dd" --badge inc01'
 alias inc10='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--svg;                   tabset --color "#a4d4dd" --badge inc10'
 alias inc11='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--html;                  tabset --color "#a4d4dd" --badge inc11'
 alias inc12='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--website-entry-points;  tabset --color "#a4d4dd" --badge inc12'
@@ -112,10 +113,13 @@ alias inc30='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offi
 #alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator/; cd active/simple-upgradable-template; tabset --color "#a4d4dd" --badge monoX2'
 
 
-alias omr01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg//; cd state--codes;       tabset --color "#a4d4dd" --badge omr01'
-alias omr02='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg//; cd state--engagement;  tabset --color "#a4d4dd" --badge omr02'
-alias omr03='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg//; cd state--prng;        tabset --color "#a4d4dd" --badge omr03'
-alias omr04='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg//; cd state--meta;        tabset --color "#a4d4dd" --badge omr04'
+alias omr01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg/; cd state--codes;       tabset --color "#a4d4dd" --badge omr01'
+alias omr02='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg/; cd state--engagement;  tabset --color "#a4d4dd" --badge omr02'
+alias omr03='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg/; cd state--prng;        tabset --color "#a4d4dd" --badge omr03'
+alias omr04='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg/; cd state--meta;        tabset --color "#a4d4dd" --badge omr04'
+alias omr51='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg/; cd assets--audio;      tabset --color "#a4d4dd" --badge omr51'
+alias omr52='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 9-rpg/; cd assets--cursors;    tabset --color "#a4d4dd" --badge omr52'
+
 
 alias ic01=' cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/immortal-clicker/;  cd sandbox;          tabset --color "#a4d4dd" --badge ic01'
 alias ikc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd A-apps--core/isekai-capitalist/; cd sandbox;          tabset --color "#a4d4dd" --badge ikc01'
