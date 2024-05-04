@@ -33,9 +33,8 @@ alias mono2='cd ~/work/src/off/offirmo-monorepo/stack--2022; git--offirmo.sh; nv
 alias mono2test='cd ~/work/src/off/offirmo-monorepo/stack--2022; nvm i; git--offirmo.sh; tabset --badge "mono2022" --color "#FF4136"'
 
 
-alias ntc='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/node-typescript-compiler;        tabset --color "#a4d4dd" --badge ntc'
-alias utt='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/toolbox--unit-tests;             tabset --color "#a4d4dd" --badge utt'
-
+alias ntc=' cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/node-typescript-compiler;        tabset --color "#a4d4dd" --badge ntc'
+alias utt=' cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/toolbox--unit-tests;             tabset --color "#a4d4dd" --badge utt'
 
 alias mono100='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ts--types;              tabset --color "#a4d4dd" --badge mono100'
 alias mono101='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd deferred;               tabset --color "#a4d4dd" --badge mono101'
@@ -100,7 +99,8 @@ alias mono3352='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--o
 
 
 #alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
-alias mms='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter; tabset --color "#a4d4dd" --badge mms'
+alias mms=' cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter;   tabset --color "#a4d4dd" --badge mms'
+alias spad='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 4-tools/; cd storypad;                        tabset --color "#a4d4dd" --badge spad'
 
 
 alias inc01='cd ~/work/src/off/offirmo-monorepo/stack--2022/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd credits;                          tabset --color "#a4d4dd" --badge inc01'

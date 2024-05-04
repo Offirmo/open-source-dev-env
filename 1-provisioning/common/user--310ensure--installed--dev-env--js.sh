@@ -26,11 +26,12 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 ############################################################
 echo "* starting…"
 
+
 ############ Node ############
 ## NVM
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 echo "* (re)installing nvm…"
-bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash'
+bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'

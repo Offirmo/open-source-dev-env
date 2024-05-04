@@ -64,7 +64,7 @@ if [[ -n $DETECTED_NVM_DIR ]]; then
 	echo ""
 	echo "******* \`nvm\` detected, updating… *******"
 	## 1) update nvm
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 	## 2) (re)load it
 	. "${DETECTED_NVM_DIR:-}/nvm.sh"
 	## 3) install latest lts
@@ -74,7 +74,8 @@ if [[ -n $DETECTED_NVM_DIR ]]; then
 	set -e
 	echo "INSTALL RETURN $NVM_RETURN"
 	## 3b) install critical packages with this lts
-	npm install --global avn avn-nvm
+	## TODO review, avn doesn't work 2024/04
+	#npm install --global avn avn-nvm
 	#avn setup
 fi
 
