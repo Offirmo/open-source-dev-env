@@ -86,5 +86,9 @@
 	"vscode-pets.throwBallWithMouse": true,
 	"vscode-pets.petColor": "akita",
 	"color-highlight.markerType": "dot-before",
-	"indentOnPaste.pasteMethod": "workaround"
+	"indentOnPaste.pasteMethod": "workaround",
+	"snyk.yesWelcomeNotification": false,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
