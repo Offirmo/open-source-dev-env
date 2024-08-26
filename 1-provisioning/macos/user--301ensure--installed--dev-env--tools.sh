@@ -50,7 +50,7 @@ brew install --cask visual-studio-code lepton
 brew install --cask responsively
 #brew install --cask polypane # polypane is great but paid
 
-brew install --cask insomnia
+#brew install --cask insomnia no, let's try https://github.com/usebruno/bruno
 
 brew install shellcheck
 

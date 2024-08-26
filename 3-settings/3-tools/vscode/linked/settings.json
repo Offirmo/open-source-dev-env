@@ -90,5 +90,6 @@
 	"snyk.yesWelcomeNotification": false,
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"snyk.folderConfigs": null
 }
