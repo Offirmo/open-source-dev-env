@@ -3,7 +3,7 @@ program your keyboard through https://www.caniusevia.com/  -> https://usevia.app
 Doc https://www.keychron.com/blogs/archived/how-to-use-via-to-program-your-keyboard
 
 
-keycodes: https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
+keycodes: https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md USE "SHORT"
 modifier:
 ^ = control = Ctrl
 ⌥ = option = alt
