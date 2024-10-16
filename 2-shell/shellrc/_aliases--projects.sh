@@ -130,7 +130,8 @@ alias tbrA11='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--
 alias tbrA12='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd logic--weapons;     tabset --color "#a4d4dd" --badge tbrA12'
 alias tbrA13='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd logic--monsters;    tabset --color "#a4d4dd" --badge tbrA13'
 alias tbrA14='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd logic--adventures;  tabset --color "#a4d4dd" --badge tbrA14'
-alias tbrA15='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd logic--shop;        tabset --color "#a4d4dd" --badge tbrA15'
+alias tbrA15='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd logic--adventure--resolved;  tabset --color "#a4d4dd" --badge tbrA15'
+alias tbrA16='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd logic--shop;        tabset --color "#a4d4dd" --badge tbrA16'
 
 alias tbrA21='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd state--character;   tabset --color "#a4d4dd" --badge tbrA21'
 alias tbrA22='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd state--energy;      tabset --color "#a4d4dd" --badge tbrA22'
@@ -151,7 +152,7 @@ alias tbrA40='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--
 #alias xxtbrA22='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
 #alias xxomr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg/; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
 
-alias tbrA99='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd sandbox;      tabset --color "#a4d4dd" --badge tbrA99'
+alias tbrA99='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd xx-sandbox;      tabset --color "#a4d4dd" --badge tbrA99'
 
 
 
