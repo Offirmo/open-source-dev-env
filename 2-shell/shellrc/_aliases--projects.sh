@@ -152,8 +152,9 @@ alias tbrA40='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--
 #alias xxtbrA22='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd rsrc--audio;        tabset --color "#a4d4dd" --badge tbrA22'
 #alias xxomr01='cd ~/work/src/off/offirmo-monorepo/9-oh-my-rpg/; cd assets--background--artbreeder; tabset --color "#a4d4dd" --badge omr01'
 
-alias tbrA99='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd xx-sandbox;      tabset --color "#a4d4dd" --badge tbrA99'
+alias tbrA99='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/the-boring-rpg/; cd x-sandbox;      tabset --color "#a4d4dd" --badge tbrA99'
 
+alias sfrA99='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd A-apps--core/space-rpg/; cd x-sandbox;      tabset --color "#a4d4dd" --badge sfrA99'
 
 
 alias monodbm='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd B-apps--support/online-adventur.es/; cd db-migrations; tabset --color "#a4d4dd" --badge monodbm'
