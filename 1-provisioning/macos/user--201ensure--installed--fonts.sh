@@ -34,7 +34,7 @@ brew update
 ## programming
 ## https://www.programmingfonts.org/
 brew install --cask font-fira-code
-brew install --cask font-jetbrains-mono
+#brew install --cask font-jetbrains-mono
 #brew install --cask font-iosevka  ## https://github.com/be5invis/Iosevka
 ## todo nerd fonts? https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/
 

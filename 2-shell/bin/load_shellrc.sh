@@ -3,7 +3,7 @@
 ## REM : this file is meant to conveniently complement ~/.bashrc
 ##       It is supposed to be called in login and non-login shells, after ~/.bashrc
 
-echo "* hello from: …open-source-dev-env/…/load_shellrc.sh"
+[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/load_shellrc.sh"
 
 ## useful function
 source_bash_files_from_dir() {

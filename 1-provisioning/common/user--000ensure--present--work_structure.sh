@@ -46,7 +46,7 @@ mkdir -p ~/work/bin/shellrc
 if [ ! -f "~/work/bin/shellrc/keep.sh" ]; then
 	echo "#! /bin/bash" > ~/work/bin/shellrc/keep.sh
 fi
-mkdir -p ~/work/containers
+#mkdir -p ~/work/containers
 mkdir -p ~/work/docs
 mkdir -p ~/work/install
 mkdir -p ~/work/src

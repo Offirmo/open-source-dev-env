@@ -49,7 +49,7 @@ fi
 
 
 ############ TOOL -- Jetbrains Toolbox ############
-#export PATH="$PATH:/Users/yjutard/Library/Application Support/JetBrains/Toolbox/scripts"
+#export PATH="$PATH:~/Library/Application Support/JetBrains/Toolbox/scripts"
 
 
 

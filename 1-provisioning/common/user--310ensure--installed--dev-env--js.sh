@@ -31,7 +31,7 @@ echo "* starting…"
 ## NVM
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 echo "* (re)installing nvm…"
-bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash'
+bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'
@@ -49,6 +49,7 @@ npm config set init-version       0.0.1
 ############ yarn ############
 ## https://yarnpkg.com/en/docs/cli/config
 # TODO check if inherited from npm ? maybe not if config in alternate place
+# TODO how do we have yarn installed?
 yarn config set color         always
 yarn config set init-license  Unlicense
 yarn config set init-version  0.0.1

@@ -41,7 +41,7 @@ echo "* starting…"
 
 ## virtualenv via pipx  https://virtualenv.pypa.io/en/latest/installation.html
 ## assuming pipx was installed via an os-dedependent method
-pipx install virtualenv
+#pipx install virtualenv
 
 
 ## https://pip.pypa.io/en/stable/installation/

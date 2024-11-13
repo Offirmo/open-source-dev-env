@@ -33,14 +33,14 @@ echo "* starting…"
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo-monorepo.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/web-tech-experiments.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo.github.io.git
-~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/my.dev.to.git
+#~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/my.dev.to.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/sync-local-repos.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/blog.git
-~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/x.git
+#~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/x.git
 
 ## Offirmo team
 ## git@offirmo.github.com:Offirmo-team
-~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo-team/wiki.git
+#~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo-team/wiki.git
 
 ## Offirmo's Online Adventures
 ## git@offirmo.github.com:online-adventures

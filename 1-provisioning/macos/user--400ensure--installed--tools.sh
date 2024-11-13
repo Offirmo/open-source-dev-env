@@ -47,9 +47,5 @@ fi
 # TODO REVIEW doesn't seem it's recommended way
 #brew install audacity
 
-## https://meetingbar.app/
-brew install meetingbar
-
-
 #############################################################
 echo "* …all done ✅"

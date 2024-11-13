@@ -37,7 +37,7 @@ git -v > /dev/null
 ## install brew, prerequisite for nearly any other tool
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 if ! command -v brew > /dev/null; then
-	## https://docs.brew.sh/Installation
+	## https://brew.sh/
 	echo "* installing brew ▶️"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	## Make brew support multiple versions

@@ -32,9 +32,13 @@ echo "******* installing base apps through brew…"
 
 brew install --cask sizeup keepassx xnviewmp
 
+# acrobat has its own updater but it runs permanently in the background and I don't trust it
 brew install --cask adobe-acrobat-reader
 
 brew install --cask grandperspective
+
+## https://meetingbar.app/
+brew install meetingbar
 
 ## quick look plugins
 ## https://github.com/sindresorhus/quick-look-plugins

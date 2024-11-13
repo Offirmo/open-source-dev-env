@@ -33,6 +33,7 @@ echo "* starting ▶️"
 ####### require bash #######
 
 ####### profiles ########
+## https://docs.google.com/spreadsheets/d/1VC5DRHw-ResS5LgoTA131ORXCv9s_aNGuhUNOEeA1-c/edit?gid=495591543#gid=495591543
 
 ## common
 ## POSIX = /etc/profile -> ~/.profile
@@ -61,9 +62,9 @@ if [ ! -f ~/.bash_profile ]; then
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.bash_profile"'
-		echo '[ -n "$PS1" ] && echo "  * shell is interactive"'
-		echo 'shopt -q login_shell && echo "  * shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bash_profile] hello!'
+		echo '[ -n "$PS1" ] && echo "  * [~/.bash_profile] shell is interactive"'
+		echo 'shopt -q login_shell && echo "  * [~/.bash_profile] shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo ''
@@ -79,7 +80,7 @@ if [ ! -f ~/.bashrc ]; then
 	{
 		echo '## user-wide runtime configuration for bash(1)'
 		echo '## in theory it’s non-login only but in practice everyone expect it to be always sourced'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.bashrc"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bashrc] hello!"'
 		echo ''
 	} >> ~/.bashrc
 fi
@@ -96,7 +97,7 @@ if [ ! -f ~/.zshenv ]; then
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true fi  ## uncomment this to troubleshoot'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.zshenv"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zshenv] hello!"'
 		echo ''
 	} >> ~/.zshenv
 fi
@@ -104,7 +105,7 @@ if [ ! -f ~/.zprofile ]; then
 	echo "* creating a runtime config file: ~/.zprofile"
 	{
 		echo '## user-wide profile for zsh(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.zprofile"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zprofile] hello!"'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo 'if [ -f ~/.profile ]; then . ~/.profile; fi'
@@ -115,7 +116,7 @@ if [ ! -f ~/.zshrc ]; then
 	echo "* creating a runtime config file: ~/.zshrc"
 	{
 		echo '## user-wide runtime configuration for zsh(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.zshrc"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zshrc] hello!"'
 		echo ''
 	} >> ~/.zshrc
 fi

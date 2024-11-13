@@ -49,8 +49,8 @@ if [ ! -f ~/.ssh/authorized_keys ]; then
 	echo "" >> ~/.ssh/authorized_keys
 fi
 
-## 100 rounds: https://crypto.stackexchange.com/a/40902
 if [ ! -f ~/.ssh/id_ed25519.pub ]; then
+	## 100 rounds: https://crypto.stackexchange.com/a/40902
 	ssh-keygen -a 100 -t ed25519 -C "$USER" -f ~/.ssh/id_ed25519
 	sleep 1
 	echo "please add your new key to GitHub & BB:"
