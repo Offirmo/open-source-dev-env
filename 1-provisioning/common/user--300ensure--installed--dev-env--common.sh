@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2023"
+echo "# revision = circa 2024"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -91,7 +91,7 @@ popd > /dev/null
 
 
 
-## Offline doc TODO
+## Offline doc TODO review
 ## devdocs
 #git clone https://github.com/Thibaut/devdocs.git && cd devdocs
 ## reactive extensions

@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2023"
+echo "# revision = circa 2024"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -51,7 +51,6 @@ fi
 
 
 ## bash
-## ref = https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html
 ## interactive login    : /etc/profile -> ~/.bash_profile OR ~/.bash_login OR ~/.profile
 ## interactive non login: ~/.bashrc
 if [ ! -f ~/.bash_profile ]; then
@@ -59,6 +58,7 @@ if [ ! -f ~/.bash_profile ]; then
 	{
 		echo '## user-wide profile for bash(1)'
 		echo '## this config file is usually the first user-level file to be sourced for bash (after /etc/bashrc)'
+		echo '## https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html'
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi'
@@ -74,12 +74,13 @@ if [ ! -f ~/.bash_profile ]; then
 		echo ''
 	} >> ~/.bash_profile
 fi
-## https://apple.stackexchange.com/a/13019/214344
 if [ ! -f ~/.bashrc ]; then
 	echo "* creating a runtime config file: ~/.bashrc"
 	{
 		echo '## user-wide runtime configuration for bash(1)'
 		echo '## in theory it’s non-login only but in practice everyone expect it to be always sourced'
+		echo '## https://apple.stackexchange.com/a/13019/214344'
+		echo ''
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bashrc] hello!"'
 		echo ''
 	} >> ~/.bashrc
@@ -87,13 +88,13 @@ fi
 
 
 ## zsh
-## ref = https://zsh.sourceforge.io/Guide/zshguide02.html
 ## /etc/zshenv -> ~/.zshenv ~/.zshrc
 if [ ! -f ~/.zshenv ]; then
 	echo "* creating a runtime config file: ~/.zshenv"
 	{
 		echo '## user-wide configuration for zsh(1)'
 		echo '## this config file should be the first user-level file to be sourced for zsh (after /etc/zshenv and /etc/zprofile)'
+		echo '## https://zsh.sourceforge.io/Guide/zshguide02.html'
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true fi  ## uncomment this to troubleshoot'

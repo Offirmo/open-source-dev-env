@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2023"
+echo "# revision = circa 2024"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -32,7 +32,7 @@ echo "* starting…"
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/minisite-bookmarks-ghpages.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo-monorepo.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/web-tech-experiments.git
-~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo.github.io.git
+#~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/offirmo.github.io.git
 #~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/my.dev.to.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/sync-local-repos.git
 ~/work/src/off/open-source-dev-env/2-shell/bin/gitc.sh  git@offirmo.github.com:Offirmo/blog.git

@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2023"
+echo "# revision = circa 2024"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -50,6 +50,7 @@ fi
 mkdir -p ~/work/docs
 mkdir -p ~/work/install
 mkdir -p ~/work/src
+## TODO sub-source by brand
 mkdir -p ~/work/tmp
 
 
