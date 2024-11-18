@@ -11,56 +11,48 @@ See also:
 
 Check that bootstrap will work with:
 
-```
-[if ubuntu] sudo apt-get install curl
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | bash
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | sudo bash
-```
-
+1. if Ubuntu: ```sudo apt-get install curl```
+2. user mode: ```curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | bash```
+3. admin mode: ```curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | sudo bash```
 
 ## Install
 
-### macOS
+### macOS pre-req
 
-Set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/>)
-```
-cat /etc/shells  <-- check if /bin/bash is present
-echo $SHELL , $0 , $BASH  <-- check current shell
-chsh -s /bin/bash
-chsh -s /bin/zsh
-```
+First, set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/>)
+1. ```cat /etc/shells``` <-- check if /bin/bash is present:
+2. ```echo $SHELL , $0 , $BASH``` <-- check current shell
+3. ```chsh -s /bin/bash``` <-- switch if needed
+4. IF NEEDED ```chsh -s /bin/zsh``` (switch back)```
 
-Show hidden files:
-* temp: <https://apple.stackexchange.com/a/340543>
-  * `Apple + shift + .`
-* définitif: (see [provisioning file](./1-provisioning/macos/user--100ensure--settings.sh))
-
-Install git: either:
+Then install git: either:
 - type `git` and accept everything asked
-- or/and `xcode-select --install` (recommended)
-- or/and install xcode and launch it once (but takes time & lot of disk space!)
+- or/and `xcode-select --install`
+- or/and install xcode and launch it once (but takes time & a lot of disk space!)
 
-Install
-```
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh   |      bash
-         then remove `src` from the spotlight search: "Spotlight privacy"
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh           |      bash
+### 000 = bootstrap
+
+1. ```curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh   |      bash```
+   1. then remove `src` from the spotlight search: "Spotlight privacy"
+2. ```curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh           |      bash```
+3. Keys:
+   1. IF WANTED copy your keys from previous machine here
+   2. ```curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh_keys.sh      | bash```
+   3. if new, add the new keys to github
+      * go here: https://github.com/settings/keys
+      * ```cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy```
+      * `cat ~/.ssh/id_ed25519.pub | pbcopy`
+   4. test it: `ssh -T git@github.com`
+   5. DELETE SSH KEYS FROM THE DISK/USB KEY!
+4. ```curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh           |      bash```
+
+### 100 = base install post-bootstrap, from local
+### 200 = ordinary most necessary tools
+### 300 = dev env
+### 400 = creator
+### 900 = gaming
 
 
-IF WANTED copy your keys from previous machine here.
-If not found, some will be generated:
-   curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh_keys.sh      | bash
-   + if new, add the new keys to github
-      - go here: https://github.com/settings/keys
-        cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy
-        cat ~/.ssh/id_ed25519.pub | pbcopy
-+ test it: `ssh -T git@github.com`
-+ DELETE SSH KEYS FROM THE DISK/USB KEY!
-
-
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh           |      bash
-
-```
 
 ### Ubuntu
 (no longer using)
@@ -97,6 +89,12 @@ echo "* hello from: .bash_logout"
 ### Manual installs
 https://www.jetbrains.com/toolbox/app/
 
+
+Show hidden files:
+* temp: <https://apple.stackexchange.com/a/340543>
+	* `Apple + shift + .`
+* définitif: (see [provisioning file](./1-provisioning/macos/user--100ensure--settings.sh))
+*
 ### Load settings
 * WebStorm: File -> Import settings... -> folder "install/intellij-colors-solarized"
 * iTerm (macOs) -> Prefs -> Profiles -> Colors -> color preset -> "ode/misc/iterm2"

@@ -30,6 +30,7 @@ echo "* starting ▶️"
 echo "*** hello, `whoami` ! ***"
 echo "This a demo script doing nothing!"
 echo "- USER             = `echo $USER`"
+echo "- COMPANY          = `echo $COMPANY`"
 echo "- COMPANY_DOMAIN   = `echo $COMPANY_DOMAIN`"
 
 ### check expected params

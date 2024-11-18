@@ -58,5 +58,5 @@ if [ -n "$PS1" ]; then export VERBOSE__RC=true fi
 
 
 
-[[ "$VERBOSE__RC" == true ]] && echo "* hello from: /etc/bashrc"
+[[ "$VERBOSE__RC" == true ]] && echo "* [/etc/bashrc] hello!"
 ```

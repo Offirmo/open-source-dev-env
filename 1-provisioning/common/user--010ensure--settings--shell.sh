@@ -42,8 +42,10 @@ if [ ! -f ~/.profile ]; then
 	{
 		echo '## user-wide profile for sh(1)'
 		echo '## may also be sourced by bash(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* hello from: ~/.profile"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello"'
 		echo ''
+		echo 'export COMPANY="foo"'
+		echo 'export COMPANY_DOMAIN="$COMPANY.com"'
 		echo 'source ~/work/src/off/open-source-dev-env/2-shell/bin/load_shellrc.sh'
 		echo ''
 	} >> ~/.profile
@@ -62,7 +64,7 @@ if [ ! -f ~/.bash_profile ]; then
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bash_profile] hello!'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bash_profile] hello!"'
 		echo '[ -n "$PS1" ] && echo "  * [~/.bash_profile] shell is interactive"'
 		echo 'shopt -q login_shell && echo "  * [~/.bash_profile] shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
