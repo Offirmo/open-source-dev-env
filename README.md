@@ -48,7 +48,9 @@ Then install git: either:
 
 ### 100 = base install post-bootstrap, from local
 
-/1-provisioning/macos/user--100ensure--settings.sh
+```bash
+bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--100ensure--settings.sh
+```
 
 ### 200 = ordinary most necessary tools
 
@@ -148,13 +150,6 @@ fi
 ```
 
 Also TODO compatibility with non-interactive shells, need no output
-
-### Useful commands
-```
-git stash --include-untracked
-git stash save -u ""
-git rebase -i master
-```
 
 ### Useful unicode chars ’☑☐✓❌
 
