@@ -29,10 +29,11 @@ echo "* starting…"
 
 ############ macOS settings ############
 
-## https://apple.stackexchange.com/questions/340542/show-hidden-files-on-mac-os-x-mojave-using-terminal/340543#340543
-## https://www.defaults-write.com/display-the-file-extensions-in-finder/
+## https://www.defaults-write.com/show-hidden-files-in-os-x-finder/
 ## Or use shortcut: (in finder) Cmd ⌘ + Shift ⇧ + .  (full stop, period)
-defaults write com.apple.finder AppleShowAllFiles -boolean true
+defaults write com.apple.Finder AppleShowAllFiles -bool true
+
+## https://www.defaults-write.com/display-the-file-extensions-in-finder/
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 ## https://www.defaults-write.com/display-full-posix-path-in-os-x-finder-title-bar/
