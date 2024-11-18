@@ -31,8 +31,9 @@ echo "* starting…"
 
 
 ## https://pypi.org/project/pipx/
-brew install pipx
-pipx ensurepath
+#brew install pipx
+#pipx ensurepath
+echo "* PLEASE REVIEW THIS FILE! ⚠️⚠️⚠️"
 
 
 

@@ -37,7 +37,7 @@ echo "* starting…"
 ## "seed packages" = pip, setuptools, wheel
 
 
-echo "* PLEASE REVIEW THIS FILE! ⚠️⚠️⚠️"
+echo "* See OS-specific script instead! ⚠️⚠️⚠️"
 
 ## virtualenv via pipx  https://virtualenv.pypa.io/en/latest/installation.html
 ## assuming pipx was installed via an os-dedependent method
