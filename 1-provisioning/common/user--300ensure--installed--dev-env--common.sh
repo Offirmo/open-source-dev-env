@@ -33,7 +33,10 @@ git config --global color.ui "auto"
 
 ## global gitignore
 ## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-if [ ! -f ~/.gitignore ]; then
+if [ -f ~/.gitignore ]; then
+	echo "* ~/.gitignore already exists ✅"
+else
+	echo "* creating ~/.gitignore ▶️"
 	echo "" > ~/.gitignore
 	echo ".DS_Store" >> ~/.gitignore
 fi
@@ -52,7 +55,7 @@ git config --global fetch.prune true
 git config --global fetch.pruneTags true
 # Enable if you use a git GUI
 git config --global gui.pruneDuringFetch true
-
+echo "* git global config set ✅"
 
 ############ Offirmo shared scripts ############
 
@@ -75,6 +78,7 @@ else
     git pull
 fi
 popd > /dev/null
+echo "* solarized color scheme downloaded and up-to-date ✅"
 
 ## jetbrains solarized color scheme (better than the above)
 ## https://github.com/jkaving/intellij-colors-solarized
@@ -88,6 +92,7 @@ else
     git pull
 fi
 popd > /dev/null
+echo "* jetbrains solarized color scheme downloaded and up-to-date ✅"
 
 
 

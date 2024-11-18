@@ -37,8 +37,10 @@ echo "* starting ▶️"
 
 ## common
 ## POSIX = /etc/profile -> ~/.profile
-if [ ! -f ~/.profile ]; then
-	echo "* creating a runtime config file: ~/.profile"
+if [ -f ~/.profile ]; then
+	echo "* ~/.profile already exists ✅"
+else
+	echo "* creating a runtime config file: ~/.profile ▶️"
 	{
 		echo '## user-wide profile for sh(1)'
 		echo '## may also be sourced by bash(1)'
@@ -55,8 +57,10 @@ fi
 ## bash
 ## interactive login    : /etc/profile -> ~/.bash_profile OR ~/.bash_login OR ~/.profile
 ## interactive non login: ~/.bashrc
-if [ ! -f ~/.bash_profile ]; then
-	echo "* creating a runtime config file: ~/.bash_profile"
+if [ -f ~/.bash_profile ]; then
+	echo "* ~/.bash_profile already exists ✅"
+else
+	echo "* creating a runtime config file: ~/.bash_profile ▶️"
 	{
 		echo '## user-wide profile for bash(1)'
 		echo '## this config file is usually the first user-level file to be sourced for bash (after /etc/bashrc)'
@@ -76,8 +80,10 @@ if [ ! -f ~/.bash_profile ]; then
 		echo ''
 	} >> ~/.bash_profile
 fi
-if [ ! -f ~/.bashrc ]; then
-	echo "* creating a runtime config file: ~/.bashrc"
+if [ -f ~/.bashrc ]; then
+	echo "* ~/.bashrc already exists ✅"
+else
+	echo "* creating a runtime config file: ~/.bashrc ▶️"
 	{
 		echo '## user-wide runtime configuration for bash(1)'
 		echo '## in theory it’s non-login only but in practice everyone expect it to be always sourced'
@@ -91,8 +97,10 @@ fi
 
 ## zsh
 ## /etc/zshenv -> ~/.zshenv ~/.zshrc
-if [ ! -f ~/.zshenv ]; then
-	echo "* creating a runtime config file: ~/.zshenv"
+if [ -f ~/.zshenv ]; then
+	echo "* ~/.zshenv already exists ✅"
+else
+	echo "* creating a runtime config file: ~/.zshenv ▶️"
 	{
 		echo '## user-wide configuration for zsh(1)'
 		echo '## this config file should be the first user-level file to be sourced for zsh (after /etc/zshenv and /etc/zprofile)'
@@ -104,8 +112,10 @@ if [ ! -f ~/.zshenv ]; then
 		echo ''
 	} >> ~/.zshenv
 fi
-if [ ! -f ~/.zprofile ]; then
-	echo "* creating a runtime config file: ~/.zprofile"
+if [ -f ~/.zprofile ]; then
+	echo "* ~/.zprofile already exists ✅"
+else
+	echo "* creating a runtime config file: ~/.zprofile ▶️"
 	{
 		echo '## user-wide profile for zsh(1)'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zprofile] hello!"'
@@ -115,8 +125,10 @@ if [ ! -f ~/.zprofile ]; then
 		echo ''
 	} >> ~/.zprofile
 fi
-if [ ! -f ~/.zshrc ]; then
-	echo "* creating a runtime config file: ~/.zshrc"
+if [ -f ~/.zshrc ]; then
+	echo "* ~/.zshrc already exists ✅"
+else
+	echo "* creating a runtime config file: ~/.zshrc ▶️"
 	{
 		echo '## user-wide runtime configuration for zsh(1)'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zshrc] hello!"'

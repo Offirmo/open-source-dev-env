@@ -32,19 +32,19 @@ Then install git: either:
 
 ### 000 = bootstrap
 
-1. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh   |      bash`
+1. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh | bash`
    1. then remove `src` from the spotlight search: "Spotlight privacy"
-2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh           |      bash`
+2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh | bash`
 3. Keys:
    1. IF WANTED copy your keys from previous machine here
-   2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh_keys.sh      | bash`
+   2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
    3. if new, add the new keys to github
       * go here: https://github.com/settings/keys
       * `cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy`
       * `cat ~/.ssh/id_ed25519.pub | pbcopy`
    4. test it: `ssh -T git@github.com`
    5. DELETE SSH KEYS FROM THE DISK/USB KEY!
-4. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh           |      bash`
+4. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash`
 
 ### 100 = base install post-bootstrap, from local
 

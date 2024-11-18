@@ -42,14 +42,23 @@ if [ ! -f ~/.ssh/config ]; then
 #AddKeysToAgent yes
 #UseKeychain yes
 fi
-if [ ! -f ~/.ssh/known_hosts ]; then
+if [ -f ~/.ssh/known_hosts ]; then
+	echo "* ~/.ssh/known_hosts already exists ✅"
+else
+	echo "* creating ~/.ssh/known_hosts ▶️"
 	echo "" >> ~/.ssh/known_hosts
 fi
-if [ ! -f ~/.ssh/authorized_keys ]; then
+if [ -f ~/.ssh/authorized_keys ]; then
+	echo "* ~/.ssh/authorized_keys already exists ✅"
+else
+	echo "* creating ~/.ssh/authorized_keys ▶️"
 	echo "" >> ~/.ssh/authorized_keys
 fi
 
-if [ ! -f ~/.ssh/id_ed25519.pub ]; then
+if [ -f ~/.ssh/id_ed25519.pub ]; then
+	echo "* ~/.ssh/id_ed25519.pub already exists ✅"
+else
+	echo "* creating ~/.ssh/id_ed25519.pub ▶️"
 	## 100 rounds: https://crypto.stackexchange.com/a/40902
 	ssh-keygen -a 100 -t ed25519 -C "$USER" -f ~/.ssh/id_ed25519
 	sleep 1
@@ -59,7 +68,10 @@ if [ ! -f ~/.ssh/id_ed25519.pub ]; then
 	echo "cat ~/.ssh/id_ed25519.pub | pbcopy"
 fi
 
-if [ ! -f ~/.ssh/id_ed25519_offirmo.pub ]; then
+if [ -f ~/.ssh/id_ed25519_offirmo.pub ]; then
+	echo "* ~/.ssh/id_ed25519_offirmo.pub already exists ✅"
+else
+	echo "* creating ~/.ssh/id_ed25519_offirmo.pub ▶️"
 	ssh-keygen -a 100 -t ed25519 -C "offirmo.net@gmail.com" -f ~/.ssh/id_ed25519_offirmo
 	sleep 1
 
@@ -88,6 +100,7 @@ chmod 644 ~/.ssh/*.pub
 chmod 644 ~/.ssh/config
 chmod 644 ~/.ssh/known_hosts
 chmod 644 ~/.ssh/authorized_keys
+echo "* ~/.ssh permissions ✅"
 
 ############################################################
 echo "* …all done ✅"

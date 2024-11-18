@@ -37,7 +37,7 @@ mkdir -p ~/.local
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 mkdir -p ~/.local/state
-
+echo "* user dir structure ✅"
 
 ############ Offirmo data structure ############
 mkdir -p ~/work
@@ -50,8 +50,9 @@ fi
 mkdir -p ~/work/docs
 mkdir -p ~/work/install
 mkdir -p ~/work/src
-## TODO sub-source by brand
+## TODO sub-source by brand?
 mkdir -p ~/work/tmp
+echo "* ~/work structure ✅"
 
 
 #############################################################

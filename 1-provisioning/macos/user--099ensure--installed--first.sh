@@ -36,7 +36,9 @@ git -v > /dev/null
 
 ## install brew, prerequisite for nearly any other tool
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-if ! command -v brew > /dev/null; then
+if command -v brew > /dev/null; then
+	echo "* brew is already installed ✅"
+else
 	## https://brew.sh/
 	echo "* installing brew ▶️"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -47,26 +49,36 @@ fi
 echo "* updating brew ▶️"
 brew update
 
-if ! command -v wget > /dev/null; then
+if command -v wget > /dev/null; then
+	echo "* wget is already installed ✅"
+else
 	## for compatibility
+	echo "* installing wget ▶️"
 	brew install wget
 fi
 
 if ! command -v jq > /dev/null; then
+	echo "* jq is already installed ✅"
+else
 	## needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
+	echo "* installing jq ▶️"
 	brew install jq
 fi
 
 ## now that jq was installed (above) we can auto-update GitHub's known host
 ## ref. https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
+echo "Adding/updating GitHub known hosts ▶️"
+## remove
 ssh-keygen -R github.com
+## (re)add
 curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+
 
 ## test if GitHub is connected
 ssh -T git@github.com || true
 
 ## We now have git, we can download this repo and launch scripts locally:
-echo "* checkout ODE repo…"
+echo "* checking out ODE repo ▶️"
 mkdir -p ~/work/src/off
 pushd ~/work/src/off > /dev/null
 ODE_INSTALL_DIR=open-source-dev-env

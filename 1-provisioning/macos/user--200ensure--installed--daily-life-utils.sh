@@ -27,6 +27,10 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 echo "* starting ▶️"
 
 echo "******* installing base apps through brew…"
+if ! command -v wget > /dev/null; then
+	echo "* brew is not installed or not loaded! ❌"
+fi
+
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 

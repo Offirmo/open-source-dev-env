@@ -35,6 +35,7 @@ bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.s
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'
+echo "* nvm installed ✅"
 
 
 
@@ -44,6 +45,7 @@ npm config set init-author-name   Offirmo
 npm config set init-author-url    https://www.offirmo.net
 npm config set init-license       Unlicense
 npm config set init-version       0.0.1
+echo "* npm config set ✅"
 
 
 ############ yarn ############
@@ -53,6 +55,7 @@ npm config set init-version       0.0.1
 yarn config set color         always
 yarn config set init-license  Unlicense
 yarn config set init-version  0.0.1
+echo "* yarn config set ✅"
 
 
 
