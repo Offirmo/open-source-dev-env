@@ -6,6 +6,7 @@ See also:
 * https://github.com/Offirmo-team/wiki/wiki/macOS
 * https://github.com/Offirmo-team/wiki/wiki/dev-env
 
+2024-11-18 20:25
 
 ## Test
 

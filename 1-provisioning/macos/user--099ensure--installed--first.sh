@@ -57,14 +57,14 @@ else
 	brew install wget
 fi
 
-if ! command -v jq > /dev/null; then
+if command -v jq > /dev/null; then
 	echo "* jq is already installed ✅"
 else
 	## needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
 	echo "* installing jq ▶️"
 	brew install jq
 fi
-
+_
 ## now that jq was installed (above) we can auto-update GitHub's known host
 ## ref. https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
 echo "Adding/updating GitHub known hosts ▶️"
@@ -72,10 +72,11 @@ echo "Adding/updating GitHub known hosts ▶️"
 ssh-keygen -R github.com
 ## (re)add
 curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
-
+## TODO REVIEW this doesn't seem to fully work
 
 ## test if GitHub is connected
-ssh -T git@github.com || true
+#ssh -T git@github.com || true
+# TODO FIXME the above line exits the script!
 
 ## We now have git, we can download this repo and launch scripts locally:
 echo "* checking out ODE repo ▶️"
