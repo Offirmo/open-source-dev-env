@@ -51,7 +51,7 @@ echo "* npm config set ✅"
 ############ yarn ############
 ## https://yarnpkg.com/en/docs/cli/config
 # TODO check if inherited from npm ? maybe not if config in alternate place
-# TODO how do we have yarn installed?
+# TODO how do we have yarn installed? TODO install it!!!
 yarn config set color         always
 yarn config set init-license  Unlicense
 yarn config set init-version  0.0.1

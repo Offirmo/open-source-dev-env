@@ -28,8 +28,9 @@ echo "* starting…"
 
 echo "******* installing some fonts through brew…"
 ### Allow fonts  https://github.com/Homebrew/homebrew-cask-fonts
-brew tap homebrew/cask-fonts
-brew update
+# deprecated!
+#brew tap homebrew/cask-fonts
+#brew update
 
 ## programming
 ## https://www.programmingfonts.org/
