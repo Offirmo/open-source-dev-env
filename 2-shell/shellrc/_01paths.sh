@@ -32,6 +32,4 @@ pathDoesntContain "/usr/sbin"       && export PATH="/usr/sbin:$PATH"
 pathDoesntContain "/bin"            && export PATH="/bin:$PATH"
 pathDoesntContain "/sbin"           && export PATH="/sbin:$PATH"
 
-
-
 ## debug echo "\"$PATH\".split(\":\")"

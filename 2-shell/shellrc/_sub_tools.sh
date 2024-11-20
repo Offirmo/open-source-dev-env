@@ -69,7 +69,6 @@ else
 		eval "$(/usr/local/bin/brew shellenv)"
 	fi
 fi
-
 ## enable brew autocomplete
 if command -v brew &> /dev/null; then
 	case "$SHELL" in

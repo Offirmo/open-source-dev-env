@@ -46,9 +46,8 @@ else
 		echo '## may also be sourced by bash(1)'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello"'
 		echo ''
-		echo 'export COMPANY="foo"'
-		echo 'export COMPANY_DOMAIN="$COMPANY.com"'
-		echo 'source ~/work/src/off/open-source-dev-env/2-shell/bin/load_shellrc.sh'
+		echo '#export COMPANY="foo"'
+		echo '#export COMPANY_DOMAIN="$COMPANY.com"'
 		echo ''
 	} >> ~/.profile
 fi
@@ -67,11 +66,12 @@ else
 		echo '## https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html'
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
-		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true fi'
+		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bash_profile] hello!"'
-		echo '[ -n "$PS1" ] && echo "  * [~/.bash_profile] shell is interactive"'
-		echo 'shopt -q login_shell && echo "  * [~/.bash_profile] shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
+		echo '[ -n "$PS1" ]              && echo "  * shell is interactive"'
+		echo 'shopt -q login_shell       && echo "  * shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
+		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo ''
 		echo 'if shopt -q login_shell && [ -f ~/.bash_login ]; then . ~/.bash_login; fi ## call it if login shell since it may be unintentionally shadowed by this file'
@@ -107,7 +107,7 @@ else
 		echo '## https://zsh.sourceforge.io/Guide/zshguide02.html'
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
-		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true fi  ## uncomment this to troubleshoot'
+		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi  ## uncomment this to troubleshoot'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zshenv] hello!"'
 		echo ''
 	} >> ~/.zshenv
@@ -135,6 +135,37 @@ else
 		echo ''
 	} >> ~/.zshrc
 fi
+
+if [[ -n "$COMPANY" ]]; then
+    TARGET=$HOME/work/bin/git--$COMPANY.sh
+	if [ -f $TARGET ]; then
+		echo "* $TARGET already exists ✅"
+	else
+		echo "* creating $TARGET ▶️"
+		{
+			echo '#! /bin/bash'
+			echo "git config user.email     \"$USER@$COMPANY_DOMAIN\""
+			echo "git config user.name      \"$USER\""
+			echo ''
+			echo "npm set init-author-email \"$USER@$COMPANY_DOMAIN\""
+			echo "npm set init-author-name  \"$USER\""
+			echo ''
+		} >> $TARGET
+	fi
+
+	TARGET=$HOME/work/bin/shellrc/alias--$COMPANY.sh
+	if [ -f $TARGET ]; then
+		echo "* $TARGET already exists ✅"
+	else
+		echo "* creating $TARGET ▶️"
+		{
+			echo '#! /bin/bash'
+			echo ''
+		} >> $TARGET
+	fi
+else
+	echo "* reminder to set $COMPANY 
+fi;
 
 echo "* PLEASE RESTART YOUR TERMINAL! ⚠️⚠️⚠️"
 #############################################################
