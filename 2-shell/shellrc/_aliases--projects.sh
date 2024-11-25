@@ -43,6 +43,7 @@ alias mono103='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git-
 alias mono105='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd promise-try;            tabset --color "#a4d4dd" --badge mono105'
 alias mono106='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd timestamps;             tabset --color "#a4d4dd" --badge mono106'
 alias mono107='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd tiny-singleton;         tabset --color "#a4d4dd" --badge mono107'
+alias mono108='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd type-detection;         tabset --color "#a4d4dd" --badge mono108'
 alias mono109='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ts--utils;              tabset --color "#a4d4dd" --badge mono109'
 alias mono110='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd random;                 tabset --color "#a4d4dd" --badge mono110'
 

@@ -80,14 +80,45 @@ else
 	open https://bitbucket.org/account/settings/ssh-keys/
 	echo "cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy"
 
-	echo ""                                          >> ~/.ssh/config
-	echo "Host offirmo.github.com"                   >> ~/.ssh/config
-	echo "   HostName github.com"                    >> ~/.ssh/config
-	echo "   User git"                               >> ~/.ssh/config
-	echo "   IdentityFile ~/.ssh/id_ed25519_offirmo" >> ~/.ssh/config
-	echo "   IdentitiesOnly yes"                     >> ~/.ssh/config
-	echo ""                                          >> ~/.ssh/config
+	{
+		echo ""
+		echo "Host offirmo.github.com"
+		echo "   HostName github.com"
+		echo "   User git"
+		echo "   IdentityFile ~/.ssh/id_ed25519_offirmo"
+		echo "   IdentitiesOnly yes"
+		echo ""
+	} >> ~/.ssh/config
 fi
+
+if [[ -n "$PRIVATE_USERNAME" ]]; then
+	TARGET=~/.ssh/id_ed25519_$PRIVATE_USERNAME
+	if [ -f $TARGET.pub ]; then
+		echo "* $TARGET already exists ✅"
+	else
+		echo "* creating $TARGET ▶️"
+		ssh-keygen -a 100 -t ed25519 -C "$PRIVATE_USERNAME" -f $TARGET
+		sleep 1
+
+		echo "please add your new key $TARGET to GitHub & similar:"
+		open https://github.com/settings/keys
+		open https://bitbucket.org/account/settings/ssh-keys/
+		echo "cat $TARGET.pub | pbcopy"
+
+		{
+			echo ""
+			echo "Host $PRIVATE_USERNAME.github.com"
+			echo "   HostName github.com"
+			echo "   User git"
+			echo "   IdentityFile $TARGET"
+			echo "   IdentitiesOnly yes"
+			echo ""
+		} >> ~/.ssh/config
+	fi
+else
+	echo "* reminder to set \$PRIVATE_USERNAME"
+fi;
+
 
 
 ## ensure correct permissions

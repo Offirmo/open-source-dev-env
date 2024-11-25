@@ -137,7 +137,7 @@ else
 fi
 
 if [[ -n "$COMPANY" ]]; then
-    TARGET=$HOME/work/bin/git--$COMPANY.sh
+	TARGET=$HOME/work/bin/git--$COMPANY.sh
 	if [ -f $TARGET ]; then
 		echo "* $TARGET already exists ✅"
 	else
@@ -164,7 +164,7 @@ if [[ -n "$COMPANY" ]]; then
 		} >> $TARGET
 	fi
 else
-	echo "* reminder to set $COMPANY 
+	echo "* reminder to set \$COMPANY"
 fi;
 
 echo "* PLEASE RESTART YOUR TERMINAL! ⚠️⚠️⚠️"

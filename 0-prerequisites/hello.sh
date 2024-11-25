@@ -32,11 +32,7 @@ echo "This a demo script doing nothing!"
 echo "- USER             = `echo $USER`"
 echo "- COMPANY          = `echo $COMPANY`"
 echo "- COMPANY_DOMAIN   = `echo $COMPANY_DOMAIN`"
-
-### check expected params
-# corporate
-# public brand
-# private brand
+echo "- PRIVATE_USERNAME = `echo $PRIVATE_USERNAME`"
 
 #############################################################
 echo "* …all done ✅"

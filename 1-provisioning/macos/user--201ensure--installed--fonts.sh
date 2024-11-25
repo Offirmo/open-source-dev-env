@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2023"
+echo "# revision = circa 2024"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -34,10 +34,17 @@ echo "******* installing some fonts through brew…"
 
 ## programming
 ## https://www.programmingfonts.org/
+
+## Useful to enable it in non-JetBrains ex. terminal or git-cola
+brew install --cask font-jetbrains-mono
+
+## excellent coding font, still better than JetBrains IMO
 brew install --cask font-fira-code
-#brew install --cask font-jetbrains-mono
+
+## TODO review
 #brew install --cask font-iosevka  ## https://github.com/be5invis/Iosevka
-## todo nerd fonts? https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/
+
+## TODO review: nerd fonts? https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/
 
 ## UX
 brew install --cask font-fira-sans
