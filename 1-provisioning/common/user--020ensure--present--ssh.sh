@@ -121,16 +121,20 @@ fi;
 
 
 
-## ensure correct permissions
+## ensure most restrictive permissions
+## this is checked by some tools which will refuse to work if incorrect
 ## https://gist.github.com/grenade/6318301
 chmod 700 ~/.ssh
-## strict default (for private keys)
-chmod 600 ~/.ssh/*
-## less strict for non-private
+## most restrictive permissions for private keys
+## note: be careful to discriminate folders & files! (seen an employer creating a folder here)
+chmod 600 `find ~/.ssh/* -type f`
+chmod 700 `find ~/.ssh/* -type d`
+# TODO review the 3 below
+#chmod 644 ~/.ssh/config
+#chmod 644 ~/.ssh/known_hosts
+#chmod 644 ~/.ssh/authorized_keys
+## slightly less strict for public
 chmod 644 ~/.ssh/*.pub
-chmod 644 ~/.ssh/config
-chmod 644 ~/.ssh/known_hosts
-chmod 644 ~/.ssh/authorized_keys
 echo "* ~/.ssh permissions ✅"
 
 ############################################################
