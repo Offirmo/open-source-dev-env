@@ -37,3 +37,7 @@ export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 ```
+
+
+which -a pnpm
+realpath $(which pnpm)

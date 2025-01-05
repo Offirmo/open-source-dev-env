@@ -28,6 +28,9 @@ echo "* starting…"
 
 
 ############ Git ############
+## TODO review https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+## TODO review https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage
+
 git config --global push.default simple
 git config --global color.ui "auto"
 

@@ -32,7 +32,7 @@ alias vsc='HOME=~/work/src/off/open-source-dev-env/3-settings/vscode/home code -
 
 
 ## git
-alias s='git status'
+alias s='git status --ahead-behind'
 alias b='git branch'
 alias ga='echo "Current git account :"; echo "   `git config --get user.name` (`git config --get user.email`)"'
 alias gfp='git fetch && git pull --recurse-submodules'
