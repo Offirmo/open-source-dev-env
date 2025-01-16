@@ -8,22 +8,19 @@ mozilla.org interactive-examples.mdn.mozilla.net frame allow
 
 
 ## Google
+## https://developers.google.com/maps/domains
 google.com googleusercontent.com * allow
 google.com gstatic.com * allow
 google.com youtube.com * allow
 google.com youtube.com frame allow
-youtube.com ggpht.com * allow
-youtube.com google.com * allow
-youtube.com google.com.au * allow
+### youtube = we try to block ads!
+## last tested 2025/01
 youtube.com googlevideo.com * allow
-youtube.com gstatic.com * allow
-youtube.com ytimg.com image allow
-youtubekids.com * frame inherit
-youtubekids.com google.com * allow
-youtubekids.com googlevideo.com * allow
-youtubekids.com gstatic.com * allow
-youtubekids.com youtubetoken-pa.googleapis.com * allow
-youtubekids.com ytimg.com image allow
+youtube.com jnn-pa.googleapis.com xhr allow
+youtube.com play.google.com xhr allow
+youtube.com yt3.ggpht.com image allow  # https://www.reddit.com/r/privacy/comments/q5h62m/what_is_ggphtcom/
+youtube.com ytimg.com * allow # seems need XHR as well as image
+
 
 ## codepen
 codepen.io cdpn.io * allow
@@ -128,9 +125,12 @@ wowhead.com zamimg.com * allow
 `
 
 
+import PRIVATE from './private-do-not-merge.mjs'
+
 const AGGREGATED = `
 ${DOMAIN_FAMILIES__BIG}
 ${DOMAIN_FAMILIES__SMALL}
+${PRIVATE}
 `
 
 export default AGGREGATED

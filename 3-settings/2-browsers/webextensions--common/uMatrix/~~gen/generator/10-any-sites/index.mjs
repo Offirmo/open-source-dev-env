@@ -13,7 +13,7 @@ const BASE = `
 
 ## Allow 1st party
 * 1st-party * allow
-## even relax self-iframes for 1p
+## even relax self-iframes
 * 1st-party frame allow
 `
 
@@ -27,8 +27,8 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 
 ## Google ReCaptcha
 * www.google.com * allow
-* www.google.com script allow
-* www.google.com frame allow
+* www.google.com script allow # force unlock
+* www.google.com frame allow # force unlock
 * www.gstatic.com * allow
 * www.gstatic.com script allow
 
@@ -38,6 +38,7 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 * identitytoolkit.googleapis.com * allow
 * securetoken.googleapis.com * allow
 
+
 # UTILS
 
 ## Algolia search
@@ -46,7 +47,7 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 
 
 * easyzoom.com * allow
-* www.easyzoom.com frame allow
+* easyzoom.com frame allow
 
 
 ## ?
@@ -62,7 +63,6 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 ## websites builders
 ## strictly speaking they can't be trusted, but many sites are based on those
 ## (compromise)
-* fonts.googleapis.com css allow
 * parastorage.com * allow
 * shopify.com * allow
 * shopifycloud.com * allow
@@ -74,10 +74,14 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 * wixapps.net * allow
 * wixstatic.com * allow
 
+## assets
+* fonts.googleapis.com css allow
+* imgur.com image allow
+
+
 # EMBEDS
 
 * cdn.embedly.com * allow
-* imgur.com image allow
 #* maps.googleapis.com * allow
 
 ## zen desk
@@ -87,7 +91,6 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 
 # MISC
 * cloudflareinsights.com * allow
-
 `
 
 

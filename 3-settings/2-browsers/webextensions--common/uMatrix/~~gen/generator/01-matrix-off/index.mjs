@@ -7,11 +7,11 @@ matrix-off: behind-the-scene true
 matrix-off: chrome-extension-scheme true
 matrix-off: chrome-scheme true
 matrix-off: moz-extension-scheme true
-matrix-off: wyciwyg-scheme true
+matrix-off: wyciwyg-scheme true # https://en.wikipedia.org/wiki/WYCIWYG
 `
 
 // work tools
-// allow everything, need them to work perfectly for my job ;)
+// allow everything, need them to work perfectly for one's job
 const ALLOWLIST__PRO_DOMAINS = `
 matrix-off: 1password.com true
 matrix-off: amplitude.com true
@@ -31,7 +31,6 @@ matrix-off: figma.com true
 matrix-off: forms.gle true
 matrix-off: github.com true
 matrix-off: google.com true
-matrix-off: microsoftonline.com true
 matrix-off: myworkday.com true
 matrix-off: navan.com true
 matrix-off: okta.com true
@@ -48,12 +47,14 @@ matrix-off: zoom.us true
 const ALLOWLIST__TRUSTED = `
 matrix-off: canva.site true
 matrix-off: devdocs.io true
+matrix-off: gouv.fr true
 matrix-off: gov.au true
+matrix-off: gov.us true
 matrix-off: offirmo.net true
-matrix-off: prezzee.com.au true
+matrix-off: prezzee.com.au true ## they are good citizens
 matrix-off: wikimedia.org true
 matrix-off: wikipedia.org true
-matrix-off: speedtestcustom.com true
+matrix-off: youtubekids.com true
 `
 
 const ALLOWLIST__REGULATED = `
@@ -67,9 +68,9 @@ matrix-off: localhost true
 
 
 
-const SPECIAL = `
-## keyboard configurator
-matrix-off: usevia.app true
+const TOOLS = `
+matrix-off: speedtestcustom.com true
+matrix-off: usevia.app true  # keyboard configurator
 `
 
 
@@ -78,7 +79,7 @@ ${SCHEMES}
 ${ALLOWLIST__PRO_DOMAINS}
 ${ALLOWLIST__REGULATED}
 ${ALLOWLIST__TRUSTED}
-${SPECIAL}
+${TOOLS}
 ${DEV}
 `
 
