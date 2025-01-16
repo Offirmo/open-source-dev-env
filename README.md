@@ -105,10 +105,7 @@ git gc
 
 ### If missing, add a debug line to shellrc existing files
 ```bash
-echo "* hello from: .profile"
-echo "* hello from: .bashrc"
-echo "* hello from: .bash_profile"
-echo "* hello from: .bash_logout"
+echo "* [~/.profile] hello!"
 ```
 
 ### Manual installs

@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_01paths.sh"
+[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_01paths.sh] hello!"
 
 pathDoesntContain() {
 	case $PATH in

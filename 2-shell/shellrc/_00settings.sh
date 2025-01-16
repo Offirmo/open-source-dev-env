@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_00settings.sh"
+[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_00settings.sh] hello!"
 
 ## instructs some lib to expect debug API + SEC
 export OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED=1

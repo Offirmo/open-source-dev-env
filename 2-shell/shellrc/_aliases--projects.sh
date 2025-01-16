@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* hello from: …open-source-dev-env/…/_aliases--projects.sh"
+[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_aliases--projects.sh] hello!"
 
 
 alias off='cd ~/work/src/off; git--offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
@@ -106,10 +106,10 @@ alias spad='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--of
 
 alias inc01='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd credits;                          tabset --color "#a4d4dd" --badge inc01'
 alias inc30='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd data-structures;                  tabset --color "#a4d4dd" --badge inc30'
-alias inc10='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--svg;                   tabset --color "#a4d4dd" --badge inc10'
-alias inc11='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--html;                  tabset --color "#a4d4dd" --badge inc11'
+alias inc10='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--html;                  tabset --color "#a4d4dd" --badge inc10'
+alias inc11='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--svg;                   tabset --color "#a4d4dd" --badge inc11'
 alias inc12='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd generator--website-entry-points;  tabset --color "#a4d4dd" --badge inc12'
-alias inc20='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd view--chat;                       tabset --color "#a4d4dd" --badge inc20'
+alias inc20='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd x-sandbox;                        tabset --color "#a4d4dd" --badge inc20'
 #alias monoX1='cd ~/work/src/off/offirmo-monorepo/5-incubator/; cd active/rpg-frame; tabset --color "#a4d4dd" --badge monoX1'
 #alias monoX2='cd ~/work/src/off/offirmo-monorepo/5-incubator/; cd active/simple-upgradable-template; tabset --color "#a4d4dd" --badge monoX2'
 

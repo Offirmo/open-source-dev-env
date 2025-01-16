@@ -44,7 +44,7 @@ else
 	{
 		echo '## user-wide profile for sh(1)'
 		echo '## may also be sourced by bash(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello!"'
 		echo ''
 		echo '#export COMPANY="foo"'
 		echo '#export COMPANY_DOMAIN="$COMPANY.com"'
