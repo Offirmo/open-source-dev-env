@@ -22,6 +22,7 @@ function cleanup(raw_multiline, { sort = false} = {}) {
 }
 
 const AGGREGATED = `
+matrix-off: v1.5--generated-on-${(new Date()).toISOString().split('T')[0]} false
 ${cleanup(SETTINGS,  {sort: false})}
 ${cleanup(OFF,       {sort: false})}
 ${cleanup(WILDCARDS, {sort: false})}
