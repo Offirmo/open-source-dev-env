@@ -33,11 +33,12 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 * www.gstatic.com script allow
 
 ## other
+* csp.withgoogle.com * allow
 * auth0.com * allow
 * captcha-delivery.com * allow
 * identitytoolkit.googleapis.com * allow
 * securetoken.googleapis.com * allow
-
+* challenges.cloudflare.com * allow
 
 # UTILS
 

@@ -68,8 +68,8 @@ alias mono3031='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git
 alias mono3040='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd unicode-data;      tabset --color "#a4d4dd" --badge mono3040'
 
 alias rtf0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format;              tabset --color "#a4d4dd" --badge rtf0'
-alias rtf1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format-to-terminal;  tabset --color "#a4d4dd" --badge rtf1'
-alias rtf2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format-to-react;     tabset --color "#a4d4dd" --badge rtf2'
+alias rtf1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format--to-terminal;  tabset --color "#a4d4dd" --badge rtf1'
+alias rtf2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format--to-react;     tabset --color "#a4d4dd" --badge rtf2'
 alias sec0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd soft-execution-context;          tabset --color "#a4d4dd" --badge sec0'
 alias sec1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd soft-execution-context-node;     tabset --color "#a4d4dd" --badge sec1'
 alias sec2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd soft-execution-context-browser;  tabset --color "#a4d4dd" --badge sec2'
