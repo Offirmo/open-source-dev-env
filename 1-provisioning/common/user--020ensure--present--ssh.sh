@@ -91,13 +91,14 @@ else
 	} >> ~/.ssh/config
 fi
 
-if [[ -n "$PRIVATE_USERNAME" ]]; then
-	TARGET=~/.ssh/id_ed25519_$PRIVATE_USERNAME
+if [[ -n "$PERSONAL_USERNAME" ]]; then
+	## TODO one day: remove ~ auto-expansion
+	TARGET=~/.ssh/id_ed25519_$PERSONAL_USERNAME
 	if [ -f $TARGET.pub ]; then
 		echo "* $TARGET already exists ✅"
 	else
 		echo "* creating $TARGET ▶️"
-		ssh-keygen -a 100 -t ed25519 -C "$PRIVATE_USERNAME" -f $TARGET
+		ssh-keygen -a 100 -t ed25519 -C "$PERSONAL_USERNAME" -f $TARGET
 		sleep 1
 
 		echo "please add your new key $TARGET to GitHub & similar:"
@@ -107,7 +108,7 @@ if [[ -n "$PRIVATE_USERNAME" ]]; then
 
 		{
 			echo ""
-			echo "Host $PRIVATE_USERNAME.github.com"
+			echo "Host $PERSONAL_USERNAME.github.com"
 			echo "   HostName github.com"
 			echo "   User git"
 			echo "   IdentityFile $TARGET"
@@ -116,7 +117,7 @@ if [[ -n "$PRIVATE_USERNAME" ]]; then
 		} >> ~/.ssh/config
 	fi
 else
-	echo "* reminder to set \$PRIVATE_USERNAME"
+	echo "* reminder to set \$PERSONAL_USERNAME to your personal GitHub username"
 fi;
 
 

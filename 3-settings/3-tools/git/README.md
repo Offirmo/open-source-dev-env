@@ -8,3 +8,5 @@ TODO https://jvns.ca/blog/2024/02/16/popular-git-config-options/
 
 TODO https://blog.gitbutler.com/git-tips-3-really-large-repositories/
 https://git-scm.com/docs/git-push#Documentation/git-push.txt---force-with-leaseltrefnamegt
+
+TODO https://blog.gitbutler.com/how-git-core-devs-configure-git/

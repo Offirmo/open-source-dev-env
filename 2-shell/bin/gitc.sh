@@ -28,11 +28,11 @@ echo "INPUT:"
 echo "  \$1 =                 $1"
 echo "  \$2 =                 $2"
 echo "  REPOSITORY_URL =     $REPOSITORY_URL"
-echo "  DEFAULT_PARENT_DIR = $DEFAULT_PARENT_DIR"
 echo "  LAST_URL_SEGMENT =   $LAST_URL_SEGMENT"
 echo "  DEFAULT_REPO_DIR =   $DEFAULT_REPO_DIR"
-echo "  PARENT_DIR =         $PARENT_DIR"
+echo "  DEFAULT_PARENT_DIR = $DEFAULT_PARENT_DIR"
 echo "  TEMP =               $TEMP"
+echo "  PERSONAL_USERNAME =  $PERSONAL_USERNAME"
 
 
 # if recognized as an expected subdir, change parent dir
@@ -55,6 +55,23 @@ case $TEMP in
 		PARENT_DIR=$PARENT_DIR/offirmo-graveyard
 		;;
 esac
+if [ $IS_OFFIRMO = 1 ]; then
+	## for pro/perso reasons, we have different SSH keys, requiring a domain tweak (see ~/.ssh/config)
+	if [[ $TEMP = "Offirmo" || $TEMP = "git@github.com:Offirmo" ]]; then
+		echo "Offirmo detected! Tweaking the URL..."
+		REPOSITORY_URL="git@offirmo.github.com:Offirmo/$LAST_URL_SEGMENT"
+	fi
+fi
+
+IS_PERSONAL=0
+if [[ -n $PERSONAL_USERNAME ]]; then
+	## same as above
+	if [[ $TEMP = "$PERSONAL_USERNAME" || $TEMP = "git@github.com:$PERSONAL_USERNAME" ]]; then
+		IS_PERSONAL=1
+		echo "Personal username detected! Tweaking the URL..."
+		REPOSITORY_URL="git@$PERSONAL_USERNAME.github.com:$PERSONAL_USERNAME/$LAST_URL_SEGMENT"
+	fi
+fi
 
 if [[ -n "$CUSTOM_REPO_DIR" ]]; then
 	TARGET_DIR="$CUSTOM_REPO_DIR"
@@ -65,6 +82,8 @@ fi
 ## debug
 echo "OUTPUT:"
 echo "  IS_OFFIRMO =     $IS_OFFIRMO"
+echo "  IS_PERSONAL =    $IS_PERSONAL"
+echo "  REPOSITORY_URL = $REPOSITORY_URL"
 echo "  PARENT_DIR =     $PARENT_DIR"
 echo "  TARGET_DIR =     $TARGET_DIR"
 
@@ -73,7 +92,9 @@ echo "* cloning $REPOSITORY_URL into ${PARENT_DIR}/${TARGET_DIR} ..."
 mkdir -p $PARENT_DIR
 pushd $PARENT_DIR > /dev/null
 
-if [[ ! -d $TARGET_DIR ]]; then
+if [[ -d $TARGET_DIR ]]; then
+	echo "! Already cloned."
+else
 	## --single-branch  cf. https://stackoverflow.com/questions/1778088/how-do-i-clone-a-single-branch-in-git
 	export GIT_LFS_SKIP_SMUDGE=1 ## https://gitlab.ub.uni-giessen.de/jlugitlab/git-lfs-howto#option-prevent-download-of-lfs-files
 	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
@@ -95,11 +116,24 @@ if [[ ! -d $TARGET_DIR ]]; then
 		echo ""                                 >> ".git/config"
 
 		popd > /dev/null
+	elif [ $IS_PERSONAL = 1 ]; then
+		## fix config
+
+		pushd $TARGET_DIR > /dev/null
+		git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+
+		echo ""                                 >> ".git/config"
+		echo "[github]"                         >> ".git/config"
+		echo "	user = $PERSONAL_USERNAME"     >> ".git/config"
+		echo "[pull]"                           >> ".git/config"
+		echo "	rebase = true"                 >> ".git/config" # my choice for my repos
+		echo ""                                 >> ".git/config"
+
+		popd > /dev/null
 	else
+		## assuming we're in "big company" mode where we don't want to pull all the branches by default
 		echo "cloned in single branch mode! If you want all branches: git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*"
 	fi
-else
-	echo "! Already cloned."
 fi
 
 popd > /dev/null
