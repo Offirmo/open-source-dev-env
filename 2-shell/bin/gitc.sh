@@ -68,6 +68,7 @@ if [[ -n $PERSONAL_USERNAME ]]; then
 	## same as above
 	if [[ $TEMP = "$PERSONAL_USERNAME" || $TEMP = "git@github.com:$PERSONAL_USERNAME" ]]; then
 		IS_PERSONAL=1
+		PARENT_DIR=$PARENT_DIR/$PERSONAL_USERNAME
 		echo "Personal username detected! Tweaking the URL..."
 		REPOSITORY_URL="git@$PERSONAL_USERNAME.github.com:$PERSONAL_USERNAME/$LAST_URL_SEGMENT"
 	fi

@@ -1,6 +1,7 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_aliases--projects.sh] hello!"
 
+source_bash_files_from_dir "$HOME/work/src/off/offirmo-monorepo/stack--current/0-meta/bin"
 
 alias off='cd ~/work/src/off; git--offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
 alias oa='cd ~/work/src/oa/online-adventures.github.io; git--offirmo.sh'
@@ -32,77 +33,27 @@ alias mono1='cd ~/work/src/off/offirmo-monorepo/stack--2021; git--offirmo.sh; nv
 alias mono2='cd ~/work/src/off/offirmo-monorepo/stack--current; git--offirmo.sh; nvm install; tabset --badge "mono2022" --color "#FF4136"'
 alias mono2test='cd ~/work/src/off/offirmo-monorepo/stack--current; nvm i; git--offirmo.sh; tabset --badge "mono2022" --color "#FF4136"'
 
+alias ntc='    cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/node-typescript-compiler;        tabset --color "#a4d4dd" --badge ntc'
+alias utt='    cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/toolbox--unit-tests;             tabset --color "#a4d4dd" --badge utt'
 
-alias ntc=' cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/node-typescript-compiler;        tabset --color "#a4d4dd" --badge ntc'
-alias utt=' cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 0-meta/; cd build-tools/toolbox--unit-tests;             tabset --color "#a4d4dd" --badge utt'
-
-alias mono100='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ts--types;              tabset --color "#a4d4dd" --badge mono100'
-alias mono101='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd deferred;               tabset --color "#a4d4dd" --badge mono101'
-alias mono102='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ponyfill--globalthis;   tabset --color "#a4d4dd" --badge mono102'
-alias mono103='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd json-stable-stringify;  tabset --color "#a4d4dd" --badge mono103'
-alias mono105='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd promise-try;            tabset --color "#a4d4dd" --badge mono105'
-alias mono106='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd timestamps;             tabset --color "#a4d4dd" --badge mono106'
-alias mono107='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd tiny-singleton;         tabset --color "#a4d4dd" --badge mono107'
-alias mono108='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd type-detection;         tabset --color "#a4d4dd" --badge mono108'
-alias mono109='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd ts--utils;              tabset --color "#a4d4dd" --badge mono109'
-alias mono110='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-stdlib/; cd random;                 tabset --color "#a4d4dd" --badge mono110'
-
-alias mono201='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd utils--error;                   tabset --color "#006EDB" --badge mono201'
-alias mono202='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd murmurhash;                     tabset --color "#006EDB" --badge mono202'
-alias mono210='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd practical-logger-types;         tabset --color "#006EDB" --badge mono210'
-alias mono211='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd practical-logger-core;          tabset --color "#a4d4dd" --badge mono211'
-alias mono212='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd practical-logger-minimal-noop;  tabset --color "#a4d4dd" --badge mono212'
-alias mono213='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd practical-logger-browser;       tabset --color "#a4d4dd" --badge mono213'
-alias mono214='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd practical-logger-node;          tabset --color "#a4d4dd" --badge mono214'
-alias mono219='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd prettify-any;                   tabset --color "#a4d4dd" --badge mono219'
-alias mono220='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd print-error-to-terminal;        tabset --color "#a4d4dd" --badge mono220'
-alias mono221='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd state--graph;                   tabset --color "#a4d4dd" --badge mono221'
-alias mono222='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 2-foundation/; cd uuid;                           tabset --color "#a4d4dd" --badge mono222'
-
-alias mono3001='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd ts--types--web;    tabset --color "#a4d4dd" --badge mono3001'
-alias mono3002='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd marketing;         tabset --color "#a4d4dd" --badge mono3002'
-alias mono3010='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd utils--async;      tabset --color "#a4d4dd" --badge mono3010'
-alias mono3020='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd normalize-string;  tabset --color "#a4d4dd" --badge mono3020'
-alias mono3030='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd utils--state;      tabset --color "#a4d4dd" --badge mono3030'
-alias mono3031='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd flux;              tabset --color "#a4d4dd" --badge mono3031'
-alias mono3040='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced/; cd unicode-data;      tabset --color "#a4d4dd" --badge mono3040'
-
-alias rtf0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format;              tabset --color "#a4d4dd" --badge rtf0'
+alias rtf0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/; cd 2-libs--cross-cutting/rich-text-format;              tabset --color "#a4d4dd" --badge rtf0'
 alias rtf1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format--to-terminal;  tabset --color "#a4d4dd" --badge rtf1'
 alias rtf2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd rich-text-format--to-react;     tabset --color "#a4d4dd" --badge rtf2'
-alias sec0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd soft-execution-context;          tabset --color "#a4d4dd" --badge sec0'
+
+alias sec0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/; cd 2-libs--cross-cutting/soft-execution-context;          tabset --color "#a4d4dd" --badge sec0'
 alias sec1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd soft-execution-context-node;     tabset --color "#a4d4dd" --badge sec1'
 alias sec2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd soft-execution-context-browser;  tabset --color "#a4d4dd" --badge sec2'
-alias uda0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd universal-debug-api-types;        tabset --color "#a4d4dd" --badge uda0'
-alias uda1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd universal-debug-api-placeholder;  tabset --color "#a4d4dd" --badge uda1'
+
+alias uda0='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/; cd 2-libs--cross-cutting/universal-debug-api-types;        tabset --color "#a4d4dd" --badge uda0'
+alias uda1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 1-isomorphic/; cd 2-libs--cross-cutting/universal-debug-api-placeholder;  tabset --color "#a4d4dd" --badge uda1'
 alias uda2='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd universal-debug-api-browser;      tabset --color "#a4d4dd" --badge uda2'
 alias uda3='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd universal-debug-api-node;         tabset --color "#a4d4dd" --badge uda3'
-alias mono3121='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd view-chat;         tabset --color "#a4d4dd" --badge mono3121'
-alias mono3122='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--multi/; cd view-chat-ui-tty;  tabset --color "#a4d4dd" --badge mono3122'
-
-alias mono3231='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--reset;       tabset --color "#a4d4dd" --badge mono3231'
-alias mono3232='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--foundation;  tabset --color "#a4d4dd" --badge mono3232'
-alias mono3233='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--framework;   tabset --color "#a4d4dd" --badge mono3233'
-alias mono3234='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd css--utils;       tabset --color "#a4d4dd" --badge mono3234'
-#alias mono3201='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd favicon-notifications; tabset --color "#a4d4dd" --badge mono3201'
-alias mono3240='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd features-detection-browser; tabset --color "#a4d4dd" --badge mono3240'
-alias mono3241='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd iframe--chat; tabset --color "#a4d4dd" --badge mono3241'
-alias mono3242='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd page-loaded; tabset --color "#a4d4dd" --badge mono3242'
-alias mono3243='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd react-error-boundary; tabset --color "#a4d4dd" --badge mono3243'
-#alias mono3206='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd ui--browser--css; tabset --color "#a4d4dd" --badge mono3206'
-#alias mono3207='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd storybook--utils; tabset --color "#a4d4dd" --badge mono3207'
-alias mono3250='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--browser/; cd xoff; tabset --color "#a4d4dd" --badge mono3250'
-
 
 alias clt='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd cli-toolbox; tabset --color "#a4d4dd" --badge clt'
-alias mono3351='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd state-migration-tester; tabset --color "#a4d4dd" --badge mono3351'
-alias mono3352='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 3-advanced--node/; cd spawn-correctly;        tabset --color "#a4d4dd" --badge mono3352'
-
 
 #alias xxxmonoT1='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-tools/; cd universal-debug-api-companion-webextension; tabset --color "#a4d4dd" --badge monoT1'
 alias mms=' cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-tools/; cd memories-sorter;   tabset --color "#a4d4dd" --badge mms'
 alias spad='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 4-tools/; cd storypad;                        tabset --color "#a4d4dd" --badge spad'
-
 
 alias inc01='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd credits;                          tabset --color "#a4d4dd" --badge inc01'
 alias inc30='cd ~/work/src/off/offirmo-monorepo/stack--current/; nvm use; git--offirmo.sh; cd 5-incubator/active/; cd data-structures;                  tabset --color "#a4d4dd" --badge inc30'
