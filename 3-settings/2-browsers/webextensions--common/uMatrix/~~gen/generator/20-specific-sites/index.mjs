@@ -5,6 +5,7 @@ const DOMAIN_FAMILIES__BIG = `
 mozilla.org mozilla.net * allow
 mozilla.org mozilla.net frame allow
 mozilla.org interactive-examples.mdn.mozilla.net frame allow
+mozilla.org mdnplay.dev * allow
 
 
 ## Google
@@ -36,6 +37,7 @@ codepen.io esm.sh * allow
 codepen.io jsdelivr.net * allow
 codepen.io threejs.org * allow
 codepen.io skypack.dev * allow
+codepen.io filestackapi.com * allow
 
 
 ## codesandbox
@@ -52,6 +54,8 @@ jsfiddle.net jshell.net * allow
 
 ## facebook
 facebook.com fbcdn.net * allow
+facebook.com fbsbx.com * allow
+facebook.com fbsbx.com frame allow
 instagram.com cdninstagram.com * allow
 instagram.com fbcdn.net * allow
 threads.net cdninstagram.com * allow
@@ -94,6 +98,10 @@ amazon.com.au amazon.com * allow
 amazon.com.au amazonaws.com * allow
 amazon.com.au media-amazon.com * allow
 amazon.com.au ssl-images-amazon.com * allow
+amazon.fr amazon.com * allow
+amazon.fr amazonaws.com * allow
+amazon.fr media-amazon.com * allow
+amazon.fr ssl-images-amazon.com * allow
 
 ## Spotify
 spotify.com scdn.co * allow
@@ -115,6 +123,47 @@ aliexpress.com alibaba.com * allow
 aliexpress.com alicdn.com * allow
 aliexpress.com aliyun.com * allow
 aliexpress.com aliyuncs.com * allow
+
+
+chatgpt.com oaistatic.com * allow
+
+
+claude.ai anthropic.com * allow
+claude.ai claudeusercontent.com * allow
+claude.ai google.com * allow
+claude.ai www.claudeusercontent.com frame allow
+claude.ai * frame inherit
+
+
+grok.com * frame inherit
+grok.com featureassets.org * allow
+grok.com x.ai * allow
+x.ai * frame inherit
+x.ai grok.com * allow
+
+
+react.dev sandpack-bundler-4bw.pages.dev * allow
+react.dev sandpack-bundler-4bw.pages.dev frame allow
+
+typescriptlang.org msecnd.net * allow
+
+
+diagrams.net * frame inherit
+diagrams.net content.googleapis.com * allow
+diagrams.net draw.io * allow
+diagrams.net google.com * allow
+diagrams.net www.draw.io frame allow
+diagrams.net www.googleapis.com * allow
+
+
+joshwcomeau.com * frame inherit
+joshwcomeau.com sandpack-bundler.vercel.app * allow
+joshwcomeau.com vimeo.com * allow
+
+
+medium.com gist.github.com * allow
+medium.com cdn.embedly.com frame allow
+medium.com embedly.com frame allow
 `
 
 
@@ -131,7 +180,7 @@ iop.org iopscience.com * allow
 iop.org iopscience.org * allow
 kickstarter.com kck.st * allow
 linkedin.com licdn.com * allow
-medium.com gist.github.com * allow
+linkedin.com media.licdn.com frame allow
 netflix.com nflxext.com * allow
 paradoxwikis.com paradoxplaza.com * allow
 patreon.com patreonusercontent.com * allow
@@ -144,15 +193,21 @@ slideshare.net slidesharecdn.com * allow
 sourceforge.net fsdn.com * allow
 steampowered.com steamcommunity.com * allow
 steampowered.com steamstatic.com * allow
+substack.com substackcdn.com * allow
+wordpress.com wp.com * allow
 wowhead.com zamimg.com * allow
 `
 
 
+const SPECIFIC_DEPS = `
+abseil.io mathjax.org * allow
+`
 import PRIVATE from './private-do-not-merge.mjs'
 
 const AGGREGATED = `
 ${DOMAIN_FAMILIES__BIG}
 ${DOMAIN_FAMILIES__SMALL}
+${SPECIFIC_DEPS}
 ${PRIVATE}
 `
 

@@ -146,7 +146,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 ## (note: PATH setup is in sibling file paths.sh)
 ## TODO REVIEW (long time not used)
 if [ -d "${HOME}/.rvm/bin" ]; then
-	echo "  * enabling rvm…"
+	#echo "  * enabling rvm…"
 	# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 	export PATH="$PATH:~/.rvm/bin"
 fi

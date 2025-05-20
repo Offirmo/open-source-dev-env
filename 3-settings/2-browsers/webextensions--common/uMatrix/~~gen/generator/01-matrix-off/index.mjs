@@ -19,10 +19,12 @@ matrix-off: app.datadoghq.com true
 matrix-off: applitools.com true
 matrix-off: atlassian.com true
 matrix-off: atlassian.net true
+matrix-off: browserstack.com true
 matrix-off: buildkite.com true
 matrix-off: calven.com true
 matrix-off: canva.com true
 matrix-off: canva.dev true
+matrix-off: chatgpt.com true
 matrix-off: cloud.scorm.com true
 matrix-off: cloudflare.com true
 matrix-off: cultureamp.com true
@@ -31,6 +33,7 @@ matrix-off: dropbox.com true
 matrix-off: figma.com true
 matrix-off: forms.gle true
 matrix-off: github.com true
+matrix-off: glean.com true
 matrix-off: google.com true
 matrix-off: looker.com true
 matrix-off: myworkday.com true
