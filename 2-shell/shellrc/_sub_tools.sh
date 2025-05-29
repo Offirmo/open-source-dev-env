@@ -185,5 +185,8 @@ fi
 
 ############ TOOL -- docker ############
 ## if installed in user only (non standard)
-## https://docs.docker.com/desktop/mac/permission-requirements/#installing-symlinks
-## TODO Docker CLI tools are installed under ~/.docker/bin. Note: You need to manually add ~/.docker/bin to your PATH
+## https://www.docker.com/products/docker-desktop/
+if [ -d "${HOME}/.docker/bin" ]; then
+	echo "  * enabling docker…"
+	export PATH="$PATH:~/.docker/bin"
+fi

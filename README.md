@@ -36,15 +36,22 @@ Then install git: either:
 1. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh | bash`
    1. then remove `src` from the spotlight search: "Spotlight privacy"
 2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh | bash`
-3. Keys:
+3. Settings: in `~/.profile`:
+```
+export PERSONAL_USERNAME=xyz
+#export COMPANY="foo"
+#export COMPANY_DOMAIN="$COMPANY.com"
+```
+4. Keys:
    1. IF WANTED copy your keys from previous machine here
-   2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
-   3. if new, add the new keys to github
+   2. Set `export PERSONAL_USERNAME=xyz` (~git username, lowercase)
+   3. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
+   4. if new, add the new keys to github
       * go here: https://github.com/settings/keys
       * `cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy`
-      * `cat ~/.ssh/id_ed25519.pub | pbcopy`
-   4. test it: `ssh -T git@github.com`
-   5. DELETE SSH KEYS FROM THE DISK/USB KEY!
+      * `cat ~/.ssh/id_ed25519_xyz.pub | pbcopy`
+   5. test it: `ssh -T git@offirmo.github.com`
+   6. DELETE SSH KEYS FROM THE DISK/USB KEY!
 4. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash`
 
 ### 100 = base install post-bootstrap, from local
@@ -154,7 +161,7 @@ Also TODO compatibility with non-interactive shells, need no output
 ### Useful npm modules
 * https://github.com/jonathaneunice/iterm2-tab-set
 
-### dual ssh keys
+### multi ssh keys with NO default
 https://github.com/Offirmo-team/wiki/wiki/git
 In `.ssh/config`:
 
@@ -168,7 +175,7 @@ Host offirmo.github.com
 Host xyz.github.com
    HostName xyz.github.com
    User git
-   IdentityFile ~/.ssh/id_ed25519
+   IdentityFile ~/.ssh/id_ed25519_xyz
    IdentitiesOnly yes
 ```
 

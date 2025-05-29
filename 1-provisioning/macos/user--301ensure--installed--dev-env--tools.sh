@@ -52,13 +52,15 @@ brew install --cask lepton
 brew install --cask responsively
 #brew install --cask polypane # polypane is great but paid
 
-#brew install --cask insomnia no, let's try https://github.com/usebruno/bruno
+## recently switched to bruno, free and no cloud https://github.com/usebruno/bruno
+#brew install --cask insomnia
+brew install bruno
 
 brew install shellcheck
 
 ## NO!
 ## Those apps should NOT be installed through brew, too "special"
-## virtualbox dropbox
+## virtualbox dropbox docker
 
 ## TODO review
 #kern.maxfiles=10485760
