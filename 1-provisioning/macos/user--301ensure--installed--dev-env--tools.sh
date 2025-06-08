@@ -52,6 +52,9 @@ brew install --cask lepton
 brew install --cask responsively
 #brew install --cask polypane # polypane is great but paid
 
+# frequently updates, better with brew
+brew install --cask pgadmin4
+
 ## recently switched to bruno, free and no cloud https://github.com/usebruno/bruno
 #brew install --cask insomnia
 brew install bruno
