@@ -112,7 +112,7 @@ git gc
 
 ### If missing, add a debug line to shellrc existing files
 ```bash
-echo "* [~/.profile] hello!"
+[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello!"
 ```
 
 ### Manual installs

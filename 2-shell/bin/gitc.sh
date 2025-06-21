@@ -20,8 +20,9 @@ DEFAULT_REPO_DIR=${LAST_URL_SEGMENT%".git"}
 PARENT_DIR="$DEFAULT_PARENT_DIR"
 # strips last segment from the full url
 TEMP=${REPOSITORY_URL%"/$LAST_URL_SEGMENT"}
-# then get n-1 segment
-TEMP="$(basename "$TEMP")"
+# then get n-1 segment, which may includes git@github.com: so we tr
+TEMP="$(basename "$(echo "$TEMP" | tr ':' '/')")"
+POSSIBLE_USER=$TEMP
 
 ## debug
 echo "INPUT:"
@@ -31,13 +32,13 @@ echo "  REPOSITORY_URL =     $REPOSITORY_URL"
 echo "  LAST_URL_SEGMENT =   $LAST_URL_SEGMENT"
 echo "  DEFAULT_REPO_DIR =   $DEFAULT_REPO_DIR"
 echo "  DEFAULT_PARENT_DIR = $DEFAULT_PARENT_DIR"
-echo "  TEMP =               $TEMP"
+echo "  POSSIBLE_USER =      $POSSIBLE_USER"
 echo "  PERSONAL_USERNAME =  $PERSONAL_USERNAME"
 
 
 # if recognized as an expected subdir, change parent dir
 IS_OFFIRMO=0
-case $TEMP in
+case $POSSIBLE_USER in
 	*Offirmo )
 		IS_OFFIRMO=1
 		PARENT_DIR=$PARENT_DIR/off
@@ -54,10 +55,13 @@ case $TEMP in
 		IS_OFFIRMO=1
 		PARENT_DIR=$PARENT_DIR/offirmo-graveyard
 		;;
+	*)
+		PARENT_DIR=$PARENT_DIR/$POSSIBLE_USER
+		;;
 esac
 if [ $IS_OFFIRMO = 1 ]; then
 	## for pro/perso reasons, we have different SSH keys, requiring a domain tweak (see ~/.ssh/config)
-	if [[ $TEMP = "Offirmo" || $TEMP = "git@github.com:Offirmo" ]]; then
+	if [[ $POSSIBLE_USER = "Offirmo" ]]; then
 		echo "Offirmo detected! Tweaking the URL..."
 		REPOSITORY_URL="git@offirmo.github.com:Offirmo/$LAST_URL_SEGMENT"
 	fi
@@ -66,9 +70,8 @@ fi
 IS_PERSONAL=0
 if [[ -n $PERSONAL_USERNAME ]]; then
 	## same as above
-	if [[ $TEMP = "$PERSONAL_USERNAME" || $TEMP = "git@github.com:$PERSONAL_USERNAME" ]]; then
+	if [[ $POSSIBLE_USER = "$PERSONAL_USERNAME" ]]; then
 		IS_PERSONAL=1
-		PARENT_DIR=$PARENT_DIR/$PERSONAL_USERNAME
 		echo "Personal username detected! Tweaking the URL..."
 		REPOSITORY_URL="git@$PERSONAL_USERNAME.github.com:$PERSONAL_USERNAME/$LAST_URL_SEGMENT"
 	fi

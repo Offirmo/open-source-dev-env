@@ -39,6 +39,19 @@ if command -v brew > /dev/null; then
 	brew doctor
 fi
 
+
+## MacPorts (macOS)
+## https://guide.macports.org/chunked/using.html#using.port
+## last reviewed: TODO!!!
+if command -v port > /dev/null; then
+	echo ""
+	echo "******* MacPorts detected, updating… *******"
+
+	echo "  * \`sudo port selfupdate\`…"
+	sudo port selfupdate
+fi
+
+
 ## apt (Ubuntu)
 ## last reviewed: TODO!!!
 if command -v apt-get > /dev/null; then
