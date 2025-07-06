@@ -5,6 +5,12 @@
 
 ## Tosort
 
+```
+command -v nvm
+which nvm
+arch
+uname -a
+```
 https://github.com/rodyager/RWTS-PDFwriter
 
 ```

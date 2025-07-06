@@ -31,7 +31,8 @@ echo "* starting…"
 ## NVM
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 echo "* (re)installing nvm…"
-bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
+# PROFILE=/dev/null  BC we load nvm ourselves in a more clever way, so don't want the install to touch .bashrc
+PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
 source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'

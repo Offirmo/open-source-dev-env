@@ -95,12 +95,61 @@ else
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	if [ -d "$NVM_DIR" ]; then
 		echo "  * enabling nvm… (\$NVM_DIR = $NVM_DIR)"
-		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 		if [ $SHELL = "/bin/bash" ]; then
 			[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 		fi
 	fi
- fi
+fi
+
+if [[ command -v nvm_find_up ]]; then
+	echo "    * enabling cdnvm…"
+	cdnvm() {
+		command cd "$@" || return $?
+		nvm_path="$(nvm_find_up .nvmrc | command tr -d '\n')"
+
+		# If there are no .nvmrc file, use the default nvm version
+		if [[ ! $nvm_path = *[^[:space:]]* ]]; then
+			echo "cdnvm = no .nvmrc found"
+			declare default_version
+			default_version="$(nvm version default)"
+
+			# If there is no default version, set it to `node`
+			# This will use the latest version on your machine
+			if [ $default_version = 'N/A' ]; then
+				nvm alias default node
+				default_version=$(nvm version default)
+			fi
+
+			# If the current version is not the default version, set it to use the default version
+			if [ "$(nvm current)" != "${default_version}" ]; then
+				nvm use default
+			fi
+		elif [[ -s "${nvm_path}/.nvmrc" && -r "${nvm_path}/.nvmrc" ]]; then
+			declare nvm_version
+			nvm_version=$(<"${nvm_path}"/.nvmrc)
+			echo "cdnvm = found $nvm_version"
+
+			declare locally_resolved_nvm_version
+			# `nvm ls` will check all locally-available versions
+			# If there are multiple matching versions, take the latest one
+			# Remove the `->` and `*` characters and spaces
+			# `locally_resolved_nvm_version` will be `N/A` if no local versions are found
+			locally_resolved_nvm_version=$(nvm ls --no-colors "${nvm_version}" | command tail -1 | command tr -d '\->*' | command tr -d '[:space:]')
+
+			# If it is not already installed, install it
+			# `nvm install` will implicitly use the newly-installed version
+			if [ "${locally_resolved_nvm_version}" = 'N/A' ]; then
+				nvm install "${nvm_version}";
+			elif [ "$(nvm current)" != "${locally_resolved_nvm_version}" ]; then
+				nvm use "${nvm_version}";
+			fi
+		fi
+	}
+
+	alias cd='cdnvm'
+	cdnvm "$PWD" || exit
+fi
 
 ## avn (auto nvm use on changing dirs)
 ## (copied from what is set on install)
@@ -113,10 +162,10 @@ fi
 ## yarn
 if command -v yarn &> /dev/null; then
 	if [[ $(yarn -v) = 1.* ]]; then
- 		echo "  * enabling yarn v1…"
+		echo "  * enabling yarn v1…"
 		export PATH="$PATH:$(yarn global bin)"
 	else
- 		echo "  * enabling yarn v2+…"
+		echo "  * enabling yarn v2+… ???"
 	fi
 else
 	## yarn is not available
