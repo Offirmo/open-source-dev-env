@@ -41,14 +41,16 @@ alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS
-alias tpx='rm -rf node_modules/ .npm npm-debug.log package-lock.json yarn.lock yarn-error.log .yarn/cache/ pnpm-lock.yaml .yalc .awcache/ .parcel/ .parcel-cache/ bower_components/ typings/'
+alias tpx='rm -rf node_modules/ .npm npm-debug.log package-lock.json yarn.lock yarn-error.log .yarn/ pnpm-lock.yaml .yalc .awcache/ .parcel/ .parcel-cache/ bower_components/ typings/'
 #alias p='puer --no-launch --port 1981'
 #alias p='puer --no-launch --port 1981 --allow-cors'
 
 ## node
 alias kng='killall node yarn tsc esbuild webpack ngrok phantomjs flow grunt gulp'
 # for bolt to work properly, it has to be installed globally via yarn
-alias onn='npm install --global iterm2-tab-set yalc pnpm yarn && yarn global add bolt'
+alias onn='npm install --global corepack iterm2-tab-set yalc && corepack enable && yarn global add bolt'
+# 2025/07 switching to corepack
+#alias onn='npm install --global iterm2-tab-set yalc pnpm yarn && yarn global add bolt'
 # 2024/02 avn no longer work avn avn-nvm
 # 2023/10 TODO yarn 4 but very hard to work
 #alias onn='corepack enable && npm install --global iterm2-tab-set avn avn-nvm'

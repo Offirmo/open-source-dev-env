@@ -26,14 +26,14 @@ POSSIBLE_USER=$TEMP
 
 ## debug
 echo "INPUT:"
-echo "  \$1 =                 $1"
-echo "  \$2 =                 $2"
-echo "  REPOSITORY_URL =     $REPOSITORY_URL"
-echo "  LAST_URL_SEGMENT =   $LAST_URL_SEGMENT"
-echo "  DEFAULT_REPO_DIR =   $DEFAULT_REPO_DIR"
-echo "  DEFAULT_PARENT_DIR = $DEFAULT_PARENT_DIR"
-echo "  POSSIBLE_USER =      $POSSIBLE_USER"
-echo "  PERSONAL_USERNAME =  $PERSONAL_USERNAME"
+echo "  \$1                       = $1"
+echo "  \$2                       = $2"
+echo "  REPOSITORY_URL            = $REPOSITORY_URL"
+echo "  LAST_URL_SEGMENT          = $LAST_URL_SEGMENT"
+echo "  DEFAULT_REPO_DIR          = $DEFAULT_REPO_DIR"
+echo "  DEFAULT_PARENT_DIR        = $DEFAULT_PARENT_DIR"
+echo "  POSSIBLE_USER             = $POSSIBLE_USER"
+echo "  PERSONAL_USERNAME__GITHUB = $PERSONAL_USERNAME__GITHUB"
 
 
 # if recognized as an expected subdir, change parent dir
@@ -68,12 +68,12 @@ if [ $IS_OFFIRMO = 1 ]; then
 fi
 
 IS_PERSONAL=0
-if [[ -n $PERSONAL_USERNAME ]]; then
+if [[ -n $PERSONAL_USERNAME__GITHUB ]]; then
 	## same as above
-	if [[ $POSSIBLE_USER = "$PERSONAL_USERNAME" ]]; then
+	if [[ "$POSSIBLE_USER" = "$PERSONAL_USERNAME__GITHUB" ]]; then
 		IS_PERSONAL=1
 		echo "Personal username detected! Tweaking the URL..."
-		REPOSITORY_URL="git@$PERSONAL_USERNAME.github.com:$PERSONAL_USERNAME/$LAST_URL_SEGMENT"
+		REPOSITORY_URL="git@$PERSONAL_USERNAME__GITHUB.github.com:$PERSONAL_USERNAME__GITHUB/$LAST_URL_SEGMENT"
 	fi
 fi
 
@@ -115,8 +115,11 @@ else
 		echo "	name = Offirmo"                >> ".git/config"
 		echo "[github]"                         >> ".git/config"
 		echo "	user = Offirmo"                >> ".git/config"
+		# my recommended choices
 		echo "[pull]"                           >> ".git/config"
-		echo "	rebase = true"                 >> ".git/config" # my choice for my repos
+		echo "	rebase = true"                 >> ".git/config"
+		echo "[push]"                           >> ".git/config"
+		echo "	default = simple"              >> ".git/config"
 		echo ""                                 >> ".git/config"
 
 		popd > /dev/null
@@ -126,12 +129,15 @@ else
 		pushd $TARGET_DIR > /dev/null
 		git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 
-		echo ""                                 >> ".git/config"
-		echo "[github]"                         >> ".git/config"
-		echo "	user = $PERSONAL_USERNAME"     >> ".git/config"
-		echo "[pull]"                           >> ".git/config"
-		echo "	rebase = true"                 >> ".git/config" # my choice for my repos
-		echo ""                                 >> ".git/config"
+		echo ""                                     >> ".git/config"
+		echo "[github]"                             >> ".git/config"
+		echo "	user = $PERSONAL_USERNAME__GITHUB" >> ".git/config"
+		# my recommended choices
+		echo "[pull]"                               >> ".git/config"
+		echo "	rebase = true"                     >> ".git/config"
+		echo "[push]"                               >> ".git/config"
+		echo "	default = simple"                  >> ".git/config"
+		echo ""                                     >> ".git/config"
 
 		popd > /dev/null
 	else

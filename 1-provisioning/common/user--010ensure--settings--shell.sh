@@ -46,6 +46,8 @@ else
 		echo '## may also be sourced by bash(1)'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello!"'
 		echo ''
+		echo '#export PERSONAL_USERNAME__GITHUB=Foo'
+		echo ''
 		echo '#export COMPANY="foo"'
 		echo '#export COMPANY_DOMAIN="$COMPANY.com"'
 		echo ''

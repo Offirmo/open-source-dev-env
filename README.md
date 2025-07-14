@@ -38,13 +38,13 @@ Then install git: either:
 2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh | bash`
 3. Settings: in `~/.profile`:
 ```
-export PERSONAL_USERNAME=xyz
+#export PERSONAL_USERNAME__GITHUB=Xyz
 #export COMPANY="foo"
 #export COMPANY_DOMAIN="$COMPANY.com"
 ```
 4. Keys:
    1. IF WANTED copy your keys from previous machine here
-   2. Set `export PERSONAL_USERNAME=xyz` (~git username, lowercase)
+   2. Set `export PERSONAL_USERNAME__GITHUB=Xyz`
    3. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
    4. if new, add the new keys to github
       * go here: https://github.com/settings/keys

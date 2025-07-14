@@ -1,7 +1,7 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_aliases--projects.sh] hello!"
 
-source_bash_files_from_dir "$HOME/work/src/off/offirmo-monorepo/stack--current/0-meta/bin"
+[ -d "$HOME/work/src/off/offirmo-monorepo/stack--current/0-meta/bin" ] && source_bash_files_from_dir "$HOME/work/src/off/offirmo-monorepo/stack--current/0-meta/bin"
 
 alias off='cd ~/work/src/off; git--offirmo.sh; tabset --badge 'off-X' --color "#F012BE"'
 alias oa='cd ~/work/src/oa/online-adventures.github.io; git--offirmo.sh'

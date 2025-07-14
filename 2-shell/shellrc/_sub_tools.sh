@@ -53,7 +53,7 @@ fi
 
 
 
-############ COMMAND -- Homebrew ############
+############ PKG MANAGER -- Homebrew ############
 ## critical to even access "brew"
 if command -v brew &> /dev/null; then
 	echo "  * enabling brew… (from $(which brew))"
@@ -78,8 +78,6 @@ if command -v brew &> /dev/null; then
 			fi
 		;;
 	esac
-else
-	echo "brew not available???"
 fi
 
 
@@ -101,8 +99,7 @@ else
 		fi
 	fi
 fi
-
-if [[ command -v nvm_find_up ]]; then
+if command -v nvm_find_up &> /dev/null; then
 	echo "    * enabling cdnvm…"
 	cdnvm() {
 		command cd "$@" || return $?
