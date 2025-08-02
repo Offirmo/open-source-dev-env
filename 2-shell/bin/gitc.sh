@@ -26,8 +26,8 @@ POSSIBLE_USER=$TEMP
 
 ## debug
 echo "INPUT:"
-echo "  \$1                       = $1"
-echo "  \$2                       = $2"
+echo "  1                         = $1"
+echo "  2                         = $2"
 echo "  REPOSITORY_URL            = $REPOSITORY_URL"
 echo "  LAST_URL_SEGMENT          = $LAST_URL_SEGMENT"
 echo "  DEFAULT_REPO_DIR          = $DEFAULT_REPO_DIR"
