@@ -101,6 +101,8 @@ else
 fi
 if command -v nvm_find_up &> /dev/null; then
 	echo "    * enabling cdnvm…"
+
+	## This command must be RESILIENT to not break starting shells
 	cdnvm() {
 		command cd "$@" || return $?
 		nvm_path="$(nvm_find_up .nvmrc | command tr -d '\n')"
@@ -137,9 +139,9 @@ if command -v nvm_find_up &> /dev/null; then
 			# If it is not already installed, install it
 			# `nvm install` will implicitly use the newly-installed version
 			if [ "${locally_resolved_nvm_version}" = 'N/A' ]; then
-				nvm install "${nvm_version}";
+				nvm install "${nvm_version}" || echo "cdnvm: ⚠️ failed to install requested ${nvm_version}, please troubleshoot!"
 			elif [ "$(nvm current)" != "${locally_resolved_nvm_version}" ]; then
-				nvm use "${nvm_version}";
+				nvm use "${nvm_version}"
 			fi
 		fi
 	}
