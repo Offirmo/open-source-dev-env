@@ -1,4 +1,4 @@
-matrix-off: v1.5--generated-on-2025-08-24 false
+matrix-off: v1.5--generated-on-2025-08-25 false
 https-strict: * true
 https-strict: behind-the-scene false
 matrix-off: about-scheme true
@@ -7,22 +7,37 @@ matrix-off: chrome-extension-scheme true
 matrix-off: chrome-scheme true
 matrix-off: moz-extension-scheme true
 matrix-off: wyciwyg-scheme true
+matrix-off: employmenthero.com true
+matrix-off: github.careers true
+matrix-off: githubtalentcommunity.careers true
+matrix-off: jibeapply.com true
+matrix-off: jobs.apple.com true
+matrix-off: metacareers.com true
+matrix-off: microsoft.com true
+matrix-off: workable.com true
+matrix-off: myworkdayjobs.com true
+matrix-off: schedule.lever.co true
+matrix-off: icims.com true
 matrix-off: 1password.com true
+matrix-off: adobe.com true
 matrix-off: amplitude.com true
 matrix-off: app.datadoghq.com true
 matrix-off: applitools.com true
 matrix-off: atlassian.com true
 matrix-off: atlassian.net true
+matrix-off: aws.amazon.com true
 matrix-off: browserstack.com true
 matrix-off: buildkite.com true
 matrix-off: calven.com true
 matrix-off: canva.com true
 matrix-off: canva.dev true
 matrix-off: chatgpt.com true
+matrix-off: clerk.com true
 matrix-off: cloud.scorm.com true
 matrix-off: cloudflare.com true
 matrix-off: cultureamp.com true
 matrix-off: docker.com true
+matrix-off: docusign.com true
 matrix-off: dropbox.com true
 matrix-off: figma.com true
 matrix-off: forms.gle true
@@ -30,15 +45,19 @@ matrix-off: github.com true
 matrix-off: glean.com true
 matrix-off: google.com true
 matrix-off: looker.com true
+matrix-off: mistral.ai true
 matrix-off: myworkday.com true
 matrix-off: navan.com true
 matrix-off: okta.com true
+matrix-off: openai.com true
 matrix-off: sentry.io true
 matrix-off: slack.com true
 matrix-off: trello.com true
 matrix-off: workramp.com true
 matrix-off: xero.com true
+matrix-off: www.npmjs.com true
 matrix-off: zoom.us true
+matrix-off: vercel.com true
 matrix-off: nab.com.au true
 matrix-off: solium.com true
 matrix-off: canva.site true
@@ -67,12 +86,18 @@ matrix-off: localhost true
 * www.google.com frame allow
 * www.gstatic.com * allow
 * www.gstatic.com script allow
-* csp.withgoogle.com * allow
 * auth0.com * allow
 * captcha-delivery.com * allow
-* identitytoolkit.googleapis.com * allow
-* securetoken.googleapis.com * allow
 * challenges.cloudflare.com * allow
+* challenges.cloudflare.com frame allow
+* csp.withgoogle.com * allow
+* hcaptcha.com * allow
+* hcaptcha.com frame allow
+* identitytoolkit.googleapis.com * allow
+* recaptcha.net * allow
+* recaptcha.net frame allow
+* securetoken.googleapis.com * allow
+* www.recaptcha.net frame allow
 * algolia.net * allow
 * algolianet.com * allow
 * easyzoom.com * allow
@@ -93,7 +118,9 @@ matrix-off: localhost true
 * wixstatic.com * allow
 * fonts.googleapis.com css allow
 * imgur.com image allow
-* cdn.embedly.com * allow
+* embedly.com * allow
+* embedly.com frame allow
+* www.youtube-nocookie.com frame allow
 * zdassets.com * allow
 * cloudflareinsights.com * allow
 abseil.io mathjax.org * allow
@@ -118,8 +145,20 @@ amazon.fr amazon.com * allow
 amazon.fr amazonaws.com * allow
 amazon.fr media-amazon.com * allow
 amazon.fr ssl-images-amazon.com * allow
+apple.com cdn-apple.com * allow
+arena.net guildwars.com * allow
+arena.net guildwars2.com * allow
+arena.net staticwars.com * allow
+blog.google ampproject.org * allow
+blog.google storage.googleapis.com * allow
 booking.com bstatic.com * allow
 chatgpt.com oaistatic.com * allow
+chrome.com google.com * allow
+chrome.com googlechromelabs.github.io * allow
+chrome.com gstatic.com * allow
+chromium.org fonts.googleapis.com * allow
+chromium.org google.com * allow
+chromium.org gstatic.com * allow
 claude.ai * frame inherit
 claude.ai anthropic.com * allow
 claude.ai claudeusercontent.com * allow
@@ -130,6 +169,7 @@ codepen.io cdpn.io frame allow
 codepen.io codepenassets.com * allow
 codepen.io esm.sh * allow
 codepen.io filestackapi.com * allow
+codepen.io github.io * allow
 codepen.io jsdelivr.net * allow
 codepen.io skypack.dev * allow
 codepen.io threejs.org * allow
@@ -144,17 +184,24 @@ diagrams.net draw.io * allow
 diagrams.net google.com * allow
 diagrams.net www.draw.io frame allow
 diagrams.net www.googleapis.com * allow
+discord.com discordapp.com * allow
 domain.com.au domain-static.s3.ap-southeast-2.amazonaws.com * allow
 domain.com.au domainstatic.com.au * allow
+dropbox.com dropboxstatic.com * allow
 facebook.com fbcdn.net * allow
 facebook.com fbsbx.com * allow
 facebook.com fbsbx.com frame allow
 flickr.com staticflickr.com * allow
+google about.google * allow
+google fonts.googleapis.com * allow
+google google.com * allow
+google googleusercontent.com * allow
+google gstatic.com * allow
+google maps.googleapis.com * allow
 google.com googleusercontent.com * allow
 google.com gstatic.com * allow
 google.com youtube.com * allow
 google.com youtube.com frame allow
-google.com.au * frame allow
 google.com.au books.google.com frame allow
 google.com.au google.com * allow
 googleblog.com blogger.com * allow
@@ -175,8 +222,9 @@ jsfiddle.net fiddle.jshell.net frame allow
 jsfiddle.net jshell.net * allow
 kickstarter.com kck.st * allow
 linkedin.com licdn.com * allow
-linkedin.com media.licdn.com frame allow
-matrix-off: localhost true
+linkedin.com licdn.com frame allow
+linkedin.com protechts.net * allow
+linkedin.com protechts.net frame allow
 medium.com cdn.embedly.com frame allow
 medium.com embedly.com frame allow
 medium.com gist.github.com * allow
@@ -193,11 +241,13 @@ prezzee.com.au prezzeeapis.com * allow
 quora.com quoracdn.net * allow
 react.dev sandpack-bundler-4bw.pages.dev * allow
 react.dev sandpack-bundler-4bw.pages.dev frame allow
+redd.it redditstatic.com * allow
 reddit.com redd.it * allow
 reddit.com redditmedia.com * allow
 reddit.com redditmedia.com frame allow
 reddit.com redditstatic.com * allow
 rewardgateway.com.au rewardgateway.net * allow
+slashdot.org as.slashdot.org * block
 slideshare.net slidesharecdn.com * allow
 sourceforge.net fsdn.com * allow
 spotify.com audio-ak-spotify-com.akamaized.net * allow
@@ -208,6 +258,7 @@ stackblitz.com w-corp-staticblitz.com * allow
 stackblitz.com webcontainer.io * allow
 stackexchange.com sstatic.net * allow
 stackexchange.com stackoverflow.com * allow
+stackoverflow.com ajax.googleapis.com * allow
 stackoverflow.com askubuntu.com * allow
 stackoverflow.com cookielaw.org * allow
 stackoverflow.com mathoverflow.net * allow
@@ -215,13 +266,22 @@ stackoverflow.com serverfault.com * allow
 stackoverflow.com sstatic.net * allow
 stackoverflow.com stackapps.com * allow
 stackoverflow.com stackexchange.com * allow
+stackoverflow.com stacksnippets.net * allow
 stackoverflow.com superuser.com * allow
 steampowered.com steamcommunity.com * allow
 steampowered.com steamstatic.com * allow
 substack.com substackcdn.com * allow
+tanstack.com stackblitz.com * allow
+tanstack.com stackblitz.com frame allow
+threads.com cdninstagram.com * allow
+threads.com fbcdn.net * allow
+threads.com instagram.com * allow
 threads.net cdninstagram.com * allow
 threads.net fbcdn.net * allow
+twitter.com twimg.com * allow
 typescriptlang.org msecnd.net * allow
+web.dev developerprofiles-pa.googleapis.com * allow
+web.dev google.com * allow
 wikipedia.org wikimedia.org * allow
 wordpress.com wp.com * allow
 wowhead.com zamimg.com * allow

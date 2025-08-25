@@ -33,12 +33,18 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 * www.gstatic.com script allow
 
 ## other
-* csp.withgoogle.com * allow
 * auth0.com * allow
 * captcha-delivery.com * allow
-* identitytoolkit.googleapis.com * allow
-* securetoken.googleapis.com * allow
 * challenges.cloudflare.com * allow
+* challenges.cloudflare.com frame allow
+* csp.withgoogle.com * allow
+* hcaptcha.com * allow
+* hcaptcha.com frame allow
+* identitytoolkit.googleapis.com * allow
+* recaptcha.net * allow
+* recaptcha.net frame allow
+* securetoken.googleapis.com * allow
+* www.recaptcha.net frame allow
 
 # UTILS
 
@@ -82,8 +88,10 @@ const COMMONLY_EMBEDDED_THIRD_PARTIES = `
 
 # EMBEDS
 
-* cdn.embedly.com * allow
+* embedly.com * allow
+* embedly.com frame allow
 #* maps.googleapis.com * allow
+* www.youtube-nocookie.com frame allow
 
 ## zen desk
 * zdassets.com * allow

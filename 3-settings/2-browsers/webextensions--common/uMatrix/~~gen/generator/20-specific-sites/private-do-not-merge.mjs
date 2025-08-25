@@ -1,6 +1,5 @@
 
 const OFF = `
-matrix-off: localhost true
 `
 
 const RULES = `
