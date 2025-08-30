@@ -1,20 +1,29 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_00settings.sh] hello!"
 
-## instructs some lib to expect debug API + SEC
-export OFFIRMO_GLOBAL_DEBUG_ENV_EXPECTED=1
+## Add this to your profile ONLY IF OFFIRMO
+## - enable dedicated special ssh key
+## - instructs some lib to private APIs and tools (ex. SXC)
+## - disable sentry and other telemetry on own apps during debug
+#export IS_OFFIRMO_DEV_ENV=1
 
-## disable sentry and other stuff
-export OFFIRMO_IS_HERE=1
+
+## asks tools to not track https://consoledonottrack.com/
+## https://turborepo.com/docs/telemetry#how-do-i-opt-out
+export DO_NOT_TRACK=1
+
 
 ## remove duplicated bash history https://askubuntu.com/a/15929
 export HISTCONTROL=ignoreboth:erasedups
 
-## set a fancy prompt (non-color, unless we know we "want" color)
+
+## improve stuff with colors
 case "$TERM" in
 	xterm-color|*-256color) color_prompt=yes;;
 esac
 
+
+## better prompt
 if [ "$color_prompt" = yes ]; then
 	## remove "user + machine" (not very useful if always the same)
 	#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -22,6 +31,7 @@ if [ "$color_prompt" = yes ]; then
 else
 	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
 
 ## enable color support of ls and also add handy aliases
 if [ "$color_prompt" = yes ]; then
@@ -38,6 +48,7 @@ if [ "$color_prompt" = yes ]; then
 fi
 
 unset color_prompt force_color_prompt
+
 
 ## https://docs.reactioncommerce.com/docs/requirements
 ## outdated, check with ulimit -l = unlimited

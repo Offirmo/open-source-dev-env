@@ -22,60 +22,76 @@ PARENT_DIR="$DEFAULT_PARENT_DIR"
 TEMP=${REPOSITORY_URL%"/$LAST_URL_SEGMENT"}
 # then get n-1 segment, which may includes git@github.com: so we tr
 TEMP="$(basename "$(echo "$TEMP" | tr ':' '/')")"
-POSSIBLE_USER=$TEMP
+POSSIBLE_USER_OR_ORG_LC=$(echo "$TEMP" | tr '[:upper:]' '[:lower:]')
 
 ## debug
 echo "INPUT:"
+echo "  BASH_SOURCE = $BASH_SOURCE"
+echo "  BASH_VERSION              = $BASH_VERSION"
 echo "  1                         = $1"
 echo "  2                         = $2"
 echo "  REPOSITORY_URL            = $REPOSITORY_URL"
 echo "  LAST_URL_SEGMENT          = $LAST_URL_SEGMENT"
 echo "  DEFAULT_REPO_DIR          = $DEFAULT_REPO_DIR"
 echo "  DEFAULT_PARENT_DIR        = $DEFAULT_PARENT_DIR"
-echo "  POSSIBLE_USER             = $POSSIBLE_USER"
+echo "  POSSIBLE_USER_OR_ORG_LC   = $POSSIBLE_USER_OR_ORG_LC"
 echo "  PERSONAL_USERNAME__GITHUB = $PERSONAL_USERNAME__GITHUB"
+echo "  IS_OFFIRMO_DEV_ENV        = $IS_OFFIRMO_DEV_ENV"
 
 
-# if recognized as an expected subdir, change parent dir
-IS_OFFIRMO=0
-case $POSSIBLE_USER in
-	*Offirmo )
-		IS_OFFIRMO=1
-		PARENT_DIR=$PARENT_DIR/off
+## detect for special handling
+IS_FROM_OFFIRMO=0
+IS_FROM_PERSONAL=0
+case $POSSIBLE_USER_OR_ORG_LC in
+	*offirmo )
+		IS_FROM_OFFIRMO=1
 		;;
 	*online-adventures )
-		IS_OFFIRMO=1
-		PARENT_DIR=$PARENT_DIR/oa
+		IS_FROM_OFFIRMO=1
 		;;
-	*Offirmo-team )
-		IS_OFFIRMO=1
-		PARENT_DIR=$PARENT_DIR/offirmo-team
+	*offirmo-team )
+		IS_FROM_OFFIRMO=1
 		;;
-	*Offirmo-graveyard )
-		IS_OFFIRMO=1
-		PARENT_DIR=$PARENT_DIR/offirmo-graveyard
+	*offirmo-graveyard )
+		IS_FROM_OFFIRMO=1
 		;;
 	*)
-		PARENT_DIR=$PARENT_DIR/$POSSIBLE_USER
+		if [ -n "$PERSONAL_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$PERSONAL_USERNAME__GITHUB" ]; then
+			IS_FROM_PERSONAL=1
+		fi
 		;;
 esac
-if [ $IS_OFFIRMO = 1 ]; then
+
+
+## branch to dedicated SSH keys if needed
+if [ "$IS_FROM_OFFIRMO" = 1 ] && [ "$IS_OFFIRMO_DEV_ENV" = 1 ]; then
 	## for pro/perso reasons, we have different SSH keys, requiring a domain tweak (see ~/.ssh/config)
-	if [[ $POSSIBLE_USER = "Offirmo" ]]; then
-		echo "Offirmo detected! Tweaking the URL..."
-		REPOSITORY_URL="git@offirmo.github.com:Offirmo/$LAST_URL_SEGMENT"
-	fi
+	echo "Offirmo detected! Tweaking the URL..."
+	REPOSITORY_URL="git@offirmo.github.com:$POSSIBLE_USER_OR_ORG_LC/$LAST_URL_SEGMENT"
+fi
+if [ "$IS_FROM_PERSONAL" = 1 ]; then
+	## for pro/perso reasons, we have different SSH keys, requiring a domain tweak (see ~/.ssh/config)
+	echo "Personal username detected! Tweaking the URL..."
+	REPOSITORY_URL="git@$PERSONAL_USERNAME__GITHUB.github.com:$POSSIBLE_USER_OR_ORG_LC/$LAST_URL_SEGMENT"
 fi
 
-IS_PERSONAL=0
-if [[ -n $PERSONAL_USERNAME__GITHUB ]]; then
-	## same as above
-	if [[ "$POSSIBLE_USER" = "$PERSONAL_USERNAME__GITHUB" ]]; then
-		IS_PERSONAL=1
-		echo "Personal username detected! Tweaking the URL..."
-		REPOSITORY_URL="git@$PERSONAL_USERNAME__GITHUB.github.com:$PERSONAL_USERNAME__GITHUB/$LAST_URL_SEGMENT"
+## structure the target directory for better FS organization
+if [ -n "$COMPANY_DOMAIN" ]; then
+	if [ "$IS_FROM_OFFIRMO" = 1 ] || [ "$IS_FROM_PERSONAL" = 1 ]; then
+		## let's clearly separate
+		PARENT_DIR=$PARENT_DIR/x-external
+	fi
+	if [ "$IS_FROM_PERSONAL" = 1 ]; then
+		## recognized in some jurisdictions
+		PARENT_DIR=$PARENT_DIR/private
 	fi
 fi
+if [ "$IS_FROM_OFFIRMO" = 1 ]; then
+	## further grouping
+	PARENT_DIR=$PARENT_DIR/offirmo-x
+fi
+## grouping by org or user
+PARENT_DIR=$PARENT_DIR/$POSSIBLE_USER_OR_ORG_LC
 
 if [[ -n "$CUSTOM_REPO_DIR" ]]; then
 	TARGET_DIR="$CUSTOM_REPO_DIR"
@@ -83,13 +99,14 @@ else
 	TARGET_DIR="$DEFAULT_REPO_DIR"
 fi
 
+
 ## debug
 echo "OUTPUT:"
-echo "  IS_OFFIRMO =     $IS_OFFIRMO"
-echo "  IS_PERSONAL =    $IS_PERSONAL"
-echo "  REPOSITORY_URL = $REPOSITORY_URL"
-echo "  PARENT_DIR =     $PARENT_DIR"
-echo "  TARGET_DIR =     $TARGET_DIR"
+echo "  IS_FROM_OFFIRMO  = $IS_FROM_OFFIRMO"
+echo "  IS_FROM_PERSONAL = $IS_FROM_PERSONAL"
+echo "  REPOSITORY_URL   = $REPOSITORY_URL"
+echo "  PARENT_DIR       = $PARENT_DIR"
+echo "  TARGET_DIR       = $TARGET_DIR"
 
 echo "* cloning $REPOSITORY_URL into ${PARENT_DIR}/${TARGET_DIR} ..."
 
@@ -103,7 +120,7 @@ else
 	export GIT_LFS_SKIP_SMUDGE=1 ## https://gitlab.ub.uni-giessen.de/jlugitlab/git-lfs-howto#option-prevent-download-of-lfs-files
 	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
 
-	if [ $IS_OFFIRMO = 1 ]; then
+	if [ $IS_FROM_OFFIRMO = 1 ]; then
 		## fix config
 
 		pushd $TARGET_DIR > /dev/null
@@ -123,7 +140,7 @@ else
 		echo ""                                 >> ".git/config"
 
 		popd > /dev/null
-	elif [ $IS_PERSONAL = 1 ]; then
+	elif [ $IS_FROM_PERSONAL = 1 ]; then
 		## fix config
 
 		pushd $TARGET_DIR > /dev/null

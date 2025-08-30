@@ -1,6 +1,12 @@
 #@IgnoreInspection BashAddShebang
 [ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_01paths.sh] hello!"
 
+#####################
+## our own stuff
+## 🥲🥲🥲 HACK that we add before and after for the :xyz: test below to work ()
+PATH="$PATH:~/work/bin"
+PATH="~/work/src/off/open-source-dev-env/2-shell/bin:$PATH"
+
 pathDoesntContain() {
 	case $PATH in
 		*:$1:*) return 1;; # note the :xyz: to avoid
@@ -8,12 +14,9 @@ pathDoesntContain() {
 	esac
 }
 
-
 #####################
-## our own stuff
-## 🥲🥲🥲 HACK that we add before and after for the :xyz: test below to work ()
-PATH="$PATH:~/work/bin"
-PATH="~/work/src/off/open-source-dev-env/2-shell/bin:$PATH"
+## specific bins
+## -> see _sub_tools.sh
 
 #####################
 ## generic bins
