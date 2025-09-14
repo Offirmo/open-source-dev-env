@@ -17,13 +17,15 @@ fi
 
 ## MacPorts (macOS)
 ## https://guide.macports.org/chunked/using.html#using.port
-## last reviewed: TODO!!!
+## last reviewed: 2025/09
 if command -v port > /dev/null; then
 	echo ""
 	echo "******* MacPorts detected, cleaning… *******"
-
-	echo "  * \`sudo port reclaim\`…"
+	## https://guide.macports.org/chunked/using.common-tasks.html
+	echo "  * \`reclaim\`…"
 	sudo port reclaim
+	echo "  * \`uninstall inactive\`…"
+	sudo port uninstall inactive
 fi
 
 

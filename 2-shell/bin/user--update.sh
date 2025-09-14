@@ -42,13 +42,15 @@ fi
 
 ## MacPorts (macOS)
 ## https://guide.macports.org/chunked/using.html#using.port
-## last reviewed: TODO!!!
+## last reviewed: 2025/09
 if command -v port > /dev/null; then
 	echo ""
 	echo "******* MacPorts detected, updating… *******"
-
-	echo "  * \`sudo port selfupdate\`…"
+	## https://guide.macports.org/chunked/using.common-tasks.html
+	echo "  * \`selfupdate\`…"
 	sudo port selfupdate
+	echo "  * \`upgrade\`…"
+	sudo port upgrade outdated
 fi
 
 

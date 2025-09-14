@@ -30,8 +30,6 @@ echo "* starting ▶️"
 # https://www.baeldung.com/linux/rc-files#rc-configuration-files
 
 
-####### require bash #######
-
 ####### profiles ########
 ## https://docs.google.com/spreadsheets/d/1VC5DRHw-ResS5LgoTA131ORXCv9s_aNGuhUNOEeA1-c/edit?gid=495591543#gid=495591543
 
@@ -46,6 +44,10 @@ else
 		echo '## may also be sourced by bash(1)'
 		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello!"'
 		echo ''
+		echo ''
+		echo '## https://consoledonottrack.com/ https://turborepo.com/docs/telemetry#how-do-i-opt-out'
+		echo 'export DO_NOT_TRACK=1'
+		echo ''
 		echo '#export PERSONAL_USERNAME__GITHUB=Foo'
 		echo ''
 		echo '#export COMPANY="foo"'
@@ -55,7 +57,7 @@ else
 fi
 
 
-## bash
+####### bash #######
 ## interactive login    : /etc/profile -> ~/.bash_profile OR ~/.bash_login OR ~/.profile
 ## interactive non login: ~/.bashrc
 if [ -f ~/.bash_profile ]; then
@@ -74,10 +76,11 @@ else
 		echo 'shopt -q login_shell       && echo "  * shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
 		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
+		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo ''
 		echo 'if shopt -q login_shell && [ -f ~/.bash_login ]; then . ~/.bash_login; fi ## call it if login shell since it may be unintentionally shadowed by this file'
-		echo 'if [ -f ~/.profile ]; then . ~/.profile; fi'
+		echo 'if [ -f "$PROFILE" ]; then . "$PROFILE"; fi'
 		echo 'if [ -f ~/.bashrc  ]; then . ~/.bashrc;  fi ## very common practice, most tools expect this file to be always sourced'
 		echo ''
 	} >> ~/.bash_profile
@@ -97,7 +100,7 @@ else
 fi
 
 
-## zsh
+####### zsh #######
 ## /etc/zshenv -> ~/.zshenv ~/.zshrc
 if [ -f ~/.zshenv ]; then
 	echo "* ~/.zshenv already exists ✅"
@@ -137,6 +140,9 @@ else
 		echo ''
 	} >> ~/.zshrc
 fi
+
+
+####### bin #######
 
 if [[ -n "$COMPANY" ]]; then
 	TARGET=$HOME/work/bin/git--$COMPANY.sh
