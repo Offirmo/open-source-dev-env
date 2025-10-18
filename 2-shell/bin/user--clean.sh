@@ -52,6 +52,7 @@ fi
 if command -v npm > /dev/null; then
 	npm cache clean --force
 fi
+## TODO pnpm
 rm -rf ~/.npm-pkgr/
 rm -rf ~/.npm_lazy
 rm -rf ~/.npm

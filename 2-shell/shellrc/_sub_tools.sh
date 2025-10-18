@@ -179,6 +179,15 @@ else
 fi
 
 
+#flyctl was installed successfully to /Users/.../.fly/bin/flyctl
+#Manually add the directory to your $HOME/.bash_profile (or similar)
+#  export FLYCTL_INSTALL="/Users/xxx/.fly"
+#  export PATH="$FLYCTL_INSTALL/bin:$PATH"
+if [ -d "${HOME}/.fly/" ]; then
+	echo "  * enabling flyctl…"
+	export PATH="$PATH:~/.fly/bin"
+fi
+
 
 ############ DEV ENV -- PYTHON ############
 ## prevents installing libs without an active virtualenv

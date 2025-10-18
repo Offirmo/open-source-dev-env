@@ -2,7 +2,7 @@
 ## To review / inspire
 * https://github.com/tregagnon/dotfiles
 * https://github.com/camwiegert/dotfiles
-
+* ast-grep https://x.com/alxfazio/status/1962801127251915011?s=46
 ## Tosort
 
 ```
@@ -10,7 +10,10 @@ command -v nvm
 which nvm
 arch
 uname -a
+set -euo pipefail;
 ```
+
+
 https://github.com/rodyager/RWTS-PDFwriter
 
 ```
