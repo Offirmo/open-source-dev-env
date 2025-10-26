@@ -52,16 +52,24 @@ fi
 if command -v npm > /dev/null; then
 	npm cache clean --force
 fi
-## TODO pnpm
+if command -v pnpm > /dev/null; then
+	## https://pnpm.io/uninstall#removing-the-global-content-addressable-store
+	rm -rf "$(pnpm store path)"
+fi
 rm -rf ~/.npm-pkgr/
 rm -rf ~/.npm_lazy
 rm -rf ~/.npm
 
 ## TODO other dev envs ex. Python, Rust...
 
-## docker
-docker system prune --all
-#docker volume prune
+## docker/podman
+if command -v docker > /dev/null; then
+	docker system prune --all
+	#docker volume prune
+fi
+if command -v podman > /dev/null; then
+	podman system prune --all
+fi
 
 ## xcode device emulators
 xcrun simctl delete unavailable
@@ -69,16 +77,3 @@ xcrun simctl erase all
 
 ## virtualbox
 #vboxmanage modifymedium disk "/Users/xxx/VirtualBox VMs/Ubuntu 16 C/Ubuntu 16 C-disk1.vdi" --compact
-
-
-# rmdir /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/com.apple.CoreSimulator.SimDevice.*
-# find /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T -type d -name "com.apple.CoreSimulator.SimDevice.*" -exec rm -r {} +
-# rm -d /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/com.apple.CoreSimulator.SimDevice.*
-# rm -d /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/ssh-*
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/yarn--15919215*
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/yarn--1591921*
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/yarn--*
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/*.log
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/SourceTreeTemp.*
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/.com.insomnia*
-# rm -R /private/var/folders/97/bcm58dhj7wl6fxgq5kv5vsj00000gp/T/.org.efounders*
