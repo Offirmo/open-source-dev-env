@@ -10,6 +10,7 @@ command -v nvm
 which nvm
 arch
 uname -a
+## https://google.github.io/zx/configuration#prefix
 set -euo pipefail;
 ```
 

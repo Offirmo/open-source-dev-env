@@ -22,10 +22,11 @@ if command -v port > /dev/null; then
 	echo ""
 	echo "******* MacPorts detected, cleaning… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
-	echo "  * \`reclaim\`…"
-	sudo port reclaim
 	echo "  * \`uninstall inactive\`…"
 	sudo port uninstall inactive
+	## https://guide.macports.org/chunked/using.html#using.port.reclaim
+	echo "  * \`reclaim\`…"
+	sudo port reclaim
 fi
 
 

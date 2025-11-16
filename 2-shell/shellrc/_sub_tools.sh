@@ -178,6 +178,18 @@ else
 	fi
 fi
 
+## deno
+## https://deno.com/
+## . "/Users/xyz/.deno/env"
+## source /Users/xyz/.local/share/bash-completion/completions/deno.bash
+if [ -d "${HOME}/.deno" ]; then
+	echo "  * enabling deno…"
+	[ -s "${HOME}/.deno/env" ] && \. "${HOME}/.deno/env"
+	if [ $SHELL = "/bin/bash" ]; then
+		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"  # This loads nvm bash_completion
+	fi
+fi
+
 
 #flyctl was installed successfully to /Users/.../.fly/bin/flyctl
 #Manually add the directory to your $HOME/.bash_profile (or similar)
