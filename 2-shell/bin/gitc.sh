@@ -40,8 +40,9 @@ echo "  IS_OFFIRMO_DEV_ENV        = $IS_OFFIRMO_DEV_ENV"
 
 
 ## detect for special handling
-IS_FROM_OFFIRMO=0
+IS_FROM_WORK=0
 IS_FROM_PERSONAL=0
+IS_FROM_OFFIRMO=0
 case $POSSIBLE_USER_OR_ORG_LC in
 	*offirmo )
 		IS_FROM_OFFIRMO=1
@@ -59,6 +60,15 @@ case $POSSIBLE_USER_OR_ORG_LC in
 		if [ -n "$PERSONAL_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$PERSONAL_USERNAME__GITHUB" ]; then
 			IS_FROM_PERSONAL=1
 		fi
+		if [ -n "$COMPANY_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$COMPANY_USERNAME__GITHUB" ]; then
+			IS_FROM_WORK=1
+		fi
+		if [ -n "$COMPANY_ORG1__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$COMPANY_ORG1__GITHUB" ]; then
+			IS_FROM_WORK=1
+		fi
+		if [ -n "$COMPANY_ORG2__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$COMPANY_ORG2__GITHUB" ]; then
+			IS_FROM_WORK=1
+		fi
 		;;
 esac
 
@@ -74,22 +84,26 @@ if [ "$IS_FROM_PERSONAL" = 1 ]; then
 	echo "Personal username detected! Tweaking the URL..."
 	REPOSITORY_URL="git@$PERSONAL_USERNAME__GITHUB.github.com:$POSSIBLE_USER_OR_ORG_LC/$LAST_URL_SEGMENT"
 fi
+## anything else is "pro"
+
 
 ## structure the target directory for better FS organization
-if [ -n "$COMPANY_DOMAIN" ]; then
-	if [ "$IS_FROM_OFFIRMO" = 1 ] || [ "$IS_FROM_PERSONAL" = 1 ]; then
-		## let's clearly separate
-		PARENT_DIR=$PARENT_DIR/x-external
-	fi
-	if [ "$IS_FROM_PERSONAL" = 1 ]; then
-		## recognized in some jurisdictions
-		PARENT_DIR=$PARENT_DIR/private
-	fi
+if [ "$IS_FROM_WORK" = 1 ]; then
+  ## work gets top level, no extra dir
+  _DO_NOTHING=1
+elif [ "$IS_FROM_PERSONAL" = 1 ]; then
+  ## let's clearly separate
+  ## recognized in some jurisdictions
+  PARENT_DIR=$PARENT_DIR/private
+else
+  ## let's clearly separate:
+  PARENT_DIR=$PARENT_DIR/x-external
 fi
 if [ "$IS_FROM_OFFIRMO" = 1 ]; then
-	## further grouping
-	PARENT_DIR=$PARENT_DIR/offirmo-x
+  ## Offirmo has several orgs, let's group them
+  PARENT_DIR=$PARENT_DIR/off
 fi
+
 ## grouping by org or user
 PARENT_DIR=$PARENT_DIR/$POSSIBLE_USER_OR_ORG_LC
 

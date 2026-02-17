@@ -52,6 +52,9 @@ else
 		echo ''
 		echo '#export COMPANY="foo"'
 		echo '#export COMPANY_DOMAIN="$COMPANY.com"'
+		echo '#export COMPANY_USERNAME__GITHUB="xxx-$COMPANY"'
+		echo '#export COMPANY_ORG1__GITHUB="$COMPANY"'
+		echo '#export COMPANY_ORG2__GITHUB="$COMPANY-alt"'
 		echo ''
 	} >> ~/.profile
 fi

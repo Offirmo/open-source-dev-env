@@ -80,12 +80,13 @@ curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/gith
 
 ## We now have git, we can download this repo and launch scripts locally:
 echo "* checking out ODE repo ▶️"
-mkdir -p ~/work/src/off
-pushd ~/work/src/off > /dev/null
+CLONE_DIR=~/work/src/x-external/off/offirmo
+mkdir -p $CLONE_DIR
+pushd $CLONE_DIR > /dev/null
 ODE_INSTALL_DIR=open-source-dev-env
 if [[ ! -d $ODE_INSTALL_DIR ]]; then
     git clone --recursive git@github.com:Offirmo/open-source-dev-env.git
-    echo "source ~/work/src/off/open-source-dev-env/2-shell/bin/load_shellrc.sh" >> ~/.bashrc
+    echo "source $CLONE_DIR/$ODE_INSTALL_DIR/2-shell/bin/load_shellrc.sh" >> ~/.bashrc
 else
     cd $ODE_INSTALL_DIR
     git fetch
@@ -94,8 +95,8 @@ fi
 popd > /dev/null
 
 echo "* ODE repo cloned, please execute the provisioning scripts locally:"
-ls -l ~/work/src/off/open-source-dev-env/1-provisioning/common/
-ls -l ~/work/src/off/open-source-dev-env/1-provisioning/macos/
+ls -l $CLONE_DIR/$ODE_INSTALL_DIR/1-provisioning/common/
+ls -l $CLONE_DIR/$ODE_INSTALL_DIR/1-provisioning/macos/
 
 #############################################################
 echo "* …all done ✅"

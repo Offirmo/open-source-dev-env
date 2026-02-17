@@ -14,8 +14,8 @@ backup:
 * https://earthly.dev/blog/vscode-git/
   * https://github.com/adamgordonbell/vs-code-styles/tree/main
 
-ln -s "$HOME/work/src/off/open-source-dev-env/3-settings/3-tools/vscode/linked/settings.json"    "$HOME/Library/Application Support/Code/User/settings.json"
-ln -s "$HOME/work/src/off/open-source-dev-env/3-settings/3-tools/vscode/linked/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
+ln -s "$HOME/work/src/x-external/off/offirmo/open-source-dev-env/3-settings/3-tools/vscode/linked/settings.json"    "$HOME/Library/Application Support/Code/User/settings.json"
+ln -s "$HOME/work/src/x-external/off/offirmo/open-source-dev-env/3-settings/3-tools/vscode/linked/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
 
 
 

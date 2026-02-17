@@ -57,33 +57,33 @@ Then install git: either:
 ### 100 = base install post-bootstrap, from local
 
 ```bash
-bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--100ensure--settings.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/macos/user--100ensure--settings.sh
 ```
 
 ### 200 = ordinary most necessary tools
 
 ```bash
-bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--200ensure--installed--daily-life-utils.sh
-bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--201ensure--installed--fonts.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/macos/user--200ensure--installed--daily-life-utils.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/macos/user--201ensure--installed--fonts.sh
 ```
 
 ### 300 = dev env
 
 ```bash
-bash ~/work/src/off/open-source-dev-env/1-provisioning/common/user--300ensure--installed--dev-env--common.sh
-bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--301ensure--installed--dev-env--tools.sh
-bash ~/work/src/off/open-source-dev-env/1-provisioning/common/user--310ensure--installed--dev-env--js.sh
-bash ~/work/src/off/open-source-dev-env/1-provisioning/common/user--399ensure--cloned--common_offirmo_repos.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/common/user--300ensure--installed--dev-env--common.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/macos/user--301ensure--installed--dev-env--tools.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/common/user--310ensure--installed--dev-env--js.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/common/user--399ensure--cloned--common_offirmo_repos.sh
 ```
 
 ### 400 = creator
 ```bash
-bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--400ensure--installed--tools.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/macos/user--400ensure--installed--tools.sh
 ```
 
 ### 900 = gaming
 ```bash
-bash ~/work/src/off/open-source-dev-env/1-provisioning/macos/user--900ensure--installed--gaming.sh
+bash ~/work/src/x-external/off/offirmo/open-source-dev-env/1-provisioning/macos/user--900ensure--installed--gaming.sh
 ```
 
 ### Ubuntu

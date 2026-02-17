@@ -24,7 +24,7 @@ alias hwrat='cd ~/work/src/off/hello-world-react-app-typescript; git--offirmo.sh
 alias hwet='cd ~/work/src/off/hello-world-express-typescript; git--offirmo.sh'
 alias hweta1='cd ~/work/src/off/hello-world-express-typescript-advanced-1; git--offirmo.sh'
 alias mbo='cd ~/work/src/off/minisite-bookmarks-ghpages; nvm use; git--offirmo.sh'
-alias ode='cd ~/work/src/off/open-source-dev-env; nvm use; git--offirmo.sh'
+alias ode='cd ~/work/src/x-external/off/offirmo/open-source-dev-env; nvm use; git--offirmo.sh'
 alias ogi='cd ~/work/src/off/offirmo.github.io; nvm use; git--offirmo.sh; tabset --color "#a4d4dd" --badge offirmo.net'
 
 

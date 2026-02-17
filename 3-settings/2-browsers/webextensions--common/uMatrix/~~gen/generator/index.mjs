@@ -1,5 +1,5 @@
 /*
-~/work/src/off/open-source-dev-env/3-settings/2-browsers/webextensions--common/uMatrix/~~gen/generator/index.mjs
+~/work/src/x-external/off/offirmo/open-source-dev-env/3-settings/2-browsers/webextensions--common/uMatrix/~~gen/generator/index.mjs
  */
 import * as fs from 'node:fs'
 

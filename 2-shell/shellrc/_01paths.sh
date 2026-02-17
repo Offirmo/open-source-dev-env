@@ -1,11 +1,12 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_01paths.sh] hello!"
+[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_01paths.sh] hello! XXX"
 
 #####################
-## our own stuff
-## 🥲🥲🥲 HACK that we add before and after for the :xyz: test below to work ()
-PATH="$PATH:~/work/bin"
-PATH="~/work/src/off/open-source-dev-env/2-shell/bin:$PATH"
+## INIT
+## so that the :xyz: test below to work ()
+#echo "initial PATH= $PATH"
+## ODE stuff is very specific, order shouldn't matter
+PATH="~/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/bin:$PATH"
 
 pathDoesntContain() {
 	case $PATH in
@@ -25,14 +26,30 @@ pathDoesntContain() {
 ## references
 ## https://linux.slashdot.org/story/23/12/24/221229/a-proposed-change-for-fedora-40-unify-usrbin-with-usrsbin
 ## https://news.ycombinator.com/item?id=31336396
+## https://unix.stackexchange.com/questions/11544/what-is-the-difference-between-opt-and-usr-local
 
-## in reverse order of importance
-pathDoesntContain "~/.local/bin"    && export PATH="~/.local/bin:$PATH"
-pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"
-pathDoesntContain "/usr/local/sbin" && export PATH="/usr/local/sbin:$PATH"
-pathDoesntContain "/usr/bin"        && export PATH="/usr/bin:$PATH"
-pathDoesntContain "/usr/sbin"       && export PATH="/usr/sbin:$PATH"
+## original Operating system
+## (we may want to override them)
 pathDoesntContain "/bin"            && export PATH="/bin:$PATH"
 pathDoesntContain "/sbin"           && export PATH="/sbin:$PATH"
 
-## debug echo "\"$PATH\".split(\":\")"
+## packages independent of the OS but ~standardized,
+## ex. Macports https://guide.macports.org/#installing.shell
+pathDoesntContain "/opt/local/bin"  && export PATH="/opt/local/bin:$PATH"
+pathDoesntContain "/opt/local/sbin" && export PATH="/opt/local/sbin:$PATH"
+
+## self, in-house maintained software
+pathDoesntContain "/usr/bin"        && export PATH="/usr/bin:$PATH"
+pathDoesntContain "/usr/sbin"       && export PATH="/usr/sbin:$PATH"
+pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"
+pathDoesntContain "/usr/local/sbin" && export PATH="/usr/local/sbin:$PATH"
+
+## ??
+pathDoesntContain "~/.local/bin"    && export PATH="~/.local/bin:$PATH"
+
+## ODE stuff
+pathDoesntContain "~/work/bin"    && export PATH="~/work/bin:$PATH"
+
+
+## debug
+#echo "final PATH= $PATH"

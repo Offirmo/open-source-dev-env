@@ -45,6 +45,9 @@ else
 fi
 git config --global core.excludesfile ~/.gitignore
 
+## "This default branch name will change to "main" in Git 3.0"
+git config --global init.defaultBranch main
+
 ## from https://github.com/dandavison/delta/blob/master/README.md
 git config --global core.pager "delta --syntax-theme='Solarized (light)'"
 git config --global interactive.diffFilter "delta --color-only"
