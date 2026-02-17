@@ -14,7 +14,9 @@ alias mdt='cd ~/work/src/x-external/off/my.dev.to; git--offirmo.sh'
 alias ogi='cd ~/work/src/x-external/off/offirmo.github.io; nvm use; git--offirmo.sh; tabset --color "#a4d4dd" --badge offirmo.net'
 alias wiki='cd ~/work/src/x-external/off/wiki.wiki; git--offirmo.sh'
 
-OFFIRMO_MONOREPO_ROOT=~/work/src/__doc/off/offirmo-monorepo/stack--current/;
-alias mono2='cd $OFFIRMO_MONOREPO_ROOT; git--offirmo.sh; nvm install; tabset --badge "mono2022" --color "#FF4136"'
+OFFIRMO_MONOREPO_ROOT=~/work/src/x-external/off/offirmo/offirmo-monorepo;
+alias mono=' cd $OFFIRMO_MONOREPO_ROOT; git--offirmo.sh; nvm install; tabset --badge "mono2022" --color "#FF4136"'
+alias mono1='cd $OFFIRMO_MONOREPO_ROOT/stack--current; git--offirmo.sh; nvm install; tabset --badge "mono1" --color "#FF4136"'
+alias mono3='cd $OFFIRMO_MONOREPO_ROOT/stack--web3; git--offirmo.sh; nvm install; tabset --badge "mono3" --color "#FF4136"'
 
-[ -d "$OFFIRMO_MONOREPO_ROOT/0-meta/bin" ] && source_bash_files_from_dir "$OFFIRMO_MONOREPO_ROOT/0-meta/bin"
+[ -d "$OFFIRMO_MONOREPO_ROOT/stack--current/0-meta/bin" ] && source_bash_files_from_dir "$OFFIRMO_MONOREPO_ROOT/stack--current/0-meta/bin"
