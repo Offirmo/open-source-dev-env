@@ -27,6 +27,6 @@ source_bash_files_from_dir() {
 	#esac
 }
 
-source_bash_files_from_dir "$HOME/work/src/off/open-source-dev-env/2-shell/shellrc"
+#source_bash_files_from_dir "$HOME/work/src/off/open-source-dev-env/2-shell/shellrc"
 source_bash_files_from_dir "$HOME/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/shellrc"
 source_bash_files_from_dir "$HOME/work/bin/shellrc"
