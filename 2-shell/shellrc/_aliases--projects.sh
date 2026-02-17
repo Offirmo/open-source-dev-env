@@ -14,4 +14,7 @@ alias mdt='cd ~/work/src/x-external/off/my.dev.to; git--offirmo.sh'
 alias ogi='cd ~/work/src/x-external/off/offirmo.github.io; nvm use; git--offirmo.sh; tabset --color "#a4d4dd" --badge offirmo.net'
 alias wiki='cd ~/work/src/x-external/off/wiki.wiki; git--offirmo.sh'
 
-[ -d "$HOME/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/0-meta/bin" ] && source_bash_files_from_dir "$HOME/work/src/x-external/off/offirmo/offirmo-monorepo/stack--current/0-meta/bin"
+OFFIRMO_MONOREPO_ROOT=~/work/src/__doc/off/offirmo-monorepo/stack--current/;
+alias mono2='cd $OFFIRMO_MONOREPO_ROOT; git--offirmo.sh; nvm install; tabset --badge "mono2022" --color "#FF4136"'
+
+[ -d "$OFFIRMO_MONOREPO_ROOT/0-meta/bin" ] && source_bash_files_from_dir "$OFFIRMO_MONOREPO_ROOT/0-meta/bin"
