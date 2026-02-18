@@ -80,7 +80,7 @@ curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/gith
 
 ## We now have git, we can download this repo and launch scripts locally:
 echo "* checking out ODE repo ▶️"
-CLONE_DIR=~/work/src/x-external/off/offirmo
+CLONE_DIR=$HOME/work/src/x-external/off/offirmo
 mkdir -p $CLONE_DIR
 pushd $CLONE_DIR > /dev/null
 ODE_INSTALL_DIR=open-source-dev-env
