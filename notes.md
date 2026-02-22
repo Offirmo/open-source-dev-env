@@ -51,3 +51,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 which -a pnpm
 realpath $(which pnpm)
+
+
+TODO https://specifications.freedesktop.org/basedir/latest/
