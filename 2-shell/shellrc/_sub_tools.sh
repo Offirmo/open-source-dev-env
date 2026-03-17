@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_sub_tools.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_sub_tools.sh] hello!"
 
 
 ############ TOOL -- iTerm ############
@@ -80,6 +80,15 @@ if command -v brew &> /dev/null; then
 	esac
 fi
 
+############ DEV ENV -- Generic ############
+## mise
+if [ -f "${HOME}/.local/bin/mise" ]; then
+	echo "  * enabling mise shims…"
+	if [ -d "${HOME}/.local/share/mise/shims" ]; then
+		export PATH="$PATH:~/.local/share/mise/shims"
+	fi
+	eval "$(mise activate bash --shims)"
+fi
 
 
 ############ DEV ENV -- ECMASCRIPT ############
@@ -89,7 +98,6 @@ fi
 if [[ -n "$NVM_DIR" ]]; then
 	echo "  * enabling nvm… already enabled"
 else
-	## TODO FIX
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	if [ -d "$NVM_DIR" ]; then
 		echo "  * enabling nvm… (\$NVM_DIR = $NVM_DIR)"
@@ -153,10 +161,10 @@ fi
 ## avn (auto nvm use on changing dirs)
 ## (copied from what is set on install)
 ## Note: as of 2024/03 it's not working
-if [ -s "${HOME}/.avn/bin/avn.sh" ]; then
-	echo "  * enabling avn…"
-	source "${HOME}/.avn/bin/avn.sh"
-fi
+#if [ -s "${HOME}/.avn/bin/avn.sh" ]; then
+#	echo "  * enabling avn…"
+#	source "${HOME}/.avn/bin/avn.sh"
+#fi
 
 ## yarn
 if command -v yarn &> /dev/null; then
@@ -188,6 +196,12 @@ if [ -d "${HOME}/.deno" ]; then
 	if [ $SHELL = "/bin/bash" ]; then
 		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"  # This loads nvm bash_completion
 	fi
+fi
+
+## bun
+if [ -d "${HOME}/.bun/bin" ]; then
+	echo "  * enabling bun…"
+	export PATH="$PATH:~/.bun/bin"
 fi
 
 

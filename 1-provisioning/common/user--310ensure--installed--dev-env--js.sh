@@ -39,6 +39,9 @@ nvm alias default 'lts/*'
 echo "* nvm installed ✅"
 
 
+npm install --global corepack iterm2-tab-set yarn @ast-grep/cli && corepack enable
+echo "* basic global pkgs installed ✅"
+
 
 ############ npm ############
 npm config set init-author-email  offirmo.net@gmail.com

@@ -22,7 +22,7 @@ Check that bootstrap will work with:
 
 First, set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/>)
 1. `cat /etc/shells` <-- check if /bin/bash is present:
-2. `echo $SHELL , $0 , $BASH` <-- check current shell
+2. `echo $SHELL , $0 , $BASH` or `dscl . -read /Users/$USER UserShell` <-- check current shell
 3. `chsh -s /bin/bash` <-- switch if needed
 4. IF NEEDED `chsh -s /bin/zsh` (switch back)```
 
@@ -42,17 +42,20 @@ Then install git: either:
 #export COMPANY="foo"
 #export COMPANY_DOMAIN="$COMPANY.com"
 ```
-4. Keys:
-   1. IF WANTED copy your keys from previous machine here
-   2. Set `export PERSONAL_USERNAME__GITHUB=Xyz`
-   3. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
-   4. if new, add the new keys to github
-      * go here: https://github.com/settings/keys
-      * `cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy`
-      * `cat ~/.ssh/id_ed25519_xyz.pub | pbcopy`
-   5. test it: `ssh -T git@offirmo.github.com`
-   6. DELETE SSH KEYS FROM THE DISK/USB KEY!
-4. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash`
+### Keys:
+1. (optional) IF WANTED copy your keys from previous machine here
+1. (optional) Set `export PERSONAL_USERNAME__GITHUB=Xyz`
+1. create keys `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
+1. if new, add the new keys to github
+  * go here: https://github.com/settings/keys
+  * `cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy`
+  * `cat ~/.ssh/id_ed25519.pub | pbcopy`
+   * `cat ~/.ssh/id_ed25519_xyz.pub | pbcopy`
+1. test it: `ssh -T git@offirmo.github.com` `ssh -T git@github.com`
+1. (if used) DELETE SSH KEYS FROM THE DISK/USB KEY!
+1. brew needs some sudo, install it manually `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+  * may need to restart shell
+1. Important `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash`
 
 ### 100 = base install post-bootstrap, from local
 

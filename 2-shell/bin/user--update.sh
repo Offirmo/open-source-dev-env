@@ -79,7 +79,8 @@ if [[ -n $DETECTED_NVM_DIR ]]; then
 	echo ""
 	echo "******* \`nvm\` detected, updating… *******"
 	## 1) update nvm
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+	## (no profile update, we do it ourselves https://github.com/nvm-sh/nvm?tab=readme-ov-file#additional-notes )
+	PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash'
 	## 2) (re)load it
 	. "${DETECTED_NVM_DIR:-}/nvm.sh"
 	## 3) install latest lts

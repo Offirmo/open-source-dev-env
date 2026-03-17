@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_01paths.sh] hello! XXX"
+[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_01paths.sh] hello! XXX"
 
 #####################
 ## INIT
@@ -44,7 +44,7 @@ pathDoesntContain "/usr/sbin"       && export PATH="/usr/sbin:$PATH"
 pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"
 pathDoesntContain "/usr/local/sbin" && export PATH="/usr/local/sbin:$PATH"
 
-## ??
+## Seen in some installer (ex. CodeRabbit CLI, Lume...)
 pathDoesntContain "~/.local/bin"    && export PATH="~/.local/bin:$PATH"
 
 ## ODE stuff

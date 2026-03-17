@@ -42,7 +42,7 @@ else
 	{
 		echo '## user-wide profile for sh(1)'
 		echo '## may also be sourced by bash(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.profile] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.profile] hello!"'
 		echo ''
 		echo ''
 		echo '## https://consoledonottrack.com/ https://turborepo.com/docs/telemetry#how-do-i-opt-out'
@@ -116,7 +116,7 @@ else
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi  ## uncomment this to troubleshoot'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zshenv] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.zshenv] hello!"'
 		echo ''
 	} >> ~/.zshenv
 fi
@@ -126,7 +126,7 @@ else
 	echo "* creating a runtime config file: ~/.zprofile ▶️"
 	{
 		echo '## user-wide profile for zsh(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zprofile] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.zprofile] hello!"'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo 'if [ -f ~/.profile ]; then . ~/.profile; fi'
@@ -139,7 +139,7 @@ else
 	echo "* creating a runtime config file: ~/.zshrc ▶️"
 	{
 		echo '## user-wide runtime configuration for zsh(1)'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.zshrc] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.zshrc] hello!"'
 		echo ''
 	} >> ~/.zshrc
 fi

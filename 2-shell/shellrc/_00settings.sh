@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_00settings.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_00settings.sh] hello!"
 
 ## Add this to your profile ONLY IF OFFIRMO
 ## - enable dedicated special ssh key

@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_aliases--tools.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_aliases--tools.sh] hello!"
 
 ## standard Ubuntu "some more ls aliases"
 ## should work on any unix-like
@@ -49,7 +49,7 @@ alias tpx='rm -rf node_modules/ .npm npm-debug.log package-lock.json yarn.lock y
 ## node
 alias kng='killall node yarn tsc esbuild webpack ngrok phantomjs flow grunt gulp'
 # for bolt to work properly, it has to be installed globally via yarn
-alias onn='npm install --global corepack iterm2-tab-set yalc @ast-grep/cli && corepack enable && yarn global add bolt'
+alias onn='npm install --global corepack iterm2-tab-set yarn yalc @ast-grep/cli && corepack enable && yarn global add bolt'
 # 2025/07 switching to corepack
 #alias onn='npm install --global iterm2-tab-set yalc pnpm yarn && yarn global add bolt'
 # 2024/02 avn no longer work avn avn-nvm

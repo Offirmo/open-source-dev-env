@@ -5,7 +5,7 @@
 echo "#########################"
 echo "# provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2024"
+echo "# revision = circa 2026"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -32,7 +32,8 @@ echo "This a demo script doing nothing!"
 echo "- USER                      = `echo $USER`"
 echo "- COMPANY                   = `echo $COMPANY`"
 echo "- COMPANY_DOMAIN            = `echo $COMPANY_DOMAIN`"
-echo "- PERSONAL_USERNAME__GITHUB = `echo PERSONAL_USERNAME__GITHUB`"
+echo "- COMPANY_USERNAME__GITHUB  = `echo $COMPANY_USERNAME__GITHUB`"
+echo "- PERSONAL_USERNAME__GITHUB = `echo $PERSONAL_USERNAME__GITHUB`"
 
 #############################################################
 echo "* …all done ✅"

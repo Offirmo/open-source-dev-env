@@ -34,15 +34,18 @@ fi
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
-brew install --cask sizeup keepassx xnviewmp
+brew install --cask sizeup xnviewmp
 
-# acrobat has its own updater but it runs permanently in the background and I don't trust it
-brew install --cask adobe-acrobat-reader
+## acrobat has its own updater but it runs permanently in the background and I don't trust it
+## (to review. less and less useful + install crap)
+#brew install --cask adobe-acrobat-reader
 
 brew install --cask grandperspective
 
 ## https://meetingbar.app/
-brew install meetingbar
+if [ -n "$COMPANY" ]; then
+	brew install meetingbar
+fi
 
 ## quick look plugins
 ## https://github.com/sindresorhus/quick-look-plugins

@@ -33,6 +33,8 @@ echo "******* installing base apps through brew…"
 ## Nooo this horror corrupts repos!
 #brew install git-lfs
 
+brew install --cask warp
+
 brew install --cask iterm2
 # prepare shell integrations, cf. https://iterm2.com/documentation-shell-integration.html
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
@@ -48,12 +50,12 @@ brew install git-cola git-delta rsync
 
 brew install --cask lepton
 
-# TODO decide which one
-brew install --cask responsively
+## TODO decide which one
+#brew install --cask responsively
 #brew install --cask polypane # polypane is great but paid
 
-# frequently updates, better with brew
-brew install --cask pgadmin4
+## frequently updates, better with brew
+#brew install --cask pgadmin4
 
 ## recently switched to bruno, free and no cloud https://github.com/usebruno/bruno
 #brew install --cask insomnia
