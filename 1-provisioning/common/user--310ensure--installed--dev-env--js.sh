@@ -28,6 +28,7 @@ echo "* starting…"
 
 
 ############ Node ############
+## XXX TODO review!
 ## NVM
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 echo "* (re)installing nvm…"
@@ -37,6 +38,10 @@ source ~/.nvm/nvm.sh
 nvm install 'lts/*'
 nvm alias default 'lts/*'
 echo "* nvm installed ✅"
+
+
+# TODO
+#mise use -g node@24
 
 
 npm install --global corepack iterm2-tab-set yarn @ast-grep/cli && corepack enable

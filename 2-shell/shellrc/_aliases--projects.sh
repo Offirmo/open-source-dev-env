@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_aliases--projects.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/_aliases--projects.sh] hello!"
 
 export OFFIRMO_ROOT=${OFFIRMO_ROOT:-"$HOME/work/src/x-external/off"};
 #echo "OFFIRMO_ROOT : $OFFIRMO_ROOT"

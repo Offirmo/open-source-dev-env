@@ -57,10 +57,10 @@ else
 	brew install wget
 fi
 
+## critically needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
 if command -v jq > /dev/null; then
 	echo "* jq is already installed ✅"
 else
-	## needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
 	echo "* installing jq ▶️"
 	brew install jq
 fi

@@ -8,6 +8,7 @@ See also:
 
 2024-11-18 20:25
 
+
 ## Test
 
 Check that bootstrap will work with:
@@ -15,6 +16,7 @@ Check that bootstrap will work with:
 1. if Ubuntu: `sudo apt-get install curl`
 2. user mode: `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | bash`
 3. admin mode: `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | sudo bash`
+
 
 ## Install
 
@@ -147,6 +149,13 @@ npm adduser
 ```
 
 
+## Compound
+
+```
+brew list --installed-on-request
+port installed requested
+```
+
 
 ## Notes
 
@@ -158,6 +167,7 @@ fi
 ```
 
 Also TODO compatibility with non-interactive shells, need no output
+
 
 ### Useful unicode chars ’☑☐✓❌
 

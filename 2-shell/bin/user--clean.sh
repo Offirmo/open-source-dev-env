@@ -1,7 +1,7 @@
 #! /bin/bash
 
 ############ cleanups ############
-echo "* […open-source-dev-env/…/user--clean.sh] hello!"
+echo "* […ode/…/user--clean.sh] hello!"
 
 ############ Global package managers ############
 

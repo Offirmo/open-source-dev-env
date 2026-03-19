@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_sub_tools.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/_sub_tools.sh] hello!"
 
 
 ############ TOOL -- iTerm ############
@@ -29,18 +29,18 @@ if [ $ITERM_SESSION_ID ]; then
 	case "$SHELL" in
 		"/bin/bash")
 			if [ ! -f ~/.iterm2_shell_integration.bash ]; then
-				echo "  * downloading iTerm2 integration… (bash)"
+				echo "$(date +%H:%M:%S)   ↳ downloading iTerm2 integration… (bash)"
 				curl https://iterm2.com/shell_integration/bash --location --output ~/.iterm2_shell_integration.bash
 			fi
-			echo "  * enabling iTerm2 integration… (bash)"
+			echo "$(date +%H:%M:%S)   ↳ enabling iTerm2 integration… (bash)"
 			source ~/.iterm2_shell_integration.bash
 			;;
 		"/bin/zsh")
 			if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
-				echo "  * downloading iTerm2 integration… (zsh)"
+				echo "$(date +%H:%M:%S)   ↳ downloading iTerm2 integration… (zsh)"
 				curl https://iterm2.com/shell_integration/zsh --location --output ~/.iterm2_shell_integration.zsh
 			fi
-			echo "  * enabling iTerm2 integration… (zsh)"
+			echo "$(date +%H:%M:%S)   ↳ enabling iTerm2 integration… (zsh)"
 			source ~/.iterm2_shell_integration.zsh
 			;;
 	esac
@@ -56,16 +56,18 @@ fi
 ############ PKG MANAGER -- Homebrew ############
 ## critical to even access "brew"
 if command -v brew &> /dev/null; then
-	echo "  * enabling brew… (from $(which brew))"
+	echo "$(date +%H:%M:%S)   ↳ enabling brew… (from $(which brew))"
 	eval "$(brew shellenv)"
+	## TODO needed?
+	#export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 else
 	# brew is not even available, try to locate it in known locations:
 	if [ -f "/opt/homebrew/bin/brew" ]; then
-		echo "  * enabling brew… (from /opt/homebrew/bin/brew)"
+		echo "$(date +%H:%M:%S)   ↳ enabling brew… (from /opt/homebrew/bin/brew)"
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	fi
 	if [ -f "/usr/local/bin/brew" ]; then
-		echo "  * enabling brew… (from /usr/local/bin/brew)"
+		echo "$(date +%H:%M:%S)   ↳ enabling brew… (from /usr/local/bin/brew)"
 		eval "$(/usr/local/bin/brew shellenv)"
 	fi
 fi
@@ -80,14 +82,16 @@ if command -v brew &> /dev/null; then
 	esac
 fi
 
+
 ############ DEV ENV -- Generic ############
 ## mise
 if [ -f "${HOME}/.local/bin/mise" ]; then
-	echo "  * enabling mise shims…"
+	echo "$(date +%H:%M:%S)   ↳ enabling mise…"
 	if [ -d "${HOME}/.local/share/mise/shims" ]; then
-		export PATH="$PATH:~/.local/share/mise/shims"
+		export PATH="~/.local/share/mise/shims:$PATH"
 	fi
 	eval "$(mise activate bash --shims)"
+	# from profile: eval "$(/Users/xxx/.local/bin/mise activate bash)"
 fi
 
 
@@ -96,20 +100,18 @@ fi
 ## (copied from what is set on install)
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 if [[ -n "$NVM_DIR" ]]; then
-	echo "  * enabling nvm… already enabled"
+	echo "$(date +%H:%M:%S)   ↳ enabling nvm… already enabled"
 else
 	export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 	if [ -d "$NVM_DIR" ]; then
-		echo "  * enabling nvm… (\$NVM_DIR = $NVM_DIR)"
+		echo "$(date +%H:%M:%S)   ↳ enabling nvm… (\$NVM_DIR = $NVM_DIR)"
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-		if [ $SHELL = "/bin/bash" ]; then
+		if [ "$SHELL" = "/bin/bash" ]; then
 			[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 		fi
 	fi
 fi
 if command -v nvm_find_up &> /dev/null; then
-	echo "    * enabling cdnvm…"
-
 	## This command must be RESILIENT to not break starting shells
 	cdnvm() {
 		command cd "$@" || return $?
@@ -154,8 +156,9 @@ if command -v nvm_find_up &> /dev/null; then
 		fi
 	}
 
-	alias cd='cdnvm'
-	cdnvm "$PWD" || exit
+	#echo "$(date +%H:%M:%S)     ↳ enabling cdnvm…"
+	#alias cd='cdnvm'
+	#cdnvm "$PWD" || exit
 fi
 
 ## avn (auto nvm use on changing dirs)
@@ -169,10 +172,10 @@ fi
 ## yarn
 if command -v yarn &> /dev/null; then
 	if [[ $(yarn -v) = 1.* ]]; then
-		echo "  * enabling yarn v1…"
+		echo "$(date +%H:%M:%S)   ↳ enabling yarn v1…"
 		export PATH="$PATH:$(yarn global bin)"
 	else
-		echo "  * enabling yarn v2+… ???"
+		echo "$(date +%H:%M:%S)   ↳ enabling yarn v2+… ???"
 	fi
 else
 	## yarn is not available
@@ -191,18 +194,20 @@ fi
 ## . "/Users/xyz/.deno/env"
 ## source /Users/xyz/.local/share/bash-completion/completions/deno.bash
 if [ -d "${HOME}/.deno" ]; then
-	echo "  * enabling deno…"
+	echo "$(date +%H:%M:%S)   ↳ enabling deno…"
 	[ -s "${HOME}/.deno/env" ] && \. "${HOME}/.deno/env"
-	if [ $SHELL = "/bin/bash" ]; then
-		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"  # This loads nvm bash_completion
+	if [ "$SHELL" = "/bin/bash" ]; then
+		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"
 	fi
 fi
 
 ## bun
 if [ -d "${HOME}/.bun/bin" ]; then
-	echo "  * enabling bun…"
-	export PATH="$PATH:~/.bun/bin"
+	echo "$(date +%H:%M:%S)   ↳ enabling bun…"
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH="$PATH:$BUN_INSTALL/bin"
 fi
+
 
 
 #flyctl was installed successfully to /Users/.../.fly/bin/flyctl
@@ -210,7 +215,7 @@ fi
 #  export FLYCTL_INSTALL="/Users/xxx/.fly"
 #  export PATH="$FLYCTL_INSTALL/bin:$PATH"
 if [ -d "${HOME}/.fly/" ]; then
-	echo "  * enabling flyctl…"
+	echo "$(date +%H:%M:%S)   ↳ enabling flyctl…"
 	export PATH="$PATH:~/.fly/bin"
 fi
 
@@ -229,12 +234,12 @@ export PIP_REQUIRE_VIRTUALENV=true
 ## (note: PATH setup is in sibling file paths.sh)
 ## TODO REVIEW (long time not used)
 if [ -d "${HOME}/.rvm/bin" ]; then
-	#echo "  * enabling rvm…"
+	echo "$(date +%H:%M:%S)   ↳ enabling rvm…"
 	# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 	export PATH="$PATH:~/.rvm/bin"
 fi
 if [ -s "${HOME}/.rvm/scripts/rvm" ]; then
-	echo "  * enabling rvm…"
+	echo "$(date +%H:%M:%S)   ↳ enabling rvm…"
 	source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
@@ -260,8 +265,8 @@ fi
 
 ############ DEV ENV -- Rust ############
 ## taken from the install logs
-if [ -d "${HOME}/.cargo/env" ]; then
-	echo "  * enabling cargo (Rust)…"
+if [ -f "${HOME}/.cargo/env" ]; then
+	echo "$(date +%H:%M:%S)   ↳ enabling cargo (Rust)…"
 	source "$HOME/.cargo/env"
 fi
 
@@ -270,6 +275,6 @@ fi
 ## if installed in user only (non standard)
 ## https://www.docker.com/products/docker-desktop/
 if [ -d "${HOME}/.docker/bin" ]; then
-	echo "  * enabling docker…"
+	echo "$(date +%H:%M:%S)   ↳ enabling docker…"
 	export PATH="$PATH:~/.docker/bin"
 fi

@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/_01paths.sh] hello! XXX"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/_01paths.sh] hello!"
 
 #####################
 ## INIT

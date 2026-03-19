@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2024"
+echo "# revision = circa 2026"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -42,7 +42,7 @@ else
 	{
 		echo '## user-wide profile for sh(1)'
 		echo '## may also be sourced by bash(1)'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.profile] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.profile] hello!"'
 		echo ''
 		echo ''
 		echo '## https://consoledonottrack.com/ https://turborepo.com/docs/telemetry#how-do-i-opt-out'
@@ -74,9 +74,9 @@ else
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi'
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bash_profile] hello!"'
-		echo '[ -n "$PS1" ]              && echo "  * shell is interactive"'
-		echo 'shopt -q login_shell       && echo "  * shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
+		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!"'
+		echo '[ -n "$PS1" ]              && echo          "           ↳ shell is interactive"'
+		echo 'shopt -q login_shell       && echo          "           ↳ shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
 		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
 		echo ''
@@ -97,7 +97,7 @@ else
 		echo '## in theory it’s non-login only but in practice everyone expect it to be always sourced'
 		echo '## https://apple.stackexchange.com/a/13019/214344'
 		echo ''
-		echo '[ "$VERBOSE__RC" == true ] && echo "* [~/.bashrc] hello!"'
+		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!"'
 		echo ''
 	} >> ~/.bashrc
 fi
@@ -116,7 +116,7 @@ else
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
 		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi  ## uncomment this to troubleshoot'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.zshenv] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshenv] hello!"'
 		echo ''
 	} >> ~/.zshenv
 fi
@@ -126,7 +126,7 @@ else
 	echo "* creating a runtime config file: ~/.zprofile ▶️"
 	{
 		echo '## user-wide profile for zsh(1)'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.zprofile] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zprofile] hello!"'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo 'if [ -f ~/.profile ]; then . ~/.profile; fi'
@@ -139,7 +139,7 @@ else
 	echo "* creating a runtime config file: ~/.zshrc ▶️"
 	{
 		echo '## user-wide runtime configuration for zsh(1)'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "* [~/.zshrc] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshrc] hello!"'
 		echo ''
 	} >> ~/.zshrc
 fi

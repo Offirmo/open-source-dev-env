@@ -2,7 +2,7 @@
 ## REM : this file is meant to conveniently complement ~/.bashrc / ~/.zshrc
 ##       It is supposed to be called in login and non-login shells, after the main rc
 ##       Usage: source this file (shebang is ignored)
-[[ "$VERBOSE__RC" == true ]] && echo "* […open-source-dev-env/…/load_shellrc.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/load_shellrc.sh] hello!"
 
 ## useful function
 source_bash_files_from_dir() {

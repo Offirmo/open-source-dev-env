@@ -2,7 +2,7 @@
 
 ############ updates ############
 echo ""
-echo "* […open-source-dev-env/…/user--update.sh] hello!"
+echo "* […ode/…/user--update.sh] hello!"
 echo "************ Updating your system… ************"
 
 

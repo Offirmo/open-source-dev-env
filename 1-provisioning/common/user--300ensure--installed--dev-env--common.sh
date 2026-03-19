@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2024"
+echo "# revision = circa 2026"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -31,37 +31,71 @@ echo "* starting…"
 ## TODO review https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 ## TODO review https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage
 
+############ global gitignore
+## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
+if [ -f ~/.config/git/ignore ]; then
+	echo "* ~/.config/git/ignore already exists ✅"
+else
+	echo "* creating ~/.config/git/ignore ▶️"
+	touch ~/.config/git/ignore
+fi
+if ! grep -qF '.DS_Store' ~/.config/git/ignore; then
+  echo '.DS_Store' >> ~/.config/git/ignore
+fi
+
+############ global gitattributes
+if [ -f ~/.config/git/attributes ]; then
+	echo "* ~/.config/git/attributes already exists ✅"
+else
+	echo "* creating ~/.config/git/attributes ▶️"
+	touch ~/.config/git/attributes
+fi
+
+############ global config
 git config --global push.default simple
 git config --global color.ui "auto"
 
-## global gitignore
-## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
-if [ -f ~/.gitignore ]; then
-	echo "* ~/.gitignore already exists ✅"
-else
-	echo "* creating ~/.gitignore ▶️"
-	echo "" > ~/.gitignore
-	echo ".DS_Store" >> ~/.gitignore
-fi
-git config --global core.excludesfile ~/.gitignore
+
 
 ## "This default branch name will change to "main" in Git 3.0"
+## but macOs is lagging
 git config --global init.defaultBranch main
 
-## from https://github.com/dandavison/delta/blob/master/README.md
-git config --global core.pager "delta --syntax-theme='Solarized (light)'"
-git config --global interactive.diffFilter "delta --color-only"
-git config --global delta.navigate true
-git config --global delta.merge "conflictstyle = diff3"
-git config --global delta.side-by-side true
-git config --global diff.colorMoved "default"
 ## from https://stackoverflow.com/questions/18308535/automatic-prune-with-git-fetch-or-pull/40842589#40842589
 # Enable automatic pruning for all your repos
 git config --global fetch.prune true
 git config --global fetch.pruneTags true
 # Enable if you use a git GUI
 git config --global gui.pruneDuringFetch true
+
+####### git-delta
+## from https://github.com/dandavison/delta/blob/master/README.md
+## also https://dandavison.github.io/delta/configuration.html
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+#	syntax-theme = gruvbox-dark
+#git config --global delta.navigate true
+#git config --global delta.dark true  # or `delta.light true`, or omit for auto-detection
+git config --global merge.conflictStyle zdiff3
+## additions
+#it config --global core.pager "delta --syntax-theme='Solarized (light)'"
+git config --global delta.side-by-side true
+git config --global delta.line-numbers true
+
+####### mergiraf
+## https://mergiraf.org/usage.html#registration-as-a-git-merge-driver
+git config --global merge.mergiraf.name mergiraf
+git config --global merge.mergiraf.driver 'mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L'
+if ! grep -qF '* merge=mergiraf' ~/.config/git/attributes; then
+  echo '* merge=mergiraf' >> ~/.config/git/attributes
+fi
+## TODO evaluate https://github.com/jelmer/awesome-merge-drivers?tab=readme-ov-file#all-in-one-merge-drivers
+
+## ??
+#git config --global diff.colorMoved "default"
+
 echo "* git global config set ✅"
+
 
 ############ Offirmo shared scripts ############
 

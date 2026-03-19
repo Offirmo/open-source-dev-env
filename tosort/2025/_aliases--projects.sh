@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[ "$VERBOSE__RC" == true ] && echo "* […open-source-dev-env/…/_aliases--projects.sh] hello!"
+[ "$VERBOSE__RC" == true ] && echo "* […ode/…/_aliases--projects.sh] hello!"
 
 [ -d "$HOME/work/src/off/offirmo-monorepo/stack--current/0-meta/bin" ] && source_bash_files_from_dir "$HOME/work/src/off/offirmo-monorepo/stack--current/0-meta/bin"
 

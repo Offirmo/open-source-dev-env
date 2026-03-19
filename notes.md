@@ -54,3 +54,13 @@ realpath $(which pnpm)
 
 
 TODO https://specifications.freedesktop.org/basedir/latest/
+
+
+```bash
+TARGET_FILE=~/.bash_profile
+LINE="export BASH_SILENCE_DEPRECATION_WARNING=1"
+if ! grep -q "${LINE}" "${TARGET_FILE}"; then
+	echo "Silencing Bash deprecation warning... ($TARGET_FILE)"
+	echo "$LINE" >> $TARGET_FILE
+fi
+```

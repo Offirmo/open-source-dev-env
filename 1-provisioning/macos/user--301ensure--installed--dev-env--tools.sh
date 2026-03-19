@@ -44,9 +44,12 @@ curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.
 ## which is redundant with update --greedy but not harmful
 brew install --cask jetbrains-toolbox visual-studio-code
 
+
+brew install git-cola git-delta mergiraf
 brew install --cask kdiff3
 
-brew install git-cola git-delta rsync
+brew install ast-grep jq yq
+#rsync
 
 brew install --cask lepton
 
