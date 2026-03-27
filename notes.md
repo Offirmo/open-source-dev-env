@@ -14,6 +14,13 @@ uname -a
 set -euo pipefail;
 ```
 
+```
+-n   String is non-empty
+-z   String is empty
+-d   Path exists and is a directory
+-f   Path exists and is a file
+-e   Path exists (any type)
+```
 
 https://github.com/rodyager/RWTS-PDFwriter
 

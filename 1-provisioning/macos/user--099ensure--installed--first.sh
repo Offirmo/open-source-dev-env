@@ -35,6 +35,7 @@ git -v > /dev/null
 
 
 ## install brew, prerequisite for nearly any other tool
+## TODO check https://github.com/justrach/nanobrew
 if command -v brew > /dev/null; then
 	echo "* brew is already installed ✅"
 else

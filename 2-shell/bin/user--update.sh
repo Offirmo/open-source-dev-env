@@ -74,7 +74,7 @@ fi
 DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 #echo "DETECTED_NVM_DIR = $DETECTED_NVM_DIR"
 #echo "DETECTED_NVM_DIR- = ${DETECTED_NVM_DIR:-}"
-if [[ -n $DETECTED_NVM_DIR ]]; then
+if [[ -d "$DETECTED_NVM_DIR" ]]; then
 	## https://github.com/nvm-sh/nvm
 	echo ""
 	echo "******* \`nvm\` detected, updating… *******"

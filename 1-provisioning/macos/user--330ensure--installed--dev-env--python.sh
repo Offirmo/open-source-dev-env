@@ -29,6 +29,7 @@ echo "* starting…"
 
 ## https://docs.brew.sh/Homebrew-and-Python
 
+# TODO https://docs.astral.sh/uv/
 
 ## https://pypi.org/project/pipx/
 #brew install pipx

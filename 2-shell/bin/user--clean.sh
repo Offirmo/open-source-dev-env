@@ -34,7 +34,7 @@ fi
 ## nvm
 ## last reviewed: 2025/06
 DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-if [[ -n $DETECTED_NVM_DIR ]]; then
+if [[ -d $DETECTED_NVM_DIR ]]; then
 	## https://github.com/nvm-sh/nvm
 	echo ""
 	echo "******* \`nvm\` detected, listing… *******"
@@ -52,6 +52,7 @@ if command -v yarn > /dev/null; then
 fi
 if command -v npm > /dev/null; then
 	npm cache clean --force
+	pnpm store prune
 fi
 if command -v pnpm > /dev/null; then
 	## https://pnpm.io/uninstall#removing-the-global-content-addressable-store
