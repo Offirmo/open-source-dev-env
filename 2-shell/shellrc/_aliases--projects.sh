@@ -22,7 +22,7 @@ export OFFIRMO_MONOREPO_ROOT=${OFFIRMO_MONOREPO_ROOT:-"$OFFIRMO_ROOT/offirmo/off
 
 alias mono='  cd $OFFIRMO_MONOREPO_ROOT;                git--offirmo.sh;              tabset --badge "mono"  --color "#FF4136"'
 alias mono1=' cd $OFFIRMO_MONOREPO_ROOT/stack--current; git--offirmo.sh; nvm install; tabset --badge "mono1" --color "#FF4136"'
-alias mono1s='cd $OFFIRMO_MONOREPO_ROOT/stack--current/0-meta/build-tools/monorepo; git--offirmo.sh; nvm install'
+alias mono1s='cd $OFFIRMO_MONOREPO_ROOT/stack--current/0-meta/X-to-reorganize/monorepo/; git--offirmo.sh; nvm install'
 alias mono3=' cd $OFFIRMO_MONOREPO_ROOT/stack--web3;    git--offirmo.sh;              tabset --badge "mono3" --color "#FF4136"'
 
-[ -d "$OFFIRMO_MONOREPO_ROOT/stack--current/0-meta/bin" ] && source_bash_files_from_dir "$OFFIRMO_MONOREPO_ROOT/stack--current/0-meta/bin"
+[ -d "$OFFIRMO_MONOREPO_ROOT/stack--current/.monorepo/bin" ] && source_bash_files_from_dir "$OFFIRMO_MONOREPO_ROOT/stack--current/.monorepo/bin"
