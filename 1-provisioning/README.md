@@ -60,3 +60,8 @@ if [ -n "$PS1" ]; then export VERBOSE__RC=true fi
 
 [[ "$VERBOSE__RC" == true ]] && echo "* [/etc/bashrc] hello!"
 ```
+
+Ruby ref. https://github.com/github-linguist/linguist?tab=readme-ov-file#dependencies
+```
+There are known problems with the macOS/Xcode supplied version of Ruby that causes problems installing some of the dependencies. Accordingly, we highly recommend you install a version of Ruby using Homebrew, rbenv, rvm, ruby-build, asdf or other packaging system
+```

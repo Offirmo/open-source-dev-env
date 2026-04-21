@@ -71,3 +71,19 @@ if ! grep -q "${LINE}" "${TARGET_FILE}"; then
 	echo "$LINE" >> $TARGET_FILE
 fi
 ```
+
+TOCHECK https://github.com/jellydn/vscode-fzf-picker#prerequisites
+
+
+```gpg.conf
+no-random-seed-file
+require-secmem
+use-agent
+no-tty
+```
+
+```gpg-agent.conf
+default-cache-ttl 604800
+max-cache-ttl 604800
+pinentry-program /opt/homebrew/bin/pinentry-mac
+```

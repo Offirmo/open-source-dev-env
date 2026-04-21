@@ -278,3 +278,12 @@ if [ -d "${HOME}/.docker/bin" ]; then
 	echo "$(date +%H:%M:%S)   ↳ enabling docker…"
 	export PATH="$PATH:~/.docker/bin"
 fi
+
+
+## > To use additional binary components installed via gcloud, add the "/opt/homebrew/share/google-cloud-sdk/bin"
+## > directory to your PATH environment variable, e.g., (for Bash shell):
+## >    export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+if [ -d "/opt/homebrew/share/google-cloud-sdk/bin" ]; then
+	echo "$(date +%H:%M:%S)   ↳ enabling shared brew google-cloud-sdk…"
+	export PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
+fi

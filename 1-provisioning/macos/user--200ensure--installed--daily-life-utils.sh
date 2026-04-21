@@ -31,10 +31,17 @@ if ! command -v wget > /dev/null; then
 	echo "* brew is not installed or not loaded! ❌"
 fi
 
+## GNU version of some utils,
+## usually have more options than macOs bundled ones
+## ex. relative symlinks with `gln -sr TARGET NEW_SYMLINK`
+brew install coreutils
+
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
 ## TODO find alternative to sizeup which is intel
+
+
 brew install --cask xnviewmp
 
 ## acrobat has its own updater but it runs permanently in the background and I don't trust it
