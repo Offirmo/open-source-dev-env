@@ -30,9 +30,16 @@ echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
-## Nooo this horror corrupts repos!
-#brew install git-lfs
 
+
+####### CLIs
+brew install ast-grep jq yq
+#rsync
+brew install shellcheck
+
+
+
+###### terminal
 brew install --cask warp
 
 brew install --cask iterm2
@@ -40,17 +47,26 @@ brew install --cask iterm2
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 
+
+
+###### git
+## Nooo this horror corrupts repos!
+#brew install git-lfs
+## https://github.com/AGWA/git-crypt/
+brew install git-crypt
+brew install git-cola git-delta mergiraf
+
+
+
+
+####### IDE
 ## both those tools have their own update system
 ## which is redundant with update --greedy but not harmful
 brew install --cask jetbrains-toolbox visual-studio-code
 
 
-brew install git-cola git-delta mergiraf
+####### misc
 brew install --cask kdiff3
-
-brew install ast-grep jq yq
-#rsync
-
 brew install --cask lepton
 
 ## TODO decide which one
@@ -64,7 +80,6 @@ brew install --cask lepton
 #brew install --cask insomnia
 brew install bruno
 
-brew install shellcheck
 
 ## NO!
 ## Those apps should NOT be installed through brew, too "special"

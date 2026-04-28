@@ -76,23 +76,23 @@ DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || 
 #echo "DETECTED_NVM_DIR- = ${DETECTED_NVM_DIR:-}"
 if [[ -d "$DETECTED_NVM_DIR" ]]; then
 	## https://github.com/nvm-sh/nvm
-	echo ""
-	echo "******* \`nvm\` detected, updating… *******"
-	## 1) update nvm
-	## (no profile update, we do it ourselves https://github.com/nvm-sh/nvm?tab=readme-ov-file#additional-notes )
-	PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash'
-	## 2) (re)load it
-	. "${DETECTED_NVM_DIR:-}/nvm.sh"
-	## 3) install latest lts
-	set +e
-	nvm install 'lts/*'
-	NVM_RETURN=$?
-	set -e
-	echo "INSTALL RETURN $NVM_RETURN"
-	## 3b) install critical packages with this lts
-	## TODO review, avn doesn't work 2024/04
-	#npm install --global avn avn-nvm
-	#avn setup
+#	echo ""
+#	echo "******* \`nvm\` detected, updating… *******"
+#	## 1) update nvm
+#	## (no profile update, we do it ourselves https://github.com/nvm-sh/nvm?tab=readme-ov-file#additional-notes )
+#	PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash'
+#	## 2) (re)load it
+#	. "${DETECTED_NVM_DIR:-}/nvm.sh"
+#	## 3) install latest lts
+#	set +e
+#	nvm install 'lts/*'
+#	NVM_RETURN=$?
+#	set -e
+#	echo "INSTALL RETURN $NVM_RETURN"
+#	## 3b) install critical packages with this lts
+#	## TODO review, avn doesn't work 2024/04
+#	#npm install --global avn avn-nvm
+#	#avn setup
 fi
 
 

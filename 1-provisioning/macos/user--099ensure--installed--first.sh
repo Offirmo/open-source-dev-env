@@ -43,9 +43,9 @@ else
 	## XXX requires sudo, may need to be run manually
 	echo "* installing brew ▶️"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	## Make brew support multiple versions
-	brew tap homebrew/cask-versions
 fi
+## Make brew support multiple versions
+brew tap homebrew/cask-versions
 
 echo "* updating brew ▶️"
 brew update
@@ -86,12 +86,13 @@ mkdir -p $CLONE_DIR
 pushd $CLONE_DIR > /dev/null
 ODE_INSTALL_DIR=open-source-dev-env
 if [[ ! -d $ODE_INSTALL_DIR ]]; then
-    git clone --recursive git@github.com:Offirmo/open-source-dev-env.git
-    echo "source $CLONE_DIR/$ODE_INSTALL_DIR/2-shell/bin/load_shellrc.sh" >> ~/.bashrc
+	## using https to not require a ssh key
+	git clone --recursive https://github.com/Offirmo/open-source-dev-env.git
+	echo "source $CLONE_DIR/$ODE_INSTALL_DIR/2-shell/bin/load_shellrc.sh" >> ~/.bashrc
 else
-    cd $ODE_INSTALL_DIR
-    git fetch
-    git pull
+	cd $ODE_INSTALL_DIR
+	git fetch
+	git pull
 fi
 popd > /dev/null
 

@@ -2,12 +2,7 @@
 
 Bootstrap shell scripts for provisioning my personal dev box. Targeting Ubuntu or macOS.
 
-See also:
-* https://github.com/Offirmo-team/wiki/wiki/macOS
-* https://github.com/Offirmo-team/wiki/wiki/dev-env
-
-2024-11-18 20:25
-
+See also bit.ly/offirmo-bootstrap
 
 ## Test
 
@@ -22,29 +17,47 @@ Check that bootstrap will work with:
 
 ### macOS pre-req
 
-First, set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/>)
-1. `cat /etc/shells` <-- check if /bin/bash is present:
+brew doesn't work well multi-users, but it's still worth it https://brew.sh/
+1. create a `brew-user` macOs user with admin rights and switch to it
+1. install git:
+  * in a terminal, type `git` and accept everything asked
+1. bootstrap:
+```sh
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh | bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+## (may need to restart shell here)
+brew tap homebrew/cask-versions
+brew update
+```
+
+### current user pre-req
+
+Optional: set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/>)
+1. `cat /etc/shells` <-- check if /bin/bash is present (highly likely)
 2. `echo $SHELL , $0 , $BASH` or `dscl . -read /Users/$USER UserShell` <-- check current shell
 3. `chsh -s /bin/bash` <-- switch if needed
-4. IF NEEDED `chsh -s /bin/zsh` (switch back)```
+4. IF NEEDED switch back `chsh -s /bin/zsh`
 
 Then install git: either:
 - type `git` and accept everything asked
 - or/and `xcode-select --install`
 - or/and install xcode and launch it once (but takes time & a lot of disk space!)
 
+
 ### 000 = bootstrap
 
 1. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--000ensure--present--work_structure.sh | bash`
    1. then remove `src` from the spotlight search: "Spotlight privacy"
 2. `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh | bash`
-3. Settings: in `~/.profile`:
+3. Edit settings: in `~/.profile`:
 ```
 #export PERSONAL_USERNAME__GITHUB=Xyz
 #export COMPANY="foo"
 #export COMPANY_DOMAIN="$COMPANY.com"
 ```
-### Keys:
+
+### SSH Keys:
 1. (optional) IF WANTED copy your keys from previous machine here
 1. (optional) Set `export PERSONAL_USERNAME__GITHUB=Xyz`
 1. create keys `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--020ensure--present--ssh.sh | bash`
@@ -52,12 +65,17 @@ Then install git: either:
   * go here: https://github.com/settings/keys
   * `cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy`
   * `cat ~/.ssh/id_ed25519.pub | pbcopy`
-   * `cat ~/.ssh/id_ed25519_xyz.pub | pbcopy`
+  * `cat ~/.ssh/id_ed25519_xyz.pub | pbcopy`
 1. test it: `ssh -T git@offirmo.github.com` `ssh -T git@github.com`
 1. (if used) DELETE SSH KEYS FROM THE DISK/USB KEY!
-1. brew needs some sudo, install it manually `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  * may need to restart shell
-1. Important `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash`
+
+XXX
+
+1. (OPTIONAL if not shared between users) brew needs some sudo, install it manually `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+1. final:
+```sh
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash
+````
 
 ### 100 = base install post-bootstrap, from local
 
