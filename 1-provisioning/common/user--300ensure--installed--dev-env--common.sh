@@ -37,7 +37,8 @@ if [ -f ~/.config/git/ignore ]; then
 	echo "* ~/.config/git/ignore already exists ✅"
 else
 	echo "* creating ~/.config/git/ignore ▶️"
-	touch ~/.config/git/ignore
+	mkdir -p ~/.config/git/
+	touch    ~/.config/git/ignore
 fi
 if ! grep -qF '.DS_Store' ~/.config/git/ignore; then
   echo '.DS_Store' >> ~/.config/git/ignore
@@ -48,7 +49,8 @@ if [ -f ~/.config/git/attributes ]; then
 	echo "* ~/.config/git/attributes already exists ✅"
 else
 	echo "* creating ~/.config/git/attributes ▶️"
-	touch ~/.config/git/attributes
+	mkdir -p ~/.config/git/
+	touch    ~/.config/git/attributes
 fi
 
 ############ global config

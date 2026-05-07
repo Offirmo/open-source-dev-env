@@ -28,8 +28,24 @@ echo "* starting…"
 
 
 ############ Node ############
-## XXX TODO review!
-## NVM
+## Mise https://mise.jdx.dev/getting-started.html
+echo "* (re)installing mise…"
+if command -v brew > /dev/null; then
+	## brew (macOs)
+	## last reviewed: 2026/05
+	brew install mise
+elif command -v apt > /dev/null; then
+	## apt (Ubuntu)
+	## last reviewed: 2026/05
+	sudo install -dm 755 /etc/apt/keyrings
+	curl -fSs https://mise.en.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.asc 1> /dev/null
+	echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc] https://mise.en.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
+	sudo apt update -y
+	sudo apt install -y mise
+fi
+mise use -g node@24
+
+## NVM (LEGACY, FYI)
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 #echo "* (re)installing nvm…"
 # PROFILE=/dev/null  BC we load nvm ourselves in a more clever way, so don't want the install to touch .bashrc
@@ -39,9 +55,6 @@ echo "* starting…"
 #nvm alias default 'lts/*'
 #echo "* nvm installed ✅"
 
-
-# TODO
-#mise use -g node@24
 
 
 npm install --global corepack iterm2-tab-set yarn @ast-grep/cli && corepack enable

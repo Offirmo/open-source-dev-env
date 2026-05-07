@@ -55,16 +55,13 @@ fi
 
 
 ## apt (Ubuntu)
-## last reviewed: TODO!!!
-if command -v apt-get > /dev/null; then
+## last reviewed: 2026/05
+if command -v apt > /dev/null; then
 	echo ""
 	echo "******* Ubuntu's Advanced Packaging Tool detected, updating… *******"
 	## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
-	sudo apt-get update
-	sudo apt-get upgrade
-	## XXX deprecated
-	## also should go in "clean"
-	#curl -o- https://www.offirmo.net/open-source-dev-env/1-provisioning/ubuntu/superuser_cleanup.sh | sudo bash
+	sudo apt update
+	sudo apt upgrade
 fi
 
 
@@ -75,6 +72,8 @@ DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || 
 #echo "DETECTED_NVM_DIR = $DETECTED_NVM_DIR"
 #echo "DETECTED_NVM_DIR- = ${DETECTED_NVM_DIR:-}"
 if [[ -d "$DETECTED_NVM_DIR" ]]; then
+	echo "******* \`nvm\` dir detected BUT ignoring *******"
+
 	## https://github.com/nvm-sh/nvm
 #	echo ""
 #	echo "******* \`nvm\` detected, updating… *******"

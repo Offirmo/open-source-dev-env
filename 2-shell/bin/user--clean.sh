@@ -30,6 +30,27 @@ if command -v port > /dev/null; then
 fi
 
 
+## apt (Ubuntu)
+## last reviewed: 2026/05
+if command -v apt > /dev/null; then
+	echo ""
+	echo "******* apt detected, cleaning… *******"
+	## fix possible unmet dependencies
+	echo "  * \`install --fix-broken\`…"
+	sudo apt install --fix-broken
+	echo "  * \`autoclean\`…"
+	sudo apt -y autoclean
+	echo "  * \`clean\`…"
+	sudo apt -y clean
+	echo "  * \`autoremove --purge\`…"
+	sudo apt -y autoremove --purge
+	## Note: if caught in a loop, use
+	## sudo dpkg --purge
+	## https://askubuntu.com/questions/337456/boot-100-and-cant-purge
+fi
+
+
+
 ############ Dev Env -- node ############
 ## nvm
 ## last reviewed: 2025/06

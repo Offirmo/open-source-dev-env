@@ -8,13 +8,17 @@ See also bit.ly/offirmo-bootstrap
 
 Check that bootstrap will work with:
 
-1. if Ubuntu: `sudo apt-get install curl`
+1. if Ubuntu (no sudo if root on a container): `apt update -y && apt install -y sudo curl gpg`
 2. user mode: `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | bash`
 3. admin mode: `curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/0-prerequisites/hello.sh | sudo bash`
 
 
 ## Install
 
+### Ubuntu
+```
+apt-get install -y vim nano
+```
 ### macOS pre-req
 
 brew doesn't work well multi-users, but it's still worth it https://brew.sh/
@@ -34,14 +38,14 @@ brew update
 ### current user pre-req
 
 Optional: set bash as default: (cf. <https://www.cyberciti.biz/faq/change-default-shell-to-bash-on-macos-catalina/>)
+1. `echo $SHELL , $0 , $BASH` or `dscl . -read /Users/$USER UserShell` <-- check current shell
 1. `cat /etc/shells` <-- check if /bin/bash is present (highly likely)
-2. `echo $SHELL , $0 , $BASH` or `dscl . -read /Users/$USER UserShell` <-- check current shell
-3. `chsh -s /bin/bash` <-- switch if needed
-4. IF NEEDED switch back `chsh -s /bin/zsh`
+1. `chsh -s /bin/bash` <-- switch if needed
+1. IF NEEDED switch back `chsh -s /bin/zsh`
 
 Then install git: either:
 - type `git` and accept everything asked
-- or/and `xcode-select --install`
+- or/and `xcode-select --install` or `apt-get install -y git`
 - or/and install xcode and launch it once (but takes time & a lot of disk space!)
 
 

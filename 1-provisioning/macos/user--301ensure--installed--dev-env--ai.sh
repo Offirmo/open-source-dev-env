@@ -26,15 +26,29 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 ############################################################
 echo "* starting…"
 
+
+## OpenCode
+## https://opencode.ai/
+brew install anomalyco/tap/opencode
+
+
+## Mistral AI vibe
+## https://mistral.ai/products/vibe
+curl -LsSf https://mistral.ai/vibe/install.sh | bash
+
+
 ## Native installer: (macOS/Linux)
 curl -fsSL https://claude.ai/install.sh | bash
 #brew install --cask claude-code
 
+
 ## https://github.com/openai/codex
 brew install --cask codex
 
+
 ## https://agent-safehouse.dev/
 brew install eugene1g/safehouse/agent-safehouse
+
 
 ## Destructive Command Guard
 ## https://github.com/Dicklesworthstone/destructive_command_guard
