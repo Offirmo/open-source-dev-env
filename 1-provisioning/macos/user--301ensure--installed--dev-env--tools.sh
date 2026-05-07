@@ -67,6 +67,7 @@ brew install --cask jetbrains-toolbox visual-studio-code
 
 ####### misc
 brew install --cask kdiff3
+## TODO find alternative to lepton which is intel
 brew install --cask lepton
 
 ## TODO decide which one

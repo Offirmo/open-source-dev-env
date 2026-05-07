@@ -27,7 +27,7 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 echo "* starting ▶️"
 
 echo "******* installing base apps through brew…"
-if ! command -v wget > /dev/null; then
+if ! command -v brew > /dev/null; then
 	echo "* brew is not installed or not loaded! ❌"
 fi
 

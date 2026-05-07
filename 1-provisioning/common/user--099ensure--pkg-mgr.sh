@@ -38,6 +38,16 @@ git -v > /dev/null
 ############ Package manager ############
 if grep -qi "ubuntu" /etc/os-release; then
 	echo "Ubuntu, pkg manager is apt"
+
+	## ensure our machine has correct time
+	#sudo apt install -y  ntp
+
+	## basic tools
+	sudo apt install -y  vim nano
+
+	## for extensions
+	#sudo apt install -y  linux-headers-$(uname -r)
+	#sudo apt install -y dkms
 elif [[ "$(uname)" == "Darwin" ]]; then
 	## install brew, prerequisite for nearly any other tool
 	## TODO check https://github.com/justrach/nanobrew
@@ -88,9 +98,9 @@ if command -v jq > /dev/null; then
 else
 	echo "* installing jq ▶️"
 	if command -v brew > /dev/null; then
-		brew install jq
+		brew install jq yq
 	elif command -v apt > /dev/null; then
-		apt install -y jq
+		apt install -y jq yq
 	fi
 fi
 

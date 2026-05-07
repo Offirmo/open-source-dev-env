@@ -53,53 +53,41 @@ fi
 
 
 
-############ PKG MANAGER -- Homebrew ############
-## critical to even access "brew"
-case $PATH in
-	*:/homebrew/:*) return 1;;
-	*) export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";;
-esac
-
-## https://www.codejam.info/2021/11/homebrew-multi-user.html#the-good-dedicate-a-single-user-account-to-homebrew
-unalias brew 2>/dev/null
-BREW_USER=$(stat -f "%Su" $(which brew))
-export BREW_USER
-
-if command -v brew &> /dev/null; then
-	echo "$(date +%H:%M:%S)   ↳ enabling brew… (from $(which brew))"
-	eval "$(brew shellenv)"
-	## TODO needed?
-	#export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-	## enable brew autocomplete
-	case "$SHELL" in
-		"/bin/bash")
-			if [ -f $(brew --prefix)/etc/bash_completion ]; then
-				. $(brew --prefix)/etc/bash_completion
-			fi
-		;;
+if [[ "$(uname)" == "Darwin" ]]; then
+	############ PKG MANAGER -- Homebrew ############
+	## critical to even access "brew"
+	case $PATH in
+		*:/homebrew/:*) return 1;;
+		*) export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";
 	esac
+
+	## https://www.codejam.info/2021/11/homebrew-multi-user.html#the-good-dedicate-a-single-user-account-to-homebrew
+	unalias brew 2>/dev/null
+	BREW_USER=$(stat -f "%Su" $(which brew))
+	export BREW_USER
+
+	if command -v brew &> /dev/null; then
+		echo "$(date +%H:%M:%S)   ↳ enabling brew… (from $(which brew))"
+		eval "$(brew shellenv)"
+		## TODO needed?
+		#export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+		## enable brew autocomplete
+		case "$SHELL" in
+			"/bin/bash")
+				if [ -f $(brew --prefix)/etc/bash_completion ]; then
+					. $(brew --prefix)/etc/bash_completion
+				fi
+			;;
+		esac
+	fi
+
+	## brew multi-user, continued.
+	## alias only now to avoid a sudo prompt during shel init
+	## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
+	## suggestion from Claude:
+	brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
+	export -f brew
 fi
-
-## brew multi-user, continued.
-## alias only now to avoid a sudo prompt during shel init
-## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
-## suggestion from Claude:
-brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
-export -f brew
-
-
-#XXX TO CHECK
-#	# brew is not even available, try to locate it in known locations:
-#	if [ -f "/opt/homebrew/bin/brew" ]; then
-#		echo "$(date +%H:%M:%S)   ↳ enabling brew… (from /opt/homebrew/bin/brew)"
-#		eval "$(/opt/homebrew/bin/brew shellenv)"
-#	fi
-#	if [ -f "/usr/local/bin/brew" ]; then
-#		echo "$(date +%H:%M:%S)   ↳ enabling brew… (from /usr/local/bin/brew)"
-#		eval "$(/usr/local/bin/brew shellenv)"
-#	fi
-#fi
-
 
 
 ############ DEV ENV -- Generic ############

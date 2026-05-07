@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2024"
+echo "# revision = circa 2026"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -44,6 +44,7 @@ elif command -v apt > /dev/null; then
 	sudo apt install -y mise
 fi
 mise use -g node@24
+mise use -g npm:corepack@0.34.7
 
 ## NVM (LEGACY, FYI)
 ## https://github.com/nvm-sh/nvm#installing-and-updating

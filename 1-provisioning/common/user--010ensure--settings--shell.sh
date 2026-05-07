@@ -44,9 +44,7 @@ else
 		echo '## may also be sourced by bash(1)'
 		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.profile] hello!"'
 		echo ''
-		echo ''
-		echo '## https://consoledonottrack.com/ https://turborepo.com/docs/telemetry#how-do-i-opt-out'
-		echo 'export DO_NOT_TRACK=1'
+		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
 		echo ''
 		echo '#export PERSONAL_USERNAME__GITHUB=Foo'
 		echo ''
@@ -66,6 +64,7 @@ fi
 if [ -f ~/.bash_profile ]; then
 	echo "* ~/.bash_profile already exists ✅"
 else
+	## do NOT put anything not specific to login here
 	echo "* creating a runtime config file: ~/.bash_profile ▶️"
 	{
 		echo '## user-wide profile for bash(1)'
@@ -77,8 +76,6 @@ else
 		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!"'
 		echo '[ -n "$PS1" ]              && echo          "           ↳ shell is interactive"'
 		echo 'shopt -q login_shell       && echo          "           ↳ shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
-		echo ''
-		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo ''
@@ -98,6 +95,14 @@ else
 		echo '## https://apple.stackexchange.com/a/13019/214344'
 		echo ''
 		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!"'
+		echo ''
+		echo '## https://consoledonottrack.com/ https://turborepo.com/docs/telemetry#how-do-i-opt-out'
+		echo 'export DO_NOT_TRACK=1'
+		echo ''
+		echo '## safety, esp. Ubuntu (https://serverfault.com/a/500778)'
+		echo 'export LANG=en_US.UTF-8'
+		echo 'export LANGUAGE=en_US.UTF-8'
+		echo 'export export LC_ALL=en_US.UTF-8'
 		echo ''
 	} >> ~/.bashrc
 fi

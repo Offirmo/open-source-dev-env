@@ -35,7 +35,7 @@ echo "******* installing some fonts through brew…"
 ## programming
 ## https://www.programmingfonts.org/
 
-## Useful to enable it in non-JetBrains ex. terminal or git-cola
+## good, useful to enable it in non-JetBrains ex. terminal or git-cola
 brew install --cask font-jetbrains-mono
 
 ## excellent coding font, still better than JetBrains IMO
@@ -52,7 +52,8 @@ brew install --cask font-fira-sans-condensed
 brew install --cask font-fira-sans-extra-condensed
 
 ## design
-brew install --cask font-comic-neue
+# TODO review, causes problems when upgrade greedy
+#brew install --cask font-comic-neue
 
 
 #############################################################
