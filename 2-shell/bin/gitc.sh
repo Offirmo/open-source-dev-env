@@ -2,6 +2,7 @@
 
 ## Clone a git repo in the appropriate folder.
 ## clones can be with ssh or https:
+## - ssh REQUIRES a valid ssh key, https doesn't
 ## - https is not inherently worse than ssh https://stackoverflow.com/questions/11041729/git-clone-with-https-or-ssh-remote
 ## - GitHub gives an https link ex. https://github.com/Offirmo/offirmo-monorepo.git
 ## - bitbucket auths better with an SSH url

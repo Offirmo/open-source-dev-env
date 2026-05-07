@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2024"
+echo "# revision = circa 2026"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -26,7 +26,8 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 ############################################################
 echo "* starting ▶️"
 
-## install "Command Line Tools (CLT) for Xcode"
+## ensure git is installed
+## mainly for macOs, install "Command Line Tools (CLT) for Xcode")
 ## brings git and some dev tools (cf. https://apple.stackexchange.com/q/321164/214344)
 ## is a prerequisite for brew, has no prerequisites, should be first.
 ## This will trigger the install if needed:
@@ -34,28 +35,51 @@ git -v > /dev/null
 ## otherwise directly call "xcode-select --install"
 
 
-## install brew, prerequisite for nearly any other tool
-## TODO check https://github.com/justrach/nanobrew
-if command -v brew > /dev/null; then
-	echo "* brew is already installed ✅"
-else
-	## https://brew.sh/
-	## XXX requires sudo, may need to be run manually
-	echo "* installing brew ▶️"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-## Make brew support multiple versions
-brew tap homebrew/cask-versions
+############ Package manager ############
+if grep -qi "ubuntu" /etc/os-release; then
+	echo "Ubuntu, pkg manager is apt"
+elif [[ "$(uname)" == "Darwin" ]]; then
+	## install brew, prerequisite for nearly any other tool
+	## TODO check https://github.com/justrach/nanobrew
+	if command -v brew > /dev/null; then
+		echo "* brew is already installed ✅"
+	else
+		## https://brew.sh/
+		## XXX requires sudo, may need to be run manually
+		echo "* installing brew ▶️"
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	fi
 
-echo "* updating brew ▶️"
-brew update
+	## (XXX deprecated as of 2026) Make brew support multiple versions
+	#brew tap homebrew/cask-versions
+
+	echo "* updating brew ▶️"
+	brew update
+fi
 
 if command -v wget > /dev/null; then
 	echo "* wget is already installed ✅"
 else
 	## for compatibility
 	echo "* installing wget ▶️"
-	brew install wget
+	if command -v brew > /dev/null; then
+		brew install wget
+	elif command -v apt > /dev/null; then
+		apt install -y wget
+	fi
+fi
+
+## needed to verify signatures, ex. mise
+if command -v gpg > /dev/null; then
+	echo "* gpg is already installed ✅"
+else
+	## for compatibility
+	echo "* installing gpg ▶️"
+	if command -v brew > /dev/null; then
+		brew install gpg
+	elif command -v apt > /dev/null; then
+		apt install -y gpg
+	fi
 fi
 
 ## critically needed for ex. here https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
@@ -63,9 +87,13 @@ if command -v jq > /dev/null; then
 	echo "* jq is already installed ✅"
 else
 	echo "* installing jq ▶️"
-	brew install jq
+	if command -v brew > /dev/null; then
+		brew install jq
+	elif command -v apt > /dev/null; then
+		apt install -y jq
+	fi
 fi
-_
+
 ## now that jq was installed (above) we can auto-update GitHub's known host
 ## ref. https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
 echo "Adding/updating GitHub known hosts ▶️"
@@ -73,11 +101,12 @@ echo "Adding/updating GitHub known hosts ▶️"
 ssh-keygen -R github.com
 ## (re)add
 curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
-## TODO REVIEW this doesn't seem to fully work
+
 
 ## test if GitHub is connected
+## (2026 not needed if cloning with https instead of ssh)
 #ssh -T git@github.com || true
-# TODO FIXME the above line exits the script!
+
 
 ## We now have git, we can download this repo and launch scripts locally:
 echo "* checking out ODE repo ▶️"

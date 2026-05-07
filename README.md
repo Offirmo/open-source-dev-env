@@ -78,7 +78,7 @@ XXX
 1. (OPTIONAL if not shared between users) brew needs some sudo, install it manually `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 1. final:
 ```sh
-curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/macos/user--099ensure--installed--first.sh | bash
+curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--099ensure--pkg-mgr.sh | bash
 ````
 
 ### 100 = base install post-bootstrap, from local
