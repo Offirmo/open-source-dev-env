@@ -290,7 +290,6 @@ fi
 ############ TOOL -- docker ############
 ## if installed in user only (non standard)
 ## https://www.docker.com/products/docker-desktop/
-
 if [ -d "/Applications/Docker.app/Contents/Resources/bin" ]; then
 	echo "$(date +%H:%M:%S)   ↳ enabling docker… (Applications)"
 	export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
@@ -298,6 +297,7 @@ elif [ -d "${HOME}/.docker/bin" ]; then
 	echo "$(date +%H:%M:%S)   ↳ enabling docker… (~/.docker)"
 	export PATH="$PATH:~/.docker/bin"
 fi
+## TODO 1D completions https://docs.docker.com/engine/cli/completion/
 
 
 ## > To use additional binary components installed via gcloud, add the "/opt/homebrew/share/google-cloud-sdk/bin"

@@ -58,16 +58,16 @@ case $POSSIBLE_USER_OR_ORG_LC in
 		IS_FROM_OFFIRMO=1
 		;;
 	*)
-		if [ -n "$PERSONAL_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$PERSONAL_USERNAME__GITHUB" ]; then
+		if [ -n "$PERSONAL_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = $(echo "$PERSONAL_USERNAME__GITHUB" | tr '[:upper:]' '[:lower:]') ]; then
 			IS_FROM_PERSONAL=1
 		fi
-		if [ -n "$COMPANY_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$COMPANY_USERNAME__GITHUB" ]; then
+		if [ -n "$COMPANY_USERNAME__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = $(echo "$COMPANY_USERNAME__GITHUB" | tr '[:upper:]' '[:lower:]') ]; then
 			IS_FROM_WORK=1
 		fi
-		if [ -n "$COMPANY_ORG1__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$COMPANY_ORG1__GITHUB" ]; then
+		if [ -n "$COMPANY_ORG1__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = $(echo "$COMPANY_ORG1__GITHUB" | tr '[:upper:]' '[:lower:]') ]; then
 			IS_FROM_WORK=1
 		fi
-		if [ -n "$COMPANY_ORG2__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = "$COMPANY_ORG2__GITHUB" ]; then
+		if [ -n "$COMPANY_ORG2__GITHUB" ] && [ "$POSSIBLE_USER_OR_ORG_LC" = $(echo "$COMPANY_ORG2__GITHUB" | tr '[:upper:]' '[:lower:]') ]; then
 			IS_FROM_WORK=1
 		fi
 		;;

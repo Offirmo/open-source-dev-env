@@ -44,7 +44,7 @@ elif command -v apt > /dev/null; then
 	sudo apt install -y mise
 fi
 mise use -g node@24
-mise use -g npm:corepack@0.34.7
+mise use -g npm:corepack@0
 
 ## NVM (LEGACY, FYI)
 ## https://github.com/nvm-sh/nvm#installing-and-updating
