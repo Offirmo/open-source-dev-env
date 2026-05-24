@@ -82,6 +82,9 @@ brew install --cask lepton
 brew install bruno
 
 
+brew install gh
+gh config set -h github.com git_protocol https
+
 ## NO!
 ## Those apps should NOT be installed through brew, too "special"
 ## virtualbox dropbox docker
