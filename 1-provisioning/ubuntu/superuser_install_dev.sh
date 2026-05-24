@@ -49,6 +49,10 @@ sudo apt install -y  build-essential
 ## for node (dixit nvm)
 sudo apt install -y  libssl-dev
 
+## Claude Code sandboxing
+## https://code.claude.com/docs/en/sandboxing
+sudo apt-get install bubblewrap socat
+
 ## chrome
 ## https://www.google.fr/chrome/browser
 #sudo apt install -y  libappindicator1 libindicator7 libxss1 fonts-liberation libcurl3 xdg-utils
