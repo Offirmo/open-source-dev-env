@@ -1,0 +1,99 @@
+{
+	"permissions": {
+		"defaultMode": "auto",
+		"allow": [
+			"Bash(* --version)",
+			"Bash(cat *)",
+			"Bash(find *)",
+			"Bash(find:*)",
+			"Bash(git diff:*)",
+			"Bash(git log:*)",
+			"Bash(git status:*)",
+			"Bash(grep:*)",
+			"Bash(head:*)",
+			"Bash(jq *)",
+			"Bash(just --version)",
+			"Bash(just setup:*)",
+			"Bash(ls *)",
+			"Bash(ls:*)",
+			"Bash(mise --version)",
+			"Bash(mise doctor:*)",
+			"Bash(mise install:*)",
+			"Bash(mise where:*)",
+			"Bash(node -v)",
+			"Bash(pnpm *)",
+			"Bash(pnpm --version)",
+			"Bash(pnpm -v)",
+			"Bash(pnpm generate:*)",
+			"Bash(pnpm install:*)",
+			"Bash(pnpm ls:*)",
+			"Bash(pnpm run:*)",
+			"Bash(pnpm why:*)",
+			"Bash(yq *)",
+			"Skill(claude-md-management:revise-claude-md)",
+			"WebFetch(domain:registry.npmjs.org)",
+			"WebSearch"
+		],
+		"deny": ["Read(./.env*)", "Read(./**/*.pem)", "Read(./**/*.key)"]
+	},
+  "model": "opus[1m]",
+  "hooks": {
+	  "PostToolUse": [
+		  {
+			  "matcher": "Write|Edit|MultiEdit",
+			  "hooks": [
+				  {
+					  "type": "command",
+					  "command": ".agents/hooks/post-edit-formatter.sh",
+					  "timeout": 30000
+				  }
+			  ]
+		  }
+	  ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "posthog@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "coderabbit@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "code-review@claude-code-plugins": true,
+    "swift-lsp@claude-plugins-official": true,
+    "compound-knowledge@compound-knowledge-marketplace": true,
+    "compound-engineering@compound-engineering-plugin": true
+  },
+  "extraKnownMarketplaces": {
+    "compound-knowledge-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-knowledge-plugin"
+      }
+    },
+    "compound-engineering-plugin": {
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-engineering-plugin"
+      }
+    }
+  },
+  "fastMode": true,
+  "skipDangerousModePermissionPrompt": true
+}

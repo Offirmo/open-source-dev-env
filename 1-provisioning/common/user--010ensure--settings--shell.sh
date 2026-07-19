@@ -44,7 +44,11 @@ else
 		echo '## may also be sourced by bash(1)'
 		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.profile] hello!"'
 		echo ''
+		## macOs
 		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
+		## brew pre-6
+		echo 'export HOMEBREW_REQUIRE_TAP_TRUST=1'
+
 		echo ''
 		echo '#export PERSONAL_USERNAME__GITHUB=Foo'
 		echo ''

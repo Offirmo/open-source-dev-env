@@ -86,9 +86,10 @@ brew install gh
 gh config set -h github.com git_protocol https
 
 
-## https://github.com/semgrep/semgrep
+## https://github.com/semgrep/semgrep https://semgrep.dev/products/community-edition/
 ## TODO review
 brew install semgrep
+semgrep --config=auto
 
 
 ## NO!

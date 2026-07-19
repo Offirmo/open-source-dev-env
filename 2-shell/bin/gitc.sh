@@ -173,9 +173,12 @@ else
 
 		popd > /dev/null
 	else
-		## assuming we're in "big company" mode where we don't want to pull all the branches by default
+		## assume we're in "big company" mode where we don't want to pull all the branches by default
 		echo "cloned in single branch mode! If you want all branches: git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*"
 	fi
 fi
 
 popd > /dev/null
+
+echo "🥳"
+echo "cd ${PARENT_DIR}/${TARGET_DIR}"

@@ -262,20 +262,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 
 ############ DEV ENV -- JAVA ############
-## taken from???
-if [[ -f /usr/libexec/java_home ]]; then
-	if ! /usr/libexec/java_home 1>/dev/null 2>&1; then
-		## most likely "The operation couldn’t be completed. Unable to locate a Java Runtime."
-		## do nothing
-		DO_NOTHING=1
-	else
-		export JAVA_HOME=$(/usr/libexec/java_home)
-	fi
+if command -v jenv &> /dev/null; then
+	eval "$(jenv init -)"
 fi
-
-## jenv???
-##export PATH="~/.jenv/bin:$PATH"
-##eval "$(jenv init -)"
 
 
 
