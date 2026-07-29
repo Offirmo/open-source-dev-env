@@ -34,9 +34,9 @@ brew install jenv
 
 # JDKs as casks — they register under /Library/Java/JavaVirtualMachines
 ## most used as of 2026
-brew install --cask temurin@21
+brew install temurin@21
 ## LTS as of 2026
-brew install --cask temurin@25
+brew install temurin@25
 # add others as needed: temurin@17, temurin@26, etc.
 
 eval "$(jenv init -)"

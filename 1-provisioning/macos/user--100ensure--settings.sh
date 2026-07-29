@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -50,6 +50,9 @@ if ! grep -q "${LINE}" "${TARGET_FILE}"; then
 	echo "Silencing Bash deprecation warning... ($TARGET_FILE)"
 	echo "$LINE" >> $TARGET_FILE
 fi
+
+
+## TODO 1D https://www.defaults-write.com/
 
 #############################################################
 echo "* …all done ✅"

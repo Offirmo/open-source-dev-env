@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -24,6 +24,32 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 #echo "  - PATH          = $PATH"
 #env
 ############################################################
+## shared
+ensure_file_has_line() {
+  local file="$1"
+  local line="$2"
+  local mode="${3:-append}"  # append | prepend
+
+  [[ ! -f "$file" ]] && printf '%s\n' "$line" > "$file" && return 0
+
+  file_has_line "$file" "$line" && return 0
+
+  if [[ "$mode" == "prepend" ]]; then
+    local tmp
+    tmp=$(mktemp)
+    { printf '%s\n' "$line"; cat "$file"; } > "$tmp" && mv "$tmp" "$file"
+  else
+    printf '\n%s\n' "$line" >> "$file"
+  fi
+}
+
+file_has_line() {
+  local file="$1"
+  local line="$2"
+  grep -qxF "$line" "$file"
+}
+
+############################################################
 echo "* starting ▶️"
 
 ## good reads
@@ -41,14 +67,13 @@ else
 	echo "* creating a runtime config file: ~/.profile ▶️"
 	{
 		echo '## user-wide profile for sh(1)'
-		echo '## may also be sourced by bash(1)'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.profile] hello!"'
+		echo '## may (should) also be sourced by other shells'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)   ↳ [~/.profile] hello!"'
 		echo ''
 		## macOs
 		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
 		## brew pre-6
 		echo 'export HOMEBREW_REQUIRE_TAP_TRUST=1'
-
 		echo ''
 		echo '#export PERSONAL_USERNAME__GITHUB=Foo'
 		echo ''
@@ -60,7 +85,10 @@ else
 		echo ''
 	} >> ~/.profile
 fi
-
+## ensure some critical lines are always present
+ensure_file_has_line ~/.profile '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)   ↳ [~/.profile] hello!"' prepend
+ensure_file_has_line ~/.profile 'export BASH_SILENCE_DEPRECATION_WARNING=1' append
+ensure_file_has_line ~/.profile 'export HOMEBREW_REQUIRE_TAP_TRUST=1' append
 
 ####### bash #######
 ## interactive login    : /etc/profile -> ~/.bash_profile OR ~/.bash_login OR ~/.profile
@@ -89,6 +117,9 @@ else
 		echo ''
 	} >> ~/.bash_profile
 fi
+## ensure some critical lines are always present
+ensure_file_has_line ~/.bash_profile '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!"' prepend
+
 if [ -f ~/.bashrc ]; then
 	echo "* ~/.bashrc already exists ✅"
 else
@@ -110,6 +141,8 @@ else
 		echo ''
 	} >> ~/.bashrc
 fi
+## ensure some critical lines are always present
+ensure_file_has_line ~/.bashrc '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!"' prepend
 
 
 ####### zsh #######
@@ -120,7 +153,7 @@ else
 	echo "* creating a runtime config file: ~/.zshenv ▶️"
 	{
 		echo '## user-wide configuration for zsh(1)'
-		echo '## this config file should be the first user-level file to be sourced for zsh (after /etc/zshenv and /etc/zprofile)'
+		echo '## this config file should be the first user-level file to be sourced for zsh (after global /etc/zshenv and /etc/zprofile)'
 		echo '## https://zsh.sourceforge.io/Guide/zshguide02.html'
 		echo ''
 		echo '## for troubleshooting, uncomment as wished:'
@@ -129,6 +162,9 @@ else
 		echo ''
 	} >> ~/.zshenv
 fi
+## ensure some critical lines are always present
+ensure_file_has_line ~/.zshenv '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshenv] hello!"' prepend
+
 if [ -f ~/.zprofile ]; then
 	echo "* ~/.zprofile already exists ✅"
 else
@@ -142,6 +178,9 @@ else
 		echo ''
 	} >> ~/.zprofile
 fi
+## ensure some critical lines are always present
+ensure_file_has_line ~/.zprofile '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zprofile] hello!"' prepend
+
 if [ -f ~/.zshrc ]; then
 	echo "* ~/.zshrc already exists ✅"
 else
@@ -152,6 +191,8 @@ else
 		echo ''
 	} >> ~/.zshrc
 fi
+## ensure some critical lines are always present
+ensure_file_has_line ~/.zshrc '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshrc] hello!"' prepend
 
 
 ####### bin #######

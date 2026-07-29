@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -38,6 +38,8 @@ git -v > /dev/null
 ############ Package manager ############
 if grep -qi "ubuntu" /etc/os-release; then
 	echo "Ubuntu, pkg manager is apt"
+
+	## TODO brew can be used on linux, review!
 
 	## ensure our machine has correct time
 	#sudo apt install -y  ntp
@@ -128,6 +130,7 @@ if [[ ! -d $ODE_INSTALL_DIR ]]; then
 	## using https to not require a ssh key
 	git clone --recursive https://github.com/Offirmo/open-source-dev-env.git
 	echo "source $CLONE_DIR/$ODE_INSTALL_DIR/2-shell/bin/load_shellrc.sh" >> ~/.bashrc
+	echo "source $CLONE_DIR/$ODE_INSTALL_DIR/2-shell/bin/load_shellrc.sh" >> ~/.zshrc
 else
 	cd $ODE_INSTALL_DIR
 	git fetch

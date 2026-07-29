@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -25,6 +25,7 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 #env
 ############################################################
 echo "* starting…"
+
 
 
 ############ Git ############
@@ -107,20 +108,20 @@ echo "* git global config set ✅"
 echo "* downloading some stuff…"
 
 ## solarized color scheme
-## TODO REVIEW
+## Useful for iTerm whose solarized mode is not great (grey dim colors)
 ## https://github.com/altercation/solarized
 ## https://ethanschoonover.com/solarized
-#pushd ~/work/install > /dev/null
-#SOLARIZED_INSTALL_DIR=solarized
-#if [[ ! -d ~/work/install/$SOLARIZED_INSTALL_DIR ]]; then
-#    git clone --recursive https://github.com/altercation/solarized.git $SOLARIZED_INSTALL_DIR
-#else
-#    cd $SOLARIZED_INSTALL_DIR
-#    git fetch
-#    git pull
-#fi
-#popd > /dev/null
-#echo "* solarized color scheme downloaded and up-to-date ✅"
+pushd ~/work/install > /dev/null
+SOLARIZED_INSTALL_DIR=solarized
+if [[ ! -d ~/work/install/$SOLARIZED_INSTALL_DIR ]]; then
+    git clone --recursive https://github.com/altercation/solarized.git $SOLARIZED_INSTALL_DIR
+else
+    cd $SOLARIZED_INSTALL_DIR
+    git fetch
+    git pull
+fi
+popd > /dev/null
+echo "* solarized color scheme downloaded and up-to-date ✅"
 
 ## jetbrains solarized color scheme (better than the above)
 ## https://github.com/jkaving/intellij-colors-solarized

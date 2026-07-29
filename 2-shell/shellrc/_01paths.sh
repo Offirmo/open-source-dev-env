@@ -1,12 +1,12 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/_01paths.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_01paths.sh] hello!"
 
 #####################
 ## INIT
 ## so that the :xyz: test below to work ()
 #echo "initial PATH= $PATH"
 ## ODE stuff is very specific, order shouldn't matter
-PATH="~/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/bin:$PATH"
+PATH="${HOME}/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/bin:$PATH"
 
 pathDoesntContain() {
 	case $PATH in
@@ -45,10 +45,10 @@ pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"
 pathDoesntContain "/usr/local/sbin" && export PATH="/usr/local/sbin:$PATH"
 
 ## Seen in some installer (ex. CodeRabbit CLI, Lume...)
-pathDoesntContain "~/.local/bin"    && export PATH="~/.local/bin:$PATH"
+pathDoesntContain "/.local/bin"     && export PATH="${HOME}/.local/bin:$PATH"
 
 ## ODE stuff
-pathDoesntContain "~/work/bin"    && export PATH="~/work/bin:$PATH"
+pathDoesntContain "/work/bin"       && export PATH="${HOME}/work/bin:$PATH"
 
 
 ## debug

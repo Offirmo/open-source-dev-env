@@ -2,7 +2,15 @@
 
 Bootstrap shell scripts for provisioning my personal dev box. Targeting Ubuntu or macOS.
 
-See also bit.ly/offirmo-bootstrap
+See also bit.ly/offirmo--bootstrap
+
+## Concepts
+
+* A .shellrc is a hidden configuration file that automatically executes commands,
+	customizes your prompt, defines aliases, and sets environment variables
+	every time you open a new terminal session.
+	The specific file name depends on your current shell
+	(e.g., ~/.bashrc for Bash or ~/.zshrc for Zsh).
 
 ## Test
 
@@ -22,7 +30,7 @@ apt-get install -y vim nano
 ### macOS pre-req
 
 brew doesn't work well multi-users, but it's still worth it https://brew.sh/
-1. create a `brew-user` macOs user with admin rights and switch to it
+1. create a `brew-user` macOS user with admin rights and switch to it
 1. install git:
   * in a terminal, type `git` and accept everything asked
 1. bootstrap:
@@ -31,7 +39,6 @@ curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-
 curl -o- https://raw.githubusercontent.com/Offirmo/open-source-dev-env/master/1-provisioning/common/user--010ensure--settings--shell.sh | bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ## (may need to restart shell here)
-brew tap homebrew/cask-versions
 brew update
 ```
 

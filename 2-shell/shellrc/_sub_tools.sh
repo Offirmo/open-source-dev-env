@@ -1,6 +1,8 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/_sub_tools.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_sub_tools.sh] hello!"
 
+## IMPORTANT:
+## zsh doesn't like ~ in the PATH, use ${HOME} everywhere
 
 ############ TOOL -- iTerm ############
 ## https://iterm2.com/documentation-shell-integration.html
@@ -29,18 +31,18 @@ if [ $ITERM_SESSION_ID ]; then
 	case "$SHELL" in
 		"/bin/bash")
 			if [ ! -f ~/.iterm2_shell_integration.bash ]; then
-				echo "$(date +%H:%M:%S)   ↳ downloading iTerm2 integration… (bash)"
+				echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (bash)"
 				curl https://iterm2.com/shell_integration/bash --location --output ~/.iterm2_shell_integration.bash
 			fi
-			echo "$(date +%H:%M:%S)   ↳ enabling iTerm2 integration… (bash)"
+			echo "$(date +%H:%M:%S)       ↳ enabling iTerm2 integration… (bash)"
 			source ~/.iterm2_shell_integration.bash
 			;;
 		"/bin/zsh")
 			if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
-				echo "$(date +%H:%M:%S)   ↳ downloading iTerm2 integration… (zsh)"
+				echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (zsh)"
 				curl https://iterm2.com/shell_integration/zsh --location --output ~/.iterm2_shell_integration.zsh
 			fi
-			echo "$(date +%H:%M:%S)   ↳ enabling iTerm2 integration… (zsh)"
+			echo "$(date +%H:%M:%S)       ↳ enabling iTerm2 integration… (zsh)"
 			source ~/.iterm2_shell_integration.zsh
 			;;
 	esac
@@ -49,7 +51,7 @@ fi
 
 
 ############ TOOL -- Jetbrains Toolbox ############
-#export PATH="$PATH:~/Library/Application Support/JetBrains/Toolbox/scripts"
+#export PATH="$PATH:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
 
 
 
@@ -57,8 +59,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	############ PKG MANAGER -- Homebrew ############
 	## critical to even access "brew"
 	case $PATH in
-		*:/homebrew/:*) return 1;;
-		*) export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";
+		*:/homebrew/bin:*) return 1;;
+		*) export PATH="/opt/homebrew/bin:$PATH";
+	esac
+	case $PATH in
+		*:/homebrew/sbin:*) return 1;;
+		*) export PATH="/opt/homebrew/sbin:$PATH";
 	esac
 
 	## https://www.codejam.info/2021/11/homebrew-multi-user.html#the-good-dedicate-a-single-user-account-to-homebrew
@@ -67,15 +73,18 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	export BREW_USER
 
 	if command -v brew &> /dev/null; then
-		echo "$(date +%H:%M:%S)   ↳ enabling brew… (from $(which brew))"
+		echo "$(date +%H:%M:%S)       ↳ enabling brew… (from $(which brew))"
 		eval "$(brew shellenv)"
 		## TODO needed?
 		#export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-		## enable brew autocomplete
+		## enable brew autocomplete (see "bash-completion" package https://docs.docker.com/engine/cli/completion/#bash)
 		case "$SHELL" in
 			"/bin/bash")
 				if [ -f $(brew --prefix)/etc/bash_completion ]; then
 					. $(brew --prefix)/etc/bash_completion
+				fi
+				if [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
+					. "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 				fi
 			;;
 		esac
@@ -85,8 +94,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	## alias only now to avoid a sudo prompt during shel init
 	## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
 	## suggestion from Claude:
-	brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
-	export -f brew
+	#brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
+	#export -f brew
 fi
 
 
@@ -95,13 +104,13 @@ fi
 if command -v mise &> /dev/null; then
 	already_enabled=1
 elif [ -f "${HOME}/.local/bin/mise" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling mise…"
+	echo "$(date +%H:%M:%S)       ↳ enabling mise…"
 	if [ -d "${HOME}/.local/share/mise/shims" ]; then
-		export PATH="~/.local/share/mise/shims:$PATH"
+		export PATH="${HOME}/.local/share/mise/shims:$PATH"
 	fi
 fi
 if command -v mise &> /dev/null; then
-	echo "$(date +%H:%M:%S)   ↳ activating mise…"
+	echo "$(date +%H:%M:%S)       ↳ activating mise…"
 	eval "$(mise activate bash --shims)"
 	# from profile: eval "$(/Users/xxx/.local/bin/mise activate bash)"
 fi
@@ -115,11 +124,11 @@ else
 	## (copied from what is set on install)
 	## https://github.com/nvm-sh/nvm#installing-and-updating
 	if [[ -n "$NVM_DIR" ]]; then
-		echo "$(date +%H:%M:%S)   ↳ enabling nvm… already enabled"
+		echo "$(date +%H:%M:%S)       ↳ enabling nvm… already enabled"
 	else
 		export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 		if [ -d "$NVM_DIR" ]; then
-			echo "$(date +%H:%M:%S)   ↳ enabling nvm… (\$NVM_DIR = $NVM_DIR)"
+			echo "$(date +%H:%M:%S)       ↳ enabling nvm… (\$NVM_DIR = $NVM_DIR)"
 			[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 			if [ "$SHELL" = "/bin/bash" ]; then
 				[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -171,7 +180,7 @@ else
 			fi
 		}
 
-		#echo "$(date +%H:%M:%S)     ↳ enabling cdnvm…"
+		#echo "$(date +%H:%M:%S)         ↳ enabling cdnvm…"
 		#alias cd='cdnvm'
 		#cdnvm "$PWD" || exit
 	fi
@@ -184,23 +193,18 @@ else
 	#	source "${HOME}/.avn/bin/avn.sh"
 	#fi
 fi
+
 ## yarn
+## first ensure it's in the path, if present
+if ! command -v yarn &> /dev/null && [[ -d ~/.yarn/bin ]]; then
+  export PATH="$PATH:${HOME}/.yarn/bin"
+fi
 if command -v yarn &> /dev/null; then
 	if [[ $(yarn -v) = 1.* ]]; then
-		echo "$(date +%H:%M:%S)   ↳ enabling yarn v1…"
+		echo "$(date +%H:%M:%S)       ↳ enabling yarn v1…"
 		export PATH="$PATH:$(yarn global bin)"
 	else
-		echo "$(date +%H:%M:%S)   ↳ enabling yarn v2+… ???"
-	fi
-else
-	## yarn is not available
-	## this may be normal if using a env manager with different yarn (ex. nvm)
-	## however we need to preemptively add yarn global path to $PATH
-	## cf. https://github.com/yarnpkg/yarn/issues/1027#issuecomment-336644907
-	if [ -d ~/.yarn/bin ]; then
-		export PATH="$PATH:~/.yarn/bin"
-	else
-		echo "XXX yarn MISSING?"
+		echo "$(date +%H:%M:%S)       ↳ yarn v2+ : nothing to do"
 	fi
 fi
 
@@ -210,7 +214,7 @@ fi
 ## . "/Users/xyz/.deno/env"
 ## source /Users/xyz/.local/share/bash-completion/completions/deno.bash
 if [ -d "${HOME}/.deno" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling deno…"
+	echo "$(date +%H:%M:%S)       ↳ enabling deno…"
 	[ -s "${HOME}/.deno/env" ] && \. "${HOME}/.deno/env"
 	if [ "$SHELL" = "/bin/bash" ]; then
 		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"
@@ -219,20 +223,20 @@ fi
 
 ## bun
 if [ -d "${HOME}/.bun/bin" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling bun…"
+	echo "$(date +%H:%M:%S)       ↳ enabling bun…"
 	export BUN_INSTALL="$HOME/.bun"
 	export PATH="$PATH:$BUN_INSTALL/bin"
 fi
 
-
+## nub TODO 1D
 
 #flyctl was installed successfully to /Users/.../.fly/bin/flyctl
 #Manually add the directory to your $HOME/.bash_profile (or similar)
 #  export FLYCTL_INSTALL="/Users/xxx/.fly"
 #  export PATH="$FLYCTL_INSTALL/bin:$PATH"
 if [ -d "${HOME}/.fly/" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling flyctl…"
-	export PATH="$PATH:~/.fly/bin"
+	echo "$(date +%H:%M:%S)       ↳ enabling flyctl…"
+	export PATH="$PATH:${HOME}/.fly/bin"
 fi
 
 
@@ -250,28 +254,39 @@ export PIP_REQUIRE_VIRTUALENV=true
 ## (note: PATH setup is in sibling file paths.sh)
 ## TODO REVIEW (long time not used)
 #if [ -d "${HOME}/.rvm/bin" ]; then
-#	echo "$(date +%H:%M:%S)   ↳ enabling rvm… (bin)"
+#	echo "$(date +%H:%M:%S)       ↳ enabling rvm… (bin)"
 #	# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#	export PATH="$PATH:~/.rvm/bin"
+#	export PATH="$PATH:${HOME}/.rvm/bin"
 #fi
 #if [ -s "${HOME}/.rvm/scripts/rvm" ]; then
-#	echo "$(date +%H:%M:%S)   ↳ enabling rvm… (scripts)"
+#	echo "$(date +%H:%M:%S)       ↳ enabling rvm… (scripts)"
 #	source "${HOME}/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 #fi
 
 
 
 ############ DEV ENV -- JAVA ############
-if command -v jenv &> /dev/null; then
-	eval "$(jenv init -)"
+## taken from???
+if [[ -f /usr/libexec/java_home ]]; then
+	if ! /usr/libexec/java_home 1>/dev/null 2>&1; then
+		## most likely "The operation couldn’t be completed. Unable to locate a Java Runtime."
+		## do nothing
+		DO_NOTHING=1
+	else
+		export JAVA_HOME=$(/usr/libexec/java_home)
+	fi
 fi
+
+## jenv???
+##export PATH="${HOME}/.jenv/bin:$PATH"
+##eval "$(jenv init -)"
 
 
 
 ############ DEV ENV -- Rust ############
 ## taken from the install logs
 if [ -f "${HOME}/.cargo/env" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling cargo (Rust)…"
+	echo "$(date +%H:%M:%S)       ↳ enabling cargo (Rust)…"
 	source "$HOME/.cargo/env"
 fi
 
@@ -280,19 +295,24 @@ fi
 ## if installed in user only (non standard)
 ## https://www.docker.com/products/docker-desktop/
 if [ -d "/Applications/Docker.app/Contents/Resources/bin" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling docker… (Applications)"
+	echo "$(date +%H:%M:%S)       ↳ enabling docker… (Applications)"
 	export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
 elif [ -d "${HOME}/.docker/bin" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling docker… (~/.docker)"
-	export PATH="$PATH:~/.docker/bin"
+	echo "$(date +%H:%M:%S)       ↳ enabling docker… (~/.docker)"
+	export PATH="$PATH:${HOME}/.docker/bin"
 fi
-## TODO 1D completions https://docs.docker.com/engine/cli/completion/
-
+## completions https://docs.docker.com/engine/cli/completion/
+if ! [[ -f ~/.local/share/bash-completion/completions/docker ]]; then
+	echo "$(date +%H:%M:%S)         ↳ creating docker completion file… (bash)"
+	mkdir -p ~/.local/share/bash-completion/completions
+	docker completion bash > ~/.local/share/bash-completion/completions/docker
+fi
+# TODO 1D completions for zsh
 
 ## > To use additional binary components installed via gcloud, add the "/opt/homebrew/share/google-cloud-sdk/bin"
 ## > directory to your PATH environment variable, e.g., (for Bash shell):
 ## >    export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 if [ -d "/opt/homebrew/share/google-cloud-sdk/bin" ]; then
-	echo "$(date +%H:%M:%S)   ↳ enabling shared brew google-cloud-sdk…"
+	echo "$(date +%H:%M:%S)     ↳ enabling shared brew google-cloud-sdk…"
 	export PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
 fi

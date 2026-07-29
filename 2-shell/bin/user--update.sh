@@ -27,7 +27,7 @@ if command -v brew > /dev/null; then
 
 	echo "  * \`brew upgrade --yes\`…"
 	brew upgrade --yes
-	echo "    * also consider running brew upgrade --greedy"
+	echo "    * also consider running brew upgrade --greedy --yes"
 
 	echo "  * \`brew update\`…"
 	brew update

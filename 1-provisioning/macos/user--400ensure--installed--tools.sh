@@ -28,7 +28,7 @@ echo "* starting…"
 
 echo "******* installing base apps through brew…"
 
-brew install --cask inkscape
+brew install inkscape
 
 brew install ffmpeg yt-dlp
 

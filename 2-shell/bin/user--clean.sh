@@ -3,6 +3,13 @@
 ############ cleanups ############
 echo "* […ode/…/user--clean.sh] hello!"
 
+
+
+########### OS ###########
+## macOS = delete tmp stuff, but only stuff belonging to the current user
+find /private/tmp -xdev -mindepth 1 -user "$(id -un)" -depth -delete
+
+
 ############ Global package managers ############
 
 ## brew (macOS)
@@ -69,13 +76,19 @@ fi
 
 ## various node/js package managers
 if command -v yarn > /dev/null; then
+	echo ""
+	echo "******* yarn detected, cleaning… *******"
 	yarn cache clean
 fi
 if command -v npm > /dev/null; then
+	echo ""
+	echo "******* npm detected, cleaning… *******"
 	npm cache clean --force
 	pnpm store prune
 fi
 if command -v pnpm > /dev/null; then
+	echo ""
+	echo "******* pnpm detected, cleaning… *******"
 	## https://pnpm.io/uninstall#removing-the-global-content-addressable-store
 	rm -rf "$(pnpm store path)"
 fi
@@ -85,18 +98,45 @@ rm -rf ~/.npm
 
 ## TODO other dev envs ex. Python, Rust...
 
+## Claude Code
+if [[ -d "${HOME}/.claude/" ]]; then
+	echo ""
+	echo "******* Claude Code detected, cleaning… *******"
+	find "${HOME}/.claude/backups"         -mindepth 1 -delete
+	find "${HOME}/.claude/file-history"    -mindepth 1 -delete
+	find "${HOME}/.claude/jobs"            -mindepth 1 -delete
+	find "${HOME}/.claude/plugins/cache"   -mindepth 1 -delete
+	find "${HOME}/.claude/plugins/data"    -mindepth 1 -delete
+	rm -rf "${HOME}/.claude/plugins/plugin-catalog-cache.json"
+	find "${HOME}/.claude/projects"        -mindepth 1 -delete
+	find "${HOME}/.claude/sessions"        -mindepth 1 -delete
+	find "${HOME}/.claude/shell-snapshots" -mindepth 1 -delete
+	find "${HOME}/.claude/tasks"           -mindepth 1 -delete
+	find "${HOME}/.claude/teams"           -mindepth 1 -delete
+	rm -rf "${HOME}/.claude/mcp-needs-auth-cache.json"
+	rm -rf "${HOME}/.claude/stats-cache.json"
+fi
+
 ## docker/podman
 if command -v docker > /dev/null; then
+	echo ""
+	echo "******* Docker detected, cleaning… *******"
 	docker system prune --all
 	#docker volume prune
 fi
 if command -v podman > /dev/null; then
+	echo ""
+	echo "******* podman detected, cleaning… *******"
 	podman system prune --all
 fi
 
 ## xcode device emulators
-xcrun simctl delete unavailable
-xcrun simctl erase all
+if xcrun simctl -h >/dev/null 2>&1; then
+	echo ""
+	echo "******* xcode device emulator detected, cleaning… *******"
+	xcrun simctl delete unavailable
+	xcrun simctl erase all
+fi
 
 ## virtualbox
 #vboxmanage modifymedium disk "/Users/xxx/VirtualBox VMs/Ubuntu 16 C/Ubuntu 16 C-disk1.vdi" --compact

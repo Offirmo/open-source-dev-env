@@ -1,5 +1,5 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […ode/…/_00settings.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_00settings.sh] hello!"
 
 ## Add this to your profile ONLY IF OFFIRMO
 ## - enable dedicated special ssh key
@@ -23,14 +23,20 @@ case "$TERM" in
 esac
 
 
-## better prompt
-if [ "$color_prompt" = yes ]; then
-	## remove "user + machine" (not very useful if always the same)
-	#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-	PS1='ℹ️  \[\033[01;34m\]\w\[\033[00m\] ▶️  '
-else
-	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+if [ -n "$BASH_VERSION" ]; then
+	## better prompt
+	if [ "$color_prompt" = yes ]; then
+		## remove "user + machine" (not very useful if always the same)
+		#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+		PS1='ℹ️  \[\033[01;34m\]\w\[\033[00m\] ▶️  '
+	else
+		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	fi
+elif [ -n "$ZSH_VERSION" ]; then
+	DO_NOTHING=1
 fi
+
+
 
 
 ## enable color support of ls and also add handy aliases

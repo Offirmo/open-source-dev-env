@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2023"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -30,19 +30,25 @@ echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
-
+## generic completion utils https://docs.docker.com/engine/cli/completion/#bash
+brew install bash-completion
 
 ####### CLIs
 brew install ast-grep jq yq
 #rsync
+
 brew install shellcheck
 
+## GNU version of some utils,
+## usually have more options than macOs bundled ones
+## ex. relative symlinks with `gln -sr TARGET NEW_SYMLINK`
+brew install coreutils
 
 
 ###### terminal
-brew install --cask warp
+brew install warp
 
-brew install --cask iterm2
+brew install iterm2
 # prepare shell integrations, cf. https://iterm2.com/documentation-shell-integration.html
 curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
@@ -52,8 +58,11 @@ curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.
 ###### git
 ## Nooo this horror corrupts repos!
 #brew install git-lfs
+
 ## https://github.com/AGWA/git-crypt/
-brew install git-crypt
+## 2026/06 not working great + complex to setup
+#brew install git-crypt
+
 brew install git-cola git-delta mergiraf
 
 
@@ -62,23 +71,23 @@ brew install git-cola git-delta mergiraf
 ####### IDE
 ## both those tools have their own update system
 ## which is redundant with update --greedy but not harmful
-brew install --cask jetbrains-toolbox visual-studio-code
+brew install jetbrains-toolbox visual-studio-code
 
 
 ####### misc
-brew install --cask kdiff3
+brew install kdiff3
 ## TODO find alternative to lepton which is intel
-brew install --cask lepton
+#brew install lepton
 
 ## TODO decide which one
-#brew install --cask responsively
-#brew install --cask polypane # polypane is great but paid
+brew install responsively
+#brew install polypane # polypane is great but paid
 
 ## frequently updates, better with brew
-#brew install --cask pgadmin4
+#brew install pgadmin4
 
 ## recently switched to bruno, free and no cloud https://github.com/usebruno/bruno
-#brew install --cask insomnia
+#brew install insomnia
 brew install bruno
 
 
@@ -95,14 +104,6 @@ semgrep --config=auto
 ## NO!
 ## Those apps should NOT be installed through brew, too "special"
 ## virtualbox dropbox docker
-
-## TODO review
-#kern.maxfiles=10485760
-#kern.maxfiles: 245760 -> 10485760
-#kern.maxfilesperproc=1048576
-#kern.maxfilesperproc: 122880 -> 1048576
-#kern.maxvnodes=1048576
-#kern.maxvnodes: 263168 -> 1048576
 
 
 #############################################################

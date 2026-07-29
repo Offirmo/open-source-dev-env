@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -28,7 +28,7 @@ echo "* starting ▶️"
 
 
 ############ Gnome/Ubuntu user-specific dirs ############
-## seems to be expected by "virtualenv" (python tool)
+## expected by some tools (e.g. "virtualenv")
 ## https://askubuntu.com/a/14536
 ## spec https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 mkdir -p ~/.cache
@@ -39,7 +39,7 @@ mkdir -p ~/.local/share
 mkdir -p ~/.local/state
 echo "* user dir structure ✅"
 
-############ Offirmo data structure ############
+############ Personal data structure ############
 mkdir -p ~/work
 mkdir -p ~/work/bin
 mkdir -p ~/work/bin/shellrc
@@ -59,13 +59,12 @@ if [ ! -f ~/work/bin/shellrc/aliases.sh ]; then
 	} >> ~/work/bin/shellrc/aliases.sh
 fi
 
-#mkdir -p ~/work/containers
 mkdir -p ~/work/docs
 mkdir -p ~/work/install
 mkdir -p ~/work/src
 mkdir -p ~/work/tmp
-echo "* ~/work structure ✅"
 
+echo "* ~/work structure ✅"
 
 #############################################################
 echo "* …all done ✅"

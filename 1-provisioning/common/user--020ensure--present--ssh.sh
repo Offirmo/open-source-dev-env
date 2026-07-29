@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -24,23 +24,23 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 #echo "  - PATH          = $PATH"
 #env
 ############################################################
+## shared
+file_has_line() {
+  local file="$1"
+  local line="$2"
+  grep -qxF "$line" "$file"
+}
+
+############################################################
 echo "* starting ▶️"
 
 ## generate if missing
 mkdir -p ~/.ssh
 
-if [ ! -f ~/.ssh/config ]; then
+if [ -f ~/.ssh/config ]; then
+	echo "* ~/.ssh/config already exists ✅"
+else
 	echo "" >> ~/.ssh/config
-#TODO config
-#ControlMaster auto
-#ControlPath ~/.ssh/socket-%r@%h:%p
-#
-#ServerAliveInterval 300
-#
-## Hosts
-#Host *
-#AddKeysToAgent yes
-#UseKeychain yes
 fi
 if [ -f ~/.ssh/known_hosts ]; then
 	echo "* ~/.ssh/known_hosts already exists ✅"
@@ -80,18 +80,24 @@ else
 	open https://bitbucket.org/account/settings/ssh-keys/
 	echo "cat ~/.ssh/id_ed25519_offirmo.pub | pbcopy"
 
-	{
-		echo ""
-		echo "Host offirmo.github.com"
-		echo "   HostName github.com"
-		echo "   User git"
-		echo "   IdentityFile ~/.ssh/id_ed25519_offirmo"
-		echo "   IdentitiesOnly yes"
-		echo ""
-	} >> ~/.ssh/config
+	if ! file_has_line ~/.ssh/config "Host offirmo.github.com"; then
+		{
+			echo ""
+			echo "Host offirmo.github.com"
+			echo "   HostName github.com"
+			echo "   User git"
+			echo "   IdentityFile ~/.ssh/id_ed25519_offirmo"
+			echo "   IdentitiesOnly yes"
+			echo ""
+		} >> ~/.ssh/config
+	fi
 fi
 
-if [[ -n "$PERSONAL_USERNAME__GITHUB" ]]; then
+if [[ -z "$PERSONAL_USERNAME__GITHUB" ]]; then
+	echo "* reminder to set \$PERSONAL_USERNAME__GITHUB to your personal GitHub username"
+elif [[ "$(tr '[:upper:]' '[:lower:]' <<< "$PERSONAL_USERNAME")" == "offirmo" ]]; then
+		ALREADY_DONE=1
+else
 	## TODO one day: remove ~ auto-expansion
 	TARGET="~/.ssh/id_ed25519_$PERSONAL_USERNAME__GITHUB"
 	if [ -f $TARGET.pub ]; then
@@ -106,20 +112,19 @@ if [[ -n "$PERSONAL_USERNAME__GITHUB" ]]; then
 		open https://bitbucket.org/account/settings/ssh-keys/
 		echo "cat $TARGET.pub | pbcopy"
 
-		{
-			echo ""
-			echo "Host $PERSONAL_USERNAME__GITHUB.github.com"
-			echo "   HostName github.com"
-			echo "   User git"
-			echo "   IdentityFile $TARGET"
-			echo "   IdentitiesOnly yes"
-			echo ""
-		} >> ~/.ssh/config
+		if ! file_has_line ~/.ssh/config "Host $PERSONAL_USERNAME__GITHUB.github.com"; then
+			{
+				echo ""
+				echo "Host $PERSONAL_USERNAME__GITHUB.github.com"
+				echo "   HostName github.com"
+				echo "   User git"
+				echo "   IdentityFile $TARGET"
+				echo "   IdentitiesOnly yes"
+				echo ""
+			} >> ~/.ssh/config
+		fi
 	fi
-else
-	echo "* reminder to set \$PERSONAL_USERNAME__GITHUB to your personal GitHub username"
-fi;
-
+fi
 
 
 ## ensure most restrictive permissions

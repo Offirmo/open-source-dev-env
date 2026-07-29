@@ -29,7 +29,7 @@ echo "* starting ▶️"
 echo "******* installing apps through brew…"
 ## in order of importance, to allow ctrl+C
 
-brew install --cask steam
+brew install steam
 
 #############################################################
 echo "* …all done ✅"

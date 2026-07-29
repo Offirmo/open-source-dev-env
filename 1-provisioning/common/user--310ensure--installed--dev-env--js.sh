@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026"
+echo "# revision = circa 2026/07"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -43,8 +43,13 @@ elif command -v apt > /dev/null; then
 	sudo apt update -y
 	sudo apt install -y mise
 fi
-mise use -g node@24
-mise use -g npm:corepack@0
+mise use -g node@lts
+mise use -g npm:iterm2-tab-set
+## XXX breaks if non-standard npm registry https://github.com/nodejs/corepack/issues/296
+## also not really needed if mise
+#mise use -g npm:corepack
+#export COREPACK_NPM_REGISTRY="https://registry.npmjs.org"
+#corepack enable
 
 ## NVM (LEGACY, FYI)
 ## https://github.com/nvm-sh/nvm#installing-and-updating
@@ -56,9 +61,8 @@ mise use -g npm:corepack@0
 #nvm alias default 'lts/*'
 #echo "* nvm installed ✅"
 
-
-
-npm install --global corepack iterm2-tab-set yarn @ast-grep/cli && corepack enable
+## TODO review
+#npm install --global  yarn @ast-grep/cli && corepack enable
 echo "* basic global pkgs installed ✅"
 
 
@@ -74,12 +78,12 @@ echo "* npm config set ✅"
 ############ yarn ############
 ## https://yarnpkg.com/en/docs/cli/config
 # TODO check if inherited from npm ? maybe not if config in alternate place
-# TODO how do we have yarn installed? TODO install it!!!
-yarn config set color         always
-yarn config set init-license  Unlicense
-yarn config set init-version  0.0.1
-echo "* yarn config set ✅"
-
+if command -v yarn &> /dev/null; then
+	yarn config set color         always
+	yarn config set init-license  Unlicense
+	yarn config set init-version  0.0.1
+	echo "* yarn config set ✅"
+fi
 
 
 #############################################################
