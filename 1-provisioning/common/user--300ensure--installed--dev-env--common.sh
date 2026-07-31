@@ -44,6 +44,7 @@ fi
 if ! grep -qF '.DS_Store' ~/.config/git/ignore; then
   echo '.DS_Store' >> ~/.config/git/ignore
 fi
+## Also seen: *.swp core
 
 ############ global gitattributes
 if [ -f ~/.config/git/attributes ]; then
