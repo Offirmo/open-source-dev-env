@@ -56,8 +56,10 @@ curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.
 
 
 ###### git
-## Nooo this horror corrupts repos!
-#brew install git-lfs
+## install the git-lfs client in case some repos need it
+brew install git-lfs
+## this is a system-wide command, actual usage is from .gitattributes per-repo
+git lfs install
 
 ## https://github.com/AGWA/git-crypt/
 ## 2026/06 not working great + complex to setup

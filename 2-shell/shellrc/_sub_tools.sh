@@ -91,11 +91,15 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	fi
 
 	## brew multi-user, continued.
-	## alias only now to avoid a sudo prompt during shel init
-	## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
-	## suggestion from Claude:
-	#brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
-	#export -f brew
+	if [ "$BREW_USER" = "$(whoami)" ]; then
+		do_nothing=1
+	else
+		## alias only now to avoid a sudo prompt during shel init
+		## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
+		## suggestion from Claude:
+		brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
+		export -f brew
+	fi
 fi
 
 
