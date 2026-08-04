@@ -77,6 +77,8 @@ even over port 443, so HTTPS + PAT is the only reliable path).
   network-level protocol inspection even when the raw TCP port is reachable
   (`nc -z` succeeds but the SSH banner exchange itself times out). If you see
   that pattern, stop debugging SSH and switch to HTTPS + PAT.
+- ***HTTPS 403*** can happen if the PAT is too fine-grained =
+  check if the target repo is included in the PAT
 - If a repo was recreated from a downloaded zip + `git init` (instead of
   `git clone`), local history is completely unrelated to the real GitHub
   history and `branch.<name>.remote` / `branch.<name>.merge` tracking config
@@ -91,3 +93,19 @@ even over port 443, so HTTPS + PAT is the only reliable path).
   git reset --hard origin/<default-branch>
   git clean -fd
   ```
+
+
+## fixing wrong author
+
+On the last commit
+```bash
+git config user.name "Correct Name"
+git config user.email "correct-email@example.com"
+
+git commit --amend --reset-author --no-edit
+```
+
+Check
+```bash
+git log --format=fuller
+```

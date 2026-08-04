@@ -320,3 +320,17 @@ if [ -d "/opt/homebrew/share/google-cloud-sdk/bin" ]; then
 	echo "$(date +%H:%M:%S)     ↳ enabling shared brew google-cloud-sdk…"
 	export PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
 fi
+
+
+## must be last?
+if command -v starship &> /dev/null; then
+	echo "$(date +%H:%M:%S)     ↳ enabling starship status bar…"
+	case "$SHELL" in
+		"/bin/bash")
+			eval "$(starship init bash)"
+			;;
+		"/bin/zsh")
+			eval "$(starship init zsh)"
+			;;
+	esac
+fi

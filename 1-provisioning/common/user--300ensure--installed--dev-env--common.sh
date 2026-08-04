@@ -34,6 +34,7 @@ echo "* starting…"
 
 ############ global gitignore
 ## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
+## [Claude] default fallback location for global excludes, used automatically, no command needed, as long as core.excludesfile isn't explicitly set to something else
 if [ -f ~/.config/git/ignore ]; then
 	echo "* ~/.config/git/ignore already exists ✅"
 else
@@ -138,6 +139,12 @@ echo "* solarized color scheme downloaded and up-to-date ✅"
 #popd > /dev/null
 #echo "* jetbrains solarized color scheme downloaded and up-to-date ✅"
 
+
+## for status bar
+## works across all shells ✅
+brew install --cask font-fira-code-nerd-font
+echo "Fira Code nerd installed ✅ Please enable it in your terminal"
+brew install starship
 
 
 ## Offline doc TODO review
