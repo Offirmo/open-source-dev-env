@@ -65,6 +65,15 @@ if command -v apt > /dev/null; then
 fi
 
 
+## Claude Code
+if command -v apt > /dev/null; then
+	echo ""
+	echo "******* Claude Code detected, updating… *******"
+	claude plugin marketplace update
+fi
+
+
+
 ############ Dev Env -- node ############
 ## nvm
 ## last reviewed: 2023/09

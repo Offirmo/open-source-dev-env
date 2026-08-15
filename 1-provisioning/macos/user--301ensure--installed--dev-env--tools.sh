@@ -67,7 +67,12 @@ git lfs install
 
 brew install git-cola git-delta mergiraf
 
-
+## for working with GitHub
+brew install gh
+## TODO review may help bypass ssh restrictions, not standard
+gh config set -h github.com git_protocol https
+##
+gh extension install github/gh-stack
 
 
 ####### IDE
@@ -78,6 +83,12 @@ brew install jetbrains-toolbox visual-studio-code
 
 ####### misc
 brew install kdiff3
+
+## auto package manager
+## https://github.com/antfu-collective/ni
+brew install ni
+
+
 ## TODO find alternative to lepton which is intel
 #brew install lepton
 
@@ -93,8 +104,7 @@ brew install responsively
 brew install bruno
 
 
-brew install gh
-gh config set -h github.com git_protocol https
+
 
 
 ## https://github.com/semgrep/semgrep https://semgrep.dev/products/community-edition/

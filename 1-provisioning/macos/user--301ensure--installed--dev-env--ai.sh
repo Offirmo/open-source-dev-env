@@ -33,8 +33,8 @@ echo "* starting…"
 
 ## Claude Code
 if ! command -v claude &> /dev/null; then
-	# TODO which is better?
-	## Native installer: (macOS/Linux)
+	## Native installer: (macOS/Linux) = recommended
+	## "you can also use brew install, but note that this method doesn't support auto-updates" https://anthropic.skilljar.com/claude-code-101/469790
 	curl -fsSL https://claude.ai/install.sh | bash
 	#brew install claude-code
 fi
