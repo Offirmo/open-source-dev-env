@@ -15,7 +15,7 @@ find /private/tmp -xdev -mindepth 1 -user "$(id -un)" -depth -delete
 ## brew (macOS)
 ## last reviewed: 2025/06
 if command -v brew > /dev/null; then
-	echo ""
+	echo
 	echo "******* \`brew\` detected, cleaning… *******"
 	brew cleanup --prune=14
 	## brew cleanup -s
@@ -26,7 +26,7 @@ fi
 ## https://guide.macports.org/chunked/using.html#using.port
 ## last reviewed: 2025/09
 if command -v port > /dev/null; then
-	echo ""
+	echo
 	echo "******* MacPorts detected, cleaning… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
 	echo "  * \`uninstall inactive\`…"
@@ -40,7 +40,7 @@ fi
 ## apt (Ubuntu)
 ## last reviewed: 2026/05
 if command -v apt > /dev/null; then
-	echo ""
+	echo
 	echo "******* apt detected, cleaning… *******"
 	## fix possible unmet dependencies
 	echo "  * \`install --fix-broken\`…"
@@ -64,7 +64,7 @@ fi
 DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 if [[ -d $DETECTED_NVM_DIR ]]; then
 	## https://github.com/nvm-sh/nvm
-	echo ""
+	echo
 	echo "******* \`nvm\` detected, listing… *******"
 	[ -s "$DETECTED_NVM_DIR/nvm.sh" ] && \. "$DETECTED_NVM_DIR/nvm.sh"  # This loads nvm
 	nvm cache clear
@@ -76,18 +76,18 @@ fi
 
 ## various node/js package managers
 if command -v yarn > /dev/null; then
-	echo ""
+	echo
 	echo "******* yarn detected, cleaning… *******"
 	yarn cache clean
 fi
 if command -v npm > /dev/null; then
-	echo ""
+	echo
 	echo "******* npm detected, cleaning… *******"
 	npm cache clean --force
 	pnpm store prune
 fi
 if command -v pnpm > /dev/null; then
-	echo ""
+	echo
 	echo "******* pnpm detected, cleaning… *******"
 	## https://pnpm.io/uninstall#removing-the-global-content-addressable-store
 	rm -rf "$(pnpm store path)"
@@ -100,7 +100,7 @@ rm -rf ~/.npm
 
 ## Claude Code
 if [[ -d "${HOME}/.claude/" ]]; then
-	echo ""
+	echo
 	echo "******* Claude Code detected, cleaning… *******"
 	find "${HOME}/.claude/backups"         -mindepth 1 -delete
 	find "${HOME}/.claude/file-history"    -mindepth 1 -delete
@@ -119,20 +119,34 @@ fi
 
 ## docker/podman
 if command -v docker > /dev/null; then
-	echo ""
-	echo "******* Docker detected, cleaning… *******"
-	docker system prune --all
-	#docker volume prune
+	## Note: the CLI can be installed while the daemon is stopped,
+	# so probe before pruning, otherwise the command errors out
+	if docker info > /dev/null 2>&1; then
+		echo
+		echo "******* Docker detected, cleaning… *******"
+		docker system prune --all
+		#docker volume prune
+	else
+		echo
+		echo "******* Docker detected but daemon not running, skipping. *******"
+	fi
 fi
 if command -v podman > /dev/null; then
-	echo ""
-	echo "******* podman detected, cleaning… *******"
-	podman system prune --all
+	## Note: the CLI can be installed while the daemon is stopped,
+	# so probe before pruning, otherwise the command errors out
+	if podman info > /dev/null 2>&1; then
+		echo
+		echo "******* podman detected, cleaning… *******"
+		podman system prune --all
+	else
+		echo
+		echo "******* podman detected but daemon not running, skipping. *******"
+	fi
 fi
 
 ## xcode device emulators
 if xcrun simctl -h >/dev/null 2>&1; then
-	echo ""
+	echo
 	echo "******* xcode device emulator detected, cleaning… *******"
 	xcrun simctl delete unavailable
 	xcrun simctl erase all

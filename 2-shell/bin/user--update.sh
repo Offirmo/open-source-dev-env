@@ -1,19 +1,20 @@
 #! /bin/bash
 
 ############ updates ############
-echo ""
+echo
 echo "* […ode/…/user--update.sh] hello!"
 echo "************ Updating your system… ************"
+echo
 
 
 
 ############ OS ############
 ## last reviewed: 2023/09
 if command -v softwareupdate > /dev/null; then
-	echo ""
 	echo "******* macOS updates… *******"
 	softwareupdate  --install  --safari-only  ## those don't require a restart
 	softwareupdate  --list
+	echo
 fi
 
 
@@ -22,7 +23,6 @@ fi
 ## brew (macOS)
 ## last reviewed: 2023/09
 if command -v brew > /dev/null; then
-	echo ""
 	echo "******* \`brew\` detected, updating… *******"
 
 	echo "  * \`brew upgrade --yes\`…"
@@ -37,6 +37,7 @@ if command -v brew > /dev/null; then
 
 	echo "  * \`brew doctor\`…"
 	brew doctor
+	echo
 fi
 
 
@@ -44,32 +45,63 @@ fi
 ## https://guide.macports.org/chunked/using.html#using.port
 ## last reviewed: 2025/09
 if command -v port > /dev/null; then
-	echo ""
 	echo "******* MacPorts detected, updating… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
 	echo "  * \`selfupdate\`…"
 	sudo port selfupdate
 	echo "  * \`upgrade\`…"
 	sudo port upgrade outdated
+	echo
 fi
 
 
 ## apt (Ubuntu)
 ## last reviewed: 2026/05
 if command -v apt > /dev/null; then
-	echo ""
 	echo "******* Ubuntu's Advanced Packaging Tool detected, updating… *******"
 	## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
 	sudo apt update
 	sudo apt upgrade
+	echo
 fi
 
 
 ## Claude Code
-if command -v apt > /dev/null; then
-	echo ""
+if command -v claude > /dev/null; then
 	echo "******* Claude Code detected, updating… *******"
+	echo "* Updating all marketplaces…"
 	claude plugin marketplace update
+	echo
+	echo "* Updating all installed plugins..."
+
+	# Enumerate up-front so a failed listing is a hard error, not a silent
+	# "no plugins found" (process substitution failures escape set -euo pipefail).
+	plugins=$(claude plugin list --json | jq -r '.[] | "\(.id)\t\(.scope)"') \
+	  || { echo "  Failed to list installed plugins" >&2; exit 1; }
+
+	if [[ -z "${plugins}" ]]; then
+		echo "  No installed plugins found."
+	else
+		# Disabled plugins are updated too: `claude plugin update` succeeds on them,
+		# and keeping them current matches the "update all" intent.
+		failed=()
+		count=0
+		while IFS=$'\t' read -r id scope; do
+		  [[ -z "${id}" ]] && continue
+		  count=$((count + 1))
+		  echo "--- ${id} (scope: ${scope})"
+		  if ! claude plugin update "${id}" --scope "${scope}"; then
+			 failed+=("${id}")
+		  fi
+		done <<< "${plugins}"
+		echo
+
+		if [[ ${#failed[@]} -gt 0 ]]; then
+		  echo "  Failed to update: ${failed[*]}" >&2
+		fi
+
+		echo "${count} plugins updated. Restart Claude Code to apply updates."
+	fi
 fi
 
 
@@ -84,7 +116,7 @@ if [[ -d "$DETECTED_NVM_DIR" ]]; then
 	echo "******* \`nvm\` dir detected BUT ignoring *******"
 
 	## https://github.com/nvm-sh/nvm
-#	echo ""
+#	echo
 #	echo "******* \`nvm\` detected, updating… *******"
 #	## 1) update nvm
 #	## (no profile update, we do it ourselves https://github.com/nvm-sh/nvm?tab=readme-ov-file#additional-notes )
@@ -101,6 +133,7 @@ if [[ -d "$DETECTED_NVM_DIR" ]]; then
 #	## TODO review, avn doesn't work 2024/04
 #	#npm install --global avn avn-nvm
 #	#avn setup
+	echo
 fi
 
 
@@ -108,9 +141,9 @@ fi
 ############ Dev Env -- Python ############
 ## pip
 if command -v pip > /dev/null; then
-	echo ""
 	echo "******* \`pip\` detected, updating… *******"
 	pip install --upgrade pip
+	echo
 fi
 
 
@@ -125,9 +158,9 @@ fi
 
 ############ Dev Env -- Rust ############
 if command -v rustup > /dev/null; then
-	echo ""
 	echo "******* Rust detected, updating… *******"
 	rustup update
+	echo
 fi
 
 

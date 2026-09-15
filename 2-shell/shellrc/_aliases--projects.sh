@@ -17,11 +17,10 @@ alias mdt='cd $OFFIRMO_ROOT/my.dev.to;         git--offirmo.sh'
 alias ogi='cd $OFFIRMO_ROOT/offirmo.github.io; git--offirmo.sh; tabset --color "#a4d4dd" --badge offirmo.net'
 alias wiki='cd $OFFIRMO_ROOT/wiki.wiki;        git--offirmo.sh'
 
-export OFFIRMO_MONOREPO_ROOT=${OFFIRMO_MONOREPO_ROOT:-"$OFFIRMO_ROOT/offirmo/offirmo-monorepo"};
-#echo "OFFIRMO_MONOREPO_ROOT : $OFFIRMO_MONOREPO_ROOT"
 
-alias mono='  cd $OFFIRMO_MONOREPO_ROOT;                git--offirmo.sh;              tabset --badge "mono"  --color "#FF4136"'
-alias mono1=' cd $OFFIRMO_MONOREPO_ROOT/stack--current; git--offirmo.sh;              tabset --badge "mono1" --color "#FF4136"'
-alias mono3=' cd $OFFIRMO_MONOREPO_ROOT/stack--web3;    git--offirmo.sh;              tabset --badge "mono3" --color "#FF4136"'
+PCRK_PATH="$HOME/work/src/x-external/off/offirmo-team/private-compounding-repository-of-knowledge"
+[ -d "$PCRK_PATH" ] && source "$PCRK_PATH/mono--current/.monorepo/bin/aliases.sh"
 
-[ -d "$OFFIRMO_MONOREPO_ROOT/stack--current/.monorepo/bin" ] && source_files_from_dir "$OFFIRMO_MONOREPO_ROOT/stack--current/.monorepo/bin"
+alias mono='  cd $PCRK_PATH;               git--offirmo.sh;              tabset --badge "mono"  --color "#FF4136"'
+alias mono1=' cd $PCRK_PATH/mono--current; git--offirmo.sh;              tabset --badge "mono1" --color "#FF4136"'
+alias mono3=' cd $PCRK_PATH/mono--web3;    git--offirmo.sh;              tabset --badge "mono3" --color "#FF4136"'
