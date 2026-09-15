@@ -12,6 +12,7 @@ source_files_from_dir() {
 	while IFS= read -r file; do
 		[[ -f "$file" ]] && source "$file"
 	done < <(ls -1 "$1"/*.sh 2>/dev/null | sort -V)
+	echo "$(date +%H:%M:%S)   ↲ done sourcing files from ${1}"
 }
 
 source_files_from_dir "$HOME/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/shellrc"
