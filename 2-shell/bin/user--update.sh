@@ -7,6 +7,10 @@ echo "************ Updating your system… ************"
 echo
 
 
+## IMPORTANT
+## for package managers, the usual pattern is
+## update (metadata) -> upgrade (the tool & packages themselves)
+
 
 ############ OS ############
 ## last reviewed: 2023/09
@@ -25,17 +29,17 @@ fi
 if command -v brew > /dev/null; then
 	echo "******* \`brew\` detected, updating… *******"
 
-	echo "  * \`brew upgrade --yes\`…"
-	brew upgrade --yes
-	echo "    * also consider running brew upgrade --greedy --yes"
-
-	echo "  * \`brew update\`…"
+	echo "  * 1. \`update\`…"
 	brew update
 
-	echo "  * \`brew cleanup\`…"
+	echo "  * 2. \`upgrade --yes\`…"
+	brew upgrade --yes
+	echo "    * also consider running: brew upgrade --greedy --yes"
+
+	echo "  * 3. \`cleanup\`…"
 	brew cleanup
 
-	echo "  * \`brew doctor\`…"
+	echo "  * \`doctor\`…"
 	brew doctor
 	echo
 fi
@@ -47,9 +51,9 @@ fi
 if command -v port > /dev/null; then
 	echo "******* MacPorts detected, updating… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
-	echo "  * \`selfupdate\`…"
+	echo "  * 1. \`selfupdate\`…"
 	sudo port selfupdate
-	echo "  * \`upgrade\`…"
+	echo "  * 2. \`upgrade\`…"
 	sudo port upgrade outdated
 	echo
 fi
@@ -60,8 +64,11 @@ fi
 if command -v apt > /dev/null; then
 	echo "******* Ubuntu's Advanced Packaging Tool detected, updating… *******"
 	## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
+	echo "  * 1. \`update\`…"
 	sudo apt update
+	echo "  * 2. \`upgrade\`…"
 	sudo apt upgrade
+	echo "    * also consider running: apt full-upgrade"
 	echo
 fi
 
@@ -69,10 +76,15 @@ fi
 ## Claude Code
 if command -v claude > /dev/null; then
 	echo "******* Claude Code detected, updating… *******"
+	#echo "  * 1. \`update\`…"
+	#claude update  NO this is an alias of upgrade
+	echo "  * \`upgrade\`…"
+	claude upgrade
+
 	echo "* Updating all marketplaces…"
 	claude plugin marketplace update
 	echo
-	echo "* Updating all installed plugins..."
+	echo "* Updating all installed plugins…"
 
 	# Enumerate up-front so a failed listing is a hard error, not a silent
 	# "no plugins found" (process substitution failures escape set -euo pipefail).
@@ -104,6 +116,13 @@ if command -v claude > /dev/null; then
 	fi
 fi
 
+
+
+## mise
+if command -v mise &> /dev/null; then
+	## https://mise.jdx.dev/cli/self-update.html#mise-self-update
+	mise self-update
+fi
 
 
 ############ Dev Env -- node ############

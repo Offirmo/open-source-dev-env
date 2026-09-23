@@ -107,6 +107,7 @@ fi
 ## mise
 if command -v mise &> /dev/null; then
 	already_enabled=1
+	#eval "$($HOME/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
 elif [ -f "${HOME}/.local/bin/mise" ]; then
 	echo "$(date +%H:%M:%S)       ↳ enabling mise…"
 	if [ -d "${HOME}/.local/share/mise/shims" ]; then
@@ -118,6 +119,9 @@ if command -v mise &> /dev/null; then
 	eval "$(mise activate bash --shims)"
 	# from profile: eval "$(/Users/xxx/.local/bin/mise activate bash)"
 fi
+
+
+
 
 ############ DEV ENV -- ECMASCRIPT ############
 if command -v mise &> /dev/null; then
