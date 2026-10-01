@@ -34,10 +34,7 @@ fi
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
-## TODO find alternative to sizeup which is intel
-
-
-brew install xnviewmp
+brew install rectangle xnviewmp
 
 ## acrobat has its own updater but it runs permanently in the background and I don't trust it
 ## (to review. less and less useful + install crap)

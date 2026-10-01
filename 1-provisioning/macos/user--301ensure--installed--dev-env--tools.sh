@@ -65,13 +65,25 @@ git lfs install
 ## 2026/06 not working great + complex to setup
 #brew install git-crypt
 
-brew install git-cola git-delta mergiraf
+brew install git-cola
+
+## https://github.com/dandavison/delta
+## https://mergiraf.org/
+## https://difftastic.wilfred.me.uk/
+brew install git-delta mergiraf difftastic
+## TODO be very careful to not enable difftastic by default to not disorient LLMs
+## ex. no "external = difft"
+## TODO mergiraf needs post-install
+## ~/.config/git/attributes   merge=mergiraf
+## or more targeted   mergiraf languages --gitattributes (not really needed, mergiraf is clever)
+## TODO difftastic needs post-install
+## https://difftastic.wilfred.me.uk/git.html#difftastic-by-default
 
 ## for working with GitHub
 brew install gh
 ## TODO review may help bypass ssh restrictions, not standard
 gh config set -h github.com git_protocol https
-##
+## TODO review extensions
 gh extension install github/gh-stack
 
 

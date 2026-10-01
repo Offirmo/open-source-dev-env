@@ -60,10 +60,14 @@ fi
 git config --global push.default simple
 git config --global color.ui "auto"
 
+## declare merge=ours as a merge driver
+## https://7tonshark.com/posts/avoid-conflicts-in-pnpm-lock/
+git config merge.ours.name "keep ours"
+git config merge.ours.driver true
 
 
 ## "This default branch name will change to "main" in Git 3.0"
-## but macOs is lagging
+## but macOs is lagging (still 2.54 as of 2026/09)
 git config --global init.defaultBranch main
 
 ## from https://stackoverflow.com/questions/18308535/automatic-prune-with-git-fetch-or-pull/40842589#40842589

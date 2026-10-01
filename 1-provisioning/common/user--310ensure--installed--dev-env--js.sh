@@ -29,6 +29,7 @@ echo "* starting…"
 
 ############ Node ############
 ## Mise https://mise.jdx.dev/getting-started.html
+## TODO review mise recommends own installer
 echo "* (re)installing mise…"
 if command -v brew > /dev/null; then
 	## brew (macOs)
