@@ -1,8 +1,9 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_sub_tools.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_sub_tools.sh] hello!" >&2
 
 ## IMPORTANT:
 ## zsh doesn't like ~ in the PATH, use ${HOME} everywhere
+## detect the CURRENT shell with $BASH_VERSION / $ZSH_VERSION, NOT $SHELL (= the user's login shell, inherited by everything)
 
 ############ TOOL -- iTerm ############
 ## https://iterm2.com/documentation-shell-integration.html
@@ -12,7 +13,10 @@ if [ $ITERM_SESSION_ID ]; then
 	## put current directory in iTerm tab title
 	## source: https://gist.github.com/phette23/5270658 (modified, cf. https://gist.github.com/phette23/5270658?permalink_comment_id=4683975#gistcomment-4683975)
 	## Original:  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
-	export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }echo -ne \"\033];\${PWD##*/}\007\""
+	## bash only (zsh ignores it), NOT exported (would be re-appended in every nested shell)
+	if [ -n "$BASH_VERSION" ]; then
+		PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }echo -ne \"\033];\${PWD##*/}\007\""
+	fi
 	# Piece-by-Piece Explanation:
 	# the if condition makes sure we only screw with $PROMPT_COMMAND if we're in an iTerm environment
 	# iTerm happens to give each session a unique $ITERM_SESSION_ID we can use, $ITERM_PROFILE is an option too
@@ -28,24 +32,21 @@ if [ $ITERM_SESSION_ID ]; then
 	# then we append the rest of $PROMPT_COMMAND so as not to remove what was already there
 	# voilà!
 
-	case "$SHELL" in
-		"/bin/bash")
-			if [ ! -f ~/.iterm2_shell_integration.bash ]; then
-				echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (bash)"
-				curl https://iterm2.com/shell_integration/bash --location --output ~/.iterm2_shell_integration.bash
-			fi
-			echo "$(date +%H:%M:%S)       ↳ enabling iTerm2 integration… (bash)"
-			source ~/.iterm2_shell_integration.bash
-			;;
-		"/bin/zsh")
-			if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
-				echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (zsh)"
-				curl https://iterm2.com/shell_integration/zsh --location --output ~/.iterm2_shell_integration.zsh
-			fi
-			echo "$(date +%H:%M:%S)       ↳ enabling iTerm2 integration… (zsh)"
-			source ~/.iterm2_shell_integration.zsh
-			;;
-	esac
+	if [ -n "$BASH_VERSION" ]; then
+		if [ ! -f ~/.iterm2_shell_integration.bash ]; then
+			echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (bash)" >&2
+			curl https://iterm2.com/shell_integration/bash --location --output ~/.iterm2_shell_integration.bash
+		fi
+		_rc_log "      ↳ enabling iTerm2 integration… (bash)"
+		source ~/.iterm2_shell_integration.bash
+	elif [ -n "$ZSH_VERSION" ]; then
+		if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
+			echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (zsh)" >&2
+			curl https://iterm2.com/shell_integration/zsh --location --output ~/.iterm2_shell_integration.zsh
+		fi
+		_rc_log "      ↳ enabling iTerm2 integration… (zsh)"
+		source ~/.iterm2_shell_integration.zsh
+	fi
 fi
 
 
@@ -55,17 +56,12 @@ fi
 
 
 
-if [[ "$(uname)" == "Darwin" ]]; then
+## $OSTYPE is a builtin var = no fork, unlike $(uname)
+if [[ "$OSTYPE" == darwin* ]]; then
 	############ PKG MANAGER -- Homebrew ############
 	## critical to even access "brew"
-	case $PATH in
-		*:/homebrew/bin:*) return 1;;
-		*) export PATH="/opt/homebrew/bin:$PATH";
-	esac
-	case $PATH in
-		*:/homebrew/sbin:*) return 1;;
-		*) export PATH="/opt/homebrew/sbin:$PATH";
-	esac
+	_prepend_to_PATH_if_not_present "/opt/homebrew/sbin"
+	_prepend_to_PATH_if_not_present "/opt/homebrew/bin"
 
 	## https://www.codejam.info/2021/11/homebrew-multi-user.html#the-good-dedicate-a-single-user-account-to-homebrew
 	unalias brew 2>/dev/null
@@ -73,21 +69,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	export BREW_USER
 
 	if command -v brew &> /dev/null; then
-		echo "$(date +%H:%M:%S)       ↳ enabling brew… (from $(which brew))"
+		_rc_log "      ↳ enabling brew…"
 		eval "$(brew shellenv)"
 		## TODO needed?
 		#export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-		## enable brew autocomplete (see "bash-completion" package https://docs.docker.com/engine/cli/completion/#bash)
-		case "$SHELL" in
-			"/bin/bash")
-				if [ -f $(brew --prefix)/etc/bash_completion ]; then
-					. $(brew --prefix)/etc/bash_completion
-				fi
-				if [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
-					. "$(brew --prefix)/etc/profile.d/bash_completion.sh"
-				fi
-			;;
-		esac
+		## NOT loading brew's "bash-completion" (v1, the only one compatible with macOS's bash 3.2):
+		## it eagerly loads ~200 completion files = ~800ms per bash start!
+		## -> instead, targeted completions are loaded in their tool's section
 	fi
 
 	## brew multi-user, continued.
@@ -98,26 +86,34 @@ if [[ "$(uname)" == "Darwin" ]]; then
 		## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
 		## suggestion from Claude:
 		brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
-		export -f brew
+		## bash only, zsh can't export functions
+		[ -n "$BASH_VERSION" ] && export -f brew
 	fi
 fi
 
 
 ############ DEV ENV -- Generic ############
 ## mise
-if command -v mise &> /dev/null; then
-	already_enabled=1
-	#eval "$($HOME/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
-elif [ -f "${HOME}/.local/bin/mise" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling mise…"
-	if [ -d "${HOME}/.local/share/mise/shims" ]; then
-		export PATH="${HOME}/.local/share/mise/shims:$PATH"
-	fi
-fi
-if command -v mise &> /dev/null; then
-	echo "$(date +%H:%M:%S)       ↳ activating mise…"
-	eval "$(mise activate bash --shims)"
-	# from profile: eval "$(/Users/xxx/.local/bin/mise activate bash)"
+#if command -v mise &> /dev/null; then
+#	already_enabled=1
+#	#eval "$($HOME/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+#elif [ -f "${HOME}/.local/bin/mise" ]; then
+#	echo "$(date +%H:%M:%S)       ↳ enabling mise…"
+#	if [ -d "${HOME}/.local/share/mise/shims" ]; then
+#		export PATH="${HOME}/.local/share/mise/shims:$PATH"
+#	fi
+#fi
+#if command -v mise &> /dev/null; then
+#	echo "$(date +%H:%M:%S)       ↳ activating mise…"
+#	eval "$(mise activate bash --shims)"
+#	# from profile: eval "$(/Users/xxx/.local/bin/mise activate bash)"
+#fi
+## "shims" mode = just the shims dir in front of the PATH = exactly what `eval "$(mise activate bash --shims)"` outputs
+## but without exec-ing mise (~130ms on this machine!)
+## (unconditional prepend, same as mise does: must stay in front of brew etc. even if path_helper re-ordered an inherited PATH)
+if [ -d "${HOME}/.local/share/mise/shims" ]; then
+	_rc_log "      ↳ enabling mise (shims)…"
+	export PATH="${HOME}/.local/share/mise/shims:$PATH"
 fi
 
 
@@ -132,13 +128,13 @@ else
 	## (copied from what is set on install)
 	## https://github.com/nvm-sh/nvm#installing-and-updating
 	if [[ -n "$NVM_DIR" ]]; then
-		echo "$(date +%H:%M:%S)       ↳ enabling nvm… already enabled"
+		_rc_log "      ↳ enabling nvm… already enabled"
 	else
 		export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 		if [ -d "$NVM_DIR" ]; then
-			echo "$(date +%H:%M:%S)       ↳ enabling nvm… (\$NVM_DIR = $NVM_DIR)"
+			_rc_log "      ↳ enabling nvm… (\$NVM_DIR = $NVM_DIR)"
 			[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-			if [ "$SHELL" = "/bin/bash" ]; then
+			if [ -n "$BASH_VERSION" ]; then
 				[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 			fi
 		fi
@@ -205,14 +201,15 @@ fi
 ## yarn
 ## first ensure it's in the path, if present
 if ! command -v yarn &> /dev/null && [[ -d ~/.yarn/bin ]]; then
-  export PATH="$PATH:${HOME}/.yarn/bin"
+	_append_to_PATH_if_not_present "${HOME}/.yarn/bin"
 fi
+## WARNING: if present, the 2 yarn invocations below = 2 node startups at each shell start (slow)
 if command -v yarn &> /dev/null; then
 	if [[ $(yarn -v) = 1.* ]]; then
-		echo "$(date +%H:%M:%S)       ↳ enabling yarn v1…"
-		export PATH="$PATH:$(yarn global bin)"
+		_rc_log "      ↳ enabling yarn v1…"
+		_append_to_PATH_if_not_present "$(yarn global bin)"
 	else
-		echo "$(date +%H:%M:%S)       ↳ yarn v2+ : nothing to do"
+		_rc_log "      ↳ yarn v2+ : nothing to do"
 	fi
 fi
 
@@ -222,18 +219,18 @@ fi
 ## . "/Users/xyz/.deno/env"
 ## source /Users/xyz/.local/share/bash-completion/completions/deno.bash
 if [ -d "${HOME}/.deno" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling deno…"
+	_rc_log "      ↳ enabling deno…"
 	[ -s "${HOME}/.deno/env" ] && \. "${HOME}/.deno/env"
-	if [ "$SHELL" = "/bin/bash" ]; then
+	if [ -n "$BASH_VERSION" ]; then
 		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"
 	fi
 fi
 
 ## bun
 if [ -d "${HOME}/.bun/bin" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling bun…"
+	_rc_log "      ↳ enabling bun…"
 	export BUN_INSTALL="$HOME/.bun"
-	export PATH="$PATH:$BUN_INSTALL/bin"
+	_append_to_PATH_if_not_present "$BUN_INSTALL/bin"
 fi
 
 ## nub TODO 1D
@@ -243,8 +240,8 @@ fi
 #  export FLYCTL_INSTALL="/Users/xxx/.fly"
 #  export PATH="$FLYCTL_INSTALL/bin:$PATH"
 if [ -d "${HOME}/.fly/" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling flyctl…"
-	export PATH="$PATH:${HOME}/.fly/bin"
+	_rc_log "      ↳ enabling flyctl…"
+	_append_to_PATH_if_not_present "${HOME}/.fly/bin"
 fi
 
 
@@ -275,14 +272,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 ############ DEV ENV -- JAVA ############
 ## taken from???
-if [[ -f /usr/libexec/java_home ]]; then
-	if ! /usr/libexec/java_home 1>/dev/null 2>&1; then
-		## most likely "The operation couldn’t be completed. Unable to locate a Java Runtime."
-		## do nothing
-		DO_NOTHING=1
-	else
-		export JAVA_HOME=$(/usr/libexec/java_home)
-	fi
+if [[ -x /usr/libexec/java_home ]]; then
+	## fails if no Java, most likely "The operation couldn’t be completed. Unable to locate a Java Runtime."
+	JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)" && export JAVA_HOME || unset JAVA_HOME
 fi
 
 ## jenv???
@@ -294,7 +286,7 @@ fi
 ############ DEV ENV -- Rust ############
 ## taken from the install logs
 if [ -f "${HOME}/.cargo/env" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling cargo (Rust)…"
+	_rc_log "      ↳ enabling cargo (Rust)…"
 	source "$HOME/.cargo/env"
 fi
 
@@ -303,15 +295,15 @@ fi
 ## if installed in user only (non standard)
 ## https://www.docker.com/products/docker-desktop/
 if [ -d "/Applications/Docker.app/Contents/Resources/bin" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling docker… (Applications)"
-	export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
+	_rc_log "      ↳ enabling docker… (Applications)"
+	_prepend_to_PATH_if_not_present "/Applications/Docker.app/Contents/Resources/bin"
 elif [ -d "${HOME}/.docker/bin" ]; then
-	echo "$(date +%H:%M:%S)       ↳ enabling docker… (~/.docker)"
-	export PATH="$PATH:${HOME}/.docker/bin"
+	_rc_log "      ↳ enabling docker… (~/.docker)"
+	_append_to_PATH_if_not_present "${HOME}/.docker/bin"
 fi
 ## completions https://docs.docker.com/engine/cli/completion/
 if ! [[ -f ~/.local/share/bash-completion/completions/docker ]]; then
-	echo "$(date +%H:%M:%S)         ↳ creating docker completion file… (bash)"
+	echo "$(date +%H:%M:%S)         ↳ creating docker completion file… (bash)" >&2
 	mkdir -p ~/.local/share/bash-completion/completions
 	docker completion bash > ~/.local/share/bash-completion/completions/docker
 fi
@@ -321,20 +313,17 @@ fi
 ## > directory to your PATH environment variable, e.g., (for Bash shell):
 ## >    export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 if [ -d "/opt/homebrew/share/google-cloud-sdk/bin" ]; then
-	echo "$(date +%H:%M:%S)     ↳ enabling shared brew google-cloud-sdk…"
-	export PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
+	_rc_log "    ↳ enabling shared brew google-cloud-sdk…"
+	_append_to_PATH_if_not_present "/opt/homebrew/share/google-cloud-sdk/bin"
 fi
 
 
 ## must be last?
 if command -v starship &> /dev/null; then
-	echo "$(date +%H:%M:%S)     ↳ enabling starship status bar…"
-	case "$SHELL" in
-		"/bin/bash")
-			eval "$(starship init bash)"
-			;;
-		"/bin/zsh")
-			eval "$(starship init zsh)"
-			;;
-	esac
+	_rc_log "    ↳ enabling starship status bar…"
+	if [ -n "$BASH_VERSION" ]; then
+		eval "$(starship init bash)"
+	elif [ -n "$ZSH_VERSION" ]; then
+		eval "$(starship init zsh)"
+	fi
 fi

@@ -1,19 +1,37 @@
 #@IgnoreInspection BashAddShebang
-[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_01paths.sh] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)     ↳ […ode/…/_01paths.sh] hello!" >&2
+
+## Important reads
+## - https://disconnect3d.pl//2026/10/02/dont-put-tilde-in-your-path/   <- ok because we target bash/zsh
+
+
 
 #####################
 ## INIT
-## so that the :xyz: test below to work ()
 #echo "initial PATH= $PATH"
-## ODE stuff is very specific, order shouldn't matter
-PATH="${HOME}/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/bin:$PATH"
 
-pathDoesntContain() {
-	case $PATH in
-		*:$1:*) return 1;; # note the :xyz: to avoid
-		*) return 0;;
+## (helpers defined first since used right below and in sibling files)
+## no-op if already present = idempotent when re-sourced / in nested shells
+_prepend_to_PATH_if_not_present() {
+	case ":$PATH:" in
+		*":$1:"*) ;;
+		*) export PATH="$1:$PATH" ;;
 	esac
 }
+_append_to_PATH_if_not_present() {
+	case ":$PATH:" in
+		*":$1:"*) ;;
+		*) export PATH="$PATH:$1" ;;
+	esac
+}
+
+## zsh: auto-dedupe PATH (keeps 1st occurrence)
+## -g is mandatory: this file is sourced from within a function, the param would be local otherwise
+## both PATH and path are needed: -U on path alone doesn't dedupe "PATH=..." assignments (used by brew, mise…)
+[ -n "$ZSH_VERSION" ] && typeset -gU PATH path
+
+## ODE stuff is very specific, order shouldn't matter
+_prepend_to_PATH_if_not_present "${HOME}/work/src/x-external/off/offirmo/open-source-dev-env/2-shell/bin"
 
 #####################
 ## specific bins
@@ -30,25 +48,25 @@ pathDoesntContain() {
 
 ## original Operating system
 ## (we may want to override them)
-pathDoesntContain "/bin"            && export PATH="/bin:$PATH"
-pathDoesntContain "/sbin"           && export PATH="/sbin:$PATH"
+_prepend_to_PATH_if_not_present "/bin"
+_prepend_to_PATH_if_not_present "/sbin"
 
 ## packages independent of the OS but ~standardized,
 ## ex. Macports https://guide.macports.org/#installing.shell
-pathDoesntContain "/opt/local/bin"  && export PATH="/opt/local/bin:$PATH"
-pathDoesntContain "/opt/local/sbin" && export PATH="/opt/local/sbin:$PATH"
+_prepend_to_PATH_if_not_present "/opt/local/bin"
+_prepend_to_PATH_if_not_present "/opt/local/sbin"
 
 ## self, in-house maintained software
-pathDoesntContain "/usr/bin"        && export PATH="/usr/bin:$PATH"
-pathDoesntContain "/usr/sbin"       && export PATH="/usr/sbin:$PATH"
-pathDoesntContain "/usr/local/bin"  && export PATH="/usr/local/bin:$PATH"
-pathDoesntContain "/usr/local/sbin" && export PATH="/usr/local/sbin:$PATH"
+_prepend_to_PATH_if_not_present "/usr/bin"
+_prepend_to_PATH_if_not_present "/usr/sbin"
+_prepend_to_PATH_if_not_present "/usr/local/bin"
+_prepend_to_PATH_if_not_present "/usr/local/sbin"
 
 ## Seen in some installer (ex. CodeRabbit CLI, Lume...)
-pathDoesntContain "/.local/bin"     && export PATH="${HOME}/.local/bin:$PATH"
+_prepend_to_PATH_if_not_present "${HOME}/.local/bin"
 
 ## ODE stuff
-pathDoesntContain "/work/bin"       && export PATH="${HOME}/work/bin:$PATH"
+_prepend_to_PATH_if_not_present "${HOME}/work/bin"
 
 
 ## debug

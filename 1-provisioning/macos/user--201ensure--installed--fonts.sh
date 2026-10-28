@@ -49,7 +49,7 @@ brew install font-fira-code
 ## UX
 brew install font-fira-sans
 brew install font-fira-sans-condensed
-brew install font-fira-sans-extra-condensed
+brew install font-fira-sans-extra-condensed ## somehow doesn't work in Webstorm settings selector
 
 ## design
 # TODO review, causes problems when upgrade greedy

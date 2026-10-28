@@ -121,7 +121,7 @@ fi
 ## mise
 if command -v mise &> /dev/null; then
 	## https://mise.jdx.dev/cli/self-update.html#mise-self-update
-	mise self-update
+	mise self-update --yes
 fi
 
 

@@ -102,6 +102,7 @@ rm -rf ~/.npm
 if [[ -d "${HOME}/.claude/" ]]; then
 	echo
 	echo "******* Claude Code detected, cleaning… *******"
+	claude plugin prune
 	find "${HOME}/.claude/backups"         -mindepth 1 -delete
 	find "${HOME}/.claude/file-history"    -mindepth 1 -delete
 	find "${HOME}/.claude/jobs"            -mindepth 1 -delete

@@ -68,7 +68,7 @@ else
 	{
 		echo '## user-wide profile for sh(1)'
 		echo '## may (should) also be sourced by other shells'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)   ↳ [~/.profile] hello!"'
+		echo '[ "$VERBOSE__RC" = true ] && echo "$(date +%H:%M:%S)   ↳ [~/.profile] hello!" >&2'
 		echo ''
 		## macOs
 		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
@@ -86,7 +86,7 @@ else
 	} >> ~/.profile
 fi
 ## ensure some critical lines are always present
-ensure_file_has_line ~/.profile '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S)   ↳ [~/.profile] hello!"' prepend
+ensure_file_has_line ~/.profile '[ "$VERBOSE__RC" = true ] && echo "$(date +%H:%M:%S)   ↳ [~/.profile] hello!" >&2' prepend
 ensure_file_has_line ~/.profile 'export BASH_SILENCE_DEPRECATION_WARNING=1' append
 ensure_file_has_line ~/.profile 'export HOMEBREW_REQUIRE_TAP_TRUST=1' append
 
@@ -100,14 +100,16 @@ else
 	echo "* creating a runtime config file: ~/.bash_profile ▶️"
 	{
 		echo '## user-wide profile for bash(1)'
-		echo '## this config file is usually the first user-level file to be sourced for bash (after /etc/bashrc)'
+		echo '## this config file is usually the first user-level file to be sourced for bash (after /etc/profile, which sources /etc/bashrc)'
 		echo '## https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html'
 		echo ''
-		echo '## for troubleshooting, uncomment as wished:'
-		echo '#if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi'
-		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!"'
-		echo '[ -n "$PS1" ]              && echo          "           ↳ shell is interactive"'
-		echo 'shopt -q login_shell       && echo          "           ↳ shell is a login shell"  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
+		echo '## troubleshooting logs: only in interactive shells on a terminal (new tabs/windows + shells typed by hand)'
+		echo '## not in shells launched by tools/scripts (no tty)'
+		echo '## (NOT exported: child processes must stay silent)'
+		echo '[[ $- == *i* && -t 0 && -t 1 ]] && VERBOSE__RC=true'
+		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!" >&2'
+		echo '[ "$VERBOSE__RC" == true ] && [[ $- == *i* ]]      && echo "           ↳ shell is interactive" >&2'
+		echo '[ "$VERBOSE__RC" == true ] && shopt -q login_shell && echo "           ↳ shell is a login shell" >&2  # https://unix.stackexchange.com/questions/26676/how-to-check-if-a-shell-is-login-interactive-batch'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo ''
@@ -118,7 +120,7 @@ else
 	} >> ~/.bash_profile
 fi
 ## ensure some critical lines are always present
-ensure_file_has_line ~/.bash_profile '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!"' prepend
+ensure_file_has_line ~/.bash_profile '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bash_profile] hello!" >&2' prepend
 
 if [ -f ~/.bashrc ]; then
 	echo "* ~/.bashrc already exists ✅"
@@ -129,7 +131,9 @@ else
 		echo '## in theory it’s non-login only but in practice everyone expect it to be always sourced'
 		echo '## https://apple.stackexchange.com/a/13019/214344'
 		echo ''
-		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!"'
+		echo '## troubleshooting logs: same as in ~/.bash_profile, repeated bc a non-login bash (ex. `bash` typed from zsh) only reads this file'
+		echo '[[ $- == *i* && -t 0 && -t 1 ]] && VERBOSE__RC=true'
+		echo '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!" >&2'
 		echo ''
 		echo '## https://consoledonottrack.com/ https://turborepo.com/docs/telemetry#how-do-i-opt-out'
 		echo 'export DO_NOT_TRACK=1'
@@ -137,33 +141,46 @@ else
 		echo '## safety, esp. Ubuntu (https://serverfault.com/a/500778)'
 		echo 'export LANG=en_US.UTF-8'
 		echo 'export LANGUAGE=en_US.UTF-8'
-		echo 'export export LC_ALL=en_US.UTF-8'
+		echo 'export LC_ALL=en_US.UTF-8'
 		echo ''
 	} >> ~/.bashrc
 fi
 ## ensure some critical lines are always present
-ensure_file_has_line ~/.bashrc '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!"' prepend
+ensure_file_has_line ~/.bashrc '[ "$VERBOSE__RC" == true ] && echo "$(date +%H:%M:%S) ↳ [~/.bashrc] hello!" >&2' prepend
 
 
 ####### zsh #######
-## /etc/zshenv -> ~/.zshenv ~/.zshrc
+## /etc/zshenv -> ~/.zshenv -> /etc/zprofile -> ~/.zprofile -> /etc/zshrc -> ~/.zshrc -> /etc/zlogin -> ~/.zlogin
 if [ -f ~/.zshenv ]; then
 	echo "* ~/.zshenv already exists ✅"
 else
 	echo "* creating a runtime config file: ~/.zshenv ▶️"
 	{
 		echo '## user-wide configuration for zsh(1)'
-		echo '## this config file should be the first user-level file to be sourced for zsh (after global /etc/zshenv and /etc/zprofile)'
+		echo '## sourced by EVERY zsh (incl. scripts) -> must stay fast and silent'
+		echo '## order: /etc/zshenv -> ~/.zshenv -> /etc/zprofile -> ~/.zprofile -> /etc/zshrc -> ~/.zshrc -> /etc/zlogin -> ~/.zlogin'
 		echo '## https://zsh.sourceforge.io/Guide/zshguide02.html'
 		echo ''
-		echo '## for troubleshooting, uncomment as wished:'
-		echo 'if [ -n "$PS1" ]; then export VERBOSE__RC=true; fi  ## uncomment this to troubleshoot'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshenv] hello!"'
+		echo '## troubleshooting logs: only in interactive shells on a terminal (new tabs/windows + shells typed by hand)'
+		echo '## not in shells launched by tools/scripts (no tty)'
+		echo '## (NOT exported: child processes must stay silent)'
+		echo '[[ -o interactive && -t 0 && -t 1 ]] && VERBOSE__RC=true'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshenv] hello!" >&2'
+		echo ''
+		echo '## auto-dedupe PATH, keeping the 1st occurrence'
+		echo '## - why: startup files (brew shellenv, Docker, mise…) prepend unconditionally, and every nested shell (Claude Code, tmux, IDE terminals) inherits PATH and re-runs them -> duplicates'
+		echo '##   (harmless for lookup since 1st match wins, but noisy `type -a` and slower lookups of missing commands)'
+		echo '## - why here: the only file read by EVERY zsh, incl. non-interactive ones (scripts, `zsh -c`, tools) which never source ~/.zshrc'
+		echo '## - why not a zsh default: sh/ksh compat + it changes semantics: re-prepending an entry moves it to the front (good) but re-appending one is a no-op (can no longer move it to the end)'
+		echo '## - both PATH and path: -U on `path` alone does NOT dedupe "PATH=..." assignments (used by brew, mise…)'
+		echo '## https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html (typeset -U)'
+		echo 'typeset -U PATH path'
 		echo ''
 	} >> ~/.zshenv
 fi
 ## ensure some critical lines are always present
-ensure_file_has_line ~/.zshenv '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshenv] hello!"' prepend
+ensure_file_has_line ~/.zshenv '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshenv] hello!" >&2' prepend
+ensure_file_has_line ~/.zshenv 'typeset -U PATH path' append
 
 if [ -f ~/.zprofile ]; then
 	echo "* ~/.zprofile already exists ✅"
@@ -171,7 +188,7 @@ else
 	echo "* creating a runtime config file: ~/.zprofile ▶️"
 	{
 		echo '## user-wide profile for zsh(1)'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zprofile] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zprofile] hello!" >&2'
 		echo ''
 		echo 'export PROFILE=~/.profile  ## helps some tools to locate the intended profile, ex. nvm'
 		echo 'if [ -f ~/.profile ]; then . ~/.profile; fi'
@@ -179,7 +196,7 @@ else
 	} >> ~/.zprofile
 fi
 ## ensure some critical lines are always present
-ensure_file_has_line ~/.zprofile '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zprofile] hello!"' prepend
+ensure_file_has_line ~/.zprofile '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zprofile] hello!" >&2' prepend
 
 if [ -f ~/.zshrc ]; then
 	echo "* ~/.zshrc already exists ✅"
@@ -187,12 +204,12 @@ else
 	echo "* creating a runtime config file: ~/.zshrc ▶️"
 	{
 		echo '## user-wide runtime configuration for zsh(1)'
-		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshrc] hello!"'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshrc] hello!" >&2'
 		echo ''
 	} >> ~/.zshrc
 fi
 ## ensure some critical lines are always present
-ensure_file_has_line ~/.zshrc '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshrc] hello!"' prepend
+ensure_file_has_line ~/.zshrc '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ [~/.zshrc] hello!" >&2' prepend
 
 
 ####### bin #######
@@ -227,6 +244,25 @@ if [[ -n "$COMPANY" ]]; then
 else
 	echo "* reminder to set \$COMPANY"
 fi;
+
+
+TARGET=$HOME/work/bin/shellrc/00-init.sh
+if [ -f $TARGET ]; then
+	echo "* $TARGET already exists ✅"
+else
+	echo "* creating $TARGET ▶️"
+	{
+		echo '#@IgnoreInspection BashAddShebang'
+		echo '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […work/00-init.sh] hello!" >&2'
+		echo ''
+		echo "## used by some Offirmo script to check a commit doesn't contain local/confidential data"
+		echo 'export FORBIDDEN_KEYWORDS="'
+		echo '  $USER'
+		echo '"'
+	} >> $TARGET
+fi
+ensure_file_has_line $TARGET '[[ "$VERBOSE__RC" == true ]] && echo "$(date +%H:%M:%S) ↳ […work/00-init.sh] hello!" >&2' prepend
+
 
 echo "* PLEASE RESTART YOUR TERMINAL! ⚠️⚠️⚠️"
 #############################################################

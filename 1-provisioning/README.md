@@ -54,11 +54,12 @@ if ! grep -q "${HEADER}" "${TARGET_FILE}"; then
 	} >> "${TARGET_FILE}"
 
 
-if [ -n "$PS1" ]; then export VERBOSE__RC=true fi
+## troubleshooting logs: only in interactive shells on a terminal, NOT exported (child processes must stay silent)
+[[ $- == *i* && -t 0 && -t 1 ]] && VERBOSE__RC=true
 
 
 
-[[ "$VERBOSE__RC" == true ]] && echo "* [/etc/bashrc] hello!"
+[[ "$VERBOSE__RC" == true ]] && echo "* [/etc/bashrc] hello!" >&2
 ```
 
 Ruby ref. https://github.com/github-linguist/linguist?tab=readme-ov-file#dependencies
