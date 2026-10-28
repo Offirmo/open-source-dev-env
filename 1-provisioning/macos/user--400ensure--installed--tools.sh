@@ -30,7 +30,7 @@ echo "******* installing base apps through brew…"
 
 brew install inkscape
 
-brew install ffmpeg yt-dlp
+brew install ffmpeg libdvdcss yt-dlp
 
 if [ ! -f ~/.config/yt-dlp/config ]; then
 	echo "* creating ytdl config file: ~/.config/yt-dlp/config"
@@ -42,6 +42,12 @@ if [ ! -f ~/.config/yt-dlp/config ]; then
 		echo '--output ~/Downloads/ytdl/%(release_date)s-%(id)s-%(title)s.%(ext)s'
 		echo '--output chapter:~/Downloads/ytdl/%(channel)s/[%(id)s]-%(title)s/%(section_title)s.%(ext)s'
 	} >> ~/.config/yt-dlp/config
+fi
+
+if ! compgen -G "/usr/local/lib/libdvdcss*" > /dev/null; then
+	## from Google, for nol VLC tools such as handbrake
+	sudo mkdir -p /usr/local/lib
+	sudo cp -a /opt/homebrew/lib/libdvdcss* /usr/local/lib/
 fi
 
 # TODO REVIEW doesn't seem it's recommended way
