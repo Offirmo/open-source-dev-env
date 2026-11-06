@@ -65,8 +65,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
 	## https://www.codejam.info/2021/11/homebrew-multi-user.html#the-good-dedicate-a-single-user-account-to-homebrew
 	unalias brew 2>/dev/null
-	BREW_USER=$(stat -f "%Su" $(which brew))
-	export BREW_USER
 
 	if command -v brew &> /dev/null; then
 		_rc_log "      ↳ enabling brew…"
@@ -79,12 +77,16 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	fi
 
 	## brew multi-user, continued.
-	if [ "$BREW_USER" = "$(whoami)" ]; then
-		do_nothing=1
-	else
-		## alias only now to avoid a sudo prompt during shel init
+	## -O = owned by the current user (test builtin = no fork, faster if brew user = current user)
+	if [ -O "/opt/homebrew/bin/brew" ]; then
+		export BREW_USER="$USER"
+	elif [ -f "/opt/homebrew/bin/brew" ]; then
+		## brew user is not current user (shared brew, loosely supported but has benefits)
+		BREW_USER="$(stat -f "%Su" /opt/homebrew/bin/brew)"
+		export BREW_USER
+		## alias only now to avoid a sudo prompt during shell init
 		## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
-		## suggestion from Claude:
+		## better solution from Claude:
 		brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
 		## bash only, zsh can't export functions
 		[ -n "$BASH_VERSION" ] && export -f brew
