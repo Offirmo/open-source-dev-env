@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026/07"
+echo "# revision = circa 2026/11"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -72,8 +72,8 @@ else
 		echo ''
 		## macOs
 		echo 'export BASH_SILENCE_DEPRECATION_WARNING=1'
-		## brew pre-6
-		echo 'export HOMEBREW_REQUIRE_TAP_TRUST=1'
+		## brew pre-6 (legacy)
+		#echo 'export HOMEBREW_REQUIRE_TAP_TRUST=1'
 		echo ''
 		echo '#export PERSONAL_USERNAME__GITHUB=Foo'
 		echo ''

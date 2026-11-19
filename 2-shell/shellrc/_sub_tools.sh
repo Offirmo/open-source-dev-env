@@ -49,6 +49,14 @@ if [ $ITERM_SESSION_ID ]; then
 	fi
 fi
 
+############ TOOL -- Warp ############
+## Warp has no equivalent of iTerm's tab badge/color escape sequences
+## https://github.com/warpdotdev/warp/issues/2743 (closed in favor of a future "warpctrl" CLI: issue 11545)
+## -> shadow the iTerm-only "tabset" (used in many aliases) with a noop
+if [[ "$TERM_PROGRAM" == "WarpTerminal" ]]; then
+	tabset() { :; }
+fi
+
 
 
 ############ TOOL -- Jetbrains Toolbox ############
@@ -94,6 +102,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 
+
 ############ DEV ENV -- Generic ############
 ## mise
 #if command -v mise &> /dev/null; then
@@ -117,7 +126,6 @@ if [ -d "${HOME}/.local/share/mise/shims" ]; then
 	_rc_log "      ↳ enabling mise (shims)…"
 	export PATH="${HOME}/.local/share/mise/shims:$PATH"
 fi
-
 
 
 
@@ -251,15 +259,14 @@ fi
 ## prevents installing libs without an active virtualenv
 ## https://docs.python-guide.org/dev/pip-virtualenv/#requiring-an-active-virtual-environment-for-pip
 export PIP_REQUIRE_VIRTUALENV=true
-## "userpath" ~ seems to be used by "virtualenv" (python)
 
 
 
 ############ DEV ENV -- RUBY ############
+## TODO REVIEW (long time not used)
 ## rvm
 ## (copied from what is set on install)
 ## (note: PATH setup is in sibling file paths.sh)
-## TODO REVIEW (long time not used)
 #if [ -d "${HOME}/.rvm/bin" ]; then
 #	echo "$(date +%H:%M:%S)       ↳ enabling rvm… (bin)"
 #	# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

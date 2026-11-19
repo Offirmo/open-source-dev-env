@@ -26,24 +26,24 @@ echo "  - LC_ALL        = `echo $LC_ALL`"
 ############################################################
 echo "* starting…"
 
+## mise is the most flexible
+## mise can also be configured to use uv or similar if needed
+mise use -g python@3
+
 
 ## https://docs.brew.sh/Homebrew-and-Python
 
-# TODO https://docs.astral.sh/uv/
+## https://docs.astral.sh/uv/
 
 ## https://pypi.org/project/pipx/
 #brew install pipx
 #pipx ensurepath
 echo "* PLEASE REVIEW THIS FILE! ⚠️⚠️⚠️"
 
-
-
-
 #pyenv: not recommended (2022/12)
 #brew install pyenv
 #pyenv install 3.9.6
 #pyenv global 3.9.6
-
 
 
 #############################################################

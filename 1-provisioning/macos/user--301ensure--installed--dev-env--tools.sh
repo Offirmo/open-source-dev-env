@@ -4,7 +4,7 @@
 echo "#########################"
 echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
 echo "# \$BASH_SOURCE = $BASH_SOURCE"
-echo "# revision = circa 2026/07"
+echo "# revision = circa 2026/11"
 echo "#########################"
 
 ## safety  (https://serverfault.com/a/500778)
@@ -30,11 +30,18 @@ echo "******* installing base apps through brew…"
 ## base apps: https://github.com/Homebrew/homebrew-cask/search?q=visual&unscoped_q=visual
 ## in order of importance, to allow ctrl+C
 
+## more modern bash
+## As of 2026/11 default = ^3, brew = ^5
+## https://smallsharpsoftwaretools.com/tutorials/use_modern_bash_on_macos/
+## NOTE not default, need to run with $(brew --prefix)/bin/bash
+brew install bash
+
 ## generic completion utils https://docs.docker.com/engine/cli/completion/#bash
 brew install bash-completion
 
 ####### CLIs
-brew install ast-grep jq yq
+## https://formulae.brew.sh/formula/fd (was requested by Claude)
+brew install ast-grep jq yq fd
 #rsync
 
 brew install shellcheck
@@ -98,6 +105,7 @@ brew install kdiff3
 
 ## auto package manager
 ## https://github.com/antfu-collective/ni
+## better installed through brew than mise, or can't delete pnpm cache
 brew install ni
 
 
@@ -121,8 +129,8 @@ brew install bruno
 
 ## https://github.com/semgrep/semgrep https://semgrep.dev/products/community-edition/
 ## TODO review
-brew install semgrep
-semgrep --config=auto
+#brew install semgrep
+#semgrep --config=auto
 
 
 ## NO!

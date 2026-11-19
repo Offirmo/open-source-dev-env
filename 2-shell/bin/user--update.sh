@@ -16,7 +16,9 @@ echo
 ## last reviewed: 2023/09
 if command -v softwareupdate > /dev/null; then
 	echo "******* macOS updates… *******"
+	echo "↳ 1. \`--safari-only\`…"
 	softwareupdate  --install  --safari-only  ## those don't require a restart
+	echo "↳ 2. \`--list\`…"
 	softwareupdate  --list
 	echo
 fi
@@ -29,17 +31,17 @@ fi
 if command -v brew > /dev/null; then
 	echo "******* \`brew\` detected, updating… *******"
 
-	echo "  * 1. \`update\`…"
+	echo "↳ 1. \`update\`…"
 	brew update
 
-	echo "  * 2. \`upgrade --yes\`…"
+	echo "↳ 2. \`upgrade --yes\`…"
 	brew upgrade --yes
-	echo "    * also consider running: brew upgrade --greedy --yes"
-
-	echo "  * 3. \`cleanup\`…"
+	echo "  ↳ also consider running: brew upgrade --greedy --yes"
+````
+	echo "↳ 3. \`cleanup\`…"
 	brew cleanup
 
-	echo "  * \`doctor\`…"
+	echo "↳ \`doctor\`…"
 	brew doctor
 	echo
 fi
@@ -51,9 +53,9 @@ fi
 if command -v port > /dev/null; then
 	echo "******* MacPorts detected, updating… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
-	echo "  * 1. \`selfupdate\`…"
+	echo "↳ 1. \`selfupdate\`…"
 	sudo port selfupdate
-	echo "  * 2. \`upgrade\`…"
+	echo "↳ 2. \`upgrade\`…"
 	sudo port upgrade outdated
 	echo
 fi
@@ -64,11 +66,11 @@ fi
 if command -v apt > /dev/null; then
 	echo "******* Ubuntu's Advanced Packaging Tool detected, updating… *******"
 	## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
-	echo "  * 1. \`update\`…"
+	echo "↳ 1. \`update\`…"
 	sudo apt update
-	echo "  * 2. \`upgrade\`…"
+	echo "↳ 2. \`upgrade\`…"
 	sudo apt upgrade
-	echo "    * also consider running: apt full-upgrade"
+	echo "  ↳ also consider running: apt full-upgrade"
 	echo
 fi
 
@@ -76,23 +78,23 @@ fi
 ## Claude Code
 if command -v claude > /dev/null; then
 	echo "******* Claude Code detected, updating… *******"
-	#echo "  * 1. \`update\`…"
+	#echo "* 1. \`update\`…"
 	#claude update  NO this is an alias of upgrade
-	echo "  * \`upgrade\`…"
+	echo "↳ \`upgrade\`…"
 	claude upgrade
 
-	echo "* Updating all marketplaces…"
+	echo "↳ Updating all marketplaces…"
 	claude plugin marketplace update
 	echo
-	echo "* Updating all installed plugins…"
+	echo "↳ Updating all installed plugins…"
 
 	# Enumerate up-front so a failed listing is a hard error, not a silent
 	# "no plugins found" (process substitution failures escape set -euo pipefail).
 	plugins=$(claude plugin list --json | jq -r '.[] | "\(.id)\t\(.scope)"') \
-	  || { echo "  Failed to list installed plugins" >&2; exit 1; }
+	  || { echo "  ↳ Failed to list installed plugins" >&2; exit 1; }
 
 	if [[ -z "${plugins}" ]]; then
-		echo "  No installed plugins found."
+		echo "  ↳ No installed plugins found."
 	else
 		# Disabled plugins are updated too: `claude plugin update` succeeds on them,
 		# and keeping them current matches the "update all" intent.
@@ -109,19 +111,28 @@ if command -v claude > /dev/null; then
 		echo
 
 		if [[ ${#failed[@]} -gt 0 ]]; then
-		  echo "  Failed to update: ${failed[*]}" >&2
+		  echo "  ↳ Failed to update: ${failed[*]}" >&2
 		fi
 
-		echo "${count} plugins updated. Restart Claude Code to apply updates."
+		echo "  ↳ ${count} plugins updated. Restart Claude Code to apply updates."
 	fi
 fi
 
 
 
 ## mise
+## last reviewed: 2026/11
 if command -v mise &> /dev/null; then
+	echo "******* \`mise\` detected, updating… *******"
 	## https://mise.jdx.dev/cli/self-update.html#mise-self-update
+	echo "↳ 1. \`self-update\`…"
 	mise self-update --yes
+	## https://mise.jdx.dev/cli/upgrade.html
+	## upgrades each tool within its requested range (ex. python@3 → latest 3.x, which ships a recent pip)
+	echo "↳ 2. \`upgrade\`…"
+	mise upgrade
+	echo "  ↳ old versions are kept, consider running: mise prune"
+	echo
 fi
 
 
@@ -159,9 +170,23 @@ fi
 
 ############ Dev Env -- Python ############
 ## pip
-if command -v pip > /dev/null; then
-	echo "******* \`pip\` detected, updating… *******"
-	pip install --upgrade pip
+## last reviewed: 2026/11
+## using `python3 -m pip` so that the interpreter we check is the one owning the pip we upgrade
+function is_python3_externally_managed {
+	## PEP 668 https://peps.python.org/pep-0668/#marking-an-interpreter-as-using-an-external-package-manager
+	python3 -I -c 'import os, sys, sysconfig
+marker = os.path.join(sysconfig.get_path("stdlib"), "EXTERNALLY-MANAGED")
+sys.exit(0 if os.path.isfile(marker) else 1)'
+}
+if command -v python3 > /dev/null && python3 -m pip --version &> /dev/null; then
+	echo "******* \`pip\` detected… *******"
+	if is_python3_externally_managed; then
+		echo "↳ externally managed (PEP 668) → skipping, upgrade it through its owner (brew, apt…)"
+	else
+		echo "↳ updating…"
+		## our shellrc sets PIP_REQUIRE_VIRTUALENV=true as a guardrail, this upgrade is intentionally global
+		PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade pip
+	fi
 	echo
 fi
 
@@ -178,6 +203,7 @@ fi
 ############ Dev Env -- Rust ############
 if command -v rustup > /dev/null; then
 	echo "******* Rust detected, updating… *******"
+	echo "↳ \`update\`…"
 	rustup update
 	echo
 fi
