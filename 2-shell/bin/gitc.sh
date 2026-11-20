@@ -125,21 +125,21 @@ echo "  TARGET_DIR       = $TARGET_DIR"
 
 echo "* cloning $REPOSITORY_URL into ${PARENT_DIR}/${TARGET_DIR} ..."
 
-mkdir -p $PARENT_DIR
-pushd $PARENT_DIR > /dev/null
+mkdir -p "$PARENT_DIR" || exit 1
+pushd "$PARENT_DIR" > /dev/null || exit 1
 
-if [[ -d $TARGET_DIR ]]; then
+if [[ -d "$TARGET_DIR" ]]; then
 	echo "! Already cloned."
 else
 	## --single-branch  cf. https://stackoverflow.com/questions/1778088/how-do-i-clone-a-single-branch-in-git
 	export GIT_LFS_SKIP_SMUDGE=1 ## https://gitlab.ub.uni-giessen.de/jlugitlab/git-lfs-howto#option-prevent-download-of-lfs-files
-	git clone --recursive --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR"
+	git clone --recurse-submodules --single-branch "$REPOSITORY_URL" "$TARGET_DIR" || exit 1
 
 	if [ $IS_FROM_OFFIRMO = 1 ]; then
 		## fix config
 
-		pushd $TARGET_DIR > /dev/null
-		git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+		pushd "$TARGET_DIR" > /dev/null || exit 1
+		git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 
 		echo ""                                 >> ".git/config"
 		echo "[user]"                           >> ".git/config"
@@ -158,8 +158,8 @@ else
 	elif [ $IS_FROM_PERSONAL = 1 ]; then
 		## fix config
 
-		pushd $TARGET_DIR > /dev/null
-		git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+		pushd "$TARGET_DIR" > /dev/null || exit 1
+		git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 
 		echo ""                                     >> ".git/config"
 		echo "[github]"                             >> ".git/config"

@@ -2,15 +2,30 @@
 # coding styles between different editors and IDEs
 # editorconfig.org
 
-# top-most EditorConfig file
+## top-most EditorConfig file
 root = true
 
-# Unix-style newlines with a newline ending every file
+
 [*]
 charset = utf-8
+trim_trailing_whitespace = true
 end_of_line = lf
+insert_final_newline = true
+# tab with visual width 3
 indent_style = tab
 indent_size = tab
 tab_width = 3
-trim_trailing_whitespace = true
-insert_final_newline = true
+## non standard EditorConfig entries
+## https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+indent_brace_style = K&R
+max_line_length = off
+quote_type = auto
+spaces_around_operators = true
+
+
+[*.md]
+## markdown has its own syntax
+indent_style = space
+indent_size = 2
+## https://github.com/microsoft/vscode/issues/1679
+trim_trailing_whitespace = false

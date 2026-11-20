@@ -5,10 +5,18 @@
 ## zsh doesn't like ~ in the PATH, use ${HOME} everywhere
 ## detect the CURRENT shell with $BASH_VERSION / $ZSH_VERSION, NOT $SHELL (= the user's login shell, inherited by everything)
 
+## XDG base dir = the spec default when unset or empty
+## https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+## NOT assigned to XDG_DATA_HOME itself: in this interactive shell, sourced code would see it but child processes wouldn't
+## (unset at the end of this file)
+_rc_xdg_data_home="${XDG_DATA_HOME:-${HOME}/.local/share}"
+## = where bash-completion (v2) looks for the user's completions
+_rc_bash_completion_user_dir="${_rc_xdg_data_home}/bash-completion/completions"
+
 ############ TOOL -- iTerm ############
 ## https://iterm2.com/documentation-shell-integration.html
 ## last reviewed: 2026/04
-if [ $ITERM_SESSION_ID ]; then
+if [ -n "$ITERM_SESSION_ID" ]; then
 
 	## put current directory in iTerm tab title
 	## source: https://gist.github.com/phette23/5270658 (modified, cf. https://gist.github.com/phette23/5270658?permalink_comment_id=4683975#gistcomment-4683975)
@@ -32,20 +40,31 @@ if [ $ITERM_SESSION_ID ]; then
 	# then we append the rest of $PROMPT_COMMAND so as not to remove what was already there
 	# voilà!
 
+	## downloaded on demand only, refreshed by 2-shell/bin/user--update.sh (same location)
+	## --fail + tmp file then mv: never cache (and source at every shell start) an error page or a partial download
+	## --max-time: a shell start must never hang on a bad network (captive portal, half-up VPN…)
 	if [ -n "$BASH_VERSION" ]; then
-		if [ ! -f ~/.iterm2_shell_integration.bash ]; then
+		_rc_iterm2_integration_file="${_rc_xdg_data_home}/iterm2/shell_integration.bash"
+		if [ ! -f "$_rc_iterm2_integration_file" ]; then
 			echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (bash)" >&2
-			curl https://iterm2.com/shell_integration/bash --location --output ~/.iterm2_shell_integration.bash
+			curl https://iterm2.com/shell_integration/bash --fail --location --max-time 5 --create-dirs --output "${_rc_iterm2_integration_file}.tmp" \
+				&& mv "${_rc_iterm2_integration_file}.tmp" "$_rc_iterm2_integration_file"
 		fi
-		_rc_log "      ↳ enabling iTerm2 integration… (bash)"
-		source ~/.iterm2_shell_integration.bash
+		if [ -f "$_rc_iterm2_integration_file" ]; then
+			_rc_log "      ↳ enabling iTerm2 integration… (bash)"
+			source "$_rc_iterm2_integration_file"
+		fi
 	elif [ -n "$ZSH_VERSION" ]; then
-		if [ ! -f ~/.iterm2_shell_integration.zsh ]; then
+		_rc_iterm2_integration_file="${_rc_xdg_data_home}/iterm2/shell_integration.zsh"
+		if [ ! -f "$_rc_iterm2_integration_file" ]; then
 			echo "$(date +%H:%M:%S)       ↳ downloading iTerm2 integration… (zsh)" >&2
-			curl https://iterm2.com/shell_integration/zsh --location --output ~/.iterm2_shell_integration.zsh
+			curl https://iterm2.com/shell_integration/zsh --fail --location --max-time 5 --create-dirs --output "${_rc_iterm2_integration_file}.tmp" \
+				&& mv "${_rc_iterm2_integration_file}.tmp" "$_rc_iterm2_integration_file"
 		fi
-		_rc_log "      ↳ enabling iTerm2 integration… (zsh)"
-		source ~/.iterm2_shell_integration.zsh
+		if [ -f "$_rc_iterm2_integration_file" ]; then
+			_rc_log "      ↳ enabling iTerm2 integration… (zsh)"
+			source "$_rc_iterm2_integration_file"
+		fi
 	fi
 fi
 
@@ -93,9 +112,9 @@ if [[ "$OSTYPE" == darwin* ]]; then
 		BREW_USER="$(stat -f "%Su" /opt/homebrew/bin/brew)"
 		export BREW_USER
 		## alias only now to avoid a sudo prompt during shell init
-		## NO! doesn't propagate to scripts:  alias brew='sudo -Hu '$BREW_USER' brew'
+		## NO! doesn't propagate to scripts:  alias brew='sudo --set-home --user='$BREW_USER' brew'
 		## better solution from Claude:
-		brew() { sudo -Hu "$BREW_USER" /opt/homebrew/bin/brew "$@"; }
+		brew() { sudo --set-home --user="$BREW_USER" /opt/homebrew/bin/brew "$@"; }
 		## bash only, zsh can't export functions
 		[ -n "$BASH_VERSION" ] && export -f brew
 	fi
@@ -122,9 +141,11 @@ fi
 ## "shims" mode = just the shims dir in front of the PATH = exactly what `eval "$(mise activate bash --shims)"` outputs
 ## but without exec-ing mise (~130ms on this machine!)
 ## (unconditional prepend, same as mise does: must stay in front of brew etc. even if path_helper re-ordered an inherited PATH)
-if [ -d "${HOME}/.local/share/mise/shims" ]; then
+## = mise's own resolution of its data dir: $MISE_DATA_DIR, else $XDG_DATA_HOME/mise (also on macOS)
+_rc_mise_shims_dir="${MISE_DATA_DIR:-${_rc_xdg_data_home}/mise}/shims"
+if [ -d "$_rc_mise_shims_dir" ]; then
 	_rc_log "      ↳ enabling mise (shims)…"
-	export PATH="${HOME}/.local/share/mise/shims:$PATH"
+	export PATH="${_rc_mise_shims_dir}:$PATH"
 fi
 
 
@@ -163,7 +184,7 @@ else
 
 				# If there is no default version, set it to `node`
 				# This will use the latest version on your machine
-				if [ $default_version = 'N/A' ]; then
+				if [ "$default_version" = 'N/A' ]; then
 					nvm alias default node
 					default_version=$(nvm version default)
 				fi
@@ -182,7 +203,7 @@ else
 				# If there are multiple matching versions, take the latest one
 				# Remove the `->` and `*` characters and spaces
 				# `locally_resolved_nvm_version` will be `N/A` if no local versions are found
-				locally_resolved_nvm_version=$(nvm ls --no-colors "${nvm_version}" | command tail -1 | command tr -d '\->*' | command tr -d '[:space:]')
+				locally_resolved_nvm_version=$(nvm ls --no-colors "${nvm_version}" | command tail --lines=1 | command tr -d '\->*' | command tr -d '[:space:]')
 
 				# If it is not already installed, install it
 				# `nvm install` will implicitly use the newly-installed version
@@ -215,7 +236,7 @@ if ! command -v yarn &> /dev/null && [[ -d ~/.yarn/bin ]]; then
 fi
 ## WARNING: if present, the 2 yarn invocations below = 2 node startups at each shell start (slow)
 if command -v yarn &> /dev/null; then
-	if [[ $(yarn -v) = 1.* ]]; then
+	if [[ $(yarn --version) = 1.* ]]; then
 		_rc_log "      ↳ enabling yarn v1…"
 		_append_to_PATH_if_not_present "$(yarn global bin)"
 	else
@@ -232,7 +253,7 @@ if [ -d "${HOME}/.deno" ]; then
 	_rc_log "      ↳ enabling deno…"
 	[ -s "${HOME}/.deno/env" ] && \. "${HOME}/.deno/env"
 	if [ -n "$BASH_VERSION" ]; then
-		[ -s "${HOME}/.local/share/bash-completion/completions/deno.bash" ] && \. "${HOME}/.local/share/bash-completion/completions/deno.bash"
+		[ -s "${_rc_bash_completion_user_dir}/deno.bash" ] && \. "${_rc_bash_completion_user_dir}/deno.bash"
 	fi
 fi
 
@@ -306,15 +327,18 @@ fi
 if [ -d "/Applications/Docker.app/Contents/Resources/bin" ]; then
 	_rc_log "      ↳ enabling docker… (Applications)"
 	_prepend_to_PATH_if_not_present "/Applications/Docker.app/Contents/Resources/bin"
-elif [ -d "${HOME}/.docker/bin" ]; then
+fi
+## NOT elif: in "user" CLI install mode, ~/.docker/bin has extras missing from the dir above (docker-compose, kubectl.docker)
+## = also what Docker Desktop keeps re-adding to the profiles: neutralize its lines there, this one is idempotent
+if [ -d "${HOME}/.docker/bin" ]; then
 	_rc_log "      ↳ enabling docker… (~/.docker)"
 	_append_to_PATH_if_not_present "${HOME}/.docker/bin"
 fi
 ## completions https://docs.docker.com/engine/cli/completion/
-if ! [[ -f ~/.local/share/bash-completion/completions/docker ]]; then
+if command -v docker &> /dev/null && ! [[ -f "${_rc_bash_completion_user_dir}/docker" ]]; then
 	echo "$(date +%H:%M:%S)         ↳ creating docker completion file… (bash)" >&2
-	mkdir -p ~/.local/share/bash-completion/completions
-	docker completion bash > ~/.local/share/bash-completion/completions/docker
+	mkdir -p "$_rc_bash_completion_user_dir"
+	docker completion bash > "${_rc_bash_completion_user_dir}/docker"
 fi
 # TODO 1D completions for zsh
 
@@ -322,17 +346,20 @@ fi
 ## > directory to your PATH environment variable, e.g., (for Bash shell):
 ## >    export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 if [ -d "/opt/homebrew/share/google-cloud-sdk/bin" ]; then
-	_rc_log "    ↳ enabling shared brew google-cloud-sdk…"
+	_rc_log "      ↳ enabling shared brew google-cloud-sdk…"
 	_append_to_PATH_if_not_present "/opt/homebrew/share/google-cloud-sdk/bin"
 fi
 
 
 ## must be last?
 if command -v starship &> /dev/null; then
-	_rc_log "    ↳ enabling starship status bar…"
+	_rc_log "      ↳ enabling starship status bar…"
 	if [ -n "$BASH_VERSION" ]; then
 		eval "$(starship init bash)"
 	elif [ -n "$ZSH_VERSION" ]; then
 		eval "$(starship init zsh)"
 	fi
 fi
+
+
+unset _rc_xdg_data_home _rc_bash_completion_user_dir _rc_iterm2_integration_file _rc_mise_shims_dir

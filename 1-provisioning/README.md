@@ -14,7 +14,7 @@ TODO IMPROVE adding to bash_profiles* only if the line is not already here
 
 HOWTO:
 ```bash
-if [ ! command -v brew > /dev/null]; then
+if ! command -v brew > /dev/null; then
 	...
 fi
 
@@ -45,7 +45,7 @@ if [ "${BASH-no}" != "no" ]; then
 fi
 
 
-if ! grep -q "${HEADER}" "${TARGET_FILE}"; then
+if ! grep --quiet "${HEADER}" "${TARGET_FILE}"; then
 	mkdir -p ...
 	{
 		echo ""

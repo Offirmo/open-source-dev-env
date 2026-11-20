@@ -1,0 +1,60 @@
+### common/user--000ensure--present--work_structure.sh
+### common/user--010ensure--settings--shell.sh
+### common/user--020ensure--present--ssh.sh
+ssh-keygen -a 100 -t ed25519 -C $USER -f ~/.ssh/id_ed25519
+open https://github.com/settings/keys
+open https://bitbucket.org/account/settings/ssh-keys/
+ssh-keygen -a 100 -t ed25519 -C offirmo.net@gmail.com -f ~/.ssh/id_ed25519_offirmo
+open https://github.com/settings/keys
+open https://bitbucket.org/account/settings/ssh-keys/
+### common/user--050ensure--pkg-mgr.sh
+brew update
+ssh-keygen -R github.com -f ~/.ssh/known_hosts
+### common/user--099ensure--cloned--ode_repo.sh
+git clone --recursive https://github.com/Offirmo/open-source-dev-env.git open-source-dev-env
+### macos/user--100ensure--settings.sh
+defaults write com.apple.Finder AppleShowAllFiles -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder DisableAllAnimations -bool true
+### macos/user--200ensure--installed--daily-life-utils.sh
+brew install rectangle xnviewmp
+brew install grandperspective
+### macos/user--201ensure--installed--fonts.sh
+brew install font-jetbrains-mono
+brew install font-fira-code
+brew install font-fira-sans
+brew install font-fira-sans-condensed
+brew install font-fira-sans-extra-condensed
+### common/user--300ensure--installed--dev-env--common.sh
+git clone --recursive https://github.com/altercation/solarized.git solarized
+brew install --cask font-fira-code-nerd-font
+brew install starship
+### macos/user--301ensure--installed--dev-env--tools.sh
+brew install bash
+brew install bash-completion
+brew install ast-grep jq yq fd
+brew install shellcheck
+brew install coreutils
+brew install warp
+brew install iterm2
+brew install git-lfs
+brew install git-cola
+brew install git-delta mergiraf difftastic
+brew install gh
+gh config set --host github.com git_protocol https
+gh extension install github/gh-stack
+brew install jetbrains-toolbox visual-studio-code
+brew install kdiff3
+brew install ni
+brew install responsively
+brew install bruno
+### common/user--310ensure--installed--dev-env--js.sh
+brew install mise
+### macos/user--400ensure--installed--tools.sh
+brew install inkscape
+brew install ffmpeg libdvdcss yt-dlp
+sudo mkdir -p /usr/local/lib
+sudo cp -a /opt/homebrew/lib/libdvdcss\* /usr/local/lib/
+### macos/user--900ensure--installed--gaming.sh
+brew install steam

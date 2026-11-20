@@ -2,27 +2,25 @@
 ## Shell provision script
 
 echo "#########################"
-echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
-echo "# \$BASH_SOURCE = $BASH_SOURCE"
+echo "# NON root provisioning script: echo${BASH_SOURCE[0]}"
 echo "# revision = circa 2026/07"
 echo "#########################"
 
-## safety  (https://serverfault.com/a/500778)
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+if [ "$EUID" -eq 0 ]; then
+	echo "* should NOT be run as root ❌"
+	exit 1
+fi
 
-## debug informations
+## predictable output of tools (english messages, code-point sorting = same on macOS and Linux)
+## C.UTF-8 = the only UTF-8 locale available on both (en_US.UTF-8 may not be generated on Linux)
+export LANG=C.UTF-8 LC_ALL=C.UTF-8
+
 echo "* environment diagnostic:"
-echo "  - BASH          = '$BASH' (should equal /bin/bash)"
-echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
-echo "  - whoami        = `whoami`"
-echo "  - pwd           = `pwd`"
-echo "  - LANG          = `echo $LANG`"
-echo "  - LC_ALL        = `echo $LC_ALL`"
-## full env
-#echo "  - PATH          = $PATH"
-#env
+echo "  - bash = $BASH $BASH_VERSION, SHLVL = $SHLVL, stdin = $([ -t 0 ] && echo tty || echo 'not a tty (piped?)')"
+echo "  - user = $(whoami), HOME = $HOME"
+echo "  - OS   = $(uname -sm) ($([[ "$OSTYPE" == darwin* ]] && echo "macOS $(sw_vers -productVersion)" || ( . /etc/os-release 2>/dev/null && echo "$PRETTY_NAME" )))"
+echo "  - brew = $(command -v brew || echo '(not found)')"
+echo "  - mise = $(command -v mise || echo '(not found)')"
 ############################################################
 echo "* starting…"
 
@@ -38,17 +36,17 @@ if command -v brew > /dev/null; then
 elif command -v apt > /dev/null; then
 	## apt (Ubuntu)
 	## last reviewed: 2026/05
-	sudo install -dm 755 /etc/apt/keyrings
-	curl -fSs https://mise.en.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.asc 1> /dev/null
+	sudo install --directory --mode=755 /etc/apt/keyrings
+	curl --fail --show-error --silent https://mise.en.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.asc 1> /dev/null
 	echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc] https://mise.en.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
-	sudo apt update -y
-	sudo apt install -y mise
+	sudo apt update --yes
+	sudo apt install --yes mise
 fi
-mise use -g node@lts
-mise use -g npm:iterm2-tab-set
+mise use --global node@lts
+mise use --global npm:iterm2-tab-set
 ## XXX breaks if non-standard npm registry https://github.com/nodejs/corepack/issues/296
 ## also not really needed if mise
-#mise use -g npm:corepack
+#mise use --global npm:corepack
 #export COREPACK_NPM_REGISTRY="https://registry.npmjs.org"
 #corepack enable
 
@@ -56,7 +54,7 @@ mise use -g npm:iterm2-tab-set
 ## https://github.com/nvm-sh/nvm#installing-and-updating
 #echo "* (re)installing nvm…"
 # PROFILE=/dev/null  BC we load nvm ourselves in a more clever way, so don't want the install to touch .bashrc
-#PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
+#PROFILE=/dev/null bash -c 'curl --output - https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
 #source ~/.nvm/nvm.sh
 #nvm install 'lts/*'
 #nvm alias default 'lts/*'
@@ -68,6 +66,7 @@ echo "* basic global pkgs installed ✅"
 
 
 ############ npm ############
+## TODO review only if Offirmo?
 npm config set init-author-email  offirmo.net@gmail.com
 npm config set init-author-name   Offirmo
 npm config set init-author-url    https://www.offirmo.net

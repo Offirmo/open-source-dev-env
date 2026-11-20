@@ -8,13 +8,14 @@
 #export IS_OFFIRMO_DEV_ENV=1
 
 
-## asks tools to not track https://consoledonottrack.com/
-## https://turborepo.com/docs/telemetry#how-do-i-opt-out
-export DO_NOT_TRACK=1
+## exported variables = in ../_.profile.sh
 
 
 ## remove duplicated bash history https://askubuntu.com/a/15929
-export HISTCONTROL=ignoreboth:erasedups
+## (NOT exported: only read by the current shell)
+HISTCONTROL=ignoreboth:erasedups
+## zsh equivalent (ignorespace + erasedups, which implies ignoredups)
+[ -n "$ZSH_VERSION" ] && setopt HIST_IGNORE_SPACE HIST_IGNORE_ALL_DUPS
 
 
 ## improve stuff with colors
@@ -41,16 +42,24 @@ fi
 
 ## enable color support of ls and also add handy aliases
 if [ "$color_prompt" = yes ]; then
-	## https://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output/33678?newreg=ead977f7838b41bba240c9e030f4b005
-	export CLICOLOR=1
-	alias ls='ls -Gp'
+	## BSD ls (macOS): colors via $CLICOLOR (../_.profile.sh)
+	## NOT "ls -G": on GNU ls (Linux, or brew's coreutils "gnubin" ahead in the PATH) -G means --no-group = no colors + no group column
+	## NOT "ls --color=auto" on macOS: only recent BSD ls supports it, an older one would make ls fail entirely
+	## -> branching on $OSTYPE (builtin var = no fork, unlike a feature test)
+	## known gap: macOS + GNU ls ahead in the PATH = no colors (harmless)
+	if [[ "$OSTYPE" == darwin* ]]; then
+		alias ls='ls -p'
+	else
+		alias ls='ls --color=auto -p'
+	fi
 
 	## TODO evaluate
 	#export LSCOLORS=ExFxBxDxCxegedabagacad
 
 	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
+	## NOT the "egrep"/"fgrep" binaries: GNU grep >= 3.8 warns "egrep is obsolescent" on every call
+	alias fgrep='grep --fixed-strings --color=auto'
+	alias egrep='grep --extended-regexp --color=auto'
 fi
 
 unset color_prompt force_color_prompt

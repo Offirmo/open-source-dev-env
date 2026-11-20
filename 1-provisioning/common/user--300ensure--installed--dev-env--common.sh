@@ -2,27 +2,31 @@
 ## Shell provision script
 
 echo "#########################"
-echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
-echo "# \$BASH_SOURCE = $BASH_SOURCE"
+echo "# NON root provisioning script: echo${BASH_SOURCE[0]}"
 echo "# revision = circa 2026/07"
 echo "#########################"
 
-## safety  (https://serverfault.com/a/500778)
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+if [ "$EUID" -eq 0 ]; then
+	echo "* should NOT be run as root ❌"
+	exit 1
+fi
 
-## debug informations
+## predictable output of tools (english messages, code-point sorting = same on macOS and Linux)
+## C.UTF-8 = the only UTF-8 locale available on both (en_US.UTF-8 may not be generated on Linux)
+export LANG=C.UTF-8 LC_ALL=C.UTF-8
+
 echo "* environment diagnostic:"
-echo "  - BASH          = '$BASH' (should equal /bin/bash)"
-echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
-echo "  - whoami        = `whoami`"
-echo "  - pwd           = `pwd`"
-echo "  - LANG          = `echo $LANG`"
-echo "  - LC_ALL        = `echo $LC_ALL`"
-## full env
-#echo "  - PATH          = $PATH"
-#env
+echo "  - bash = $BASH $BASH_VERSION, SHLVL = $SHLVL, stdin = $([ -t 0 ] && echo tty || echo 'not a tty (piped?)')"
+echo "  - user = $(whoami), HOME = $HOME"
+echo "  - OS   = $(uname -sm) ($([[ "$OSTYPE" == darwin* ]] && echo "macOS $(sw_vers -productVersion)" || ( . /etc/os-release 2>/dev/null && echo "$PRETTY_NAME" )))"
+echo "  - brew = $(command -v brew || echo '(not found)')"
+echo "  - XDG_CONFIG_HOME = ${XDG_CONFIG_HOME:-(unset)}"
+############################################################
+## XDG base dirs = the spec defaults when unset or empty
+## https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+## NOT exported: no change for child processes (some tools behave differently when set, ex. nvm's installer)
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
 ############################################################
 echo "* starting…"
 
@@ -35,35 +39,46 @@ echo "* starting…"
 ############ global gitignore
 ## https://gist.github.com/subfuzion/db7f57fff2fb6998a16c
 ## [Claude] default fallback location for global excludes, used automatically, no command needed, as long as core.excludesfile isn't explicitly set to something else
-if [ -f ~/.config/git/ignore ]; then
-	echo "* ~/.config/git/ignore already exists ✅"
+if [ -f "$XDG_CONFIG_HOME/git/ignore" ]; then
+	echo "* $XDG_CONFIG_HOME/git/ignore already exists ✅"
 else
-	echo "* creating ~/.config/git/ignore ▶️"
-	mkdir -p ~/.config/git/
-	touch    ~/.config/git/ignore
+	echo "* creating $XDG_CONFIG_HOME/git/ignore ▶️"
+	mkdir -p "$XDG_CONFIG_HOME/git"
+	touch    "$XDG_CONFIG_HOME/git/ignore"
 fi
-if ! grep -qF '.DS_Store' ~/.config/git/ignore; then
-  echo '.DS_Store' >> ~/.config/git/ignore
+if ! grep --quiet --fixed-strings '.DS_Store' "$XDG_CONFIG_HOME/git/ignore"; then
+  echo '.DS_Store' >> "$XDG_CONFIG_HOME/git/ignore"
 fi
 ## Also seen: *.swp core
 
 ############ global gitattributes
-if [ -f ~/.config/git/attributes ]; then
-	echo "* ~/.config/git/attributes already exists ✅"
+if [ -f "$XDG_CONFIG_HOME/git/attributes" ]; then
+	echo "* $XDG_CONFIG_HOME/git/attributes already exists ✅"
 else
-	echo "* creating ~/.config/git/attributes ▶️"
-	mkdir -p ~/.config/git/
-	touch    ~/.config/git/attributes
+	echo "* creating $XDG_CONFIG_HOME/git/attributes ▶️"
+	mkdir -p "$XDG_CONFIG_HOME/git"
+	touch    "$XDG_CONFIG_HOME/git/attributes"
 fi
 
 ############ global config
+## git reads both ~/.gitconfig and $XDG_CONFIG_HOME/git/config
+## but `git config --global` only writes into the XDG one if it exists AND ~/.gitconfig doesn't
+## https://git-scm.com/docs/git-config#Documentation/git-config.txt---global
+## -> on a fresh machine, create it so that the global config lands in the XDG dir
+## (an existing ~/.gitconfig is left alone = keeps receiving the writes)
+if [ ! -f ~/.gitconfig ] && [ ! -f "$XDG_CONFIG_HOME/git/config" ]; then
+	echo "* creating $XDG_CONFIG_HOME/git/config ▶️"
+	mkdir -p "$XDG_CONFIG_HOME/git"
+	touch    "$XDG_CONFIG_HOME/git/config"
+fi
+
 git config --global push.default simple
 git config --global color.ui "auto"
 
 ## declare merge=ours as a merge driver
 ## https://7tonshark.com/posts/avoid-conflicts-in-pnpm-lock/
-git config merge.ours.name "keep ours"
-git config merge.ours.driver true
+git config --global merge.ours.name "keep ours"
+git config --global merge.ours.driver true
 
 
 ## "This default branch name will change to "main" in Git 3.0"
@@ -94,9 +109,9 @@ git config --global delta.line-numbers true
 ####### mergiraf
 ## https://mergiraf.org/usage.html#registration-as-a-git-merge-driver
 git config --global merge.mergiraf.name mergiraf
-git config --global merge.mergiraf.driver 'mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L'
-if ! grep -qF '* merge=mergiraf' ~/.config/git/attributes; then
-  echo '* merge=mergiraf' >> ~/.config/git/attributes
+git config --global merge.mergiraf.driver 'mergiraf merge --git %O %A %B --base-name %S --left-name %X --right-name %Y --path-name %P --conflict-marker-size %L'
+if ! grep --quiet --fixed-strings '* merge=mergiraf' "$XDG_CONFIG_HOME/git/attributes"; then
+  echo '* merge=mergiraf' >> "$XDG_CONFIG_HOME/git/attributes"
 fi
 ## TODO evaluate https://github.com/jelmer/awesome-merge-drivers?tab=readme-ov-file#all-in-one-merge-drivers
 

@@ -4,7 +4,6 @@
 echo
 echo "* […ode/…/user--update.sh] hello!"
 echo "************ Updating your system… ************"
-echo
 
 
 ## IMPORTANT
@@ -15,12 +14,12 @@ echo
 ############ OS ############
 ## last reviewed: 2023/09
 if command -v softwareupdate > /dev/null; then
+	echo
 	echo "******* macOS updates… *******"
 	echo "↳ 1. \`--safari-only\`…"
 	softwareupdate  --install  --safari-only  ## those don't require a restart
 	echo "↳ 2. \`--list\`…"
 	softwareupdate  --list
-	echo
 fi
 
 
@@ -29,6 +28,7 @@ fi
 ## brew (macOS)
 ## last reviewed: 2023/09
 if command -v brew > /dev/null; then
+	echo
 	echo "******* \`brew\` detected, updating… *******"
 
 	echo "↳ 1. \`update\`…"
@@ -37,13 +37,12 @@ if command -v brew > /dev/null; then
 	echo "↳ 2. \`upgrade --yes\`…"
 	brew upgrade --yes
 	echo "  ↳ also consider running: brew upgrade --greedy --yes"
-````
+
 	echo "↳ 3. \`cleanup\`…"
 	brew cleanup
 
 	echo "↳ \`doctor\`…"
 	brew doctor
-	echo
 fi
 
 
@@ -51,19 +50,20 @@ fi
 ## https://guide.macports.org/chunked/using.html#using.port
 ## last reviewed: 2025/09
 if command -v port > /dev/null; then
+	echo
 	echo "******* MacPorts detected, updating… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
 	echo "↳ 1. \`selfupdate\`…"
 	sudo port selfupdate
 	echo "↳ 2. \`upgrade\`…"
 	sudo port upgrade outdated
-	echo
 fi
 
 
 ## apt (Ubuntu)
 ## last reviewed: 2026/05
 if command -v apt > /dev/null; then
+	echo
 	echo "******* Ubuntu's Advanced Packaging Tool detected, updating… *******"
 	## https://blog.packagecloud.io/you-need-apt-get-update-and-apt-get-upgrade/
 	echo "↳ 1. \`update\`…"
@@ -71,12 +71,32 @@ if command -v apt > /dev/null; then
 	echo "↳ 2. \`upgrade\`…"
 	sudo apt upgrade
 	echo "  ↳ also consider running: apt full-upgrade"
+fi
+
+
+
+############ Tools (may include their own package management) ############
+
+## mise
+## last reviewed: 2026/11
+if command -v mise &> /dev/null; then
 	echo
+	echo "******* \`mise\` detected, updating… *******"
+	## https://mise.jdx.dev/cli/self-update.html#mise-self-update
+	echo "↳ 1. \`self-update\`…"
+	mise self-update --yes
+	## https://mise.jdx.dev/cli/upgrade.html
+	## upgrades each tool within its requested range (ex. python@3 → latest 3.x, which ships a recent pip)
+	echo "↳ 2. \`upgrade\`…"
+	mise upgrade
+	echo "  ↳ old versions are kept, consider running: mise prune"
 fi
 
 
 ## Claude Code
+## last reviewed: 2026/11
 if command -v claude > /dev/null; then
+	echo
 	echo "******* Claude Code detected, updating… *******"
 	#echo "* 1. \`update\`…"
 	#claude update  NO this is an alias of upgrade
@@ -88,12 +108,13 @@ if command -v claude > /dev/null; then
 	echo
 	echo "↳ Updating all installed plugins…"
 
-	# Enumerate up-front so a failed listing is a hard error, not a silent
-	# "no plugins found" (process substitution failures escape set -euo pipefail).
-	plugins=$(claude plugin list --json | jq -r '.[] | "\(.id)\t\(.scope)"') \
-	  || { echo "  ↳ Failed to list installed plugins" >&2; exit 1; }
-
-	if [[ -z "${plugins}" ]]; then
+	## NOT piped into jq: without pipefail only jq's exit code would be seen,
+	## and jq exits 0 on empty input = a failed listing would look like "no plugins"
+	if ! plugins_json="$(claude plugin list --json)"; then
+		echo "  ↳ ❌ failed to list installed plugins, skipping their update" >&2
+	elif ! plugins="$(jq --raw-output '.[] | "\(.id)\t\(.scope)"' <<< "${plugins_json}")"; then
+		echo "  ↳ ❌ failed to parse installed plugins, skipping their update" >&2
+	elif [[ -z "${plugins}" ]]; then
 		echo "  ↳ No installed plugins found."
 	else
 		# Disabled plugins are updated too: `claude plugin update` succeeds on them,
@@ -108,32 +129,39 @@ if command -v claude > /dev/null; then
 			 failed+=("${id}")
 		  fi
 		done <<< "${plugins}"
-		echo
 
 		if [[ ${#failed[@]} -gt 0 ]]; then
 		  echo "  ↳ Failed to update: ${failed[*]}" >&2
 		fi
 
-		echo "  ↳ ${count} plugins updated. Restart Claude Code to apply updates."
+		echo "  ↳ $((count - ${#failed[@]}))/${count} plugins updated. Restart Claude Code to apply updates."
 	fi
 fi
 
 
-
-## mise
+## iTerm2 shell integration https://iterm2.com/documentation-shell-integration.html
 ## last reviewed: 2026/11
-if command -v mise &> /dev/null; then
-	echo "******* \`mise\` detected, updating… *******"
-	## https://mise.jdx.dev/cli/self-update.html#mise-self-update
-	echo "↳ 1. \`self-update\`…"
-	mise self-update --yes
-	## https://mise.jdx.dev/cli/upgrade.html
-	## upgrades each tool within its requested range (ex. python@3 → latest 3.x, which ships a recent pip)
-	echo "↳ 2. \`upgrade\`…"
-	mise upgrade
-	echo "  ↳ old versions are kept, consider running: mise prune"
+## downloaded on demand (never refreshed) by 2-shell/shellrc/_sub_tools.sh, same location
+## -> refreshing only the ones present = the shells actually used
+## (XDG base dir = the spec default when unset or empty)
+ITERM2_INTEGRATION_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/iterm2"
+if [[ -d "$ITERM2_INTEGRATION_DIR" ]]; then
 	echo
+	echo "******* iTerm2 shell integration detected, updating… *******"
+	for shell_name in bash zsh; do
+		integration_file="$ITERM2_INTEGRATION_DIR/shell_integration.$shell_name"
+		[[ -f "$integration_file" ]] || continue
+		echo "↳ ${shell_name}…"
+		## --fail + tmp file then mv: never replace a working file with an error page or a partial download
+		if ! { curl --fail --silent --show-error --location --max-time 30 "https://iterm2.com/shell_integration/$shell_name" \
+				--output "$integration_file.tmp" \
+			&& mv "$integration_file.tmp" "$integration_file"; }; then
+			rm -f "$integration_file.tmp"
+			echo "  ↳ ❌ failed to download, keeping the current one" >&2
+		fi
+	done
 fi
+
 
 
 ############ Dev Env -- node ############
@@ -143,6 +171,7 @@ DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || 
 #echo "DETECTED_NVM_DIR = $DETECTED_NVM_DIR"
 #echo "DETECTED_NVM_DIR- = ${DETECTED_NVM_DIR:-}"
 if [[ -d "$DETECTED_NVM_DIR" ]]; then
+	echo
 	echo "******* \`nvm\` dir detected BUT ignoring *******"
 
 	## https://github.com/nvm-sh/nvm
@@ -166,6 +195,7 @@ if [[ -d "$DETECTED_NVM_DIR" ]]; then
 	echo
 fi
 
+# pnpm doctor
 
 
 ############ Dev Env -- Python ############
@@ -179,15 +209,15 @@ marker = os.path.join(sysconfig.get_path("stdlib"), "EXTERNALLY-MANAGED")
 sys.exit(0 if os.path.isfile(marker) else 1)'
 }
 if command -v python3 > /dev/null && python3 -m pip --version &> /dev/null; then
+	echo
 	echo "******* \`pip\` detected… *******"
 	if is_python3_externally_managed; then
 		echo "↳ externally managed (PEP 668) → skipping, upgrade it through its owner (brew, apt…)"
 	else
 		echo "↳ updating…"
-		## our shellrc sets PIP_REQUIRE_VIRTUALENV=true as a guardrail, this upgrade is intentionally global
+		## our 2-shell/_.profile.sh sets PIP_REQUIRE_VIRTUALENV=true as a guardrail, this upgrade is intentionally global
 		PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade pip
 	fi
-	echo
 fi
 
 
@@ -202,10 +232,10 @@ fi
 
 ############ Dev Env -- Rust ############
 if command -v rustup > /dev/null; then
+	echo
 	echo "******* Rust detected, updating… *******"
 	echo "↳ \`update\`…"
 	rustup update
-	echo
 fi
 
 

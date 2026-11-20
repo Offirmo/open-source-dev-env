@@ -2,27 +2,24 @@
 ## Shell provision script
 
 echo "#########################"
-echo "# NON root provisioning script: $(basename "${BASH_SOURCE}")"
-echo "# \$BASH_SOURCE = $BASH_SOURCE"
+echo "# NON root provisioning script: echo${BASH_SOURCE[0]}"
 echo "# revision = circa 2026/11"
 echo "#########################"
 
-## safety  (https://serverfault.com/a/500778)
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+if [ "$EUID" -eq 0 ]; then
+	echo "* should NOT be run as root ❌"
+	exit 1
+fi
 
-## debug informations
+## predictable output of tools (english messages, code-point sorting = same on macOS and Linux)
+## C.UTF-8 = the only UTF-8 locale available on both (en_US.UTF-8 may not be generated on Linux)
+export LANG=C.UTF-8 LC_ALL=C.UTF-8
+
 echo "* environment diagnostic:"
-echo "  - BASH          = '$BASH' (should equal /bin/bash)"
-echo "  - BASH_SUBSHELL = $BASH_SUBSHELL"
-echo "  - whoami        = `whoami`"
-echo "  - pwd           = `pwd`"
-echo "  - LANG          = `echo $LANG`"
-echo "  - LC_ALL        = `echo $LC_ALL`"
-## full env
-#echo "  - PATH          = $PATH"
-#env
+echo "  - bash = $BASH $BASH_VERSION, SHLVL = $SHLVL, stdin = $([ -t 0 ] && echo tty || echo 'not a tty (piped?)')"
+echo "  - user = $(whoami), HOME = $HOME"
+echo "  - OS   = $(uname -sm) ($([[ "$OSTYPE" == darwin* ]] && echo "macOS $(sw_vers -productVersion)" || ( . /etc/os-release 2>/dev/null && echo "$PRETTY_NAME" )))"
+echo "  - brew = $(command -v brew || echo '(not found)')"
 ############################################################
 echo "* starting…"
 
@@ -56,17 +53,18 @@ brew install coreutils
 brew install warp
 
 brew install iterm2
-# prepare shell integrations, cf. https://iterm2.com/documentation-shell-integration.html
-curl -L https://iterm2.com/shell_integration/bash -o ~/.iterm2_shell_integration.bash
-curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+## shell integration https://iterm2.com/documentation-shell-integration.html
+## NOT downloaded here: done on demand at the 1st iTerm shell by 2-shell/shellrc/_sub_tools.sh,
+## then refreshed by 2-shell/bin/user--update.sh
 
 
 
 ###### git
 ## install the git-lfs client in case some repos need it
 brew install git-lfs
-## this is a system-wide command, actual usage is from .gitattributes per-repo
-git lfs install
+## user-wide setup (~/.gitconfig), actual usage is from .gitattributes per-repo
+## --skip-repo = do NOT also install LFS hooks into the repo we accidentally may happen to be in (ex. this one)
+git lfs install --skip-repo
 
 ## https://github.com/AGWA/git-crypt/
 ## 2026/06 not working great + complex to setup
@@ -81,7 +79,7 @@ brew install git-delta mergiraf difftastic
 ## TODO be very careful to not enable difftastic by default to not disorient LLMs
 ## ex. no "external = difft"
 ## TODO mergiraf needs post-install
-## ~/.config/git/attributes   merge=mergiraf
+## $XDG_CONFIG_HOME/git/attributes   merge=mergiraf
 ## or more targeted   mergiraf languages --gitattributes (not really needed, mergiraf is clever)
 ## TODO difftastic needs post-install
 ## https://difftastic.wilfred.me.uk/git.html#difftastic-by-default
@@ -89,7 +87,7 @@ brew install git-delta mergiraf difftastic
 ## for working with GitHub
 brew install gh
 ## TODO review may help bypass ssh restrictions, not standard
-gh config set -h github.com git_protocol https
+gh config set --host github.com git_protocol https
 ## TODO review extensions
 gh extension install github/gh-stack
 

@@ -9,7 +9,8 @@ alias l='ls -CF'
 
 ## helper for MacOS
 ## https://github.com/memkind/memkind/issues/33#issuecomment-648317086
-alias nproc="sysctl -n hw.logicalcpu"
+## only if missing: Linux and brew's coreutils provide a real one
+command -v nproc &> /dev/null || alias nproc="sysctl -n hw.logicalcpu"
 
 ## my own
 alias x='exit'
@@ -21,12 +22,15 @@ alias ydl='yt-dlp --verbose'
 ## works if installed via umake
 #alias ws='jetbrains-webstorm &'
 
+
 ## need to be built
 #alias rdm='~/work/src/rdm/bin/osx/debug/rdm'
 
+
 ## VSCode with custom folder
 ## cf. https://stackoverflow.com/a/73718136
-alias vsc='HOME=~/work/src/x-external/off/offirmo/open-source-dev-env/3-settings/vscode/home code --user-data-dir ~/work/src/x-external/off/offirmo/open-source-dev-env/misc/vscode/data-dir'
+## TODO review
+#alias vsc='HOME=~/work/src/x-external/off/offirmo/open-source-dev-env/3-settings/vscode/home code --user-data-dir ~/work/src/x-external/off/offirmo/open-source-dev-env/misc/vscode/data-dir'
 #  --password-store=basic
 # mkdir ~/.local/share/keyrings
 
@@ -41,7 +45,7 @@ alias gfp2='git fetch && git pull --recurse-submodules --rebase --autostash'
 alias gpof='git push origin --force --no-verify'
 
 #alias ur='CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`; git checkout master; git pull; git checkout $CURRENT_BRANCH; git fetch origin master; git rebase origin/master'
-alias gac='git add . && git commit -m "TLDW :scream_cat:" --no-verify'
+alias gac='git add . && git commit --message "TLDW :scream_cat:" --no-verify'
 alias gitc='gitc.sh'
 
 ## JS

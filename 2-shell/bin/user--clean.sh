@@ -1,13 +1,21 @@
 #! /bin/bash
 
 ############ cleanups ############
+echo
 echo "* […ode/…/user--clean.sh] hello!"
+echo "************ Cleaning your system… ************"
 
 
 
-########### OS ###########
+############ OS ############
 ## macOS = delete tmp stuff, but only stuff belonging to the current user
-find /private/tmp -xdev -mindepth 1 -user "$(id -un)" -depth -delete
+## - only OLD stuff: running apps keep their runtime files there (Claude Code, Docker, tmux…)
+## - only files + empty dirs, NOT sockets: their mtime = creation time, ex. launchd's ssh-agent socket lives as long as the session
+## (Linux: /tmp is cleaned by systemd-tmpfiles)
+if [[ -d /private/tmp ]]; then
+	find /private/tmp -xdev -mindepth 1 -user "$(id -un)" -depth \( -type f -o -type d -empty \) -mtime +2 -delete
+fi
+
 
 
 ############ Global package managers ############
@@ -17,6 +25,7 @@ find /private/tmp -xdev -mindepth 1 -user "$(id -un)" -depth -delete
 if command -v brew > /dev/null; then
 	echo
 	echo "******* \`brew\` detected, cleaning… *******"
+	echo "↳ \`cleanup --prune=14\`…"
 	brew cleanup --prune=14
 	## brew cleanup -s
 fi
@@ -29,10 +38,10 @@ if command -v port > /dev/null; then
 	echo
 	echo "******* MacPorts detected, cleaning… *******"
 	## https://guide.macports.org/chunked/using.common-tasks.html
-	echo "  * \`uninstall inactive\`…"
+	echo "↳ \`uninstall inactive\`…"
 	sudo port uninstall inactive
 	## https://guide.macports.org/chunked/using.html#using.port.reclaim
-	echo "  * \`reclaim\`…"
+	echo "↳ \`reclaim\`…"
 	sudo port reclaim
 fi
 
@@ -43,14 +52,14 @@ if command -v apt > /dev/null; then
 	echo
 	echo "******* apt detected, cleaning… *******"
 	## fix possible unmet dependencies
-	echo "  * \`install --fix-broken\`…"
+	echo "↳ \`install --fix-broken\`…"
 	sudo apt install --fix-broken
-	echo "  * \`autoclean\`…"
-	sudo apt -y autoclean
-	echo "  * \`clean\`…"
-	sudo apt -y clean
-	echo "  * \`autoremove --purge\`…"
-	sudo apt -y autoremove --purge
+	echo "↳ \`autoclean\`…"
+	sudo apt --yes autoclean
+	echo "↳ \`clean\`…"
+	sudo apt --yes clean
+	echo "↳ \`autoremove --purge\`…"
+	sudo apt --yes autoremove --purge
 	## Note: if caught in a loop, use
 	## sudo dpkg --purge
 	## https://askubuntu.com/questions/337456/boot-100-and-cant-purge
@@ -65,11 +74,13 @@ DETECTED_NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || 
 if [[ -d $DETECTED_NVM_DIR ]]; then
 	## https://github.com/nvm-sh/nvm
 	echo
-	echo "******* \`nvm\` detected, listing… *******"
+	echo "******* \`nvm\` detected, cleaning… *******"
 	[ -s "$DETECTED_NVM_DIR/nvm.sh" ] && \. "$DETECTED_NVM_DIR/nvm.sh"  # This loads nvm
+	echo "↳ \`cache clear\`…"
 	nvm cache clear
 	## list available node installs
 	## but cleaning will need to be done manually
+	echo "↳ Please review those installed node.js:"
 	nvm ls
 fi
 
@@ -78,17 +89,22 @@ fi
 if command -v yarn > /dev/null; then
 	echo
 	echo "******* yarn detected, cleaning… *******"
+	echo "↳ \`cache clean\`…"
 	yarn cache clean
 fi
 if command -v npm > /dev/null; then
 	echo
 	echo "******* npm detected, cleaning… *******"
+	echo "↳ \`cache clean --force\`…"
 	npm cache clean --force
-	pnpm store prune
 fi
 if command -v pnpm > /dev/null; then
 	echo
 	echo "******* pnpm detected, cleaning… *******"
+	echo "↳ \`cache delete\`…"
+	## https://pnpm.io/cli/cache-delete
+	pnpm cache delete
+	echo "↳ removing the store…"
 	## https://pnpm.io/uninstall#removing-the-global-content-addressable-store
 	rm -rf "$(pnpm store path)"
 fi
@@ -99,24 +115,24 @@ rm -rf ~/.npm
 ## TODO other dev envs ex. Python, Rust...
 
 ## Claude Code
-if [[ -d "${HOME}/.claude/" ]]; then
-	echo
-	echo "******* Claude Code detected, cleaning… *******"
-	claude plugin prune
-	find "${HOME}/.claude/backups"         -mindepth 1 -delete
-	find "${HOME}/.claude/file-history"    -mindepth 1 -delete
-	find "${HOME}/.claude/jobs"            -mindepth 1 -delete
-	find "${HOME}/.claude/plugins/cache"   -mindepth 1 -delete
-	find "${HOME}/.claude/plugins/data"    -mindepth 1 -delete
-	rm -rf "${HOME}/.claude/plugins/plugin-catalog-cache.json"
-	find "${HOME}/.claude/projects"        -mindepth 1 -delete
-	find "${HOME}/.claude/sessions"        -mindepth 1 -delete
-	find "${HOME}/.claude/shell-snapshots" -mindepth 1 -delete
-	find "${HOME}/.claude/tasks"           -mindepth 1 -delete
-	find "${HOME}/.claude/teams"           -mindepth 1 -delete
-	rm -rf "${HOME}/.claude/mcp-needs-auth-cache.json"
-	rm -rf "${HOME}/.claude/stats-cache.json"
-fi
+#if [[ -d "${HOME}/.claude/" ]]; then
+#	echo
+#	echo "******* Claude Code detected, cleaning… *******"
+#	claude plugin prune
+#	find "${HOME}/.claude/backups"         -mindepth 1 -delete
+#	find "${HOME}/.claude/file-history"    -mindepth 1 -delete
+#	find "${HOME}/.claude/jobs"            -mindepth 1 -delete
+#	find "${HOME}/.claude/plugins/cache"   -mindepth 1 -delete
+#	find "${HOME}/.claude/plugins/data"    -mindepth 1 -delete
+#	rm -rf "${HOME}/.claude/plugins/plugin-catalog-cache.json"
+#	find "${HOME}/.claude/projects"        -mindepth 1 -delete
+#	find "${HOME}/.claude/sessions"        -mindepth 1 -delete
+#	find "${HOME}/.claude/shell-snapshots" -mindepth 1 -delete
+#	find "${HOME}/.claude/tasks"           -mindepth 1 -delete
+#	find "${HOME}/.claude/teams"           -mindepth 1 -delete
+#	rm -rf "${HOME}/.claude/mcp-needs-auth-cache.json"
+#	rm -rf "${HOME}/.claude/stats-cache.json"
+#fi
 
 ## docker/podman
 if command -v docker > /dev/null; then

@@ -1,39 +1,29 @@
 #! /bin/bash
 ## DEMO of Shell provision script FOR TEST PURPOSE
 
-
 echo "#########################"
-echo "# provisioning script: $(basename "${BASH_SOURCE}")"
-echo "# \$BASH_SOURCE = $BASH_SOURCE"
+echo "# provisioning script: echo${BASH_SOURCE[0]}"
 echo "# revision = circa 2026"
 echo "#########################"
 
-## safety  (https://serverfault.com/a/500778)
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+## predictable output of tools (english messages, code-point sorting = same on macOS and Linux)
+## C.UTF-8 = the only UTF-8 locale available on both (en_US.UTF-8 may not be generated on Linux)
+export LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-## debug informations
 echo "* environment diagnostic:"
-echo "  - BASH            = '$BASH' (should equal /bin/bash)"
-echo "  - BASH_SUBSHELL   = $BASH_SUBSHELL"
-echo "  - whoami          = `whoami`"
-echo "  - pwd             = `pwd`"
-echo "  - LANG            = `echo $LANG`"
-echo "  - LC_ALL          = `echo $LC_ALL`"
-## full env
-#echo "  - PATH          = $PATH"
-#env
+echo "  - bash = $BASH $BASH_VERSION, SHLVL = $SHLVL, stdin = $([ -t 0 ] && echo tty || echo 'not a tty (piped?)')"
+echo "  - user = $(whoami) (EUID = $EUID), HOME = $HOME"
+echo "  - OS   = $(uname -sm) ($([[ "$OSTYPE" == darwin* ]] && echo "macOS $(sw_vers -productVersion)" || ( . /etc/os-release 2>/dev/null && echo "$PRETTY_NAME" )))"
 ############################################################
 echo "* starting ▶️"
 
-echo "*** hello, `whoami` ! ***"
+echo "*** hello, $(whoami) ! ***"
 echo "This a demo script doing nothing!"
-echo "- USER                      = `echo $USER`"
-echo "- COMPANY                   = `echo $COMPANY`"
-echo "- COMPANY_DOMAIN            = `echo $COMPANY_DOMAIN`"
-echo "- COMPANY_USERNAME__GITHUB  = `echo $COMPANY_USERNAME__GITHUB`"
-echo "- PERSONAL_USERNAME__GITHUB = `echo $PERSONAL_USERNAME__GITHUB`"
+echo "- USER                      = $USER"
+echo "- COMPANY                   = $COMPANY"
+echo "- COMPANY_DOMAIN            = $COMPANY_DOMAIN"
+echo "- COMPANY_USERNAME__GITHUB  = $COMPANY_USERNAME__GITHUB"
+echo "- PERSONAL_USERNAME__GITHUB = $PERSONAL_USERNAME__GITHUB"
 
 #############################################################
 echo "* …all done ✅"

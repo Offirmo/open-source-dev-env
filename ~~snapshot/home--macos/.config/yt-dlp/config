@@ -1,0 +1,5 @@
+# https://github.com/yt-dlp/yt-dlp/#configuration
+--split-chapters
+--format bestaudio[ext=mp3]/bestaudio[ext=m4a]/bestaudio
+--output ~/Downloads/ytdl/%(release_date)s-%(id)s-%(title)s.%(ext)s
+--output chapter:~/Downloads/ytdl/%(channel)s/[%(id)s]-%(title)s/%(section_title)s.%(ext)s
